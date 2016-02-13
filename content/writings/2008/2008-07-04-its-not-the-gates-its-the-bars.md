@@ -2,10 +2,10 @@
 title: It's not the Gates, it's the bars
 author: Oz Nahum
 published: 2008-07-04
-tags: [Opinion, Linux, FOSS]
+tags: Opinion, Linux, FOSS
 public: yes
 chronological : yes
-kind: writing 
+kind: writing
 summary: The BBC publishes an important [article](http://news.bbc.co.uk/2/hi/technology/7487060.stm) by Richard Stallman. I felt this is so important and true it has to be copied an published here fully
 ---
 
