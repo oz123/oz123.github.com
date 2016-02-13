@@ -2,7 +2,7 @@
 title: Windows 7 and the amount of developers of Linux
 author: Oz Nahum
 published: 2008-08-22
-tags: Linux, Window-7
+tags: Linux, Windows-7
 public: yes
 chronological : yes
 kind: writing 
