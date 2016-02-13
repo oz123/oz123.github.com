@@ -9,7 +9,6 @@ kind: writing
 summary: In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch.
 ---
 
-
 In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch. I've already had an experience with the Ubuntu alternate installer, and I knew more or less what I was doing.
 
 But back then, if you read something about Debian, the constant theme was that Debian is hard and only for advanced users. But hey, there's Etch. It had a new shiny fancy graphical installer. So I downloaded the CD, burned it and started the install.

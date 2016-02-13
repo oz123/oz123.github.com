@@ -2,7 +2,7 @@
 title: salt quick tip - changing passwords on multiple clusters
 author: Oz Nahum Tiram
 published: 2014-10-24
-tags: [salt, linux, sudo]
+tags: salt, linux, sudo
 public: yes
 chronological: yes
 kind: writing

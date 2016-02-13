@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-02-13T22:31:08Z</updated>
+<updated>2016-02-13T23:15:06Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -42,7 +42,7 @@
   <link href="writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html" />
   <id>./writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html</id>
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">Apparently, bash offeres assosiative arrays, similar to Python dictionary
+    <div xmlns="http://www.w3.org/1999/xhtml">Apparently, bash offeres assosiative arrays, similar to Python dictionaries
 <a href="writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html"> continue reading...</a></div>
   </content>
   </entry>
@@ -96,7 +96,7 @@
   <link href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
   <id>./writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">and I just wanted to share my thoughts.
+    <div xmlns="http://www.w3.org/1999/xhtml">I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
 <a href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html"> continue reading...</a></div>
   </content>
   </entry>

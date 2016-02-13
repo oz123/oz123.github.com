@@ -4,10 +4,8 @@ author: Oz Nahum
 published: 2011-10-19
 tags: Python,FOSS, Programming
 public: yes
-chronological: yes
 kind: writing 
 summary: Warning: This is not a technical post, rather just a boring rant and a call for advice. A friend of mine asked me what programming language he should learn. 
-
 ---
 
 Warning: This is not a technical post, rather just a boring rant and a

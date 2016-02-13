@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-02-13T22:31:03Z</updated>
+<updated>2016-02-13T23:15:00Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -15,7 +15,7 @@
   <link href="writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
   <id>./writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multiple Linux hosts.
+    <div xmlns="http://www.w3.org/1999/xhtml">Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts.
 <a href="writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html"> continue reading...</a></div>
   </content>
   </entry>

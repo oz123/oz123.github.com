@@ -2,7 +2,7 @@
 title: Installing Oracle's JAVA on Debian
 author: Oz Nahum Tiram
 published: 2014-04-16
-tags: [JAVA, Debian]
+tags: JAVA, Debian
 public: yes
 chronological: yes
 kind: writing
