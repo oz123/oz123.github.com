@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> UEFI Secure booting is good for Linux </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; 2012-01-18</div>
+	<h1>UEFI Secure booting is good for Linux</h1>
+	<p>Microsoft will block non Windows on the ARM platform. Big deal. It is if
+installing Linux on any other Laptop is easy. Sure you can install Linux
+on most Laptops today. But does it really work? Do you get the same
+battery time with Linux as with Windows? Nope. Do your multimedia Keys
+work? In 90% of the cases only partially. Does your computer suspend or
+hibernates as in Windows? in about 50% of the cases the answer is no.
+Does your Graphics Card works the same as under Windows ? NOPE.</p>
+
+<p>So, the situation is like this: OEM A makes a deal with M\$ and writes
+proper drivers to the hardware and SomeUser Joe gets a hardware which
+works perfect with Windows 7. Later, SomeUser Joe, installs SomeCrack
+for SomeCoolSoftware which contains a Trojan which he can't get rid of.
+After some frustration, he decides to quit with this M\$ thingi and give
+Ubuntu a try, because he heard it's cool. He than tries Ubuntu and
+discovers some things don't work. Here our little story splits.</p>
+
+<p>First possibility, the Linux Sucks possibility. SomeUser Joe, is
+frustrated, his computer will freeze every time he resumes it from
+suspend. Or the graphics card is slow, or the Fan always works loudly.
+Linux Sucks. Period. SomeUser Joe, bites it, and installs Windows 7. His
+next computer will be Apple.</p>
+
+<p>Second possibility, the Linux has a cool community, SomeUser Joe, heard
+about it and wants to join. So, he files another bug, which might be
+taken seriously, or not, in Ubuntu's bugzilla. This bug might find it's
+way upstream to the Kernel developers and they might solve it, but the
+patch will only be in the next release of Ubuntu maybe in 6 months from
+now. Damn speculations. But Linux works at most. So, in 3 years from now
+SomeUser Joe, might look for a new Laptop, without the Windows Tax, and
+will save a scrap of 50 bucks, which he will spend 100 times more money
+in working hours value digging through forums and IRC channels trying to
+get he's M\$ free Laptop to work.</p>
+
+<p>Third Possibility, SomeUser Joe buy his next Laptop with Linux
+pre-installed. Hell yes! UEFI is a great thing. I wish all M\$ devices
+would never run Linux. It will force Linux fan boys to see that by
+saving \$50 to \$100 dollars buying a Laptop from OEM's which sell
+Windows, they sleep with the Devil. UEFI is a great opportunity to Linux
+and FOSS, because we have a great OS in our hands and now we have also
+Free Hardware like the BeagleBoard, PandaBoard, RaspberryPi and even the
+GTA04.</p>
+
+<p>There are some small companies the sell Linux laptops which have the
+latest trends in hardware. If there are just 1 Million Linux users and
+just one third of them will buy a new device this year, that is about
+300,000 laptops sold with Linux. I think this is a huge jump in sales
+for a small company like ZaReason or System76. They would be then more
+then able to go out on a broad campaign putting Linux on the main stream
+student Laptop. </p>
+
+<p>So, please, stop whining about UEFI. Just don't buy laptop from OEM like
+Dell or Lenovo or Acer or Asus. There are ENOUGH alternatives for
+Preinstalled Linux Laptops. Here is a short list:\</p>
+
+<ul>
+<li><a href="http://system76/">System76</a></li>
+<li><a href="http://zareason.com/">Zareason</a></li>
+<li><a href="http://rockiger.com/de/shop/product/satchbook">Rockiger</a></li>
+<li><a href="http://www.ohava.com/">ohava</a> </li>
+<li><a href="http://www.alwaysinnovating.com/">AlwaysInnonvating</a></li>
+</ul>
+
+<p>If you happen to know of others, please let me know !</p>
+
+<p>(P.S. Dell don't count! Dell's Ubuntu offering mock Linux users,
+offering a free OS with lousy hardware which costs more than the Windows
+installed laptops with cost cheaper for better hardware. Just because of
+this mockery, I will never recommend any customer of mine or buy myself
+any product of Dell).</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/opinion"><span>Opinion</span></a>, <a class="tag" href="/tags/windows"><span> Windows</span></a>, <a class="tag" href="/tags/foss"><span> FOSS</span></a>, <a class="tag" href="/tags/hardware"><span> Hardware</span></a>, <a class="tag" href="/tags/arm"><span>ARM</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html&title=UEFI Secure booting is good for Linux&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html&title=UEFI Secure booting is good for Linux" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html" title="UEFI Secure booting is good for Linux" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html&body=UEFI Secure booting is good for Linux" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

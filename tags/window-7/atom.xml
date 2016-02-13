@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:26Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Windows 7 and the amount of developers of Linux</title>
+  <link href="writings/2008-08-22-windows-7-and-the-amount-of-developers/index.html" />
+  <id>./writings/2008-08-22-windows-7-and-the-amount-of-developers/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">The marker Israel publishes a <a href="http://it.themarker.com/tmit/article/4273">translated article</a> from IDG were they mention that Microsoft has about 2000 people working on the next generation of Windows, 500  people are in charge of the 2000 developers. And my guess is that Microsoft will have triple the amount of people selling (or trying to sell that operating system).
+<a href="writings/2008-08-22-windows-7-and-the-amount-of-developers/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

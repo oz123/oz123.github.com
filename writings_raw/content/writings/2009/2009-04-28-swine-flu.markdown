@@ -1,0 +1,33 @@
+---
+title: Swine Flu 
+author: Oz Nahum
+published: 2009-04-28
+tags: Web
+public: yes
+chronological : yes
+kind: writing 
+summary: Lately everybody's talking about swine flu. So I must too. Just in case I get it, and die before I manage to say something about that. Here's my two cents.
+---
+
+Lately everybody's talking about swine flu. So I must too. Just in case I get it, and die before I manage to say something about that. Here's my two cents.
+
+The media, is as usual making us dumb. As a friend of mine put it bluntly  - "well... car accidents are politically accepted, because everybody owns a car. But deaths caused by flu just scare people."
+
+Well, if you ask me, I just don't get it. How come something unpreventable such as a mutation in the genes of a flu virus cause so much panic, where as driving a car don't.
+
+Here's an interactive map of the places where swine flu was found:
+
+  
+View [H1N1 Swine Flu](http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=106484775090296685271.0004681a37b713f6b5950&ll=11.867351,-88.59375&spn=103.334876,149.414063&z=2&source=embed) in a larger map
+
+If I made a map of car accidents in the USA, or in Europe, you'd practically see no land, because it would all be covered red.
+
+Or worse if I make a map of obesity or death caused by smoking...
+
+Which are all preventable deaths, and kill hundreds  of thousands every year. See this for example http://en.wikipedia.org/wiki/List_of_preventable_causes_of_death.
+
+So I really don't get it - car accidents and obesity are politically acceptable, and pig's flue is not.
+
+Which reminded me why Walt Disney became such a dinosaur, when they did classics like that:
+
+The biggest epidemic of all in my opinion is stupidity and "political acceptance" of such as car accidents and other preventable deaths.

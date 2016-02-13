@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:20Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Building Octave-3.4 on Debian Sid</title>
+  <link href="writings/2011-05-24-building-octave-34-on-debian-sid/index.html" />
+  <id>./writings/2011-05-24-building-octave-34-on-debian-sid/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I wanted to build the latest Octave (3.4) on my Debian Sid. Well, it wasn't as easy as before, since I upgrade it quite often.
+<a href="writings/2011-05-24-building-octave-34-on-debian-sid/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Making Octave plot nicer</title>
+  <link href="writings/2009-05-21-making-octave-ploting-nicer/index.html" />
+  <id>./writings/2009-05-21-making-octave-ploting-nicer/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Personally, I prefer Python over Octave/Matlab. But since I'm being forced to write Matlab code for one of my courses, I started playing around with Octave.
+<a href="writings/2009-05-21-making-octave-ploting-nicer/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

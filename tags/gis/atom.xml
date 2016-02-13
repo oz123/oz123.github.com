@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:24Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>oh, Yesterday I was a bad programmer</title>
+  <link href="writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html" />
+  <id>./writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Forgetting my first lesson in programming, I looked for a solution to convert IP addresses to country. I found out tables, and SQL files, and went on and on trying to figure how to use them, and do SQL in python
+<a href="writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>MapServer Examples for Debian</title>
+  <link href="writings/2010-06-14-mapserver-examples-for-debian-2/index.html" />
+  <id>./writings/2010-06-14-mapserver-examples-for-debian-2/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I've made a package of the Itasca example that are supposed to work  "out of the box" for Debian Lenny and Squeeze
+<a href="writings/2010-06-14-mapserver-examples-for-debian-2/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

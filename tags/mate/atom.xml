@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:34Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Short news about the GNOME 2 fork</title>
+  <link href="writings/2011-12-11-short-news-about-gnome-2-fork/index.html" />
+  <id>./writings/2011-12-11-short-news-about-gnome-2-fork/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Well, I've been following the <a href="https://github.com/Perberos/Mate-Desktop-Environment">Development of Mate DE</a> quite closely via github and it seems like the project is gaining momentum.
+<a href="writings/2011-12-11-short-news-about-gnome-2-fork/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

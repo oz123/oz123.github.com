@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> PyGTK CD Ripper Tutorial - Part 6 </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; 2013-02-27</div>
+	<h1>PyGTK CD Ripper Tutorial - Part 6</h1>
+	<p>Part 1 of this <a href="http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/">pygtk tutorial</a> stopped with a working toolbar and two place 
+holders. <a href="http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/">Part 2</a> of this tutorial  extended this minimal UI with a list of
+songs which was created using GTK ListView. <a href="http://oz123.github.com/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/">Part 3</a> showed how to gain better control 
+on <code>ListView</code>. <a href="http://oz123.github.com/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/">Part 4</a> added some final polish to the UI and added an empty Preferences 
+Dialog. <a href="http://oz123.github.com/writings/2013-02-11-PyGTK%20CD%20Ripper%20Tutorial%20Part%205/">Part 5</a> of this tutorial added a <code>gtk.Notebook</code> to the Preferences dialog, and 
+showed how to populate the first to Notebook pages (tabs) with the appropriate widget. This part
+of the tutorial will finish populating  the gtk.Notebook, by populating the "Encode" and "Advanced"
+pages.</p>
+
+<p>The <code>gtk.Notebook</code> instance was created in the <code>create_notebook</code> method of the Preferences dialog. To make 
+the code breakable and more readable, each page of the notebook was populated in  a class method
+with the appropriate name:</p>
+
+<pre><code>class PrefDialog():
+    """
+    create the preferences dialog
+    """ 
+
+    def set_file_names(self):
+        """
+        add widgets to the page File Names
+        """
+        ...
+
+    def set_general_page(self):
+        """
+        add widgets to the page General
+        """    
+        ....
+
+    def insert_notebook(self):
+        """
+        create a notebook with 4 pages, each containing a gtk.VBox.
+        """
+        self.notebook = gtk.Notebook()
+
+        for idx, page in enumerate(["General", "File Names", "Encode", 
+            "Advanced"]):
+            # later, we can replace widget with a vbox, and then
+            # the road is wide open to start packing other widgets inside it!
+            vbox = gtk.VBox(False)
+            self.notebook.append_page(vbox)
+            # note: you could also do
+            # label = gtk.Label(page)
+            # self.notebook.append_page(vbox, tab_label = label)
+            pg = self.notebook.get_nth_page(idx)
+            self.notebook.set_tab_label_text(pg, page)
+
+        self.set_general_page()
+        self.set_file_names()
+        self.set_encode()
+        self.set_advanced()
+        self.dialog.vbox.pack_start(self.notebook)
+
+
+    def __init__(self, window):
+        """
+        initialize the preferences dialog
+        """
+        # title, parent, flags (0, for defaults), no buttons
+        self.dialog = gtk.Dialog("Preferences", window, 0,
+        (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
+
+        self.dialog.set_default_size(250, 300)
+
+        self.insert_notebook()
+        response = self.dialog.show_all()
+        response = self.dialog.run()
+
+
+
+        if response == gtk.RESPONSE_OK:
+            print "The OK button was clicked"
+        elif response == gtk.RESPONSE_CANCEL:
+            print "The Cancel button was clicked"
+
+        self.dialog.destroy()
+</code></pre>
+
+<p>The method <code>set_general_page</code> was broadly discussed in part 5 of this 
+tutorial, and the method <code>set_file_names</code> was left undocumented since it 
+introduces no new concepts. This part of the tutorial will focus mainly 
+on populating the "Encode" page which includes 2 new type of widgets, 
+these are the <code>gtk.Frame</code> and <code>gtk.Expander</code>, which help creating the 
+following page:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-w6jbKTW8yXo/USt-ToZ1OQI/AAAAAAAACKY/5i6KzVVQylg/s596/Encode.png" alt="prefs_encode" /></p>
+
+<p>With goals set, here is the code to generate the "Encode" page. First, in 
+the method we call <code>notebook.get_nth_page(2)</code>, so other widgets <br />
+can be directly attached to <code>pg</code>. Introspecting <code>pg</code> with <code>print type(pg)</code> 
+will show that <code>pg</code> is a <code>gtk.VBox</code> widget, the output to the terminal
+will be:</p>
+
+<pre><code>&lt;type 'gtk.VBox'&gt;
+</code></pre>
+
+<p>Hence, the method to create a note book page with 3 frames will look 
+like this:</p>
+
+<pre><code>def set_encode(self):
+    """
+    add widgets to the page encoding
+    """
+    pg = self.notebook.get_nth_page(2)
+    print type(pg)
+    # the constractor for gtk.Frame takes a label as keyword
+    mp3_frame = gtk.Frame("MP3")
+    ogg_frame = gtk.Frame("OGG")
+    flac_frame = gtk.Frame("FLAC")
+
+    pg.pack_start(mp3_frame, True, True, 0)
+    pg.pack_start(ogg_frame, True, True, 0)
+    pg.pack_start(flac_frame, True, True, 0)
+</code></pre>
+
+<p>This will produce the following UI:</p>
+
+<p><img src="https://lh6.googleusercontent.com/-77QtY3iLrek/USyvRcGc1iI/AAAAAAAACLE/wz3govq85-U/w405-h375-o-k/3-Empty-Frames.png" alt="3 empty frames" /></p>
+
+<p>This is a good start, but the frames lack a check button, and the inner widgets.
+The creation of a <code>gtk.Checkbutton</code> was already discussed in other parts this 
+pygtk tutorial:</p>
+
+<pre><code>    mp3 = gtk.CheckButton(label="MP3 (lossy compression)" )
+</code></pre>
+
+<p>In order to include a Checkbutton inside a frame, the following method is
+used:</p>
+
+<pre><code>    mp3_frame.set_label_widget(mp3)
+</code></pre>
+
+<p>Next some widgets are added inside the <code>mp3_frame</code>. The tricky part is that 
+a <code>gtk.Frame</code> can contain only a single widget. Hence, adding a <code>gtk.VBox</code>
+or a <code>gtk.HBox</code> allows attaching mutliple widgets through packing:</p>
+
+<pre><code>    vbr_bttn = gtk.CheckButton(label="Variable bit rate (VBR)")
+    vboxmp3 = gtk.VBox()
+    vboxmp3.pack_start(vbr_bttn)
+    mp3_frame.add(vboxmp3)
+</code></pre>
+
+<p>This will create the following UI:</p>
+
+<p><img src="https://lh6.googleusercontent.com/-YkKWEGF_zis/USyx8g_vHwI/AAAAAAAACLg/iux6DNfjGbY/w461-h428-o-k/mp3_frame_with_checkbutton.png" alt="checkbutton inside a frame" /></p>
+
+<p>The next 2 items in the <code>mp3_frame</code> are a <code>gtk.Label</code> and a new type of 
+widget called <code>gtk.HScroll</code>, they are packed into a <code>gtk.HBox</code> which is
+in turn packed into the <code>gtk.VBox</code> created earlier:</p>
+
+<pre><code>    mp3_hbox = gtk.HBox(False,0)
+    bitrate_Label = gtk.Label("Bitrate")
+    bitrate_Label.set_alignment(5,0)
+    # this creates a scale from 0 to 13 with increments
+    # of 1, witht the default value 0.
+    # the full options give in the documentation are:
+    # adjustment = gtk.Adjustment(value=0, lower=0, upper=0, 
+                                  step_incr=0, page_incr=0, 
+                                               page_size=0)
+    adj_mp3 = gtk.Adjustment(0, 0, 14, 1, 1, 1)
+    # this will create an Horizontal Scale moveable with the above 
+    # Adjustment
+    scroll_mp3 = gtk.HScale(adj_mp3)
+    # this will set the number of significat digits after the decimal
+    # point
+    scroll_mp3.set_digits(0)
+    # this will be the position right of the scale
+    scroll_mp3.set_value_pos(gtk.POS_RIGHT)
+    mp3_hbox.pack_start(bitrate_Label, False, False, 0)
+    mp3_hbox.pack_start(scroll_mp3, True, True, 5)
+    vboxmp3.pack_start(mp3_hbox)
+</code></pre>
+
+<p><img src="https://lh6.googleusercontent.com/-Y5rOXIE1arc/USy3k3-2cOI/AAAAAAAACL8/WsqRIAY4kxk/w461-h428-o-k/mp3_all_widgets.png" alt="mp3 frame with all the widgets" /></p>
+
+<p>The above UI looks quit ugly. But with the help of <code>gtk.Alignment</code> one can
+fine tune the position of the attached widgets. The <code>Alignment</code> widget 
+is used to control the alignment and size of its child:</p>
+
+<pre><code>    # alignment = gtk.Alignment(xalign=0.0, yalign=0.0, xscale=0.0, yscale=0.0)
+    # alignment.set(xalign, yalign, xscale, yscale)
+    # def set_padding(padding_top, padding_bottom, padding_left, padding_right)
+    alignment_mp3 = gtk.Alignment(0.5, 0.5, 1, 1)
+    alignment_mp3.set_padding(2, 2, 12, 2)
+
+    # IMPORTANT:
+    # Instead of adding vboxmp3 to the frame
+    # mp3_frame.add(vboxmp3)
+    # vboxmp3 is now added to the aligment widget, and this 
+    # widget is in turn added to the frame
+    alignment_mp3.add(vboxmp3)
+    mp3_frame.add(alignment_mp3)
+</code></pre>
+
+<p>The complete <code>set_encode</code> method is now:</p>
+
+<pre><code>def set_encode(self):
+    """
+    add widgets to the page encoding
+    """
+    pg = self.notebook.get_nth_page(2)
+    pg.set_border_width(5)
+    vbox_inside = gtk.VBox(False, 0)
+    vbox_inside.set_border_width(5)
+
+    mp3_frame = gtk.Frame("MP3")
+    ogg_frame = gtk.Frame("OGG")
+    flac_frame = gtk.Frame("FLAC")
+
+    #MP3
+    # alignment = gtk.Alignment(xalign=0.0, yalign=0.0, xscale=0.0, yscale=0.0)
+    # alignment.set(xalign, yalign, xscale, yscale)
+    # def set_padding(padding_top, padding_bottom, padding_left, padding_right)
+    alignment_mp3 = gtk.Alignment(0.5, 0.5, 1, 1)
+    alignment_mp3.set_padding(2, 2, 12, 2)
+    mp3 = gtk.CheckButton(label="MP3 (lossy compression)" )
+    mp3_frame.set_label_widget(mp3)
+    vbr_bttn = gtk.CheckButton(label="Variable bit rate (VBR)")
+
+    mp3_hbox = gtk.HBox(False,0)
+    bitrate_Label = gtk.Label("Bitrate")
+    bitrate_Label.set_alignment(5,0)
+    adj_mp3 = gtk.Adjustment(0, 0, 14, 1, 1, 1)
+    scroll_mp3 = gtk.HScale(adj_mp3)
+    scroll_mp3.set_digits(0)
+
+    scroll_mp3.set_value_pos(gtk.POS_RIGHT)
+    mp3_hbox.pack_start(bitrate_Label, False, False, 0)
+    mp3_hbox.pack_start(scroll_mp3, True, True, 5)
+    vboxmp3 = gtk.VBox()
+    vboxmp3.pack_start(vbr_bttn)
+    vboxmp3.pack_start(mp3_hbox)
+    alignment_mp3.add(vboxmp3)
+    mp3_frame.add(alignment_mp3)
+
+    pg.pack_start(mp3_frame, True, False, 0)
+    pg.pack_start(ogg_frame, True, True, 0)
+    pg.pack_start(flac_frame, True, True, 0)
+</code></pre>
+
+<p>This method will produce the following UI when called:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-_0TLTqO0z_U/USy65_ldQII/AAAAAAAACMY/iP8pJmlWfL8/w461-h428-o-k/all_mp3_widgets_aligned.png" alt="all widgets aligned" /></p>
+
+<p>The last piece, is making the widgets in the frame appear grayed like in 
+asunder. A grayed out application is called insensitive, hence the 
+widget appears "grayed out" and the user can't interact with it. Also, 
+setting these widgets to sensitive or insensitive state should be connected
+to the check button in the Frame's label, hence, this makes sense to do this
+inside a class method, since buttons can be connected to methods. Here
+is how this is done:</p>
+
+<pre><code>mp3.connect("toggled", self.toggle_widgets, 
+                       [bitrate_Label, vbr_bttn ,scroll_mp3])
+</code></pre>
+
+<p>When ever this button will be checked or unchecked, the following method
+will be called:</p>
+
+<pre><code>def toggle_widgets(self, button, widget_list):
+    """
+    make the widgets inside the MP3/OGG/etc Frame sensitive or 
+    insensitive (grayed) according to the state of
+    the CheckButton 
+    """
+    # button.get_active() returns true or false
+    # when a widget is insensitive, e.g.
+    # widget.set_sensitive(false)
+    # it appears as gray
+    for widget in widget_list:
+        widget.set_sensitive(button.get_active())
+</code></pre>
+
+<p>After connecting the <code>mp3</code> button to the method, the method <code>toggle_widgets</code>
+is called once, so by default the widgets are insensitive:</p>
+
+<pre><code>self.toggle_widgets(mp3, [bitrate_Label, vbr_bttn ,scroll_mp3])
+</code></pre>
+
+<p>Hence, the coplete method <code>set_encode</code> is now:</p>
+
+<pre><code>def set_encode(self):
+    """
+    add widgets to the page encoding
+    """
+    pg = self.notebook.get_nth_page(2)
+    pg.set_border_width(5)
+    vbox_inside = gtk.VBox(False, 0)
+    vbox_inside.set_border_width(5)
+
+    mp3_frame = gtk.Frame("MP3")
+    ogg_frame = gtk.Frame("OGG")
+    flac_frame = gtk.Frame("FLAC")
+
+    #MP3
+    # alignment = gtk.Alignment(xalign=0.0, yalign=0.0, xscale=0.0, yscale=0.0)
+    # alignment.set(xalign, yalign, xscale, yscale)
+    # def set_padding(padding_top, padding_bottom, padding_left, padding_right)
+    alignment_mp3 = gtk.Alignment(0.5, 0.5, 1, 1)
+    alignment_mp3.set_padding(2, 2, 12, 2)
+    mp3 = gtk.CheckButton(label="MP3 (lossy compression)" )
+    mp3_frame.set_label_widget(mp3)
+    vbr_bttn = gtk.CheckButton(label="Variable bit rate (VBR)")
+
+    mp3_hbox = gtk.HBox(False,0)
+    bitrate_Label = gtk.Label("Bitrate")
+    bitrate_Label.set_alignment(5,0)
+    adj_mp3 = gtk.Adjustment(0, 0, 14, 1, 1, 1)
+    scroll_mp3 = gtk.HScale(adj_mp3)
+    scroll_mp3.set_digits(0)
+
+    # connect mp3 to some function
+    mp3.connect("toggled", self.toggle_widgets, [bitrate_Label, vbr_bttn ,scroll_mp3])
+    # this will make the widgets insensitive
+    self.toggle_widgets(mp3, [bitrate_Label, vbr_bttn ,scroll_mp3])
+
+    scroll_mp3.set_value_pos(gtk.POS_RIGHT)
+    mp3_hbox.pack_start(bitrate_Label, False, False, 0)
+    mp3_hbox.pack_start(scroll_mp3, True, True, 5)
+    vboxmp3 = gtk.VBox()
+    vboxmp3.pack_start(vbr_bttn)
+    vboxmp3.pack_start(mp3_hbox)
+    alignment_mp3.add(vboxmp3)
+    mp3_frame.add(alignment_mp3)
+</code></pre>
+
+<p>This will produce the following UI's:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-zWWfe4Sn7Gk/USzGv3C5ICI/AAAAAAAACMo/35-I_TRIzyI/w407-h378-o-k/insensitive_widgets.png" alt="insensitive widgets" />
+<img src="https://lh3.googleusercontent.com/-nmeBNuWerrM/USzGzjjguHI/AAAAAAAACMw/ujv66bp6QtM/w461-h428-p-o-k/sensitive_widgets.png" alt="sensitive widgets" /></p>
+
+<p>The same methodology has to be repeated for each of the frames. With the 
+special case of the frames which are hidden by expanders, and especially
+the frame for WavPack which includes a frame inside a frame. Here is how
+a <code>gtk.Expander</code> and frame inside a frame are created:</p>
+
+<pre><code>expander = gtk.Expander(label="More formats")
+</code></pre>
+
+<p>much like <code>gtk.Frame</code> a <code>gtk.Expander</code> can contain only one child widget, 
+a <code>gtk.Vbox</code> added to it, allows packing multiple widgets:</p>
+
+<pre><code>    expander = gtk.Expander(label="More formats")
+
+    wv_pk_frame = gtk.Frame("WavPack")
+    hybrid_frame = gtk.Frame("Hybrid")        
+    vbox_wv_pk = gtk.VBox()
+    wv_pk_frame.add(vbox_wv_pk)
+
+    hybrid_hbox = gtk.HBox(False,0)
+    hybrid_frame.add(hybrid_hbox)
+    vbox_wv_pk.pack_start(hybrid_frame,True, True, 5)
+
+    # add both frames to expander packed inside VBox
+    vbox_in_expander = gtk.VBox(False)
+    # wv_pk_frame has already the hybrid frame include
+    # inside gtk.HBox, so other widgets can be attached to it.
+    vbox_in_expander.pack_start(wv_pk_frame, False, True, 0)
+    expander.add(vbox_in_expander)
+</code></pre>
+
+<p>The following addition of the code yield the following UI:</p>
+
+<p><img src="https://lh4.googleusercontent.com/-0sG_mlTENzY/US3Rrc5asJI/AAAAAAAACNM/KJlcWAJvan0/s348/EmbeddedFrame.png" alt="Embedded gtk.Frame inside another gtk.Frame" /></p>
+
+<p>With the same methodology as before, it is quite easy to add all the necessary 
+widgets to the <code>WavPack</code> frame. Also, adding a second expander is not
+complicated either. The next page in the notebook, the "Advanced" page, 
+includes only familiar <code>gtk.Widgets</code> that were discussed in other parts 
+of this pygtk tutorial and therefore, the creation of this page will not 
+be thoroughly discussed. 
+The full code of this With the UI of the Preferences dialog can be found
+in <a href="https://github.com/oz123/punder/blob/Preferences_UI_complete/punder.py">here</a>. <br />
+The next parts of this tutorial will show how to add symbols to the window, 
+and will demonstrate how to save the configuration options to a configuration file.
+Also, since the UI is almost complete, it would be quite nice to have some keyboard
+shortcuts and maybe even translation to other languages. So, stay tuned.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>, <a class="tag" href="/tags/pygtk"><span> PyGTK</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html&title=PyGTK CD Ripper Tutorial - Part 6&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html&title=PyGTK CD Ripper Tutorial - Part 6" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html" title="PyGTK CD Ripper Tutorial - Part 6" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html&body=PyGTK CD Ripper Tutorial - Part 6" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

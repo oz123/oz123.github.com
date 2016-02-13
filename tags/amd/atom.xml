@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:21Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Oh, AMD, are you a dumb company ?</title>
+  <link href="writings/2009-02-05-oh-amd-are-you-a-dumb-company/index.html" />
+  <id>./writings/2009-02-05-oh-amd-are-you-a-dumb-company/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Recently, I decided I would like to buy a new laptop. The one I am using is 5 years old now, and I would like to have a laptop which does not weigh like an elephant, and comes with linux preinstalled.
+<a href="writings/2009-02-05-oh-amd-are-you-a-dumb-company/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

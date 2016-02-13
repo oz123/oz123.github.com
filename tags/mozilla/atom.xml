@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:20Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Greener Browsing</title>
+  <link href="writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html" />
+  <id>./writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I use a very old laptop, a Thosiba Portege 3440ct. This tiny little machine has a Pentium III 500 MHz CPU and 128 RAM.
+<a href="writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:36Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Simple Multiprocessing Task Queue in Python</title>
+  <link href="writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
+  <id>./writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
+<a href="writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Farewell PyCharm! Going VIM again</title>
+  <link href="writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>./writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
+<a href="writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Poor man's Read-The-Docs</title>
+  <link href="writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>./writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
+<a href="writings/2015-01-16-Poor-man's-Read-The-Docs/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>New version of Pwman3 released</title>
+  <link href="writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
+  <id>./writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
+<a href="writings/2015-03-22-New-version-of-Pwman3-released/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Revive and old Smartphone with Cyanogenmod!</title>
+  <link href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
+  <id>./writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">and I just wanted to share my thoughts.
+<a href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
+  <link href="writings/2014-01-11-Tiling-windows-mate/index.html" />
+  <id>./writings/2014-01-11-Tiling-windows-mate/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Environment such as Mate-Desktop using x-tile
+<a href="writings/2014-01-11-Tiling-windows-mate/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>salt quick tip - changing passwords on multiple clusters</title>
+  <link href="writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
+  <id>./writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multiple Linux hosts.
+<a href="writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Alternatives to systemd using debian</title>
+  <link href="writings/2014-10-17-Alternatives-to-Systemd-using-debian/index.html" />
+  <id>./writings/2014-10-17-Alternatives-to-Systemd-using-debian/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Systemd is not to be ignored. You either happy are unhappy about it. I belong to the second group. Hence, I decided to see what alternatives exist if I still want to use Debian.
+<a href="writings/2014-10-17-Alternatives-to-Systemd-using-debian/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Installing Oracle's JAVA on Debian</title>
+  <link href="writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html" />
+  <id>./writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">There are many solutions floating around to install Oracle's JAVA on Debian based systems. Most of them involve too many manual steps. Here is one that does not, and it simply works!
+<a href="writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Localizing applications with gettext</title>
+  <link href="writings/2013-08-04-Localizing-with-gettext/index.html" />
+  <id>./writings/2013-08-04-Localizing-with-gettext/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I was always interested in how I can add translations to pwman3 or to my little PyGTK tutorial, these are summerizing of my gettext experiences
+<a href="writings/2013-08-04-Localizing-with-gettext/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

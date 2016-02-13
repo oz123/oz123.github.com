@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:29Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>GNOME Fork is dead</title>
+  <link href="writings/2011-04-02-gnome-fork-is-dead/index.html" />
+  <id>./writings/2011-04-02-gnome-fork-is-dead/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">The <a href="http://www.exde.org">EXDE project</a>, which aimed to continue supporting gnome 2.X is dead. This is really a shame
+<a href="writings/2011-04-02-gnome-fork-is-dead/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Quicktip - Setting keyboard layout in GNOME via CLI</title>
+  <link href="writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html" />
+  <id>./writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Of course backups could do the job, but I find a clean install much cleaner and safer for my purposes.
+<a href="writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>The more I read on GNOME 3 I get more mad</title>
+  <link href="writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html" />
+  <id>./writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">The idea I need to learn X Programming Language (e.g. JavaScript) in order to customize my desktop is IMHO simply IDIOTIC! Although I love learning programming languages, and I am a programmer, I DON'T WANT to program my desktop. My desktop is not a problem I need to solve. It should just work.
+<a href="writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

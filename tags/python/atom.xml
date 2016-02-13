@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:29Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>New version of Pwman3 released</title>
+  <link href="writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
+  <id>./writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
+<a href="writings/2015-03-22-New-version-of-Pwman3-released/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Simple Multiprocessing Task Queue in Python</title>
+  <link href="writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
+  <id>./writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
+<a href="writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Farewell PyCharm! Going VIM again</title>
+  <link href="writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>./writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
+<a href="writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Poor man's Read-The-Docs</title>
+  <link href="writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>./writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
+<a href="writings/2015-01-16-Poor-man's-Read-The-Docs/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

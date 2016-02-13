@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> MasterMind Game in Fortran 95 </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; 2010-04-24</div>
+	<h1>MasterMind Game in Fortran 95</h1>
+	<p>Just for the fun, and to learn some Fortran 95, I wrote this little game which imitates the <a href="http://en.wikipedia.org/wiki/Mastermind_%28board_game%29">MasterMind</a> game.</p>
+
+<p>There is probably a lot to improve, but for now it was a good exercise for some of the language features.
+Here is the full code in Fortran 95, with some comments:</p>
+
+<pre><code>!      MasterMind.f90
+!      A Small Fortran Program to imitate the game MasterMind
+!      For more details see
+!      http://en.wikipedia.org/wiki/Mastermind_%28board_game%29
+!
+!      This Program was written just for fun, and for practicing
+!      Fortran 95 programming.
+!      By reading this code you can see the following features
+!      of Fortran 95:
+!      * Modules, Subroutines and Functions
+!      * Use of arrays and strings, assignments and strings
+!      * DO loops and IF THEN structures
+!
+!                Copyright 2010 Oz Nahum
+!
+!      This program is free software; you can redistribute it and/or modify
+!      it under the terms of the GNU General Public License as posted by
+!      the Free Software Foundation; either version 2 of the License, or
+!      (at your option) any later version.
+!
+!      This program is distributed in the hope that it will be useful,
+!      but WITHOUT ANY WARRANTY; without even the implied warranty of
+!      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!      GNU General Public License for more details.
+!
+!      You should have received a copy of the GNU General Public License
+!      along with this program; if not, write to the Free Software
+!      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+!      MA 02110-1301, USA.
+
+MODULE CSEED
+  INTEGER :: SEED
+  INTEGER :: num
+  CHARACTER(LEN=1),DIMENSION(6)::gameLetters !Define allowed letters
+END MODULE CSEED
+
+PROGRAM MasterMind
+    USE CSEED
+    IMPLICIT NONE
+    REAL, EXTERNAL :: RANDN
+    INTEGER :: i,j
+    REAL :: x
+    INTEGER, DIMENSION(50) :: first = (/( 0, i=1,50)/)
+    CHARACTER(LEN=1), DIMENSION(4):: list
+    CHARACTER(LEN=1), DIMENSION(4):: gameCombination,userGuess,gamePoints
+    CHARACTER(LEN=4):: gamePointsChar='0000'
+    list =(/'G','Y','B','R'/)
+    gameLetters=(/'G','Y','B','R','V','S'/)
+    PRINT *, "Welcome to the MasterMind", "Game in Fortran"
+            !"*****************************************"
+    PRINT *, "*****************************************"
+    PRINT *, " Here are the rules: I choose a random "
+    PRINT *, " combination of 4 colors out of 6. You have "
+    PRINT *, " 10 tries to guess what I chose. "
+    PRINT *, " The colors possible are: "
+    PRINT *, " Green (G), Yellow (Y),Blue (B), Red (R),   "
+    PRINT *, " Violet (V), Silver (S) "
+
+    call getGameCombination(gameCombination)
+    !no real need to print the game combination and discover the user
+    !what  it is
+    PRINT *,  gameCombination, " FROM OUTSIDE"
+    DO i=1,10
+    call getGuess(userGuess)
+    call compare(gameCombination, userGuess,gamePoints)
+    !Reset Scores
+    !gamePointsChar='0000'
+    DO j=1,4
+    gamePointsChar(j:j)=gamePoints(j)
+    END DO
+    IF (gamePointsChar=='BBBB') THEN
+    print *, "That's right ! ", gameCombination, " Is the guess. &amp;
+    &amp;You win after",  i, "rounds !"
+    exit
+    END IF
+    END DO
+    IF (i==10) THEN
+    PRINT *, "You have reached the maximu allowed tries, you lose ...&amp;
+    &amp; but you can always try again!"
+    END IF
+END PROGRAM MasterMind
+
+SUBROUTINE compare(gameCombination, userGuess,roundPoints)
+!SUBROUTINE compare(userGuess)
+use CSEED
+IMPLICIT NONE
+INTENT(IN) :: gameCombination, userGuess
+INTENT (OUT) :: roundPoints
+CHARACTER(LEN=1),DIMENSION(4):: roundPoints, gameCombination, userGuess
+INTEGER :: i,j
+roundPoints = (/'0','0','0','0'/)
+!Just for practicing character operations roundPoints is also converted
+!to a string
+DO i=1,4
+    DO j=1,4
+    IF (gameCombination(i) == userGuess(i)) THEN
+        roundPoints(i)='B'
+        exit
+        !PRINT *, roundPoints
+    END IF
+    !else if (gameCombination(i) == userGuess(j)) THEN
+    if (gameCombination(i) == userGuess(j)) THEN
+        roundPoints(j)='W'
+        !PRINT *, roundPoints
+        !exit
+    END IF
+
+    !ELSE
+    !IF (gameCombination(i) == userGuess(j)) THEN
+    !    roundPoints(j)='W'
+    !END IF
+    END DO
+END DO
+PRINT *, "Your score " , roundPoints
+!no need to give any output variable, just print scores to screen
+END SUBROUTINE compare
+
+SUBROUTINE getGameCombination(gameCombination)
+! A subroutine to choose  the game combiantion from the game
+! letters
+  USE CSEED
+  IMPLICIT NONE
+  CHARACTER(LEN=1), DIMENSION(4), INTENT (OUT):: gameCombination
+  REAL, EXTERNAL :: RANDN
+  INTEGER :: I
+  REAL :: Y
+  INTEGER, DIMENSION (8) :: T
+  CALL DATE_AND_TIME(VALUES = T)
+  SEED = T(1)+70*(T(2)+12*(T(3)+31*(T(5)+23*(T(6)+59*T(7)))))
+  IF (MOD(SEED,2).EQ.0) SEED = SEED-1
+  DO I = 1, 4
+    Y = RANDN()
+  !get numbers from 1 to 6
+  num = int(Y*6+1)
+  gameCombination(I)=gameLetters(num)
+  END DO
+END SUBROUTINE getGameCombination
+
+SUBROUTINE getGuess(userGuess)
+    !get user guess
+    IMPLICIT NONE
+    INTENT(INOUT) :: userGuess
+    !The subrutine has to know the shape and type of
+    !userGuess
+    CHARACTER(LEN=1), DIMENSION(4):: userGuess
+    !subrutine to get players guess
+    PRINT *, "Type your guess as 4 letters separated by spaces:"
+    PRINT *, 'Valid input is:  "G B S V"'
+    !PRINT *,'asd',userGuess
+    READ *, userGuess
+    PRINT *, "Here is your guess:   ", userGuess
+END SUBROUTINE getGuess
+
+REAL FUNCTION RANDN()
+! Function to generate a uniform random number in [0,1]
+! following x(i+1)=a*x(i) mod c with a=7** 5 and
+! c=2** 31-1.  Here the seed is a global variable.
+!
+  USE CSEED
+  IMPLICIT NONE
+  INTEGER :: H, L, T, A, C, Q, R
+  DATA A/16807/, C/2147483647/, Q/127773/, R/2836/
+  !The DATA statement is used to specify initial values
+  !for variables and array elements.
+  H = SEED/Q
+  L = MOD(SEED, Q)
+  T = A*L - R*H
+  IF (T .GT. 0) THEN
+    SEED = T
+  ELSE
+    SEED = C + T
+  END IF
+  RANDN = SEED/FLOAT(C)
+END FUNCTION RANDN
+</code></pre>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/programming"><span>Programming</span></a>, <a class="tag" href="/tags/fortran"><span> Fortran</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2010-04-24-mastermind-game-in-fortran-95/index.html&title=MasterMind Game in Fortran 95&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2010-04-24-mastermind-game-in-fortran-95/index.html&title=MasterMind Game in Fortran 95" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html" title="MasterMind Game in Fortran 95" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2010-04-24-mastermind-game-in-fortran-95/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2010-04-24-mastermind-game-in-fortran-95/index.html&body=MasterMind Game in Fortran 95" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:35Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Revive and old Smartphone with Cyanogenmod!</title>
+  <link href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
+  <id>./writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">and I just wanted to share my thoughts.
+<a href="writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
+  <link href="writings/2014-01-11-Tiling-windows-mate/index.html" />
+  <id>./writings/2014-01-11-Tiling-windows-mate/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Environment such as Mate-Desktop using x-tile
+<a href="writings/2014-01-11-Tiling-windows-mate/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Dell is not serious about Linux</title>
+  <link href="writings/2013-12-09-Dell-and-Linux/index.html" />
+  <id>./writings/2013-12-09-Dell-and-Linux/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">advertising platform
+<a href="writings/2013-12-09-Dell-and-Linux/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>The Wierdest Post Ever in ServerFault.</title>
+  <link href="writings/2011-12-10-wierdest-post-ever-in-serverfault/index.html" />
+  <id>./writings/2011-12-10-wierdest-post-ever-in-serverfault/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">I don't know if this is a joke or not. But if it's not a joke, it must be cruel.
+<a href="writings/2011-12-10-wierdest-post-ever-in-serverfault/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Simple IPTABLES script</title>
+  <link href="writings/2010-04-11-simple-iptables-script/index.html" />
+  <id>./writings/2010-04-11-simple-iptables-script/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">In the following a simple IPTABLES script. It has the following features:
+<a href="writings/2010-04-11-simple-iptables-script/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>How not to use the kill Command on Linux</title>
+  <link href="writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html" />
+  <id>./writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">A few months ago I installed Debian GNU/Linux on an old Sony Vaio Laptop of a friend of mine. The laptop is really nice with slim case and a 15" screen. She was really happy she could write her thesis on this nice machine again because Windows XP could not function properly on this machine. Installation was a breeze and  the non technical friend of mine was working on it happily for 4 months now.
+<a href="writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>WICD rocks on the roads !</title>
+  <link href="writings/2009-08-27-wicd-rock-on-the-roads/index.html" />
+  <id>./writings/2009-08-27-wicd-rock-on-the-roads/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Been traveling in the USA for a couple of weeks now. I was prepared for bitter timetime with my Debian and wireless roaming. So I've mastered the use of commands ifconfig and iwlist and such. The reason is that I've had my share already with network-manager.
+<a href="writings/2009-08-27-wicd-rock-on-the-roads/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>MoinMoin wiki on Debian, Installation and configuration</title>
+  <link href="writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html" />
+  <id>./writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.
+<a href="writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>WOULD PAY FOR ANYTHING OPEN</title>
+  <link href="writings/2009-07-14-would-pay-for-anything-open/index.html" />
+  <id>./writings/2009-07-14-would-pay-for-anything-open/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Hey, maybe some manufacturer will read this desperate post.
+<a href="writings/2009-07-14-would-pay-for-anything-open/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+<entry>
+  <title>Top 10 linux blog posts you should avoid reading</title>
+  <link href="writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html" />
+  <id>./writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">As a frequent reader of Linux related news, I've come to the conclusion the sometimes reading posts about Linux is a complete waste of time. With time I've noticed that there are some repeating patterns to what I skip, so I've compiled this list to those who want to save some time, and a reminder to myself.
+<a href="writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

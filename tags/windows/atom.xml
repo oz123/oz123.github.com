@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:27Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Revisiting Windows 7 - Package management is possible</title>
+  <link href="writings/2011-12-25-revisiting-windows-7-package-management/index.html" />
+  <id>./writings/2011-12-25-revisiting-windows-7-package-management/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">After a very long time I did not use Windows for my private needs, I have finally found the times to take a longer look on Windows 7. I have decided to install the operating system on a real machine to see it's real behaviour and interaction with plastic and iron
+<a href="writings/2011-12-25-revisiting-windows-7-package-management/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:29Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Command Line Posting to Blogger</title>
+  <link href="writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
+  <id>./writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
+<a href="writings/2012-04-02-command-line-posting-to-blogger_02/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>

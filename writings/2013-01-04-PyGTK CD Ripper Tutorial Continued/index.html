@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> PyGTK CD Ripper Tutorial - Part 2 </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; 2013-01-05</div>
+	<h1>PyGTK CD Ripper Tutorial - Part 2</h1>
+	<p>Part 1 of this <a href="http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/">pygtk tutorial</a> stopped with a working toolbar and two place 
+holders. But this is obviously not enough to create complicated UIs.</p>
+
+<h3>Enter gtk.Table</h3>
+
+<p>Tables allow packing multiple widgets together. The principle is quite
+simple. Think of a chess-board with coordinate system, and you can place
+different text areas, buttons and other widgets inside the place holders.
+Here is how a table with multiple labels, text widgets and a check button
+looks like this in asunder:</p>
+
+<p><img src="https://lh3.googleusercontent.com/-O6BQuYNQffs/UObHeEQknAI/AAAAAAAACC0/kTKBpapZPSs/s621/Screenshot-Asunder-Table.png" alt="Album<em>info</em>Table" /></p>
+
+<p>This table has 8 elements, in it, however its size is 3 by 3. Here is how
+this table is created:</p>
+
+<pre><code>album_table = gtk.Table(3, 3, False)
+</code></pre>
+
+<p>The 3 arguments (<code>False</code>) determines whether this table is homogeneous or
+not. If set to True, all elements in the table will be the same size. </p>
+
+<p>Then the table is added to the main window with packing:</p>
+
+<pre><code>vbox.pack_start(album_table)
+</code></pre>
+
+<p>The table is populated using the method:</p>
+
+<pre><code>table.attach(widget, left, right, top, bottom, xoptions, 
+             yoptions, xpadding, ypadding)
+</code></pre>
+
+<p>And the coordinate system start from the top left corner. Translated to
+this coordinate system, the album info in <code>asunder</code> looks like that:</p>
+
+<pre><code>      0               1          2               3
+    0 +---------------+----------+--------------+
+      |  Artist label |  Text    | Check Button |
+    1 +---------------+----------+--------------+
+      |  Title label  |  Text    |  Empty       |
+    2 +---------------+----------+--------------+
+      |  Genere/Year  |  Text    |  Number      |
+    3 +---------------+----------+--------------+
+</code></pre>
+
+<p>The table would then be populated with the first Widget like this:</p>
+
+<pre><code>    artist_label = gtk.Label('Album Artist:')
+    album_table.attach(artist_label, 0, 1, 0, 1)
+</code></pre>
+
+<p>The text widget is also inserted:</p>
+
+<pre><code>    artist_name = gtk.Entry(128)
+    artist_name.set_text("Unknown Artist")
+</code></pre>
+
+<p>Note that the <code>gtk.Entry</code> init method takes an integer as an argument.
+This number specifies the letters allowed text in this box. 128 Letter
+should be decent length to an album name.
+After the <code>gtk.Entry</code> widget is created, the method <code>set_text</code> sets 
+the default text to displayed in the text area. <br />
+Next, a <code>CheckButton</code> widget is added in the top right corner:</p>
+
+<pre><code>    single_artist = gtk.CheckButton("Single Artist")
+    album_table.attach(single_artist, 2, 3, 0, 1)
+</code></pre>
+
+<p>The <code>gtk.CheckButton</code> init method takes a String as an argument. This
+string will be shown next to the check button. By now, the UI created
+with table populated with 3 widgets looks like this:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-awnmWEseaWE/UObOztXYnPI/AAAAAAAACDQ/L-LwRsaS_mM/s506/Screenshot-boxes.py.png" alt="A table with 3 widgets" /></p>
+
+<p>Packing the rest of the widget into the table is not so hard now. You
+can find the code that shows that in the <a href="https://github.com/oz123/punder/blob/table_complete/punder.py">table_complete</a>
+tag, which will produce the following UI:</p>
+
+<p><img src="https://lh6.googleusercontent.com/--HdQVExZlYg/UObWWwhs-lI/AAAAAAAACDs/Ag2mSIYgCiI/s506/Screenshot-boxes.py-1.png" alt="A table with all widgets" /></p>
+
+<p>Now that the table containing the album information, it is time to look
+on populating the list of tracks using two of the more complicated GTK
+widgets, the <code>TreeView</code> and <code>ListStore</code>.</p>
+
+<h3>Creating complex TreeViews and ListStore in GTK</h3>
+
+<p>Asunder populated the list of album tracks inside a <code>TreeView</code>:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-1Zjnj0XCBsI/UOgFZ2hx3gI/AAAAAAAACEI/7IkLvU9la-4/s606/AsunderTreeView.png" alt="Asunder TreeView highlighted" /></p>
+
+<p>A <code>TreeView</code> expects a <code>gtk.ListStore</code> widget to be handed over when creating
+it. Hence, before a TreeView can be created, a ListStore has to be created with
+some thought on what has to be stored in it:</p>
+
+<pre><code>    # We begin with creating a ListStore
+    liststore = gtk.ListStore(bool,int,str,str,str)
+</code></pre>
+
+<p>This list store has 5 items (which will be than translated to 5 columns in the 
+TreeView). The first item is of type <code>bool</code>, to indicate <code>rip</code> or <code>skip</code>; the
+second is of type <code>int</code> to indicate track number; the third and fourth are both
+strings to indicate the track artist and title respectively. The last item is 
+also a string, although a tracks length is actually a number. <br />
+After a <code>gtk.ListStore</code> is properly created with the correct fields to hold, 
+a new <code>gtk.TreeView</code> widget can be created:</p>
+
+<pre><code>    treeview = gtk.TreeView(liststore)
+</code></pre>
+
+<p>The created widget is empty and has no columns; a column is add with 
+<code>gtk.TreeViewColumn</code> and attaching <code>gtk.CellRendererText</code> widget to it:</p>
+
+<pre><code>    rendererText = gtk.CellRendererText()
+    column = gtk.TreeViewColumn("Rip", rendererText, text=0)
+    column.set_sort_column_id(0)
+    treeView.append_column(column)
+</code></pre>
+
+<p>The above code snipped has to be repeated for every column, hence it will not 
+be displayed here. Another thing to be noticed here, which is not inside the 
+scope of GTK programming, but rather in the scope of good coding, is the length
+of the current <code>__init__</code> function. If all the columns that need to be created, 
+are directly created inside the <code>__init__</code> method, it will be a very long and
+complicated to understand. This will make it hard to maintain and change later.
+Hence, it is better to have a small method that wrapped all the code related to 
+making the columns inside a class method <code>def create_columns(self, treeView)</code>. 
+Hence, the UI class will now look like:</p>
+
+<pre><code>class PunderUI():
+    """
+    Initial class to draw the first toolbar.
+    """
+    def help_dialog(self, widget):
+      ...
+
+    def create_columns(self, treeView):
+        """
+        create columns for treeview of track list
+        """
+        rendererText = gtk.CellRendererText()
+        column = gtk.TreeViewColumn("Rip", rendererText, text=0)
+        column.set_sort_column_id(0)
+        treeView.append_column(column)
+        ...
+
+    def __init__(self):
+        """
+        create the gui using GTK Window, and Toolbar.
+        """
+        window = gtk.Window()
+        window.set_default_size(500, -1)
+        vbox = gtk.VBox()
+        window.add(vbox)
+
+        ...
+        liststore = gtk.ListStore(bool,int,str,str,str)
+        treeview = gtk.TreeView(liststore)
+        ...
+        # populate the treeview widget with columns
+        self.create_columns(treeview)
+</code></pre>
+
+<p>The result of populating <code>treeview</code> with columns is:</p>
+
+<p><img src="https://lh4.googleusercontent.com/-s5PG1zSkigE/UOgMbD13WVI/AAAAAAAACEg/Xz8ttf8ZZgs/s506/Screenshot-punder.py.png" alt="TreeView populated with columns" /></p>
+
+<p>Since the <code>ListStore</code> object created earlier is empty, so is the <code>TreeView</code>. 
+Hence, it makes sense to populate <code>liststore</code> with some dummy data, just so
+it will be visible. <code>ListStore</code> is populated with the method <code>append</code> which
+takes an iterable as an argument. This iterable has to match in size the size
+declared when creating the <code>ListStore</code> object. The items inside this iterable
+should also match the types declared earlier:</p>
+
+<pre><code>    # dummy function
+    for i in range(1,6):
+       liststore.append([True,i,"bar","baz","zap"])
+</code></pre>
+
+<p>Put together, the above snippets create a poplluated <code>ListStore</code> inside a 
+<code>TreeView</code>:</p>
+
+<p><img src="https://lh3.googleusercontent.com/-FNY2AUuOuGc/UOgOd38DNbI/AAAAAAAACE8/8V7omSeNGDo/s493/TreeView-punder.py.png" alt="Punder with TreeView poplated" /></p>
+
+<p>The code to produce this UI can be found in the github brach 
+<a href="https://github.com/oz123/punder/blob/127c039bf147694d3bb0d92c5e0d52428ca5a5af/punder.py">simplified tree view</a>. The UI is almost complete. 
+However, there is more work to do. So, stay tuned for part tree.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>, <a class="tag" href="/tags/pygtk"><span> PyGTK</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html&title=PyGTK CD Ripper Tutorial - Part 2&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html&title=PyGTK CD Ripper Tutorial - Part 2" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html" title="PyGTK CD Ripper Tutorial - Part 2" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html&body=PyGTK CD Ripper Tutorial - Part 2" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

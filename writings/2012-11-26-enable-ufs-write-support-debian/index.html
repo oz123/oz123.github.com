@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Enable UFS Write support under Debian </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; 2012-11-26</div>
+	<h1>Enable UFS Write support under Debian</h1>
+	<p>I recently installed FreeBD 9.0 on my laptop, side by side with Debian GNU\Linux. 
+While I am very excited about FreeBSD, I am still not ready to turn it into my 
+main operation system. Hence, from a time to time I would like to be able to 
+stuff or exchange data between Debian an FreeBSD. </p>
+
+<p>So, here is how I recompiled the UFS module under Debian Wheezy, without the need
+to recompile the whole kernel. </p>
+
+<pre><code>sudo apt-get build-dep --no-install-recommends linux-image-$(uname -r)
+mkdir ufs_rw
+cd ufs_rw
+apt-get source linux-image-$(uname -r)
+cd linux-3.2.32 
+cp -v /usr/src/linux-headers-3.2.0-4-amd64/Module.symvers .
+cp -v /boot/config-3.2.0-4-amd64 .
+make EXTRAVERSION=-4 O=~/ufs_rw menuconfig
+</code></pre>
+
+<p>if you feel like doing stuff with sed instead of the Curses Menu:</p>
+
+<pre><code>make EXTRAVERSION=-4 O=~/ufs_rw  oldconfig
+sed -i 's/# CONFIG_UFS_FS_WRITE is not set/CONFIG_UFS_FS_WRITE=y/' ~/ufs_rw/.config
+</code></pre>
+
+<p>Then, continue with</p>
+
+<pre><code>make EXTRAVERSION=-4 O=~/ufs_rw prepare
+make EXTRAVERSION=-4 O=~/ufs_rw outputmakefile
+make EXTRAVERSION=-4 O=~/ufs_rw archprepare
+make EXTRAVERSION=-4 O=~/ufs_rw modules SUBDIRS=scripts
+make EXTRAVERSION=-4 O=~/ufs_rw modules SUBDIRS=fs/ufs
+</code></pre>
+
+<p>Now, you find the compiled module under ~/ufs_rw/</p>
+
+<pre><code>sudo modinfo fs/ufs/ufs.ko 
+filename:       /home/ozdeb/ufs_rw/fs/ufs/ufs.ko
+license:        GPL
+depends:        
+vermagic:       3.2.32-4 SMP mod_unload modversions
+</code></pre>
+
+<p>you can install the module or just use it every time you need it.</p>
+
+<pre><code>sudo cp ~/ufs_rw/fs/ufs/ufs.ko /lib/modules/3.2.0-4-amd64/kernel/fs/ufs/
+#to load the module:
+modprope -iv ufs.ko
+</code></pre>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/debian"><span>Debian</span></a>, <a class="tag" href="/tags/kernel"><span> Kernel</span></a>, <a class="tag" href="/tags/freebsd"><span> FreeBSD</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2012-11-26-enable-ufs-write-support-debian/index.html&title=Enable UFS Write support under Debian&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2012-11-26-enable-ufs-write-support-debian/index.html&title=Enable UFS Write support under Debian" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2012-11-26-enable-ufs-write-support-debian/index.html" title="Enable UFS Write support under Debian" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2012-11-26-enable-ufs-write-support-debian/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2012-11-26-enable-ufs-write-support-debian/index.html&body=Enable UFS Write support under Debian" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

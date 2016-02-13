@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-02-13T17:04:29Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>MoinMoin wiki on Debian, Installation and configuration</title>
+  <link href="writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html" />
+  <id>./writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.
+<a href="writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html"> continue reading...</a></div>
+  </content>
+  </entry>
+</feed>
