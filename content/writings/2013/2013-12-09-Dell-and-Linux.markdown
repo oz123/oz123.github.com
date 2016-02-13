@@ -6,8 +6,7 @@ tags: Linux, Windows, Hardware
 public: yes
 chronological : yes
 kind: writing 
-summary: |
-summary: advertising platform
+summary: How serious Dell is about Linux? I think it is not that serious, and it is using Ubuntu fans as free advertising platformadvertising platform
 ---
 
  You want to know why? Here is why:

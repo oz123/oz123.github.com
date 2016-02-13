@@ -6,8 +6,7 @@ tags: CLI, Linux
 public: yes
 chronological: yes
 kind: writing 
-summary: |
-summary: I was pretty amused by the command `yes`
+summary: Recently I started building my own [LFS](http://www.linuxfromscratch.org/), I was pretty amused by the command `yes`
 ---
 
 Recently I started building my own

@@ -4,11 +4,10 @@ author: Oz Nahum Tiram
 published: 2015-10-30
 tags: NoSQL
 public: yes
+kind: writing
 chronological: yes
-summary: summary: |
+summary: Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support. 
 ---
-
-...
 
 Released just recently (14-10-2015) the new SQLite (3.9.x) now has optional
 support for NoSQL like work flows with the new JSON field type.

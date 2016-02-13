@@ -6,8 +6,7 @@ tags: Linux, Mate-Desktop
 public: yes
 chronological : yes
 kind: writing 
-summary: |
-summary: Environment such as Mate-Desktop using x-tile
+summary: Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
 ---
 
 X-Tile is a Desktop Environment agnostic program written in Python which reorganises your open

@@ -6,7 +6,7 @@ tags: bash, linux
 public: yes
 chronological: yes
 kind: writing
-summary: Apparently, bash offeres assosiative arrays, similar to Python dictionary
+summary: Apparently, bash offeres assosiative arrays, similar to Python dictionaries
 ---
 
 Here is something new I learned. Modern unix shells like bash (>4.x) or zsh, 

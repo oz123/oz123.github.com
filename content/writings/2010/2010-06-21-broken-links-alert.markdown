@@ -6,7 +6,6 @@ tags: Web
 public: yes
 chronological : yes
 kind: writing 
-summary: |
 summary: Due to infrastructure changes, I removed all the attachments.
 ---
 

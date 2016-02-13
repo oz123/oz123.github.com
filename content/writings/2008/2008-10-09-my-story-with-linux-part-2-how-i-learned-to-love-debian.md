@@ -1,3 +1,4 @@
+---
 title: My Story with linux part 2 - How I learned to love Debian
 author: Oz Nahum
 published: 2008-10-09
@@ -5,10 +6,8 @@ tags: [Linux, Debian]
 public: yes
 chronological : yes
 kind: writing 
-summary: |
-    In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch.
-...
-
+summary: In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch.
+---
 
 In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch. I've already had an experience with the Ubuntu alternate installer, and I knew more or less what I was doing.
 

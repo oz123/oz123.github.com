@@ -6,9 +6,7 @@ tags: Python
 public: yes
 chronological: yes
 kind: writing
-summary: |
-    I gave a quick talk in Python Munich User Group about one of my favourite
-summary: Here is a link to the presentation about psutil.
+summary: I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
 ---
 
 I am a new comer to the  Python Munich User group, never the less I had the 

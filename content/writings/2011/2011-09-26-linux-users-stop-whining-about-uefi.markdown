@@ -6,12 +6,9 @@ tags: ARM,FOSS, Linux, Hardware, Windows
 public: yes
 chronological: yes
 kind: writing 
-summary: |
-summary: System should really stop whining about the UEFI secure booting.
+summary: Sorry for the provocative title, but I think Linux and other FOSS  Operating System should really stop whining about the UEFI secure booting.
 ---
 
-Operating System should really stop whining about the UEFI secure
-booting.
 I see no difference between someone who buys a laptop made by Apple and
 a someone who buys a Laptop with Windows OS. As the saying goes: "If you
 sleep with dogs, you wake up with flees". For a very long time the Linux

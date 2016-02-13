@@ -6,8 +6,8 @@ tags: Python,FOSS, Programming
 public: yes
 chronological: yes
 kind: writing 
-summary: |
-summary: for advice. A friend of mine asked me what programming language he should learn. 
+summary: Warning: This is not a technical post, rather just a boring rant and a call for advice. A friend of mine asked me what programming language he should learn. 
+
 ---
 
 Warning: This is not a technical post, rather just a boring rant and a

@@ -10,10 +10,6 @@ summary: Sometimes, installation of Debian packages is too easy, but then config
 ---
 
 
-=======================================================
-posted: 2009-09-11 23:04:23
-slug: moinmoin-wiki-on-debian-installation-and-configuration
-
 Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.
 
 This is the case, in my opinion, with the README.Debian file which describes an example of moin-moin wiki installation under a subdomain wiki.example.org.

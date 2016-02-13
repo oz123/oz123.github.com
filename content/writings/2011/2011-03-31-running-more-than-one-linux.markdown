@@ -6,8 +6,7 @@ tags: Debian, Linux
 public: yes
 chronological: yes
 kind: writing 
-summary: |
-summary: the box, and I very happy with the stability of the system.
+summary: My laptop has reached Nirvana with Debian Squeeze, everything works out of the box, and I very happy with the stability of the system.
 ---
 
 My laptop has reached Nirvana with Debian Squeeze, everything works out

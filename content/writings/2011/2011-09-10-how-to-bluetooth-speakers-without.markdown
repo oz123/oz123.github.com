@@ -6,12 +6,8 @@ tags: Debian,FOSS, Hardware
 public: yes
 chronological: yes
 kind: writing 
-summary: |
-summary: Creative Labs D200, which provide me with nice tunes compared to the prices. 
+summary: About 3 months ago I have purchased a Bluetooth Speakers set. I chose  the Creative Labs D200, which provide me with nice tunes compared to the prices. 
 ---
-
-
-
 About 3 months ago I have purchased a Bluetooth Speakers set. I chose
 the Creative Labs D200, which provide me with nice tunes compared to the
 prices. The speakers worked out of the box with my Bluetooth adapter.

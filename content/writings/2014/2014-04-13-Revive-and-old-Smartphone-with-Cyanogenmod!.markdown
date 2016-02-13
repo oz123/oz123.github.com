@@ -6,8 +6,7 @@ tags: Linux, Cyanogedmod
 public: yes
 chronological: yes
 kind: writing
-summary: |
-summary: and I just wanted to share my thoughts.
+summary: I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
 ---
 
 I received an old Samsung Galaxy SII (GT-I9100) from a friend of mine
