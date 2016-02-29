@@ -1,6 +1,5 @@
 body {
     font: normal 18px/28px "Gentium Basic", Gentium, Palatino, Georgia, serif;
-    font-family:
     color:#444;
     padding:0;margin:0;
     background: #fff;
@@ -25,13 +24,13 @@ html>body {font-size:18px;
 		}
 
 a {
-    text-decoration:none;
     color:#2760BF;
 }
 
 a:hover {
     border-bottom: 1px dotted #444;
     color:#00252e;
+		text-decoration: none;
 }
 
 a  img { border: 0;}
@@ -40,10 +39,6 @@ a:visited {
 
 h1, h2, h3, h4 {
     font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
-}
-h2, h3, h4 {
-    border-bottom: 1px solid #eee;
-    color: #444;
 }
 
 h1 {
@@ -66,6 +61,7 @@ h4 {
     line-height:25px;
 }
 
+
 h1 a, h2 a, h3 a, h4 a {
     color:#444;
 }
@@ -85,6 +81,7 @@ li {
 h1, h2, h3, h4 {
     font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
 }
+
 h2, h3, h4 {
     border-bottom: 1px solid #eee;
     color: #444;
@@ -139,6 +136,9 @@ div.popup .content .image img {
 }
 
 
+.navbar {
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
+}
 
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
@@ -234,11 +234,11 @@ div.popup .content .image img {
 
 }
 .index {
-		font-size: 110%;
+		font-size: 100%;
 }
 
-.index a {font-size: 110%;
-          font-weight:bold;}
+.index a {font-size: 100%;
+          }
 
 .sidebar-nav .navbar-header{ float: none; }
 
@@ -284,14 +284,15 @@ div.popup .content .image img {
 }
 
 .link-url a{
-	font-size: 110%;
+	font-size: 100%;
 }
 
-.permalink{
-    font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
+.permalink {
+    /*font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     text-align:center;
     float:right;
+		margin-bottom: 4em;
 }
 
 .entry .meta .permalink a{
@@ -303,8 +304,8 @@ div.popup .content .image img {
 }
 
 .date-published {
-    font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
-    padding-right:23px;
+  font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
+  padding-right:23px;
 	float:left;
 	font-size: 90%;
 }
@@ -314,11 +315,14 @@ div.popup .content .image img {
   font-style:italic;
   float:right;
   margin-bottom: 10px;
-  font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;
 }
 
 .tags a {
-	font-weight: bold;
+  text-decoration:none;
+}
+
+.tags a:hover {
+  text-decoration:none;
 }
 
 img.displayed {
