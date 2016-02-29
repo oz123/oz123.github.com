@@ -287,12 +287,16 @@ div.popup .content .image img {
 	font-size: 100%;
 }
 
+.index h1 {
+	font-weight: bold;
+}
+
 .permalink {
     /*font-family:"Yanone Kaffeesatz", Ubuntu, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     text-align:center;
     float:right;
-		margin-bottom: 4em;
+		margin-bottom: 2em;
 }
 
 .entry .meta .permalink a{
