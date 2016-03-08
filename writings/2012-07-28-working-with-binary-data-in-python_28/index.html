@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Working With Binary Data in Python </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; July 28, 2012</div>
+	<h1>Working With Binary Data in Python</h1>
+	<p>Working with binary data puzzled me for quite a time, so here is a post explaining some of
+my findings. 
+First we define a bytes array:</p>
+
+<pre><code>s = bytearray(b"Hello World") 
+for i in s:
+      print i 
+... 72 101 108 108 111 32 87 111 114 108 100
+</code></pre>
+
+<p>now, let's write this data to a file:</p>
+
+<pre><code>f = open('helloword.bin','wb')
+for i in s:
+   f.write(struct.pack("I",i)) f.close()
+</code></pre>
+
+<p>Let's inspect the file created:</p>
+
+<pre><code>$ du -h points.bin 
+4.0K    points.bin 
+$file points.bin 
+points.bin: data 
+$ less points.bin 
+"points.bin" may be a binary file.  See it anyway?
+</code></pre>
+
+<h2>Binary file sizes</h2>
+
+<p>let's us write "hello world" into a text file in a text form:</p>
+
+<pre><code>f = open('helloword.txt") 
+f.write("hello world") 
+f.close()
+</code></pre>
+
+<p>Once again we can inspect the file:</p>
+
+<pre><code>$ du -h   helloworld.txt 
+4.0K    helloworld.txt
+</code></pre>
+
+<p>Now, what happens if we make a longer binary array?\</p>
+
+<pre><code>s.split() 
+s.append(33) 
+bytearray(b'Hello World!') 
+for i in range(10000): 
+s.append(33) 
+f = open('longhelloword.bin', 'wb') 
+import struct
+
+for i in s: 
+f.write(struct.pack("I",i)) 
+f.close() 
+f = open('longhelloword.txt', 'w') 
+hello = "Hello World!" 
+for i in range(10000): 
+    hello = hello+"!"
+</code></pre>
+
+<p>In a shell, examaining the file sizes:</p>
+
+<pre><code>$ du -h longhelloword.bin 
+40K     longhelloword.bin 
+$ du -h longhelloword.txt 
+12K     longhelloword.txt
+</code></pre>
+
+<p>Wait a minute ! Why is the binary file almost 4 times bigger?</p>
+
+<p>The answer is: it depends on the format specifier in <code>struct.pack</code>. 
+Namely, we used an <code>unsigned int</code>, for each character we then reserved 4
+bytes!. 
+When we saved the text, every character was assigned to the file exactly
+as a <code>char</code> which takes one byte only. </p>
+
+<p>If we repeat the above with <code>struct.pack("b",i)</code> the sizes of the file
+won't differ: </p>
+
+<pre><code>f = open('longhellowordwithchar.bin', 'w') 
+for i in s: 
+f.write(struct.pack('b',i)) 
+f.close()
+</code></pre>
+
+<p>and in the shell:</p>
+
+<pre><code>$ du  longhellowordwithchar.bin 
+12      longhellowordwithchar.bin 
+$ du  longhelloword.txt        
+12      longhelloword.txt
+</code></pre>
+
+<p>Credits: 
+http://dabeaz.blogspot.de/2010/01/few-useful-bytearray-tricks.html 
+http://docs.python.org/library/struct.html#module-struct</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/programming"><span>Programming</span></a>, <a class="tag" href="/tags/python"><span> Python</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2012-07-28-working-with-binary-data-in-python_28/index.html&title=Working With Binary Data in Python&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2012-07-28-working-with-binary-data-in-python_28/index.html&title=Working With Binary Data in Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html" title="Working With Binary Data in Python" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2012-07-28-working-with-binary-data-in-python_28/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2012-07-28-working-with-binary-data-in-python_28/index.html&body=Working With Binary Data in Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

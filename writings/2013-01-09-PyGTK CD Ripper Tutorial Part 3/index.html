@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> PyGTK CD Ripper Tutorial - Part 3 </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; January 09, 2013</div>
+	<h1>PyGTK CD Ripper Tutorial - Part 3</h1>
+	<p>Part 1 of this <a href="http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/">pygtk tutorial</a> stopped with a working toolbar and two place 
+holders. <a href="http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/">Part 2</a> of this tutorial  extended this minimal UI with a list of
+songs which was created using GTK ListView. However, this ListView was populated
+with a boolean value (True\False) instead of a real Check Button. Additionally, 
+the <code>ListView</code> was populated using a very dumb way, hard coding the values in 
+the table. The next part of the tutorial will show how to gain better control 
+on <code>ListView</code>.</p>
+
+<h3>gtk.ListView tamed and controlled</h3>
+
+<p>Earlier, the <code>TreeView</code> table was populated with columns containing a text widget.
+Each of the columns in the method <code>create_columns</code> was created with:</p>
+
+<pre><code>rendererText = gtk.CellRendererText()
+column = gtk.TreeViewColumn("Rip", rendererText, text=0)
+</code></pre>
+
+<p>The method <code>gtk.TreeViewColumn</code> takes two arguments:</p>
+
+<pre><code>`treeviewcolumn = gtk.TreeViewColumn(title, cellrenderer)`
+</code></pre>
+
+<p>and <code>cellrender</code> can be on of the 7 <code>CellRederer</code> widgets:</p>
+
+<pre><code>CellRendererText
+CellRendererToggle
+CellRendererPixbuf
+CellRendererCombo
+CellRendererProgress
+CellRendererSpinner
+CellRendererSpin
+CellRendererAccel
+</code></pre>
+
+<p>For the purpose of creating a check button to signal that it is desired to rip a
+a track from the CD, a <code>CellRendererToggle</code> is required. Hence, the first lines
+of the method <code>create_columns</code> responsible to create the first column will now be
+modified to the following:</p>
+
+<pre><code>    # first, cell is created properly as CellRendererToggle widget
+    cell = gtk.CellRendererToggle()
+    # much like before, only this time cell is no longer CellRendererText
+    column = gtk.TreeViewColumn("Rip",cell,active=0)
+    column.set_sort_column_id(0)
+    treeView.append_column(column)
+    # finally, the cell widget is connected to a callback method that 
+    # does something if toggled.
+    cell.connect("toggled", self.on_toggle, self.liststore)
+</code></pre>
+
+<p>Connecting to a callback function on predefined event is a common operation when
+writing UIs, and it was already show in part 1 of this tutorial. The method 
+<code>on_toggle</code> is quite simple all it does is to set the widget to False if it is True
+and vice versa. Despite the straight forward task, it uses some not yet familiar
+methods:</p>
+
+<pre><code>def on_toggle(self, cell, path, list_store):
+    """
+    a click event on the check button should negate
+    the content of the button.
+    """
+    if path is not None:
+        iterator = list_store.get_iter(path)
+        list_store[iterator][0] = not list_store[iterator][0]
+</code></pre>
+
+<p>When a mouse click is detected on any of the CellRendererToggle widgets,  the 
+method <code>self.on_toggle</code> is called with the following parameters:</p>
+
+<ul>
+<li>cell - a pointer to the cell widget, e.g. 
+<code>&lt;gtk.CellRendererToggle object at 0x7f3a53147fa0 (GtkCellRendererToggle at 0x1f2f580)&gt;</code></li>
+<li>path - the row number in the <code>TreeView</code> widget, e.g. <code>0</code>.</li>
+<li>list_store - the <code>ListStore</code> widget. </li>
+</ul>
+
+<p>You should insert some print statements inside <code>on_toggle</code> to see this parameters. 
+The address <code>0x1f2f580</code> is the memory address at the moment of calling the program, 
+it is not expected to be fixed. Same as the row index, it depends on the <code>CellRendererToggle</code>
+that was clicked. <br />
+The method <code>list_store.get_iter(path)</code> returns a pointer to a <code>GtkTreeIter</code> 
+instance, e.g. <code>&lt;GtkTreeIter at 0x12c4580&gt;</code>. This iterator instance allows changing
+the contents of a row:</p>
+
+<pre><code>list_store[iterator][0] = not list_store[iterator][0]
+</code></pre>
+
+<p>It is possible of course to print all the items of a row:</p>
+
+<pre><code>        for item in list_store[iterator]:
+                print item
+</code></pre>
+
+<p>which will output as expected:</p>
+
+<pre><code>True
+5
+bar
+baz
+zap
+</code></pre>
+
+<p>Hence, a list_store, can be accessed like a Table with Row,Column coordinates.
+This allows some fun stuff like the following code:</p>
+
+<pre><code>access the table values as a coordinate system (like in gtk.Table)
+self.liststore[2][0] = False
+
+# or you can use the iterators approach
+path = self.liststore.get_path(tree_iter)
+self.ls_iter = self.liststore.get_iter_first()
+# liststore.set_value(iter, column, value)
+self.liststore.set_value(self.ls_iter, 3, "First Track")
+second = self.liststore.iter_next(self.ls_iter)
+third = self.liststore.iter_next(second)
+self.liststore.set_value(third, 2, "Famous Singer")
+</code></pre>
+
+<p>When put together with the whole UI Class, the code will result in:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-4Xm1L8XDD58/UO3b0gdtqkI/AAAAAAAACFY/31j4-Cypj10/s506/TreeViewCoordinates.png" alt="A Tree with different values" /></p>
+
+<p>This UI is generated by the <a href="https://github.com/oz123/punder/blob/better_treeview_control/punder.py"><code>better_treeview_control</code></a> tag. 
+The interface is almost complete, but it has some funny quirks and the buttons
+in the toolbar do nothing except the very limited About Dialog. 
+More functionality will be added in part 4 of this pygtk tutorial. </p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>, <a class="tag" href="/tags/pygtk"><span> PyGTK</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html&title=PyGTK CD Ripper Tutorial - Part 3&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html&title=PyGTK CD Ripper Tutorial - Part 3" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html" title="PyGTK CD Ripper Tutorial - Part 3" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html&body=PyGTK CD Ripper Tutorial - Part 3" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

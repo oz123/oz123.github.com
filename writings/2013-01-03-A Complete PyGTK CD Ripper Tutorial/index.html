@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> A Complete PyGTK CD Ripper Tutorial </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; January 03, 2013</div>
+	<h1>A Complete PyGTK CD Ripper Tutorial</h1>
+	<p>Most tutorials on GTK, create partial UIs, and thus leave the reader to connect the rest by himself. 
+Some others create an almost complete application, but usually, this application is useless. 
+This tutorial, will lead (eventually, I hope...) to a functional application, 
+that rips CD and converts them to MP3 using cdparanoia and lame. 
+In addition to writing this tutorial in blog posts with code, the code will 
+be highly verbose and commented thoroughly.</p>
+
+<p>First, a statement of destination: My goal is to produces a functional PyGTK clone of 
+<a href="http://littlesvr.ca/asunder/">asunder</a>, a full blown GTK CD Ripper and converter. 
+The goal is not to rewrite the software in Python, rather to Develop a full tutorial, 
+and document the steps leading to a complete application, with the right and wrong decisions, 
+exposed and open for discussion. </p>
+
+<p>For the beginning, here is what out first GTK Window should look like:</p>
+
+<p><img src="https://lh3.googleusercontent.com/-_4S1FVNGUZ0/UOVMeWTcoUI/AAAAAAAACA0/mebapvcgPlI/s606/Screenshot-Asunder.png" alt="asunder main window1" title="Where we want to be" /></p>
+
+<pre><code>#!/usr/bin/env python
+
+"""
+punder.py - part one:
+
+creating a very very basic UI. A tool bar with Four buttons.
+2 of the buttones contain icons and text, and two buttons contain
+just icons.
+"""
+
+import gtk
+
+class PunderUI():
+    """
+Initial class to draw the first toolbar.
+"""
+    def __init__(self):
+        """
+create the gui using GTK Window, and Toolbar.
+"""
+        window = gtk.Window()
+        window.set_default_size(500, -1)
+
+        toolbar = gtk.Toolbar()
+        # bad naming convention
+        button1 = gtk.ToolButton()
+        button1 = gtk.ToolButton(gtk.STOCK_REFRESH)
+
+        button1.set_label("CDDB")
+        button1.set_is_important(True)
+
+        button2 = gtk.ToolButton(gtk.STOCK_PREFERENCES)
+        button2.set_is_important(True)
+
+        separator1 = gtk.SeparatorToolItem()
+
+        # more verbose ... hard to type, but nothing that
+        # a decent IDE can not cope with.
+        # give your items clear name, which indicate
+        # their roles
+        button_about = gtk.ToolButton(gtk.STOCK_ABOUT)
+
+        # if you set a button to not important, it's text label
+        # will not be shown!
+        # unlike button2.set_is_important(True)
+        button_about.set_is_important(False)
+
+        window.connect("destroy", lambda w: gtk.main_quit())
+        window.add(toolbar)
+        toolbar.insert(button1, 0)
+        toolbar.insert(button2, 1)
+        toolbar.insert(separator1, 2)
+        toolbar.insert(button_about, 3)
+        # launch the window.
+        window.show_all()
+
+PunderUI()
+gtk.main()
+</code></pre>
+
+<p>If you run this code with <code>python punder.py</code> you will see the following
+window:</p>
+
+<p><img src="https://lh4.googleusercontent.com/-D_XgKwFkY-o/UOVUpPseR9I/AAAAAAAACBo/QEAuSoye_gw/s506/Screenshot-punder.py.png" alt="asunder tool_bar" title="A hubmle start" /></p>
+
+<h3>Making a button do something</h3>
+
+<p>Now we have a simple toolbar with 3 buttons that don't do anything. 
+In order to make a button do something we need to call the Gobject method 
+connect. We call this method with a callback function and a signal.  </p>
+
+<p>It makes sense that when pressing the about button an about dialog will
+pop up, so here is the right code:</p>
+
+<pre><code>button_about.connect("clicked", self.help_dialog)
+</code></pre>
+
+<p>Now, we still have not defined the <code>help_dialog</code> method, so pressing that
+button will result in an error. Here is the right handler function:</p>
+
+<pre><code>def help_dialog(self, widget):
+    """
+    create a GTK help dialog upon button click and destroy it when pressing the 
+    close button
+    """
+    self.about = gtk.AboutDialog()
+    sometext=gtk.Label('This is just the beggining.\nWill Get back to later.')
+    self.about.vbox.pack_start(sometext)      
+    self.about.show_all()
+    result = self.about.run() 
+    # adding this will cause the about dialog to close when we
+    # press the button 'Close'.
+    self.about.hide()
+</code></pre>
+
+<p>All together our <code>PunderUI</code> class looks like that:</p>
+
+<pre><code>class PunderUI():
+    """
+    Initial class to draw the first toolbar.
+    """
+    def help_dialog(self, widget):
+        """
+        create a GTK help dialog upon button click and destroy it when pressing the 
+        close button
+        """
+        self.about = gtk.AboutDialog()
+        sometext=gtk.Label('This is just the beggining.\nWill Get back to later.')
+        self.about.vbox.pack_start(sometext)      
+        self.about.show_all()
+        result = self.about.run() 
+        # adding this will cause the about dialog to close when we
+        # press the button 'Close'.
+        self.about.hide()
+
+    def __init__(self):
+        """
+        create the gui using GTK Window, and Toolbar.
+        """
+        window = gtk.Window()
+        window.set_default_size(500, -1)
+
+        toolbar = gtk.Toolbar()
+        # bad naming convention
+        button1 = gtk.ToolButton()
+        button1 = gtk.ToolButton(gtk.STOCK_REFRESH)
+
+        button1.set_label("CDDB")
+        button1.set_is_important(True)
+
+        button2 = gtk.ToolButton(gtk.STOCK_PREFERENCES)
+        button2.set_is_important(True)
+
+        separator1 = gtk.SeparatorToolItem()
+
+        # more verbose ... hard to type, but nothing that 
+        # a decent IDE can not cope with. 
+        # give your items clear name, which indicate
+        # their roles
+        #button_help = gtk.ToolButton(gtk.STOCK_HELP)
+        #button_help.set_is_important(True)
+        button_about = gtk.ToolButton(gtk.STOCK_ABOUT)
+
+        # if you set a button to not important, it's text label
+        # will not be shown!
+        # unlike button2.set_is_important(True)
+        button_about.set_is_important(False)
+
+        # with .connect we make a button do something
+        # in this case, the event clicked will trigger
+        # the class method rundialog
+        # gtk.Button is inherited from the class gobject
+        # hence it contains also the method connect, which
+        # takes by default 2 arguments:
+        # def connect(detailed_signal, handler, ...)
+        # see more info the [method documentation][doc1]
+        button_about.connect("clicked", self.help_dialog)
+
+        window.connect("destroy", lambda w: gtk.main_quit())       
+        window.add(toolbar)
+        toolbar.insert(button1, 0)
+        toolbar.insert(button2, 1)
+        toolbar.insert(separator1, 2)
+        toolbar.insert(button_about, 3)
+        window.show_all()
+</code></pre>
+
+<p>And pressing the <code>About</code> button will show the following dialog:</p>
+
+<p><img src="https://lh6.googleusercontent.com/-4KumGibmvWU/UOV2ILkUjxI/AAAAAAAACCE/l9VRfLRv0rw/s214/Screenshot-About%2520punder.py.png" alt="punder_about" title="A Raw About Dialog" /></p>
+
+<h3>Packing more widgets</h3>
+
+<p>Until now the window created is pretty poor. By using packing it is 
+possible to add more elements to user interface. Packing is done, 
+this by defining a container box:</p>
+
+<pre><code>vbox = gtk.VBox()
+</code></pre>
+
+<p>And adding it to the Window:</p>
+
+<pre><code>window.add(vbox)
+</code></pre>
+
+<p>Now a child widget can be added to <code>vbox</code>, for example, the toolbar
+created earlier, can be drawn inside <code>vbox</code>, instead directly in the 
+window.</p>
+
+<pre><code>#window.add(toolbar)
+vbox.pack_start(toolbar, False)
+</code></pre>
+
+<p>To test how a user interface looks like, it is possible to define 
+simple place holders and also pack them into <code>vbox</code>:</p>
+
+<pre><code># add some more stuff to vbox
+album_info = gtk.Label('A place holder for Album info')
+vbox.pack_start(album_info)
+
+track_list = gtk.Label('A place holder for track_list')
+vbox.pack_start(track_list)
+</code></pre>
+
+<p>The full PunderUI class will result in the following window:</p>
+
+<p><img src="https://lh6.googleusercontent.com/-lEICR2zzbLE/UOWYIaWv92I/AAAAAAAACCk/k0PgOYD6aJs/s506/Screenshot-punder.py-packing_demo.png" alt="A Window with more the just a toolbar" title="Advancing toward the full Window" /></p>
+
+<p>The full code, for this part of the tutorial can be found
+in the <a href="https://github.com/oz123/punder/blob/end_part_1/punder.py">github repository under the tag end<em>part</em>1</a>. The next
+part, will demonstrate how to create a <code>gtk.TreeView()</code> to populate
+the list of songs. Naturally, it will need to demonstrate how to populate
+the text in the boxes, retrieved from a process that reads the CD-ROM.
+Stay tuned!</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>, <a class="tag" href="/tags/pygtk"><span> PyGTK</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html&title=A Complete PyGTK CD Ripper Tutorial&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html&title=A Complete PyGTK CD Ripper Tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html" title="A Complete PyGTK CD Ripper Tutorial" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html&body=A Complete PyGTK CD Ripper Tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

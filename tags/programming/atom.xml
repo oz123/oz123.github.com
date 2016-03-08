@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:11Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Working With Binary Data in Python</title>
+  <link href="http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html" />
+  <id>http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Working with binary data puzzled me for quite a time, so here is a post explaining some of my findings
+    <a href="http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>The weired Indexing in Perl</title>
+  <link href="http://oz123.github.com/writings/2012-03-16-whats-wrong-with-perl/index.html" />
+  <id>http://oz123.github.com/writings/2012-03-16-whats-wrong-with-perl/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I am learning Perl. I am doing it with a lot of a resentment, but I am  slowly learning it.
+    <a href="http://oz123.github.com/writings/2012-03-16-whats-wrong-with-perl/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>VIM Quicky - set tabs and spaces behaviour for different files</title>
+  <link href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html" />
+  <id>http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Never really bothered me before, because I only used Python and C, so I always replaces tabs with spaces.
+    <a href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>2 Cool Python Learning resources</title>
+  <link href="http://oz123.github.com/writings/2011-05-26-2-cool-python-learning-resources/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-26-2-cool-python-learning-resources/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Another cool one liner to remove all development packages to clean your Debian.
+    <a href="http://oz123.github.com/writings/2011-05-26-2-cool-python-learning-resources/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Matlab Alternative RStudio</title>
+  <link href="http://oz123.github.com/writings/2011-03-03-matlab-alternative-rstudio/index.html" />
+  <id>http://oz123.github.com/writings/2011-03-03-matlab-alternative-rstudio/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    To the list of great Matlab alternative I add today [RSTUDIO](http://www.rstudio.org/)
+    <a href="http://oz123.github.com/writings/2011-03-03-matlab-alternative-rstudio/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>oh, Yesterday I was a bad programmer</title>
+  <link href="http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html" />
+  <id>http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Forgetting my first lesson in programming, I looked for a solution to convert IP addresses to country. I found out tables, and SQL files, and went on and on trying to figure how to use them, and do SQL in python
+    <a href="http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Tiny Python script to convert Fortran comments to "!"</title>
+  <link href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html" />
+  <id>http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I work on a very old Fortran code, which is Fixed form Fortran 77 mixed with some Fortran 95. Geany IDE, had problem displaying lines starting with "c" as comments.
+    <a href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Easy Python debugging</title>
+  <link href="http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html" />
+  <id>http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Just a quicky post ... Python has the excellent pdb module to debug your programs.
+    <a href="http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>MasterMind Game in Fortran 95</title>
+  <link href="http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html" />
+  <id>http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Just for the fun, and to learn some Fortran 95, I wrote this little game which imitates the [MasterMind](http://en.wikipedia.org/wiki/Mastermind_%28board_game%29) game.
+    <a href="http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Another matplotlib tutorial</title>
+  <link href="http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html" />
+  <id>http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Recently I started working with [MIN3P](http://www.eos.ubc.ca/about/faculty/U.Mayer.html), a reactive transport modeling software, which produces data output which can be easily visualized with a commercial software package. However, I can't afford purchasing this package for my research, and I won't even though they have a Linux client.
+    <a href="http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

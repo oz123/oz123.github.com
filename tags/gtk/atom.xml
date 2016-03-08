@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:10Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>A Usefull PyGTK Example</title>
+  <link href="http://oz123.github.com/writings/2011-08-03-usefull-pygtk-example/index.html" />
+  <id>http://oz123.github.com/writings/2011-08-03-usefull-pygtk-example/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I have been looking for a good pygtk tutorial for a very long time. I have found a few tutorials which where an overkill, so I don't link to them.
+    <a href="http://oz123.github.com/writings/2011-08-03-usefull-pygtk-example/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

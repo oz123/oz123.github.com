@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:10Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>The best latex editor Kile 2.1 Released!</title>
+  <link href="http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html" />
+  <id>http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This should be really bigger news! Although I don't use KDE at all, Kile is the best editor for Latex, I have tried.
+    <a href="http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Good Bye Latex ? Hello WeasyPrint</title>
+  <link href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html" />
+  <id>http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Latex, is my main way of producing reports and scientific works. Usually these are formed as PDF before being actually printed. Latex is AWESOME.
+    <a href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

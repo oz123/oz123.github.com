@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Farewell PyCharm! Going VIM again </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; January 20, 2015</div>
+	<h1>Farewell PyCharm! Going VIM again</h1>
+	<p>A few months ago, we started working with git. It turned out that ECLIPSE with
+PyDev is a real mess to learn with GIT. I talked about it with a friend, and 
+he suggested that we try PyCharm. I had my doubts, that we could migrate from
+SVN to GIT and simultaneously to PyCharm from PyDev.  </p>
+
+<p>Never the less, I gave PyCharm a spin, and I found it surprisingly straight 
+forward. There are no complicated workspaces and views to learn when working 
+with GIT. Everything else, like introspection, and project management is really 
+a breeze when comparing to PyDev. Even the debugger is really nice to work with. </p>
+
+<p>What was really weired for me, but really easy for my team, was that PyCharm 
+tries to make working with git similar to working with Subversion. It really 
+does work for people who com with long SVN history.</p>
+
+<p>However, as my colleagues started to become more convenient with GIT, it turned 
+out that PyCharm's intensive caching is really not playing well with git, if you
+start working with git directly through a terminal. </p>
+
+<p>Here is where I am partly fault. While I tried to learn the PyCharm interface, 
+I always found that I am faster to cherry-pick or merge or do any git action 
+on the shell. So, even when I was sitting with colleagues to do some peer working
+on our Software I was showing them the underlying git command. </p>
+
+<p>Slowly, they started also to get annoyed with the fact that PyCharm's interface
+to git is a bit cumbersome, and that git's awesome command completing and 
+ability to share git alias and <code>.config</code> files is simply faster and easier. </p>
+
+<p>So now, that everyone is feeling comfortable working with git on the shell, I no
+longer feel obligated to work with PyCharm and learn it, so I could help my 
+colleagues. Hence, I am back to VIM, and the best interface to git after git 
+commands on the shell is <code>vim-fugitive</code> if you don't know vim fugitive, watch 
+these bunch of screencasts linked in <a href="https://github.com/tpope/vim-fugitive">vim-fugitive's home-page</a>.</p>
+
+<p>To sum it up, I really found PyCharm better then PyDev, because it easier to 
+understand and to work with. It's Version Control interface, is a bless for SVN 
+new comers for git, but at the same time it is very limiting for people who 
+really know git. It really helped us migrating to git, but when things became 
+more complicated we ended up working with git in the shell, until we really didn't
+need or want to use PyCharm's Version Control interface. May be Jetbrains should 
+consider enabling git power users turning off this SVN compatibility. For me, 
+it's already too late. I am back to VIM. </p>
+
+<p>And finally, I am a big fan of <a href="https://github.com/oz123/solarized-mate-terminal">the solarized color theme</a>. 
+I really missed it in PyCharm -But I also found PyCharm's darcula color theme 
+really pleasant. Changing from PyCharm to VIM a couple of times a day 
+looking at text with different themes was an eye irritating experience. 
+Hence, I changed my default color theme in VIM to <a href="https://github.com/alem0lars/vim-colorscheme-darcula">darcula-vim</a>, 
+and I don't really miss solarized ...</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>python</span></a>, <a class="tag" href="/tags/vim"><span> VIM</span></a>, <a class="tag" href="/tags/git"><span> git</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html&title=Farewell PyCharm! Going VIM again&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html&title=Farewell PyCharm! Going VIM again" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" title="Farewell PyCharm! Going VIM again" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html&body=Farewell PyCharm! Going VIM again" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

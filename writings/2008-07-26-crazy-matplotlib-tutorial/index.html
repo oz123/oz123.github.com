@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Crazy Matplotlib tutorial </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; July 26, 2008</div>
+	<h1>Crazy Matplotlib tutorial</h1>
+	<p>Note: A better and more realistic tutorial can be found <a href="http://www.tabula0rasa.org/2009/01/a-matplotlib-tutorial/">here</a> and a new version<a href="http://www.tabula0rasa.org/2010/04/another-matplotlib-tutorial/"> here </a>.
+I started using python's matplotlib to plot graphs in my Oceanography courses. Matplotlib is pretty easy to understand if you already know some python. However it's documentation is somewhat frustrating, even though it comes with a plethora of examples.</p>
+
+<p>So I turned to seek help on the user's list, and that was a great experience. I got responses almost immediately, and many times the respondent was the author of the program himself. That was very nice, but people kept telling me I should read the tutorial and user guide and I kept answering that I prefer to learn by doing. Which is true. I use another program which has a steep learning curve called latex-beamer. It comes with a wonderful 300+ pages user guide. I read bits and parts of it. But mostly, I just saw other people code and copied it and changed it to fit my own presentation needs. Unfortunately, I couldn't do the same with Matplotlib, maybe because graph codes is not something people show around like beamer presentation.</p>
+
+<p>So I ended up quite frustrated and I wrote the following to the mailing list:</p>
+
+<p>I am a lost case about reading tutorial at the moment.
+I am in a middle of a very intense course, and they expect us to do crazy stuff with matlab. so it's either that or solving with python. I'll do read it when I have time...</p>
+
+<pre><code>I am mostly frustrated with documentation writers who write very nice tutorials describing
+how to plot completely unuseful graphs of spheres inside loops and a &lt;span class="nfakPe"&gt;dolphin&lt;/span&gt; swimming
+in the middle. Come on, this is not what users need. I am talking about what many students
+feel. We need real tutorials, this why I wrote my own little tutorial here
+&lt;a href="../?p=21" target="_blank"&gt;http://www.tabula0rasa.org/?p=21&lt;/a&gt;.
+</code></pre>
+
+<p>So I vented a lit bit my frustration. The reply didn't wait long before arriving in a very funny way:</p>
+
+<pre><code>Oz Nahum wrote:
+
+&gt;I am mostly frustrated with documentation writers who write very nice tutorials describing how
+&gt;to plot completely unuseful graphs of spheres inside loops and a dolphin swimming in the middle.
+
+I'm sorry.  I just couldn't resist writing a tutorial example for this.  Please take it in the spirit of fun it was intended.
+
+Mike
+
+
+
+
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, PathPatch
+from matplotlib.path import Path
+from matplotlib.transforms import Affine2D
+import numpy as np
+
+r = np.random.rand(50)
+t = np.random.rand(50) * np.pi * 2.0
+x = r * np.cos(t)
+y = r * np.sin(t)
+
+fig = plt.figure(figsize=(6,6))
+ax = plt.subplot(111)
+circle = Circle((0, 0), 1, facecolor=(0,0,0.8),
+edgecolor=(0,0.8,0.8), linewidth=3, alpha=0.5)
+ax.add_patch(circle)
+
+plt.plot(x, y, 'o', color=(0.9, 0.9, 1.0), alpha=0.8)
+
+# Dolphin from OpenClipart library by Andy Fitzsimon
+#
+#
+#
+#
+#
+
+dolphin = """
+M -0.59739425,160.18173 C -0.62740401,160.18885 -0.57867129,160.11183
+-0.57867129,160.11183 C -0.57867129,160.11183 -0.5438361,159.89315
+-0.39514638,159.81496 C -0.24645668,159.73678 -0.18316813,159.71981
+-0.18316813,159.71981 C -0.18316813,159.71981 -0.10322971,159.58124
+-0.057804323,159.58725 C -0.029723983,159.58913 -0.061841603,159.60356
+-0.071265813,159.62815 C -0.080250183,159.65325 -0.082918513,159.70554
+-0.061841203,159.71248 C -0.040763903,159.7194 -0.0066711426,159.71091
+0.077336307,159.73612 C 0.16879567,159.76377 0.28380306,159.86448
+0.31516668,159.91533 C 0.3465303,159.96618 0.5011127,160.1771
+0.5011127,160.1771 C 0.63668998,160.19238 0.67763022,160.31259
+0.66556395,160.32668 C 0.65339985,160.34212 0.66350443,160.33642
+0.64907098,160.33088 C 0.63463742,160.32533 0.61309688,160.297
+0.5789627,160.29339 C 0.54348657,160.28968 0.52329693,160.27674
+0.50728856,160.27737 C 0.49060916,160.27795 0.48965803,160.31565
+0.46114204,160.33673 C 0.43329696,160.35786 0.4570711,160.39871
+0.43309565,160.40685 C 0.4105108,160.41442 0.39416631,160.33027
+0.3954995,160.2935 C 0.39683269,160.25672 0.43807996,160.21522
+0.44567915,160.19734 C 0.45327833,160.17946 0.27946869,159.9424
+-0.061852613,159.99845 C -0.083965233,160.0427 -0.26176109,160.06683
+-0.26176109,160.06683 C -0.30127962,160.07028 -0.21167141,160.09731
+-0.24649368,160.1011 C -0.32642366,160.11569 -0.34521187,160.06895
+-0.40622293,160.0819 C -0.467234,160.09485 -0.56738444,160.17461
+-0.59739425,160.18173
+"""
+
+vertices = []
+codes = []
+parts = dolphin.split()
+i = 0
+code_map = {
+'M': (Path.MOVETO, 1),
+'C': (Path.CURVE4, 3),
+'L': (Path.LINETO, 1)
+}
+
+while i &lt; len(parts):
+code = parts[i]
+path_code, npoints = code_map[code]
+codes.extend([path_code] * npoints)
+vertices.extend([[float(x) for x in y.split(',')] for y in parts[i+1:i+npoints+1]])
+i += npoints + 1
+vertices = np.array(vertices, np.float)
+vertices[:,1] -= 160
+
+dolphin_path = Path(vertices, codes)
+dolphin_patch = PathPatch(dolphin_path, facecolor=(0.6, 0.6, 0.6),
+edgecolor=(0.0, 0.0, 0.0))
+ax.add_patch(dolphin_patch)
+
+vertices = Affine2D().rotate_deg(60).transform(vertices)
+dolphin_path2 = Path(vertices, codes)
+dolphin_patch2 = PathPatch(dolphin_path2, facecolor=(0.5, 0.5, 0.5),
+edgecolor=(0.0, 0.0, 0.0))
+ax.add_patch(dolphin_patch2)
+
+plt.show()
+</code></pre>
+
+<p>and of course, here is a picture of this plot:</p>
+
+<p><a href="http://www.tabula0rasa.org/wp-content/uploads/2008/07/dolphin.png"><img src="http://www.tabula0rasa.org/wp-content/uploads/2008/07/dolphin-300x300.png" alt="" /></a></p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2008-07-26-crazy-matplotlib-tutorial/index.html&title=Crazy Matplotlib tutorial&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2008-07-26-crazy-matplotlib-tutorial/index.html&title=Crazy Matplotlib tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2008-07-26-crazy-matplotlib-tutorial/index.html" title="Crazy Matplotlib tutorial" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2008-07-26-crazy-matplotlib-tutorial/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2008-07-26-crazy-matplotlib-tutorial/index.html&body=Crazy Matplotlib tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

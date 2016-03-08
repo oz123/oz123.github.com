@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> A matplotlib tutorial </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; January 05, 2009</div>
+	<h1>A matplotlib tutorial</h1>
+	<p>Most people that find my blog in the end of the internet arrive here while looking for python matplotlib tutorial. That's thanks to the crazy matplotlib tutorial I already have in my blog. However, this tutorial is not very useful. And since I'm using matplotlib to do some of my homeworks, I been wanting to post some real life tutorial. After all why not give the audience what it wants?</p>
+
+<p>So here it is - a real life, hydrological problem solved with python matplotlib. First, some background.
+Notice, I wrote another <a href="http://www.tabula0rasa.org/2010/04/another-matplotlib-tutorial/">matplotlib tutorial</a>.</p>
+
+<p>In hydro-geology, the science describing water flow in rocks, one would like to know how good is the hydraulic conductivity of a certain rock bearing water, in order to know how easy it would be the extract these water. In order to find the hydraulic conductivity hydrologists conduct pumping tests, in which they extract large amount of water via one pumping well and observe the draw down of water in near by wells. More can be found <a href="http://en.wikipedia.org/wiki/Aquifer_test">here</a>.
+In real life the field data the hydrologist gets is a water heights in wells and the distances of these observations wells from the pumping well.</p>
+
+<pre><code>r [m]    h [m]
+
+15       6.40
+14.95    6.53 
+30.7     6.80
+30.6     6.89
+57.7     7.16
+57.9     7.23
+</code></pre>
+
+<p>The water level in all wells with out pumping is 8.2 m, and it is easy to see that this data is slightly noisy. This can be in reality due to errors of measurements in the field. In order to get rid of the noise, one can do a linear regression. So in this tutorial we'll do some linear regression and plot the draw down in the wells as a function of the logarithmic distance to the pumping well.  Using the corrected draw down after Jacob, 1963, and the regression of the logarithmic distance vs. corrected draw down  we will find the hydraulic conductivity of the aquifer. Let's just write down the mathematical equations in mathematical language before really coding it in python:
+The draw down is:</p>
+
+<pre><code>  s(r)=h_0-h(r)
+  h_0,h(r)
+</code></pre>
+
+<p>are the original water level, without pumping and the observed level after pumping, respectively.
+The corrected draw down is:</p>
+
+<pre><code>  s'(r)=s_i-\frac{s_i^2}{2h_0}
+</code></pre>
+
+<p>and the linear regression that is preformed is according to the following formula:</p>
+
+<pre><code>s'(r)=\frac{Q_w}{2\pi T}\cdot \ln r-\frac{Q_w}{2\pi T}\cdot \ln R
+</code></pre>
+
+<p>I'm not going to fully explain how this formula is developed because that's not the scope of this post. But it easy to see that this formula is in the form of a linear line which follows the scheme of y=ax+b. So the first term will be given by the slope of the regressions, and the first term will be given by the intercept. Also in the formula are [math]Q_w, T, r, R[/math] which are respectively the pumping rate, transmissivity (related to hydraulic conductivity), distance of observation well, and maximum distance of influence due to pumping.
+OK, enough background let's start coding. As with every python mathplotlib program, we start by extending our python capabilities with importing various  modules and functions:</p>
+
+<pre><code>from pylab import plot, title, show , legend, figure, ylim, ylabel, xlabel
+from scipy import *
+</code></pre>
+
+<p>Now we define the constants and data given for out problems as variables:</p>
+
+<pre><code>Qw = -6.31e-2 #rate of pumping in cubic meter per second, minus sign for extraction well.
+h0=8.2 #Initial height in meters, without pumping
+r=array((15  , 14.95, 30.7,  30.6,  57.7,  57.9))#distance from well in meters
+h=array((6.40, 6.53,  6.80,  6.89,  7.16,  7.23))     #head height in meters
+</code></pre>
+
+<p>Note that I've defined the table of distances and heights as two numpy arrays. This is because I want the code to run efficiently. When doing algebra or any operation on a vectory (a numpy array) the result is also a vector, which makes things easier, and negates the need to write loops in our code to go over lists, for example.  Let's do some basic calculations of draw down and corrected draw down:</p>
+
+<pre><code>print "draw down is:"
+print r
+s=h0-h #drawdown
+print s
+sc = s-s*s/2/h0 #corrected drawdown
+print sc
+lnr = log(r) #this is  scipy log, which takes a vector and returns a vector
+print lnr
+</code></pre>
+
+<p>The print declarations can be omitted, they are just to see that the result of operation on a vector, is a vector.
+Now we do a linear regression on our data:</p>
+
+<pre><code>(ar,br)=polyfit(lnr,sc,1) #ar, slope. br, intercept
+xr=polyval([ar, br], lnr)
+</code></pre>
+
+<p>The function polyfit gets the x-series, y-series, and the order of the polynomial  regression. In this case 1st order means that our polynomial regression is in the form of y=ax+b, like we wanted, and the function returns then two values: ar, br, which are the slope and the intercept.
+The function polyval takes a vector of x values and processes them through the equation of the polynomial regression. In return it gives a new vector of y values according to the polynomial regression. These values can be plotted as the trend line later.
+Now we use the values of the slope and the intercept of the linear regression to calculate the transmissivity, T, of the aquifer and the Hydraulic conductivity, K, and the maximum distance of well influence.</p>
+
+<pre><code>T = Qw/2/pi/ar #[m^2/sec]
+K = T/h0 #Hydraulic conductivity in m/sec.
+Rmax = exp((br/abs(ar))) #Max distance of well influence
+</code></pre>
+
+<p>Just before we go to the final stage of plotting the data, we add some output lines, which will print the results of our calculations:</p>
+
+<pre><code>print('Linear regression using polyfit')
+print "slope", abs(ar), "intercept", br
+print "Aquifer Transmissivity is: ", round(T, 4) , "m^2/sec"
+print "Aquifer Hydraulic Conductiviy is: ", round(K, 4) , "m^2/sec"
+print "Max distance of well influence is: ", Rmax, "m."
+</code></pre>
+
+<p>And finally we present our data of corrected draw down vs. distance and  corrected draw down vs. logarithmic distance in graphs:</p>
+
+<pre><code>figure(1)
+title('Well Data Ploted vs. Distance from Well')
+plot(r,h,'b+--')
+ylim(5.5, 7.5)
+ylabel('Water level in well [m]')
+xlabel('Distance to well [m]')
+figure(2)
+title('Corrected drawdown vs. Logarithmic Distance from Well')
+plot(lnr,sc,'b+')
+plot(lnr, xr,'k-')
+ylim(0, 1.7)
+ylabel('Corrected Drawdown [m]')
+xlabel('Log distance to well [m]')
+figure(3)
+title('Corrected drawdown vs. Distance from Well')
+plot(r,sc,'go')
+ylim(0.6, 1.7)
+ylabel('Corrected Drawdown [m]')
+xlabel('Distance to well [m]')
+show()
+</code></pre>
+
+<p>And that's it, run the program and here is the text out put we get and the graphs:</p>
+
+<pre><code>draw down is:
+[ 15.    14.95  30.7   30.6   57.7   57.9 ]
+print draw down
+[ 1.8   1.67  1.4   1.31  1.04  0.97]
+print corrected draw down
+[ 1.60243902  1.49994512  1.2804878   1.20535976  0.97404878  0.91262805]
+log distance:
+[ 2.7080502   2.7047113   3.42426265  3.42100001  4.05525717  4.05871738]
+xr:
+[ 1.55477368  1.55627462  1.23281334  1.23428     0.94916119  0.94760571]
+
+Extraction rate  -0.0631 cubic meter per sec
+Linear regression using polyfit
+slope 0.449531885929 intercept 2.77212859042
+Aquifer Transmissivity is:  0.0223 m^2/sec
+Aquifer Hydraulic Conductiviy is:  0.0027 m^2/sec
+Max distance of well influence is:  476.611020898 m.
+</code></pre>
+
+<p><a href="http://tabula0rasa.org/wp-content/uploads/2009/01/1.png"><img src="http://tabula0rasa.org/wp-content/uploads/2009/01/1-300x226.png" alt="" /></a>
+<a href="http://tabula0rasa.org/wp-content/uploads/2009/01/2.png"><img src="http://tabula0rasa.org/wp-content/uploads/2009/01/2-300x226.png" alt="" /></a>
+<a href="http://tabula0rasa.org/wp-content/uploads/2009/01/3.png"><img src="http://tabula0rasa.org/wp-content/uploads/2009/01/3-300x226.png" alt="" /></a></p>
+
+<p>And that all. The full source can be fetched <a href="http://tabula0rasa.org/wp-content/uploads/2009/01/problem16correctedb.py_.zip">here</a>.</p>
+
+<p>P.S Due to some weird problem with the new wordpress I had to upload the file zipped. Why it doesn't let me upload python sources I don't know...</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>, <a class="tag" href="/tags/programming"><span> Programming</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2009-01-05-a-matplotlib-tutorial/index.html&title=A matplotlib tutorial&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2009-01-05-a-matplotlib-tutorial/index.html&title=A matplotlib tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2009-01-05-a-matplotlib-tutorial/index.html" title="A matplotlib tutorial" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2009-01-05-a-matplotlib-tutorial/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2009-01-05-a-matplotlib-tutorial/index.html&body=A matplotlib tutorial" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

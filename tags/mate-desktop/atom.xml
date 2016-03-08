@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:11Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
+  <link href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html" />
+  <id>http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
+    <a href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

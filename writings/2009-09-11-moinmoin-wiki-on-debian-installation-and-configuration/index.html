@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> MoinMoin wiki on Debian, Installation and configuration </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum</a> &ndash; August 27, 2009</div>
+	<h1>MoinMoin wiki on Debian, Installation and configuration</h1>
+	<p>Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.</p>
+
+<p>This is the case, in my opinion, with the README.Debian file which describes an example of moin-moin wiki installation under a subdomain wiki.example.org.</p>
+
+<p>Here are my notes of how to install moinmoin package from Debian Squeeze on Debian Lenny.</p>
+
+<p>First, you need to install python-support from debian-backports.org.</p>
+
+<p>Second, download manually or with apt-get the package of debian lenny for python-moinmoin.</p>
+
+<p>Install both packages, if you downloaded them manually with the command:</p>
+
+<pre><code>dpkg -i python-support_1.0.3~bpo50+1_all.deb python-moinmoin_1.8.4-1_all.deb
+</code></pre>
+
+<p>After that you need to issue the following command, which are also described in the README.Debian:</p>
+
+<p>1) Create and populate /var/www/mywiki</p>
+
+<pre><code>mkdir /var/www/mywiki
+
+
+
+
+cp -r /usr/share/moin/server/moin.cgi /var/www/mywiki
+mkdir /var/lib/mywiki
+cp -r /usr/share/moin/data /usr/share/moin/underlay /var/lib/mywiki
+</code></pre>
+
+<p>2) Pass on the wiki to Apache:</p>
+
+<pre><code> chown -R www-data: /var/www/mywiki /var/lib/mywiki
+</code></pre>
+
+<p>3) Configure Apache2:
+Add the following as /etc/apache2/sites-available/mywiki:</p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+ #comment the line below if you intend to use only http://localhost/mywiki
+ ServerName wiki.example.org
+ DocumentRoot /var/www/mywiki/
+ Alias /moin_static184/applets/FCKeditor/ "/usr/share/fckeditor/"
+ Alias /moin_static184/ "/usr/share/moin/htdocs/"
+ ScriptAlias /MyWiki "/var/www/mywiki/moin.cgi"
+&lt;/VirtualHost&gt;
+&lt;Directory /var/www/mywiki/&gt;
+ Options Indexes FollowSymLinks MultiViews
+ AllowOverride None
+ Order allow,deny
+ allow from all
+ Options +ExecCGI
+&lt;/Directory&gt;
+</code></pre>
+
+<p>4) Configure MoinMoin:</p>
+
+<p>Edit /etc/moin/farmconfig.py to commentout data<em>dir and
+data</em>underlay_dir (we need those defined separately for each wiki)</p>
+
+<p>Edit /etc/moin/mywiki.py to include these lines:</p>
+
+<pre><code> sitename = u'MyWiki' # [Unicode]
+
+
+
+
+ data_dir = '/var/lib/mywiki/data'
+ data_underlay_dir = '/var/lib/mywiki/underlay'
+</code></pre>
+
+<p>Edit /etc/moin/wikilist to include this line:</p>
+
+<pre><code> www-data wiki.example.org/
+</code></pre>
+
+<p>5) Activate wiki:</p>
+
+<pre><code>a2ensite mywiki
+invoke-rc.d apache2 reload
+</code></pre>
+
+<p>6) Enjoy your new wiki at http://your.site/MyWiki/</p>
+
+<h3>A Note about themes, debian, moin-moin</h3>
+
+<p>Debian is intended for the server... Thus it's quite biased for a wiki-farm rather than a personal use wiki. Default moinmoin shares lot's of files between different possible moinmoin installations.</p>
+
+<p>The appropriate directory for installation of themes, under Debian won't be the data directory (in the above example, /var/lib/mywiki/data)  rather a shared directory under /usr/share/moin/htdocs.</p>
+
+<p>So the css/, img/, js/ directories of a plugin go there, and the python module of the theme goes to /var/lib/mywiki/data/plugin/theme.</p>
+
+<p>Here is an example of how I installed fixedleft theme:</p>
+
+<pre><code>ls -p /usr/share/moin/
+config/  data/    htdocs/  server/  underlay/
+
+ls -p /usr/share/moin/htdocs/
+applets/  common/      fixedleft/  modern/    rightsidebar/
+classic/  favicon.ico  index.html  modernized/    robots.txt
+
+ls -p /usr/share/moin/htdocs/fixedleft/
+css/  img/  js/
+
+ls -p /var/lib/mywiki/data/plugin/theme/
+fixedleft.py  fixedleft.pyc  __init__.py  __init__.pyc
+</code></pre>
+
+<p>To activate the theme, you need to /etc/moin/mywiki.py, add the following line:</p>
+
+<pre><code>theme_default = 'fixedleft'
+</code></pre>
+
+<p>to activate fixed left as the default theme.</p>
+
+<p>If you have two lines like this:</p>
+
+<pre><code>theme_default = 'rightsidebar'
+theme_default = 'fixedleft'
+</code></pre>
+
+<p>The last one will be the effective one.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/linux"><span>Linux</span></a>, <a class="tag" href="/tags/python"><span> Python</span></a>, <a class="tag" href="/tags/wiki"><span> Wiki</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html&title=MoinMoin wiki on Debian, Installation and configuration&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html&title=MoinMoin wiki on Debian, Installation and configuration" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html" title="MoinMoin wiki on Debian, Installation and configuration" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html&body=MoinMoin wiki on Debian, Installation and configuration" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

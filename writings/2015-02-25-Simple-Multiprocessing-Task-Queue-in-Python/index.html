@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Simple Multiprocessing Task Queue in Python </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; February 25, 2015</div>
+	<h1>Simple Multiprocessing Task Queue in Python</h1>
+	<p>Python's most popular implementation does <code>Threading</code> quite differently from what
+most people understand. In order to utilize multiple CPUs on a modern computer, one
+has to start multiple processes. One way to do it, is to write python programs
+which accept command line parameters and start different instances with different 
+parameters (either from the shell or using Python's <code>subprocess</code> module. 
+Thus, one lets the Operating System utilize the CPUs. <br />
+But one can also start multiple Python processes directly from within a running 
+Python program. </p>
+
+<p>In the following tutorial, a simple multiple tasks are started via a main process, 
+which looks for tasks, and when it finds them, it runs them without blocking the 
+main process (which has only one task, look for tasks and lunch them when found). 
+If you want to see a full blown application that does something similar to that, 
+e.g. a Task Queue see <a href="celeryproject.org">Celeryproject.org</a>.</p>
+
+<p>So let's get started. The skeleton of the application called <code>tasku.py</code> is rather 
+simple:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main loop of tasku where everything happens.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">check_for_tasks</span><span class="p">():</span>
+            <span class="n">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+        <span class="n">clean_finished_tasks</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The application is quite straight forward. Jobs are sought, and when found they are launched. 
+A second step cleans all the finished tasks. But the above application lack the functions,
+<code>check_for_task</code>, <code>start_task</code> and <code>clean_finished_tasks</code>. Let's begin defining a <code>Task</code> 
+and <code>check_for_tasks</code>.</p>
+
+<p>A <code>Task</code> is a Python class that does not do much, it starts, reads a message from a file, 
+and hangs around for a period of time which is also read from that file. The fact that 
+the task does not immediately terminate is useful, so we can see the task in the OS process tree:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   read a task file with the following content: Hello Parallel Tasks;5</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">taskfile</span>
+      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">taskfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+           <span class="n">msg</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">delay</span>
+
+   <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">delay</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The <code>Task</code> class is also quite straight forward. It has a constructor, and a <code>run</code> method. 
+The function <code>check_for_tasks</code> is as follows:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">check_for_tasks</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    find files with .task ending in current directory.</span>
+<span class="sd">    This a file based no-priority queue which only find the files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.task&#39;</span><span class="p">),</span>
+                  <span class="nb">filter</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)))</span>
+    <span class="c1"># this should also check for jobs that are not already running ...</span>
+    <span class="k">return</span> <span class="n">tasks</span>
+</code></pre></div>
+
+<p>The <code>Task</code> file can be named <code>do_something.task</code> and <code>say_hello.task</code> they will be return in 
+alphabetical order. Hence, priority setting is by the naming of files. </p>
+
+<p>Next, the function <code>start_task</code> is shown, and finally, multiprocessing is coming 
+into the game:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    open the file, read it&#39;s conent, then start a process with the file</span>
+<span class="sd">    running is a global directory holding the running jobs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">task</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">running</span><span class="p">:</span>
+
+        <span class="n">ti</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">run</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">running</span><span class="p">[</span><span class="n">ti</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span> 
+</code></pre></div>
+
+<p>Note, here that I did <code>import multiprocessing as mp</code>. The last step in the main 
+loop is <code>clean_finished_tasks</code>:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">clean_finished_tasks</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check the running dictionary for items, each task that is done,</span>
+<span class="sd">    is moved to the correct place (errors, or completed),</span>
+<span class="sd">    errors and executed are global dictionaries. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">running</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">exitcode</span><span class="p">:</span>
+                <span class="n">errors</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">exitcode</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">executed</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;success!&#39;</span>
+                <span class="n">running</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="s1">&#39;.done&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Finally, all the building stones are there. The full program is then:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1"># non persistant task list</span>
+<span class="n">running</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">executed</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    read a task file with the following content: Hello Parallel Tasks;5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">taskfile</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">taskfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+        <span class="n">msg</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">delay</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">check_for_tasks</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    find files with .task ending in current directory.</span>
+<span class="sd">    This a file based no-priority queue which only find the files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.task&#39;</span><span class="p">),</span>
+                    <span class="nb">filter</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)))</span>
+    <span class="c1"># this should also check for jobs that are not already running ...</span>
+    <span class="k">return</span> <span class="n">tasks</span>
+
+
+<span class="k">def</span> <span class="nf">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    open the file, read it&#39;s conent, then start a process with the file</span>
+<span class="sd">    running is a global directory holding the running jobs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">task</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">running</span><span class="p">:</span>
+
+        <span class="n">ti</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">run</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">running</span><span class="p">[</span><span class="n">ti</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span>
+
+
+<span class="k">def</span> <span class="nf">clean_finished_tasks</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check the running dictionary for items, each task that is done,</span>
+<span class="sd">    is moved to the correct place (errors, or completed),</span>
+<span class="sd">    errors and executed are global dictionaries.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">running</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">exitcode</span><span class="p">:</span>
+                <span class="n">errors</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">exitcode</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">executed</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;success!&#39;</span>
+                <span class="n">running</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="s1">&#39;.done&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main loop of tasku where everything happens.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">check_for_tasks</span><span class="p">():</span>
+            <span class="n">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+        <span class="n">clean_finished_tasks</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s2">&quot;successfully cleaned! &quot;</span>
+        <span class="c1"># added some information output</span>
+        <span class="k">print</span> <span class="s2">&quot;executed, &quot;</span><span class="p">,</span> <span class="n">executed</span>
+        <span class="k">print</span> <span class="s2">&quot;running, &quot;</span><span class="p">,</span> <span class="n">running</span>
+        <span class="k">print</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="c1"># add some delay so, we could see what is going on in the OS</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+
+<p>To see what happens when this code runs, start it with <code>python tasku.py</code>, you 
+should see something similar to this:</p>
+
+<pre><code>$ python tasku.py                               
+executed,  {}                                                                      
+running,  {}                                                                       
+2015-02-25 21:32:51.766882                                                         
+executed,  {}                                                                      
+running,  {}                                                                       
+2015-02-25 21:32:56.771922  
+</code></pre>
+
+<p>This is kind of Boring, so let's put create a task. On a different shell issue:</p>
+
+<pre><code>$ echo "I am the first task;7" &gt; 1.task
+</code></pre>
+
+<p>After a maximum of 5 seconds you should see you task working:</p>
+
+<pre><code>executed,  {}
+running,  {}
+2015-02-26 05:03:27.223866
+1.task True
+executed,  {}
+running,  {'1.task': (&lt;Process(1.task, started)&gt;, 6882, True)}
+2015-02-26 05:03:32.232389
+I am the first task
+1.task True
+executed,  {}
+running,  {'1.task': (&lt;Process(1.task, started)&gt;, 6882, True)}
+2015-02-26 05:03:37.237662
+1.task False
+successfully cleaned 1.task ! 
+executed,  {'1.task': 'success!'}
+running,  {}
+2015-02-26 05:03:42.243716
+</code></pre>
+
+<p>The task has it's own PID, and you can see the process tree with <code>pstree</code>:</p>
+
+<pre><code>$ pstree -a -p 6870
+python,6870 tasku.py
+  |
+   `-python,6882 tasku.py
+</code></pre>
+
+<p>The process <code>6882</code> is launched by 6870. You can find this by doing:</p>
+
+<pre><code>echo "I am the first task;7" &gt; 1.task &amp;&amp; sleep 3 &amp;&amp; pgrep -f tasku
+</code></pre>
+
+<p>To make thing a bit more interesting in <code>tasku</code> lets see what happens when multiple
+tasks are placed on the queue for immediate run, but different delay times to 
+finish. In order to automate the putting of tasks I wrote a Makefile which 
+can be downloaded here. The following assumes this make file was downloaded
+(You can find all the sources needed for here: <a href="https://gist.github.com/oz123/b3aab600e629fcd37d54">tasku.py</a>).</p>
+
+<pre><code>make create_all_tasks
+</code></pre>
+
+<p>The <code>create_all_tasks</code> target will enqueue 4 jobs with different delay times, wait
+a little for <code>tasku</code> to find and launch the tasks and then print the process tree.
+Here is what should be seen in both terminals:</p>
+
+<pre><code>make create_all_tasks
+echo
+
+python,26652 tasku.py
+  |-python,26653 tasku.py
+  |-python,26654 tasku.py
+  |-python,26655 tasku.py
+  `-python,26656 tasku.py
+python,26653 tasku.py
+python,26654 tasku.py
+python,26655 tasku.py
+python,26656 tasku.py
+</code></pre>
+
+<p>The process <code>tasku.py</code></p>
+
+<pre><code>$ python tasku.py`
+I am the the second task
+this task will finish quickly
+2.task True
+3.task True
+1.task True
+4.task True
+executed,  {}
+running,  {'2.task': (&lt;Process(2.task, started)&gt;, 26653, True), '3.task': 
+          (&lt;Process(3.task, started)&gt;, 26654, True), 
+          '1.task': (&lt;Process(1.task, started)&gt;, 26655, True), 
+          '4.task': (&lt;Process(4.task, started)&gt;, 26656, True)}
+2015-02-26 10:48:21.235133
+this task will hang around
+I am the first task
+2.task True
+3.task True
+1.task True
+4.task True
+executed,  {}
+running,  {'2.task': (&lt;Process(2.task, started)&gt;, 26653, True), 
+           '3.task': (&lt;Process(3.task, started)&gt;, 26654, True), 
+           '1.task': (&lt;Process(1.task, started)&gt;, 26655, True), 
+           '4.task': (&lt;Process(4.task, started)&gt;, 26656, True)}
+2015-02-26 10:48:26.242138
+2.task False
+3.task False
+1.task False
+4.task True
+successfully cleaned 2.task ! 
+successfully cleaned 3.task ! 
+successfully cleaned 1.task ! 
+executed,  {'2.task': 'success!', '3.task': 'success!', '1.task': 'success!'}
+running,  {'4.task': (&lt;Process(4.task, started)&gt;, 26656, True)}
+2015-02-26 10:48:31.248629
+4.task False
+successfully cleaned 4.task ! 
+executed,  {'2.task': 'success!', '3.task': 'success!', 
+            '1.task': 'success!', '4.task': 'success!'}
+running,  {}
+</code></pre>
+
+<p>As can be seen, the main process (<code>pid 26652</code>) now launched other processes, 
+which take a certain delay time to finish. Once, these process are finish, they 
+will exist, and will no longer be found in the process tree. This way, one can
+distribute the work of certain complicated tasks to multiple CPUs using python. 
+This rudimentary example only scratches the surface of <code>multiprocessing</code>. For 
+example it does not show how the processes can share data with each other, or 
+how to pass parameters to the process when launching it. I will try to cover 
+those in another part.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>python</span></a>, <a class="tag" href="/tags/linux"><span> linux</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html&title=Simple Multiprocessing Task Queue in Python&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html&title=Simple Multiprocessing Task Queue in Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" title="Simple Multiprocessing Task Queue in Python" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html&body=Simple Multiprocessing Task Queue in Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

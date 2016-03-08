@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:10Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>dwm Baby, Hell Yeah I am becoming a SUPER GEEK!</title>
+  <link href="http://oz123.github.com/writings/2011-06-24-dwm-baby-hell-yeah-i-am-becoming-super/index.html" />
+  <id>http://oz123.github.com/writings/2011-06-24-dwm-baby-hell-yeah-i-am-becoming-super/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    F\#!k yeah! I am using a [tiling window manager](http://dwm.suckless.org/) called DWM, and it is the best thing I have seen lately
+    <a href="http://oz123.github.com/writings/2011-06-24-dwm-baby-hell-yeah-i-am-becoming-super/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

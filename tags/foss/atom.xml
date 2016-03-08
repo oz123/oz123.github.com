@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:09Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>More GCONF Fun - Setting display backlight</title>
+  <link href="http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html" />
+  <id>http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    In my Clevo notebook all the Fn keys work, except the Brightness keys. So after search quite long, I have found that the only solution that really works for me is `xbacklight`
+    <a href="http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>When friends spit FUD</title>
+  <link href="http://oz123.github.com/writings/2011-10-19-when-friends-spit-fud/index.html" />
+  <id>http://oz123.github.com/writings/2011-10-19-when-friends-spit-fud/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Warning: This is not a technical post, rather just a boring rant and a call for advice. A friend of mine asked me what programming language he should learn.
+    <a href="http://oz123.github.com/writings/2011-10-19-when-friends-spit-fud/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Linux users - stop whining about UEFI Secure booting!</title>
+  <link href="http://oz123.github.com/writings/2011-09-26-linux-users-stop-whining-about-uefi/index.html" />
+  <id>http://oz123.github.com/writings/2011-09-26-linux-users-stop-whining-about-uefi/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Sorry for the provocative title, but I think Linux and other FOSS  Operating System should really stop whining about the UEFI secure booting.
+    <a href="http://oz123.github.com/writings/2011-09-26-linux-users-stop-whining-about-uefi/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Using BluetoothSpeakers without Pulseaudio</title>
+  <link href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html" />
+  <id>http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    About 3 months ago I have purchased a Bluetooth Speakers set. I chose  the Creative Labs D200, which provide me with nice tunes compared to the prices.
+    <a href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>20 Years of linux - a humoristic view</title>
+  <link href="http://oz123.github.com/writings/2011-08-25-20-years-of-linux-humoristic-view/index.html" />
+  <id>http://oz123.github.com/writings/2011-08-25-20-years-of-linux-humoristic-view/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    20 Years of linux - a humoristic view
+    <a href="http://oz123.github.com/writings/2011-08-25-20-years-of-linux-humoristic-view/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Short news about the GNOME 2 fork</title>
+  <link href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html" />
+  <id>http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Well, I've been following the [Development of Mate DE](https://github.com/Perberos/Mate-Desktop-Environment) quite closely via github and it seems like the project is gaining momentum.
+    <a href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

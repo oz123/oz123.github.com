@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:08Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>No more MONO on Ubuntu</title>
+  <link href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html" />
+  <id>http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Well, it's a quite a late response, but it ought to be. After Ubuntu has shoved Mono down our throats for quite a while, they have decided to retreat from it.
+    <a href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>A quick tip - How to pause ubuntu upgrade tool</title>
+  <link href="http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html" />
+  <id>http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I've been upgrading my ubuntu laptop since ubuntu 6.06, even though sometimes I break my installation and need to do a clean install... Never the less I think ubuntu's upgrade tool has no second in the linux world. It is mostly a reliable tool and usually does the job. But there is one thing that always annoyed me about it. Once you get it running you can't stop it, and if you stop it cleans all the packages downloaded. It's really annoying because when it runs it completely over takes the net usage and other net applications.
+    <a href="http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

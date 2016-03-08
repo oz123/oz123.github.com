@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:11Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>Command Line Posting to Blogger</title>
+  <link href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
+  <id>http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
+    <a href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Stripping EOL from output in BASH</title>
+  <link href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Sometimes you have to text process the output of many chained commands, e.g. bash command to list all dev package in Debian. The results are usually outputted with "\\n"
+    <a href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>How not to use the kill Command on Linux</title>
+  <link href="http://oz123.github.com/writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html" />
+  <id>http://oz123.github.com/writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    A few months ago I installed Debian GNU/Linux on an old Sony Vaio Laptop of a friend of mine. The laptop is really nice with slim case and a 15" screen. She was really happy she could write her thesis on this nice machine again because Windows XP could not function properly on this machine. Installation was a breeze and  the non technical friend of mine was working on it happily for 4 months now.
+    <a href="http://oz123.github.com/writings/2009-11-22-how-not-to-use-kill-command-on-linux/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>KDE and layout switch</title>
+  <link href="http://oz123.github.com/writings/2008-06-08-kde-and-layout-switch/index.html" />
+  <id>http://oz123.github.com/writings/2008-06-08-kde-and-layout-switch/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Unfortunately many DE's suck for that reason: Developers' just ignore users. Personally, I like KDE, but I don't use it. Never. Why ? Because KDE developers will not fix the bug which prevents normal keyboard layout change
+    <a href="http://oz123.github.com/writings/2008-06-08-kde-and-layout-switch/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>A purpose of a linux command</title>
+  <link href="http://oz123.github.com/writings/2008-05-22-a-purpose-of-linux-command-reminder-for-a-forgotten-useful-tool/index.html" />
+  <id>http://oz123.github.com/writings/2008-05-22-a-purpose-of-linux-command-reminder-for-a-forgotten-useful-tool/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Ever happened to you that you needed to do something on your linux box and didn't know how ? Sure it did!
+    <a href="http://oz123.github.com/writings/2008-05-22-a-purpose-of-linux-command-reminder-for-a-forgotten-useful-tool/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>
