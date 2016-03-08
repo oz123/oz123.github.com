@@ -1,5 +1,5 @@
 ---
-title: about
+title: About this blog
 public: yes
 kind: page
 template: about.html
