@@ -4,9 +4,8 @@ author: Oz Nahum Tiram
 published: 2014-10-24
 tags: salt, linux, sudo
 public: yes
-chronological: yes
 kind: writing
-summary: Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts.
+summary: Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
 ---
 
 Salt is a configuration management system and a remote execution framework written
