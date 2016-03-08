@@ -16,9 +16,9 @@ He is also a part of a software development team running all the latest buzz
 words like DevOps, Continuous Deploment and Continous Integration.
 When he is not doing computer related stuff, he likes cycling and rock climbing.
 
-You can find the Curriculum Vitea of Oz in PDF format here.
-Internet Safety aware people
-You can find my PGP Key Here
+You can find the Curriculum Vitea of Oz in PDF format
+[here](http://oz123.github.io/media/uploads/Oz_Tiram_Resume_Aug_2015.pdf).
+Internet Safety aware people You can find my PGP Key Here
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
