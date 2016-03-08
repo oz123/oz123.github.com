@@ -18,6 +18,7 @@ When he is not doing computer related stuff, he likes cycling and rock climbing.
 
 You can find the Curriculum Vitea of Oz in PDF format
 [here](http://oz123.github.io/media/uploads/Oz_Tiram_Resume_Aug_2015.pdf).
+
 Internet Safety aware people You can find my PGP Key Here
 
 ```
