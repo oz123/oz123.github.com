@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2016-03-08T21:25:12Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>NoSQLite - SQLite, support for JSON field</title>
+  <link href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html" />
+  <id>http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support.
+    <a href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>AJAX with bottle.py</title>
+  <link href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
+  <id>http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    A working example of AJAX with JQuery and Bottle
+    <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Introducing psutil in Munich Python Users</title>
+  <link href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html" />
+  <id>http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
+    <a href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Dictionaries in bash scripts - it is possible</title>
+  <link href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html" />
+  <id>http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Apparently, bash offeres assosiative arrays, similar to Python dictionaries
+    <a href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Farewell Vundle, enter vim-plug</title>
+  <link href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html" />
+  <id>http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Vundle, the vim pluging manager used me for almost 4 faitfull years. But I recently discovered vim-plug
+    <a href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>New version of Pwman3 released</title>
+  <link href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
+  <id>http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
+    <a href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Simple Multiprocessing Task Queue in Python</title>
+  <link href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
+  <id>http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
+    <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Farewell PyCharm! Going VIM again</title>
+  <link href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
+    <a href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Poor man's Read-The-Docs</title>
+  <link href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
+    <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>salt quick tip - changing passwords on multiple clusters</title>
+  <link href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
+  <id>http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
+    <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>
