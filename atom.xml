@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-08T21:42:28Z</updated>
+<updated>2016-03-10T22:09:34Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Back again to writing</title>
+  <link href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html" />
+  <id>http://oz123.github.com/writings/2016-03-10-Back-again/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This blog is back from a long pause
+    <a href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>NoSQLite - SQLite, support for JSON field</title>
   <link href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
     <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>salt quick tip - changing passwords on multiple clusters</title>
-  <link href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
-  <id>http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
-    <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
