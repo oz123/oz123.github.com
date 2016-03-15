@@ -5,30 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-08T21:25:10Z</updated>
+<updated>2016-03-15T20:50:19Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>The best latex editor Kile 2.1 Released!</title>
-  <link href="http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html" />
-  <id>http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html</id>
+  <title>Floats wider than text in Latex</title>
+  <link href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html" />
+  <id>http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    This should be really bigger news! Although I don't use KDE at all, Kile is the best editor for Latex, I have tried.
-    <a href="http://oz123.github.com/writings/2011-06-21-best-latex-editor-kile-21-released/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Good Bye Latex ? Hello WeasyPrint</title>
-  <link href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html" />
-  <id>http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex, is my main way of producing reports and scientific works. Usually these are formed as PDF before being actually printed. Latex is AWESOME.
-    <a href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html">continue reading...</a>
+    Latex floats  by default have the text width or smaller. Took me some time to figure out how to make a float wider than the text width itself.
+    <a href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -5,19 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-10T22:09:33Z</updated>
+<updated>2016-03-15T20:50:17Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Back again to writing</title>
-  <link href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html" />
-  <id>http://oz123.github.com/writings/2016-03-10-Back-again/index.html</id>
+  <title>Command Line Posting to Blogger</title>
+  <link href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
+  <id>http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    This blog is back from a long pause
-    <a href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html">continue reading...</a>
+    Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
+    <a href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

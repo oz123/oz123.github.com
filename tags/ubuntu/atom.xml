@@ -5,30 +5,74 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-08T21:25:08Z</updated>
+<updated>2016-03-15T20:50:15Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>No more MONO on Ubuntu</title>
-  <link href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html" />
-  <id>http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html</id>
+  <title>Ubuntu 12.04 Intrusive OS</title>
+  <link href="http://oz123.github.com/writings/2012-05-08-ubuntu-1204-intrusive-os/index.html" />
+  <id>http://oz123.github.com/writings/2012-05-08-ubuntu-1204-intrusive-os/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Well, it's a quite a late response, but it ought to be. After Ubuntu has shoved Mono down our throats for quite a while, they have decided to retreat from it.
-    <a href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html">continue reading...</a>
+    I installed Ubuntu 12.04 on two laptops by now. and I must rant. Ubuntu developers are assuming two many things about me.
+    <a href="http://oz123.github.com/writings/2012-05-08-ubuntu-1204-intrusive-os/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>A quick tip - How to pause ubuntu upgrade tool</title>
-  <link href="http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html" />
-  <id>http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html</id>
+  <title>GCC 4.7 Breaks 169 Packages in Debian or my weired hobby</title>
+  <link href="http://oz123.github.com/writings/2012-05-07-gcc-47-breaks-169-packages-in-debian-my/index.html" />
+  <id>http://oz123.github.com/writings/2012-05-07-gcc-47-breaks-169-packages-in-debian-my/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    I've been upgrading my ubuntu laptop since ubuntu 6.06, even though sometimes I break my installation and need to do a clean install... Never the less I think ubuntu's upgrade tool has no second in the linux world. It is mostly a reliable tool and usually does the job. But there is one thing that always annoyed me about it. Once you get it running you can't stop it, and if you stop it cleans all the packages downloaded. It's really annoying because when it runs it completely over takes the net usage and other net applications.
-    <a href="http://oz123.github.com/writings/2008-07-09-a-quick-tip-how-to-pause-ubuntu-upgrade-tool/index.html">continue reading...</a>
+    I have a weired hobby, checking very frequently the[Release-Critical Bugs](http://bugs.debian.org/release-critical/) in Debian.
+    <a href="http://oz123.github.com/writings/2012-05-07-gcc-47-breaks-169-packages-in-debian-my/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Ubuntu Rant! You need Ubuntu to install Ubuntu</title>
+  <link href="http://oz123.github.com/writings/2012-05-03-ubuntu-rant-you-need-ubuntu-to-install/index.html" />
+  <id>http://oz123.github.com/writings/2012-05-03-ubuntu-rant-you-need-ubuntu-to-install/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Ubuntu "engineers" are probably dumber than Enterprise Linux OS' engineers
+    <a href="http://oz123.github.com/writings/2012-05-03-ubuntu-rant-you-need-ubuntu-to-install/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>More UNITY Crap</title>
+  <link href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Take a loot at this [post](http://ubuntuguide.net/how-to-run-multiple-copies-of-program-from-unity-launcher). You need a "how to" to run multiple copies of the same program.
+    <a href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Wow, long time ago</title>
+  <link href="http://oz123.github.com/writings/2011-02-18-wow-long-time-ago/index.html" />
+  <id>http://oz123.github.com/writings/2011-02-18-wow-long-time-ago/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Wow, Long time ago ... My last post ages ago was a rant about Uhbuntu
+    <a href="http://oz123.github.com/writings/2011-02-18-wow-long-time-ago/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Ubuntu Gusty is Bloatware</title>
+  <link href="http://oz123.github.com/writings/2007-11-06-ubuntu-gutsy-is-bloatware/index.html" />
+  <id>http://oz123.github.com/writings/2007-11-06-ubuntu-gutsy-is-bloatware/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Ubuntu Gutsy is Bloatware. The latest ubuntu distro is terrible, comparing with the previous one, Feisty Fawn. Cases like this make me think about the 6 months release cycle, and really appreciate my Debian stable, which is old, but working. So why am I saying Ubuntu Gutsy is terrible ?
+    <a href="http://oz123.github.com/writings/2007-11-06-ubuntu-gutsy-is-bloatware/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

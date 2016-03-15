@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Python's regex is not always the best option </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; March 15, 2016</div>
+	<h1>Python's regex is not always the best option</h1>
+	<p>A few years ago I worked for a small startup with with a few developers who knew
+regular expressions very well, but didn't know Python's way of doing things. We
+had no API, and our way of exchanging data was parsing files uploaded to our
+FTP server by our partners (sigh ... I know it's ugly, but hey I didn't design it).
+The some of the files where CSV or XML files with string as dates. The quality of the
+files was not really good, which means that the dates where not consistent. Dates
+could have been written as:</p>
+
+<pre><code>2016-14-03
+16-14-03
+2016.14.03
+</code></pre>
+
+<p>We had no way of telling, and there was only one parser for all files. The code
+of the parser contained a function called <code>parseDateString</code> which was responsible
+to convert a string to a python <code>datetime</code> object. The function was pretty long,
+and had to be extended every time a new format was encountered, because it broke
+the code which cause the ETL to stop. So how did this function look, and what
+does it have to do with regex? Here is a small demo extract, not the real code,
+but close enough to demonstrate the case:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parseDateString</span><span class="p">(</span><span class="n">date_string</span><span class="p">):</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{4}-\d{2}-\d{2}&#39;</span><span class="p">):</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{2}-\d{2}-\d{2}&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{4}\.\d{2}\.\d{2}&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%y.%m.</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="o">....</span><span class="p">):</span>
+        <span class="o">...</span>
+
+        <span class="k">return</span> <span class="n">d</span>
+</code></pre></div>
+
+<p>So, now if we got a data file with a new date format, for example <code>2015/01/31</code>
+the above code would have returned <code>None</code>, and somewhere along the way an exception was
+triggered, the ETL process was stopped, and somebody would have to fix the code by adding
+another regex match.</p>
+
+<p>While this worked, this method have become something like 200
+lines of code with the time, which needed to be modified every time this code broke.
+This was expensive, because it was running slow. And even if
+we used <code>re.compile</code> it was still expensive in terms of developer time spent on
+that task. As I was the junior in the company, I had to deal with this task very
+often, because it was a repetitive task that no one liked doing (I suggested
+refactoring this part, but since I was junior and we had no tests, I could no prove
+my case, but that is another story).</p>
+
+<p>So how this can be written without regex,using a Pythonic way without making this
+a Programmer task? Here is just was example:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parseDateString</span><span class="p">(</span><span class="n">date_string</span><span class="p">):</span>
+
+    <span class="n">formats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y.%m.</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,]</span>  <span class="c1"># add more as you like</span>
+
+    <span class="k">for</span> <span class="n">format_</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+           <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="n">format_</span><span class="p">)</span>
+           <span class="k">return</span> <span class="n">d</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+           <span class="k">continue</span>
+</code></pre></div>
+
+<p>Now formats can be easily read from a configuration file, or a Django admin interface,
+which can be done by other people then developers (who hate repetitive tasks...).
+Also there is no regex involved. The original function with regex, was written
+the way it was written because the original developer was really good at them,
+and tended to use them everywhere, even when not needed.</p>
+
+<p>Here is a second example. This time, I am the one responsible for this overwhelmingly
+complex regex. Luckily for everyone involved, this never really got
+to production, but I kept the code as a future reference for a bad code. The task
+at hand was to find the average response time of a web server serving API requests.
+The log file contained entries like the following:</p>
+
+<pre><code>INFO  @ 24 Oct 2013 07:59:35,770 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='1ms'
+INFO  @ 24 Oct 2013 07:59:45,770 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='1ms'
+INFO  @ 24 Oct 2013 07:59:55,771 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='2ms'
+INFO  @ 24 Oct 2013 07:37:37,661 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/v2/foo/e0cf059a-5080-40a5-aaf1-67eb866aa48f/secretKey' was answered with statusCode='400' took t='211ms'
+INFO  @ 24 Oct 2013 07:59:55,771 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='2ms'
+INFO  @ 24 Oct 2013 07:59:55,771 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='2ms'
+INFO  @ 24 Oct 2013 07:36:15,743 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/transactions/async/cc7089aa5a9a54a116fd9593/0e76e80992b416f520d0b' was answered with statusCode='200' took t='294ms'
+INFO  @ 24 Oct 2013 07:36:15,786 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='4ms'
+INFO  @ 24 Oct 2013 07:36:25,785 @ io.company.api.web.interceptor.ExecuteTimeInterceptor - Request to url='/status' was answered with statusCode='200' took t='2ms'
+</code></pre>
+
+<p>The task at hand was to find the average response time of each of the URLs served.
+The way I started solving this problem was too sophisticated. I tried hammering
+it late at night with regex. I thought it would be useful to match the url with
+a regex group. The difficulty laid in the fact that some of the urls contained trailing
+UUIDs and different <code>secretKey</code> strings which had to be grouped together.</p>
+
+<p>Here is how I started, wasted an expensive half an hour building a regex:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;.+ - Request to url=&#39;/(?P&lt;URL&gt;.*/)(?P&lt;UUID1&gt;([a-f0-9]{0,32})|&quot;</span>
+         <span class="s2">&quot;([0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}))/(?P&lt;UUID2&gt;[0-9a-f]&quot;</span>
+         <span class="s2">&quot;{32}|([0-9a-f]{8}-[0-9a-f]{4}-{3}[0-9a-f]{12})|.*).*t=&quot;</span>
+         <span class="s2">&quot;&#39;(?P&lt;time&gt;\d+)ms&#39;$&quot;</span><span class="p">)</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;requests.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The above code was spitting out dictionaries which I thought I could group:</p>
+
+<pre><code>{'H2': '', 'H': None, 'U2': None, 'S': None, 'U': 'e0cf059a-5080-40a5-aaf1-67eb866aa48f', 'S2': 'secretKey'}
+{'H2': '1a6173566e18097992b416f520dc00b0', 'H': '0e617c6e180a497992b416f520dc00b0', 'U2': None, 'S': None, 'U': None, 'S2': None}
+{'H2': '', 'H': '0e617c6e180a497992b416f520dc00b0', 'U2': None, 'S': None, 'U': None, 'S2': 'secretKey'}
+{'H2': None, 'H': None, 'U2': '1bcf059a-5080-40a5-aaf1-67eb866aa48f', 'S': None, 'U': 'e0cf059a-5080-40a5-aaf1-67eb866aa48f', 'S2': None}
+</code></pre>
+
+<p>However, I created a monster, which was not always working, and took much
+time to care for. Honestly, speaking, reading that regex 6 months later, I don't
+even understand it quickly. I think other developers who will read this regex, will not
+cheer if they had to expand it. After a few tries of fixing that code regex, I wrote
+a the following comment in my code:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="sd">&quot;&quot;&quot;stop using REGEX you fuck&quot;&quot;&quot;</span>
+</code></pre></div>
+
+<p>I deleted the regex and made <code>git commit</code>, so I will have a future reference.
+Now, I started again with a clean slate intending to use regex as little as possible,
+and if possible use built-it methods for strings. Here is what I came with:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;requests.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+
+<span class="c1"># dummy dict with url, n calls and total time</span>
+<span class="n">url_table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span>  <span class="p">{</span><span class="s1">&#39;calls&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="s1">&#39;total_time&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+
+   <span class="n">url_path</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+   <span class="n">url_path</span> <span class="o">=</span> <span class="n">url_path</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+   <span class="k">if</span> <span class="n">url_path</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+       <span class="n">url_path</span> <span class="o">=</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+   <span class="k">if</span> <span class="n">url_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url_table</span><span class="p">:</span>
+      <span class="n">url_table</span><span class="p">[</span><span class="n">url_path</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;calls&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;total_time&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])}</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">calls</span> <span class="o">=</span> <span class="n">url_table</span><span class="p">[</span><span class="n">url_path</span><span class="p">][</span><span class="s1">&#39;calls&#39;</span><span class="p">]</span>
+      <span class="n">total_time</span> <span class="o">=</span> <span class="n">url_table</span><span class="p">[</span><span class="n">url_path</span><span class="p">][</span><span class="s1">&#39;total_time&#39;</span><span class="p">]</span>
+      <span class="n">url_table</span><span class="p">[</span><span class="n">url_path</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;calls&#39;</span><span class="p">:</span> <span class="n">calls</span><span class="o">+</span><span class="mi">1</span> <span class="p">,</span>
+                             <span class="s1">&#39;total_time&#39;</span><span class="p">:</span> <span class="n">total_time</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])}</span>
+
+<span class="n">url_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span>
+<span class="c1"># print header</span>
+<span class="k">print</span> <span class="s2">&quot;URL</span><span class="se">\t</span><span class="s2"> |# of calls </span><span class="se">\t</span><span class="s2">| avg. response time (ms)&quot;</span>
+<span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">url_table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&quot;{}</span><span class="se">\t</span><span class="s2">|{}</span><span class="se">\t</span><span class="s2">|{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;calls&#39;</span><span class="p">],</span>
+            <span class="n">values</span><span class="p">[</span><span class="s1">&#39;total_time&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;calls&#39;</span><span class="p">])</span>
+
+<span class="c1"># ouput:</span>
+
+<span class="c1"># URL    |# of calls    | avg. response time (ms)</span>
+<span class="c1"># status    |210    |163</span>
+<span class="c1"># transactions  |3  |395</span>
+<span class="c1"># api-docs/v2/merchants |2  |416</span>
+<span class="c1"># status/details    |28 |852</span>
+<span class="c1"># api-docs  |2  |173</span>
+<span class="c1"># v2/merchants  |3  |74</span>
+<span class="c1"># api-docs/v2/transactions  |2  |331</span>
+<span class="c1"># transactions/async    |5  |2567</span>
+<span class="c1"># api-docs/v2/events    |2  |390</span>
+</code></pre></div>
+
+<p>It is not the most elegant code, but it's <strong>way more</strong> readable compared to the
+monstrous regex I started with.</p>
+
+<p>My conclusion is that sometimes using Python's string methods is enough, and
+it is more readable. You have <code>spilt</code>, <code>count</code>, strip, <code>lstrip</code>, <code>endswith</code> and
+<code>startswith</code> and more. The last two methods I mentioned accept a string or a
+tuple of strings to check:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;elepahant&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s1">&#39;elep&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">))</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;elep&#39;</span><span class="p">,</span> <span class="s1">&#39;nt&#39;</span><span class="p">))</span>
+<span class="bp">True</span>
+</code></pre></div>
+
+<p>So before you go hacking yourself a nice regex, check the STL, maybe the code
+you need is already implemented with a nice API. Don't write your own
+<code>pareDateString</code> as shown above. Python is there to help you work with text in
+an elegant way, without much need to use regex.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2016-03-14-Regex/index.html&title=Python's regex is not always the best option&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2016-03-14-Regex/index.html&title=Python's regex is not always the best option" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2016-03-14-Regex/index.html" title="Python's regex is not always the best option" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2016-03-14-Regex/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2016-03-14-Regex/index.html&body=Python's regex is not always the best option" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>
