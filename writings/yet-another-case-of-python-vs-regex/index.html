@@ -165,6 +165,27 @@ expressions:</p>
 frozenset(['\xc3\x84lephant', '\xc3\x9c\xc3\xb6\xc3\xb6'])
 </code></pre>
 
+<p>Another alternative is to mark your string as unicode literals or use
+a future import:</p>
+
+<pre><code>$ python
+Python 2.7.11 (default, Feb 10 2016, 07:38:46)
+[GCC 4.9.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; from __future__ import unicode_literals
+&gt;&gt;&gt; 'Üdo'[0].isupper()
+True
+
+$ python
+Python 2.7.11 (default, Feb 10 2016, 07:38:46)
+[GCC 4.9.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 'Üdo'[0].isupper()
+False
+&gt;&gt;&gt; u'Üdo'[0].isupper()
+True
+</code></pre>
+
 <p>So with that, you see there is need to rush and always use regular expressions
 when programming with Python. Sometimes, there unavoidable, but in many years
 I program with Python, I have rarely seen such cases. Let me finish with a
