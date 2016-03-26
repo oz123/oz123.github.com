@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-15T21:16:29Z</updated>
+<updated>2016-03-26T18:59:29Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Yet another case of Python vs. Regular Expressions</title>
+  <link href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html" />
+  <id>http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Regular Expressions are really awesome, and If you read the last post you might got the wrong impression I am totally against their use. I love using regular expressions, but sometimes, knowing Python is more than enough.
+    <a href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Python's regex is not always the best option</title>
   <link href="http://oz123.github.com/writings/2016-03-14-Regex/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
     <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Farewell PyCharm! Going VIM again</title>
-  <link href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
-  <id>http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
-    <a href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
