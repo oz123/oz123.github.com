@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-26T21:31:58Z</updated>
+<updated>2016-03-29T22:51:39Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Morse fun with Python</title>
+  <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
+  <id>http://oz123.github.com/writings/morse-fun-with-python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Creating morse code or translating it to ASCII text is fun, even more fun is making your laptop beep morse code. Here how you can do it with Python.
+    <a href="http://oz123.github.com/writings/morse-fun-with-python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Yet another case of Python vs. Regular Expressions</title>
   <link href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. Part 2 then continued and expanded this tutorial with GTK ListView to create the song list. This part will add some polish and varnish to the UI as well as some more functionality...
     <a href="http://oz123.github.com/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>PyGTK CD Ripper Tutorial - Part 2</title>
-  <link href="http://oz123.github.com/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html" />
-  <id>http://oz123.github.com/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. This part will expand this GUI and will add some more functionality ...
-    <a href="http://oz123.github.com/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

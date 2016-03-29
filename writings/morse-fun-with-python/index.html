@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Morse fun with Python </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; March 29, 2016</div>
+	<h1>Morse fun with Python</h1>
+	<p>Python is a fun programming language, and making real stuff can be done
+with really quickly. This last weekend, I wanted to play a little bit with
+making Python speak. Well not really speak, but make sounds.</p>
+
+<p>Hopefully, you know what <a href="https://en.wikipedia.org/wiki/Morse_code">Morse Code</a> is. Truth is, that you will find
+a lot of Morse Code translations examples with Python, because it's a loved
+programming example.</p>
+
+<p>But none of the examples I saw had whistles and bells, and I wanted to
+learn how to use wave files in Python. With a little help from Andrew
+    Ippoliti Blog post about [wave files in Python], and with the help of
+    <a href="http://larsimmisch.github.io/pyalsaaudio/pyalsaaudio.html">pyalsaaudio</a> I  made the following program:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">wave</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+
+<span class="n">morsetab</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span>              <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;-...&#39;</span><span class="p">,</span>            <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;-...&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-.&#39;</span><span class="p">,</span>            <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;-..&#39;</span><span class="p">,</span>             <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;-..&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>               <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;..-.&#39;</span><span class="p">,</span>            <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;..-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;--.&#39;</span><span class="p">,</span>             <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;--.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;....&#39;</span><span class="p">,</span>            <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;....&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span>              <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;J&#39;</span><span class="p">:</span> <span class="s1">&#39;.---&#39;</span><span class="p">,</span>            <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="s1">&#39;.---&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-&#39;</span><span class="p">,</span>             <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;.-..&#39;</span><span class="p">,</span>            <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="s1">&#39;.-..&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span>              <span class="s1">&#39;m&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span>              <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;---&#39;</span><span class="p">,</span>             <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;---&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;.--.&#39;</span><span class="p">,</span>            <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;.--.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;--.-&#39;</span><span class="p">,</span>            <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;--.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;.-.&#39;</span><span class="p">,</span>             <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;.-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>             <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span>               <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;U&#39;</span><span class="p">:</span> <span class="s1">&#39;..-&#39;</span><span class="p">,</span>             <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="s1">&#39;..-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="s1">&#39;...-&#39;</span><span class="p">,</span>            <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="s1">&#39;...-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="s1">&#39;.--&#39;</span><span class="p">,</span>             <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;.--&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="s1">&#39;-..-&#39;</span><span class="p">,</span>            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;-..-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="s1">&#39;-.--&#39;</span><span class="p">,</span>            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;-.--&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="s1">&#39;--..&#39;</span><span class="p">,</span>            <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="s1">&#39;--..&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="s1">&#39;-----&#39;</span><span class="p">,</span>           <span class="s1">&#39;,&#39;</span><span class="p">:</span> <span class="s1">&#39;--..--&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;.----&#39;</span><span class="p">,</span>           <span class="s1">&#39;.&#39;</span><span class="p">:</span> <span class="s1">&#39;.-.-.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;..---&#39;</span><span class="p">,</span>           <span class="s1">&#39;?&#39;</span><span class="p">:</span> <span class="s1">&#39;..--..&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;...--&#39;</span><span class="p">,</span>           <span class="s1">&#39;;&#39;</span><span class="p">:</span> <span class="s1">&#39;-.-.-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;....-&#39;</span><span class="p">,</span>           <span class="s1">&#39;:&#39;</span><span class="p">:</span> <span class="s1">&#39;---...&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;.....&#39;</span><span class="p">,</span>           <span class="s2">&quot;&#39;&quot;</span><span class="p">:</span> <span class="s1">&#39;.----.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;-....&#39;</span><span class="p">,</span>           <span class="s1">&#39;-&#39;</span><span class="p">:</span> <span class="s1">&#39;-....-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;--...&#39;</span><span class="p">,</span>           <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="s1">&#39;-..-.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;---..&#39;</span><span class="p">,</span>           <span class="s1">&#39;(&#39;</span><span class="p">:</span> <span class="s1">&#39;-.--.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;----.&#39;</span><span class="p">,</span>           <span class="s1">&#39;)&#39;</span><span class="p">:</span> <span class="s1">&#39;-.--.-&#39;</span><span class="p">,</span>
+            <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>               <span class="s1">&#39;_&#39;</span><span class="p">:</span> <span class="s1">&#39;..--.-&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+<span class="n">reverse_morsetab</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">morsetab</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+
+<span class="k">def</span> <span class="nf">write_signal</span><span class="p">(</span><span class="n">wavef</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mf">44100.0</span><span class="p">,</span>
+                 <span class="n">frequency</span><span class="o">=</span><span class="mf">1240.0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        rate = 44100.0 # Sample rate in Hertz</span>
+<span class="sd">        duration = 0.1       # seconds</span>
+<span class="sd">        frequency = 1240.0    # hertz</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">rate</span> <span class="o">*</span> <span class="n">duration</span><span class="p">)):</span>
+                <span class="c1"># max volume 32767.0</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">volume</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">frequency</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">rate</span><span class="p">)))</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;h&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                <span class="n">wavef</span><span class="o">.</span><span class="n">writeframesraw</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">text_to_morse</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">seperator</span><span class="o">=</span><span class="s2">&quot; / &quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;translate a string to morse code in dot dash form&quot;&quot;&quot;</span>
+        <span class="n">morse</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+                <span class="n">morse_word</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+                        <span class="n">morse_word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">morsetab</span><span class="p">[</span><span class="n">w</span><span class="p">])</span>
+                <span class="n">morse</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">morse_word</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">seperator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">morse</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">morse_to_wav</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">file_</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="n">char2signal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;.&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">file_</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">file_</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">(</span><span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
+
+    <span class="n">wav</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">wav</span><span class="o">.</span><span class="n">setnchannels</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># mono</span>
+    <span class="n">wav</span><span class="o">.</span><span class="n">setsampwidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mf">44100.0</span>
+    <span class="n">wav</span><span class="o">.</span><span class="n">setframerate</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">write_signal</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">char2signal</span><span class="p">[</span><span class="n">char</span><span class="p">],</span> <span class="n">volume</span><span class="o">=</span><span class="mf">32767.0</span><span class="p">)</span>
+        <span class="n">write_signal</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">wav</span><span class="o">.</span><span class="n">writeframes</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">wav</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">file_</span>
+
+
+<span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">card</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">alsaaudio</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need to install pyalsaaudio&quot;</span><span class="p">)</span>
+
+    <span class="n">device</span> <span class="o">=</span> <span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM</span><span class="p">(</span><span class="n">card</span><span class="o">=</span><span class="n">card</span><span class="p">)</span>
+
+    <span class="c1"># Set attributes</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+    <span class="n">device</span><span class="o">.</span><span class="n">setchannels</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getnchannels</span><span class="p">())</span>
+    <span class="n">device</span><span class="o">.</span><span class="n">setrate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getframerate</span><span class="p">())</span>
+
+    <span class="c1"># 8bit is unsigned in wav files</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_U8</span><span class="p">)</span>
+    <span class="c1"># Otherwise we assume signed data, little endian</span>
+    <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_S16_LE</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_S24_LE</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_S32_LE</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unsupported format&#39;</span><span class="p">)</span>
+
+    <span class="n">device</span><span class="o">.</span><span class="n">setperiodsize</span><span class="p">(</span><span class="mi">320</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readframes</span><span class="p">(</span><span class="mi">320</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">data</span><span class="p">:</span>
+        <span class="c1"># Read data from stdin</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readframes</span><span class="p">(</span><span class="mi">320</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">morse_to_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">seperator</span><span class="o">=</span><span class="s2">&quot; / &quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;translate dash dot morse code to ascii text&quot;&quot;&quot;</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">seperator</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="n">clear</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">chars</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+                    <span class="n">clear</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reverse_morsetab</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+            <span class="n">translated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clear</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">translated</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">prog</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;a simple morse generator and translator&#39;</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">HelpFormatter</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Specify the output format: text or sound&quot;</span><span class="p">,</span>
+                        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;sound&#39;</span><span class="p">])</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Specify the file to write&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span>
+                            <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">REMAINDER</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">o</span> <span class="o">==</span> <span class="s1">&#39;sound&#39;</span><span class="p">:</span>
+        <span class="n">morse</span> <span class="o">=</span> <span class="n">text_to_morse</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">morse_to_wav</span><span class="p">(</span><span class="n">morse</span><span class="p">,</span> <span class="n">file_</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">f</span><span class="p">:</span>
+            <span class="n">play</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;[a-z]+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+            <span class="n">conv</span> <span class="o">=</span> <span class="n">text_to_morse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">conv</span> <span class="o">=</span> <span class="n">morse_to_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">f</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">conv</span><span class="p">))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">morse</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Using the program is a fun:</p>
+
+<pre><code>$ python morse_translator.py "hello world"
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+</code></pre>
+
+<p>Or the other way around:</p>
+
+<pre><code> $ python morse_translator.py .... . .-.. .-.. --- / .-- --- .-. .-.. -..
+hello world
+</code></pre>
+
+<p>And the real fun is:</p>
+
+<pre><code>$ python morse_translator.py -o sound hello world
+</code></pre>
+
+<p>This will beep the morse code to your speakers! And if you want to save the file:</p>
+
+<pre><code>$ python morse_translator.py -o sound -f hello.wav hello world
+</code></pre>
+
+<p>That was it, weekend fun with Python and Morse code. You can download the
+complete code <a href="http://oz123.github.com/media/uploads/morse_translator.py">here</a>.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>Python</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/morse-fun-with-python/index.html&title=Morse fun with Python&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/morse-fun-with-python/index.html&title=Morse fun with Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/morse-fun-with-python/index.html" title="Morse fun with Python" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/morse-fun-with-python/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/morse-fun-with-python/index.html&body=Morse fun with Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>
