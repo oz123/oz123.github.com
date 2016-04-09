@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Psutils and friends</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      
+      body {
+        font-family: 'Droid Serif';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+
+
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+	
+      img[alt="Glances"] { 
+        max-width:  600px; 
+        display: block;
+      }
+
+
+      ul li { padding: 5px 0px; }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+         color: #000;
+      }
+     .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .lblue {
+        background: #A9BFD4;
+      }
+    </style>
+  </head>
+  <body>
+  <textarea id="source">
+
+class: center, middle, lblue
+
+# psutils and friends
+## My Favorite Python tool 
+### 14.07.2015, Oz Tiram, Python Users Munich
+
+---
+class: lblue
+#  What is it?
+
+  * psutil is a crosss platfrom library for retrieving information on running processes and system utilization 
+  * It implements many functionalities offered by command line tools such as: `ps`, `top`, `lsof`, `netstat`, etc ... 
+
+---
+class: lblue
+# Why ?
+
+ * We still need to know stuff about systems
+ * `It works! On my laptop!`<sup>TM</sup>  (Dev's with Windows laptops)
+ * Replace tools like `ps`, `netstat` etc. where they are not available
+ * Use, don't parse!
+
+
+---
+class: lblue
+.left-column[
+  ## Example 
+  ### - With UNIX tools
+]
+
+.right-column[
+
+ * Get the number of hosts CPUs:
+
+```shell
+ $ cat /proc/cpuinfo 
+```
+]
+---
+class: lblue
+.left-column[
+  ## Example 
+  ### - With UNIX tools
+  ### - Parsing? 
+]
+.right-column[
+
+ * Get the number of hosts CPUs:
+
+```shell
+ $ cat /proc/cpuinfo 
+```
+
+ * Parse that output with Python?
+
+```python
+In [11]: f = open('/proc/cpuinfo')
+In [12]: [f for f in f.readlines() if 
+          f.startswith('processor')]
+Out[12]: 
+['processor\t: 0\n',
+ ...
+ 'processor\t: 6\n',
+ 'processor\t: 7\n']
+```
+]
+
+---
+class: lblue
+.left-column[
+  ## Example 
+  ### - With UNIX tools
+  ### - Parsing?
+  ### - Using!
+]
+.right-column[
+
+ * Get the number of hosts CPUs:
+
+```shell
+ $ cat /proc/cpuinfo 
+```
+
+ * Parse that output with Python?
+
+```python
+In [11]: f = open('/proc/cpuinfo')
+In [12]: [f for f in f.readlines() if 
+          f.startswith('processor')]
+Out[12]: 
+['processor\t: 0\n',
+ ...
+ 'processor\t: 6\n',
+ 'processor\t: 7\n']
+```
+ * With `psutil`
+
+```python
+>>> import psutil
+>>> psutil.cpu_count()
+8
+>>> psutil.cpu_count(logical=False)
+4
+```
+* <a>It works! On their laptop too!</a>
+]
+
+---
+class: lblue
+# Friends 
+
+ * [PSDash](https://github.com/Jahaja/psdash/)
+
+   ![Glances](https://github.com/Jahaja/psdash/blob/master/docs/screenshots/process_overview.png?raw=true)
+
+  A Flask based real time monitoring for a single or multiple hosts.
+
+---
+
+class: lblue
+# Friends 
+
+ * [Glances](https://github.com/nicolargo/glances)
+
+   ![Glances](https://raw.githubusercontent.com/nicolargo/glances/develop/docs/images/glances-responsive-webdesign.png)
+ 
+   Cureses based real time monitoring with an optional responsive web UI.
+---
+class: lblue
+# and more ...
+
+ * [Excellent documentaion for psutils](http://pythonhosted.org/psutil/)
+ * [ptop](http://github.com/black-perl/ptop/)
+
+   ![Glances](https://raw.githubusercontent.com/black-perl/ptop/master/docs/ptop2.png)
+ * [GRR Rapid Response: remote live forensics for incident response](https://github.com/google/grr)
+  
+
+</textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+	var slideshow = remark.create( 
+{
+  // Set the slideshow display ratio
+  // Default: '4:3'
+  // Alternatives: '16:9', ...
+  ratio: '4:3',
+
+  // Navigation options
+  navigation: {
+    // Enable or disable navigating using scroll
+    // Default: true
+    // Alternatives: false
+    scroll: true,
+
+    // Enable or disable navigation using touch
+    // Default: true
+    // Alternatives: false
+    touch: true,
+
+    // Enable or disable navigation using click
+    // Default: false
+    // Alternatives: true
+    click: false
+  },
+
+   //slideNumberFormat: function (current, total) {
+   //return '';
+   //},
+
+  // Enable or disable counting of incremental slides in the slide counting
+  countIncrementalSlides: true
+});
+    </script>
+  </body>
+</html>
