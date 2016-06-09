@@ -14,7 +14,7 @@ for gentoo. All ebuilds support building with traditional GTK+2 and the
 newer GTK+3.
 
 You should be able to use those ebuild with layman adding my overlay found
-at https://github.com/oz123/mate-de-gentoo.
+at the [following repository oz123/mate-de-gentoo](https://github.com/oz123/mate-de-gentoo).
 
 In the mean while some packages have been already updated to 1.14.1 by
 mate developers. These will come soon into the overlay. 
