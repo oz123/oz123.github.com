@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T13:45:31Z</updated>
+<updated>2016-06-09T13:45:34Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -18,17 +18,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I am announcing here the release of the ebuilds collection of mate-desktop for gentoo. All ebuilds support building with traditional GTK+2 and the newer GTK+3.
     <a href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
-  <link href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html" />
-  <id>http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
-    <a href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

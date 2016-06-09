@@ -5,74 +5,41 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-15T20:50:18Z</updated>
+<updated>2016-06-09T13:45:36Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>GNOME Fork revisited</title>
-  <link href="http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html" />
-  <id>http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html</id>
+  <title>GNOME Fork is dead</title>
+  <link href="http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Since I posted in my blog about GNOME 2 fork, I have seen numerous hits.
-    <a href="http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html">continue reading...</a>
+    The [EXDE project](http://www.exde.org), which aimed to continue supporting gnome 2.X is dead. This is really a shame
+    <a href="http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Remove all GNOME from debian - a one line</title>
-  <link href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html</id>
+  <title>Quicktip - Setting keyboard layout in GNOME via CLI</title>
+  <link href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html" />
+  <id>http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    This one is not so easy to follow, but it works for me    ...
-    <a href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html">continue reading...</a>
+    Of course backups could do the job, but I find a clean install much cleaner and safer for my purposes.
+    <a href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Quicktip - make gedit more sane</title>
-  <link href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html" />
-  <id>http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html</id>
+  <title>The more I read on GNOME 3 I get more mad</title>
+  <link href="http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html" />
+  <id>http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Continuing the agile setup of GNOME desktop using gconftool-2. Here's a snippet to make tab width 4 spaces, insert spaces instead of tabs and enable automatic indentation:
-    <a href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Short news about the GNOME 2 fork</title>
-  <link href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html" />
-  <id>http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Well, I've been following the [Development of Mate DE](https://github.com/Perberos/Mate-Desktop-Environment) quite closely via github and it seems like the project is gaining momentum.
-    <a href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Better Apps in Linux</title>
-  <link href="http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html" />
-  <id>http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I don't know why, but I have the feeling that the rise of Ubuntu, does not bring Linux forward. I have read a few posts about it. And I think that the focus of Linux developers is starting to annoy me so much that I am thinking of ripping Linux off my Laptop and just installing \*BSD, although I'd have to twitch my nose, because I prefer GPL over BSD.
-    <a href="http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Network-manager still sucks !</title>
-  <link href="http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html" />
-  <id>http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I have been long complaining about the buggy network-manager included in GNOME. Today, I have (re)discovered I am still unable to use Network-Manager to connect to a WPA secured wirless
-    <a href="http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html">continue reading...</a>
+    The idea I need to learn X Programming Language (e.g. JavaScript) in order to customize my desktop is IMHO simply IDIOTIC! Although I love learning programming languages, and I am a programmer, I DON'T WANT to program my desktop. My desktop is not a problem I need to solve. It should just work.
+    <a href="http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
