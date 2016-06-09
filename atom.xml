@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-03-29T22:51:39Z</updated>
+<updated>2016-06-09T13:45:39Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Mate Desktop Environment 1.14 for Gentoo</title>
+  <link href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html" />
+  <id>http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I am announcing here the release of the ebuilds collection of mate-desktop for gentoo. All ebuilds support building with traditional GTK+2 and the newer GTK+3.
+    <a href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Morse fun with Python</title>
   <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Vundle, the vim pluging manager used me for almost 4 faitfull years. But I recently discovered vim-plug
     <a href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>New version of Pwman3 released</title>
-  <link href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
-  <id>http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
-    <a href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
