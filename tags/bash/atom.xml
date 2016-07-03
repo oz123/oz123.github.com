@@ -5,19 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T13:45:36Z</updated>
+<updated>2016-07-03T19:20:02Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Stripping EOL from output in BASH</title>
-  <link href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html</id>
+  <title>Poor man's Read-The-Docs</title>
+  <link href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Sometimes you have to text process the output of many chained commands, e.g. bash command to list all dev package in Debian. The results are usually outputted with "\\n"
-    <a href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html">continue reading...</a>
+    Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
+    <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

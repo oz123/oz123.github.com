@@ -5,74 +5,118 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T13:45:34Z</updated>
+<updated>2016-07-03T19:20:00Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Installing Oracle's JAVA on Debian</title>
-  <link href="http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html" />
-  <id>http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html</id>
+  <title>Enable UFS Write support under Debian</title>
+  <link href="http://oz123.github.com/writings/2012-11-26-enable-ufs-write-support-debian/index.html" />
+  <id>http://oz123.github.com/writings/2012-11-26-enable-ufs-write-support-debian/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    There are many solutions floating around to install Oracle's JAVA on Debian based systems. Most of them involve too many manual steps. Here is one that does not, and it simply works!
-    <a href="http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html">continue reading...</a>
+    A short memo on enabling UFS write support on Debian
+    <a href="http://oz123.github.com/writings/2012-11-26-enable-ufs-write-support-debian/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Quicktip - make gedit more sane</title>
-  <link href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html" />
-  <id>http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html</id>
+  <title>GNU vs Canon</title>
+  <link href="http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html" />
+  <id>http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Continuing the agile setup of GNOME desktop using gconftool-2. Here's a snippet to make tab width 4 spaces, insert spaces instead of tabs and enable automatic indentation:
-    <a href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html">continue reading...</a>
+    Linux does not exist in American conusmer market. At least not for Canon.
+    <a href="http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Floats wider than text in Latex</title>
-  <link href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html" />
-  <id>http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html</id>
+  <title>Turn your laptop to alarm clock</title>
+  <link href="http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex floats  by default have the text width or smaller. Took me some time to figure out how to make a float wider than the text width itself.
-    <a href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html">continue reading...</a>
+    I bumped into an article describing `rtcwake` [here](http://www.dedoimedo.com/computers/wake-cron.html), so I thought it will be cool to write a nice wrapper script around it.
+    <a href="http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Installing python-matplotlib from source in Debian</title>
-  <link href="http://oz123.github.com/writings/2010-09-15-installing-python-matplotlib-from-source-in-debian/index.html" />
-  <id>http://oz123.github.com/writings/2010-09-15-installing-python-matplotlib-from-source-in-debian/index.html</id>
+  <title>Remove all Development packages from Debian</title>
+  <link href="http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Hoora Debian ! I love how every past experience of developers brings something useful ! If you need to build python matplotlib from sources you need to install quite a lot dependencies. Luckily for me in Debian it's quite easy.
-    <a href="http://oz123.github.com/writings/2010-09-15-installing-python-matplotlib-from-source-in-debian/index.html">continue reading...</a>
+    Another cool one liner to remove all development packages to clean your Debian.
+    <a href="http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>My Story with linux part 2 - How I learned to love Debian</title>
-  <link href="http://oz123.github.com/writings/2008-10-09-my-story-with-linux-part-2-how-i-learned-to-love-debian/index.html" />
-  <id>http://oz123.github.com/writings/2008-10-09-my-story-with-linux-part-2-how-i-learned-to-love-debian/index.html</id>
+  <title>Remove all GNOME from debian - a one line</title>
+  <link href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    In the previous part of this long inventory post, I've finished with Debian Etch. After a year and a half of distro hoping, I've decided that I'm experienced enough to try the new Debian Etch.
-    <a href="http://oz123.github.com/writings/2008-10-09-my-story-with-linux-part-2-how-i-learned-to-love-debian/index.html">continue reading...</a>
+    This one is not so easy to follow, but it works for me    ...
+    <a href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>My story with Linux, Part 1</title>
-  <link href="http://oz123.github.com/writings/2008-08-17-my-story-with-linux-part-1/index.html" />
-  <id>http://oz123.github.com/writings/2008-08-17-my-story-with-linux-part-1/index.html</id>
+  <title>Running more than one linux distribution without rebooting</title>
+  <link href="http://oz123.github.com/writings/2011-03-31-running-more-than-one-linux/index.html" />
+  <id>http://oz123.github.com/writings/2011-03-31-running-more-than-one-linux/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    My story with Debian GNU\Linux is a true love story. At least for the time being. This post is dedicated to describe how I got "here". "Here" is my relationship with Debian on my laptop started
-    <a href="http://oz123.github.com/writings/2008-08-17-my-story-with-linux-part-1/index.html">continue reading...</a>
+    My laptop has reached Nirvana with Debian Squeeze, everything works out of the box, and I very happy with the stability of the system.
+    <a href="http://oz123.github.com/writings/2011-03-31-running-more-than-one-linux/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Saving Karo - making a 6 years old laptop alive again</title>
+  <link href="http://oz123.github.com/writings/2012-01-08-saving-karo-making-6-years-old-laptop/index.html" />
+  <id>http://oz123.github.com/writings/2012-01-08-saving-karo-making-6-years-old-laptop/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Karo is the second laptop I got, I bought in my second year of Uni, in 2005. Karo, diamond in Turkish, is an HP Compaq nx6110 business Laptop.
+    <a href="http://oz123.github.com/writings/2012-01-08-saving-karo-making-6-years-old-laptop/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>More GCONF Fun - Setting display backlight</title>
+  <link href="http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html" />
+  <id>http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    In my Clevo notebook all the Fn keys work, except the Brightness keys. So after search quite long, I have found that the only solution that really works for me is `xbacklight`
+    <a href="http://oz123.github.com/writings/2011-10-23-more-gconf-fun-setting-display/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Another crack in the Windows hagmony</title>
+  <link href="http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html" />
+  <id>http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    For about 4 years now there is a possibility to get a Netbook with Linux. Now, there are many of them coming with Android and Meego.
+    <a href="http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Using BluetoothSpeakers without Pulseaudio</title>
+  <link href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html" />
+  <id>http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    About 3 months ago I have purchased a Bluetooth Speakers set. I chose  the Creative Labs D200, which provide me with nice tunes compared to the prices.
+    <a href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

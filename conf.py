@@ -5,6 +5,8 @@ python code as a configuration language instead of choosing the
 ini, yaml, or what ever DSL for configuration.
 """
 
+import os
+
 # ARCHIVE SIZE
 # 0 Means that all the entries will be in the archive
 # 10 meas that all the entries except the last 10
@@ -18,7 +20,7 @@ CONFIG = {
     'http_port': 3030,
     'content_encoding': 'utf-8',
     'author': 'Oz Nahum Tiram',
-    'editor': 'editor',
+    'editor': os.getenv("EDITOR"),
     'ARCHIVE_SIZE': 10,
     'INDEX_SIZE': 10
     }

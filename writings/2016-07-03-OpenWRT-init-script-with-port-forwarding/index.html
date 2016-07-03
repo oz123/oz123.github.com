@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> OpenWRT SSH init script with port forwarding </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; July 03, 2016</div>
+	<h1>OpenWRT SSH init script with port forwarding</h1>
+	<p>OpenWRT uses it's own init system called procd, which does also process supervision, and is a nice alternative to systemd.
+Here how to create a permanent connection from your OpenWRT router to your publicly available server.</p>
+
+<p>First, OpenWRT isn't using OpenBSD's SSH, rather a lightweight alternative called dropbear. It's keys aren't ssh keys. You will
+need to create a dropbear key and add its public signature to your <code>authorized_keys</code> file in your public server:</p>
+
+<pre><code>root@OpenWRT # dropbearkey -t rsa -f /root/.ssh/id_dropbear
+</code></pre>
+
+<p>Then, extract the public key with:</p>
+
+<pre><code> $ dropbearkey -y -f .ssh/id_dropbear
+ Public key portion is:
+  ... you long public key ...
+
+</code></pre>
+
+<p>Add the public key to the file <code>youruser@your_public_server:~/youruser/.ssh/authorized_keys</code>.</p>
+
+<p>Make sure your the SSH daemon in your public server can forward ports by adding the following option to <code>/etc/ssh/sshd_config</code>:</p>
+
+<pre><code>GatewayPorts yes
+</code></pre>
+
+<p>Make sure you restart the SSH daemon (<code>service ssh restart</code> or what ever init system you use).</p>
+
+<p>Next in your OpenWRT create the following script:</p>
+
+<pre><code>root@OpenWrt:~# cat bin/ssh-ccd 
+#!/bin/sh
+
+USER=youruser
+SERVER_IP=xxx.yyy.zzz.aaa
+PORT=10000
+
+ssh -i /root/.ssh/id_dropbear -l $USER $SERVER_IP -R $PORT:127.0.0.1:22 -N &amp;
+</code></pre>
+
+<p>Adapt the variables USER, SERVER_IP and PORT to match your setup, and make the script executable with <code>chmod +x /root/bin/ssh-ccd</code>.
+Note the last flag <code>-N</code>. This option makes sure your connection is done without running any command (not even starting a shell).</p>
+
+<p>Now, it's time to add the init script: </p>
+
+<div class="codehilite"><pre><span></span><code>root@OpenWrt:~# cat /etc/init.d/ssh-ccd 
+<span class="c1">#!/bin/sh /etc/rc.common</span>
+
+<span class="nv">USE_PROCD</span><span class="o">=</span>1
+
+<span class="nv">START</span><span class="o">=</span>99
+<span class="nv">STOP</span><span class="o">=</span>0
+
+
+start_service<span class="o">()</span> <span class="o">{</span>
+  procd_open_instance
+  <span class="nb">echo</span> <span class="s2">&quot;Starting ssh connection&quot;</span>
+  procd_set_param env <span class="nb">export</span> <span class="nv">HOME</span><span class="o">=</span>/root  
+  procd_set_param <span class="nb">command</span> /root/bin/ssh-ccd
+  procd_set_param stdout <span class="m">1</span> <span class="c1"># forward stdout of the command to logd</span>
+  procd_set_param stderr <span class="m">1</span> <span class="c1"># same for stderr</span>
+
+  <span class="c1"># respawn automatically if something died, be careful if you have an alternative process supervisor</span>
+  <span class="c1"># if process dies sooner than respawn_threshold, it is considered crashed and after 5 retries the service is stopped</span>
+  procd_set_param respawn <span class="si">${</span><span class="nv">respawn_threshold</span><span class="k">:-</span><span class="nv">3600</span><span class="si">}</span> <span class="si">${</span><span class="nv">respawn_timeout</span><span class="k">:-</span><span class="nv">5</span><span class="si">}</span> <span class="si">${</span><span class="nv">respawn_retry</span><span class="k">:-</span><span class="nv">5</span><span class="si">}</span>
+  procd_close_instance
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Again, make sure the script is executable <code>chmod +x /etc/init.d/ssh-ccd</code>. You need to enable the script and then start it.</p>
+
+<pre><code>root@OpenWrt:~# /etc/init.d/ssh-ccd enable
+root@OpenWrt:~# /etc/init.d/ssh-ccd start
+</code></pre>
+
+<p>And if everything works, you should see a permanent SSH process in your OpenWRT:</p>
+
+<pre><code>root@OpenWrt:~# ps | grep ssh
+4783 root      1288 S    ssh -i /root/.ssh/id_dropbear -l USER SERVER -R PORT:127.0.0.1:22 -N
+4894 root      1356 S    grep ssh
+</code></pre>
+
+<p>Now on your public server you can access your OpenWRT with:</p>
+
+<pre><code>root@publicserver:/home/user# ssh -l root -p PORT localhost
+
+
+BusyBox v1.23.2 (2015-07-25 15:09:46 CEST) built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ CHAOS CALMER (15.05, r46767)
+ -----------------------------------------------------
+  * 1 1/2 oz Gin            Shake with a glassful
+  * 1/4 oz Triple Sec       of broken ice and pour
+  * 3/4 oz Lime Juice       unstrained into a goblet.
+  * 1 1/2 oz Orange Juice
+  * 1 tsp. Grenadine Syrup
+ -----------------------------------------------------
+root@OpenWrt:~# 
+
+</code></pre>
+
+<p>Now you can successfully access your OpenWRT from your public server anytime.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/openwrt"><span>OpenWRT</span></a>, <a class="tag" href="/tags/linux"><span> Linux</span></a>, <a class="tag" href="/tags/ssh"><span> SSH</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html&title=OpenWRT SSH init script with port forwarding&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html&title=OpenWRT SSH init script with port forwarding" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" title="OpenWRT SSH init script with port forwarding" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html&body=OpenWRT SSH init script with port forwarding" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

@@ -5,74 +5,96 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T13:45:34Z</updated>
+<updated>2016-07-03T19:20:05Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Command Line Posting to Blogger</title>
-  <link href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
-  <id>http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
+  <title>Broken Links Alert</title>
+  <link href="http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html" />
+  <id>http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
-    <a href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
+    Due to infrastructure changes, I removed all the attachments.
+    <a href="http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Proportionality Should Be a Guidline of War</title>
-  <link href="http://oz123.github.com/writings/2010-02-12-proportionality-should-be-a-guidline-of-war/index.html" />
-  <id>http://oz123.github.com/writings/2010-02-12-proportionality-should-be-a-guidline-of-war/index.html</id>
+  <title>Convert LATEX to OPENOFFICE</title>
+  <link href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html" />
+  <id>http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Robert McNamara in a horrifying clip in YouTube.
-    <a href="http://oz123.github.com/writings/2010-02-12-proportionality-should-be-a-guidline-of-war/index.html">continue reading...</a>
+    For a long time I know that I can export lyx files to ODT format, and it does a pretty good job. Today, I start lyx with moving it to the background and I looked what's going in on when I export to ODT. It's using a commant htlatex, which can be found in the Debian package tex4ht .
+    <a href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Top 10 linux blog posts you should avoid reading</title>
-  <link href="http://oz123.github.com/writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html" />
-  <id>http://oz123.github.com/writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html</id>
+  <title>Swine Flu</title>
+  <link href="http://oz123.github.com/writings/2009-04-28-swine-flu/index.html" />
+  <id>http://oz123.github.com/writings/2009-04-28-swine-flu/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    As a frequent reader of Linux related news, I've come to the conclusion the sometimes reading posts about Linux is a complete waste of time. With time I've noticed that there are some repeating patterns to what I skip, so I've compiled this list to those who want to save some time, and a reminder to myself.
-    <a href="http://oz123.github.com/writings/2009-04-29-top-10-linux-blog-posts-you-should-avoid-reading/index.html">continue reading...</a>
+    Lately everybody's talking about swine flu. So I must too. Just in case I get it, and die before I manage to say something about that. Here's my two cents.
+    <a href="http://oz123.github.com/writings/2009-04-28-swine-flu/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Fucked up explorer</title>
-  <link href="http://oz123.github.com/writings/2008-09-21-fucked-up-explorer/index.html" />
-  <id>http://oz123.github.com/writings/2008-09-21-fucked-up-explorer/index.html</id>
+  <title>Israel's new Minister of Foreign Affairs - A note to Obama's administration</title>
+  <link href="http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html" />
+  <id>http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    I hate microsoft. Short Post descrbining a hack for explorer. Not much ...
-    <a href="http://oz123.github.com/writings/2008-09-21-fucked-up-explorer/index.html">continue reading...</a>
+    Dear President Obama, I am writing you even though you are not my president. But some how you know a lot of people are looking up to you
+    <a href="http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Playing with wordpress - Hacking the header to display random pictures</title>
-  <link href="http://oz123.github.com/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html" />
-  <id>http://oz123.github.com/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html</id>
+  <title>The Real Economic Crisis</title>
+  <link href="http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html" />
+  <id>http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    After I started seriously playing with wordpress and discovered how cool it is, I decided that I can seriously hack to it my own needs.
-    <a href="http://oz123.github.com/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html">continue reading...</a>
+    Everybody is talking about the "CRISIS" and the bailouts and the rescues and the huge salaries.
+    <a href="http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Greener Browsing</title>
-  <link href="http://oz123.github.com/writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html" />
-  <id>http://oz123.github.com/writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html</id>
+  <title>WordPress rant...</title>
+  <link href="http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html" />
+  <id>http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    I use a very old laptop, a Thosiba Portege 3440ct. This tiny little machine has a Pentium III 500 MHz CPU and 128 RAM.
-    <a href="http://oz123.github.com/writings/2008-05-20-flashblock-and-you-are-a-little-bit-greener/index.html">continue reading...</a>
+    WordPress is a great tool for quickly building a personal blog, website or even a store or a large community website. However, there comes a time with every wordpress installation, or maybe even every pre built content management system such as Drupal or Joomla!, that you encounter the glass ceiling where you have to start heavily digging in code you didn't write
+    <a href="http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Video guides for Wikipedia editing</title>
+  <link href="http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html" />
+  <id>http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This is a just reminder and collector:
+    <a href="http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Hey, I actually like the new Blogger</title>
+  <link href="http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html" />
+  <id>http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    It used to really suck, but my two hours of playing with it made me
+    <a href="http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
