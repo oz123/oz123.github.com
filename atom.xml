@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T15:57:59Z</updated>
+<updated>2016-07-03T19:21:26Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>OpenWRT SSH init script with port forwarding</title>
+  <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
+  <id>http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
+    <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Mate Desktop Environment 1.14 for Gentoo</title>
   <link href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Apparently, bash offeres assosiative arrays, similar to Python dictionaries
     <a href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Farewell Vundle, enter vim-plug</title>
-  <link href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html" />
-  <id>http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Vundle, the vim pluging manager used me for almost 4 faitfull years. But I recently discovered vim-plug
-    <a href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

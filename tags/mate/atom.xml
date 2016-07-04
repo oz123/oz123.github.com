@@ -5,19 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-06-09T13:45:34Z</updated>
+<updated>2016-07-03T19:20:04Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Short news about the GNOME 2 fork</title>
-  <link href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html" />
-  <id>http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html</id>
+  <title>GNOME Fork revisited</title>
+  <link href="http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html" />
+  <id>http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Well, I've been following the [Development of Mate DE](https://github.com/Perberos/Mate-Desktop-Environment) quite closely via github and it seems like the project is gaining momentum.
-    <a href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html">continue reading...</a>
+    Since I posted in my blog about GNOME 2 fork, I have seen numerous hits.
+    <a href="http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
