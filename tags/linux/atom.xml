@@ -5,11 +5,33 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:15Z</updated>
+<updated>2016-08-10T15:40:30Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>OpenWRT SSH init script with port forwarding</title>
+  <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
+  <id>http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
+    <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Gentoo - Reasons why you should give it a try</title>
+  <link href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
+  <id>http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Type your summary here.
+    <a href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Dictionaries in bash scripts - it is possible</title>
   <link href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html" />
@@ -40,6 +62,61 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
     <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Revive and old Smartphone with Cyanogenmod!</title>
+  <link href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
+  <id>http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
+    <a href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
+  <link href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html" />
+  <id>http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
+    <a href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Dell is not serious about Linux</title>
+  <link href="http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html" />
+  <id>http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    How serious Dell is about Linux? I think it is not that serious, and it is using Ubuntu fans as free advertising platformadvertising platform
+    <a href="http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>New Entry in the Linux laptop list</title>
+  <link href="http://oz123.github.com/writings/2012-05-02-new-entry-in-linux-laptop-list/index.html" />
+  <id>http://oz123.github.com/writings/2012-05-02-new-entry-in-linux-laptop-list/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I am looking for a new laptop. 14" is a bit hard to fit in the bag sometimes.
+    <a href="http://oz123.github.com/writings/2012-05-02-new-entry-in-linux-laptop-list/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>The future of Windows</title>
+  <link href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Last week I participated in a Windows 7 course. I was sent to the course by my employer, although in my official role is Linux System Engineer. 9 people attended the course. Looking around my colleagues I had some interesting observations, I'd like to share.
+    <a href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

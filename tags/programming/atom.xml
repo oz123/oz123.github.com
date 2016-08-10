@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:14Z</updated>
+<updated>2016-08-10T15:40:31Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Gentoo - Reasons why you should give it a try</title>
+  <link href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
+  <id>http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Type your summary here.
+    <a href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Git tip - git describe</title>
   <link href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. This part will expand this GUI and will add some more functionality ...
     <a href="http://oz123.github.com/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>A Complete PyGTK CD Ripper Tutorial</title>
-  <link href="http://oz123.github.com/writings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html" />
-  <id>http://oz123.github.com/writings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Most tutorials on GTK, create partial UIs, and thus leave the reader to connect the rest by himself. Some others create an almost complete application, but usually, this application is useless. This tutorial, will lead (eventually, I hope...) to a functional application, that rips CD and converts them to MP3 using cdparanoia and lame. In addition to writing this tutorial in blog posts with code, the code will be highly verbose and commented thoroughly ...
-    <a href="http://oz123.github.com/writings/2013-01-03-A Complete PyGTK CD Ripper Tutorial/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

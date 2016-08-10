@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:13Z</updated>
+<updated>2016-08-10T15:40:32Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -40,6 +40,17 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Once in a while, I bump into posts praising Red Hat for the fact that its Financial Worth in the Stock Market has crossed the 1 Billion Dollar. Every time I read these posts I shiver. And let me explain why.
     <a href="http://oz123.github.com/writings/2012-05-24-why-does-billlion-dollar-opensource/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Building Octave-3.4 on Debian Sid</title>
+  <link href="http://oz123.github.com/writings/2011-05-24-building-octave-34-on-debian-sid/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-24-building-octave-34-on-debian-sid/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I wanted to build the latest Octave (3.4) on my Debian Sid. Well, it wasn't as easy as before, since I upgrade it quite often.
+    <a href="http://oz123.github.com/writings/2011-05-24-building-octave-34-on-debian-sid/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Sometimes I just can't wonder An posts a blog which shows the guy has no clue what he's talking about. And people actually make such a fuss about it.
     <a href="http://oz123.github.com/writings/2011-10-26-analyst-my-s/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Another crack in the Windows hagmony</title>
-  <link href="http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html" />
-  <id>http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    For about 4 years now there is a possibility to get a Netbook with Linux. Now, there are many of them coming with Android and Meego.
-    <a href="http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

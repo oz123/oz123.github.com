@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:14Z</updated>
+<updated>2016-08-10T15:40:31Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Network-manager still sucks !</title>
+  <link href="http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html" />
+  <id>http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I have been long complaining about the buggy network-manager included in GNOME. Today, I have (re)discovered I am still unable to use Network-Manager to connect to a WPA secured wirless
+    <a href="http://oz123.github.com/writings/2011-02-26-network-manager-still-sucks/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>WICD rocks on the roads !</title>
   <link href="http://oz123.github.com/writings/2009-08-27-wicd-rock-on-the-roads/index.html" />

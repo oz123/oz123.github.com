@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:13Z</updated>
+<updated>2016-08-10T15:40:32Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -18,6 +18,28 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Vundle, the vim pluging manager used me for almost 4 faitfull years. But I recently discovered vim-plug
     <a href="http://oz123.github.com/writings/2015-04-30-Farewell-Vundle,-enter-vim-plug/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Farewell PyCharm! Going VIM again</title>
+  <link href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
+    <a href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>VIM Quicky - set tabs and spaces behaviour for different files</title>
+  <link href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html" />
+  <id>http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Never really bothered me before, because I only used Python and C, so I always replaces tabs with spaces.
+    <a href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

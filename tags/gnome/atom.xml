@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T14:32:14Z</updated>
+<updated>2016-08-10T15:40:30Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -18,6 +18,17 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Since I posted in my blog about GNOME 2 fork, I have seen numerous hits.
     <a href="http://oz123.github.com/writings/2011-07-05-gnome-fork-revisited/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>GNOME Fork is dead</title>
+  <link href="http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html" />
+  <id>http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    The [EXDE project](http://www.exde.org), which aimed to continue supporting gnome 2.X is dead. This is really a shame
+    <a href="http://oz123.github.com/writings/2011-04-02-gnome-fork-is-dead/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
@@ -44,6 +55,17 @@
   </content>
   </entry>
 <entry>
+  <title>Quicktip - Setting keyboard layout in GNOME via CLI</title>
+  <link href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html" />
+  <id>http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Of course backups could do the job, but I find a clean install much cleaner and safer for my purposes.
+    <a href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
   <title>Short news about the GNOME 2 fork</title>
   <link href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html" />
   <id>http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html</id>
@@ -51,6 +73,17 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Well, I've been following the [Development of Mate DE](https://github.com/Perberos/Mate-Desktop-Environment) quite closely via github and it seems like the project is gaining momentum.
     <a href="http://oz123.github.com/writings/2011-12-11-short-news-about-gnome-2-fork/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>The more I read on GNOME 3 I get more mad</title>
+  <link href="http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html" />
+  <id>http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    The idea I need to learn X Programming Language (e.g. JavaScript) in order to customize my desktop is IMHO simply IDIOTIC! Although I love learning programming languages, and I am a programmer, I DON'T WANT to program my desktop. My desktop is not a problem I need to solve. It should just work.
+    <a href="http://oz123.github.com/writings/2011-12-12-more-i-read-on-gnome-3-i-get-more-mad/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
