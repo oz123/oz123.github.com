@@ -62,10 +62,10 @@ root directory served from nginx. </p>
 
 <span class="nv">CONFIG_FILE</span><span class="o">=</span><span class="nv">$1</span>
 
-<span class="nb">source</span> <span class="nv">$C</span>ONFIG_FILE
-<span class="nv">BRANCHES</span><span class="o">=(</span><span class="nv">$B</span>RANCHES<span class="o">)</span>
-<span class="nv">PACKAGES</span><span class="o">=(</span>$PACKAGES<span class="o">)</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:$PATH
+<span class="nb">source</span> <span class="nv">$CONFIG_FILE</span>
+<span class="nv">BRANCHES</span><span class="o">=(</span><span class="nv">$BRANCHES</span><span class="o">)</span>
+<span class="nv">PACKAGES</span><span class="o">=(</span><span class="nv">$PACKAGES</span><span class="o">)</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
 
 <span class="k">function</span> ffw<span class="o">(){</span>
 
@@ -79,18 +79,18 @@ root directory served from nginx. </p>
    make html 
    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
       <span class="nb">echo</span> <span class="s2">&quot;Make html finished with 0&quot;</span>
-      <span class="nb">echo</span> -n <span class="nv">$C</span>URRENT &gt; ../CURRENT_<span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>        
-      cp -R build/html/ <span class="nv">$DE</span>STINATION/<span class="nv">$b</span>
-      cp ../CURRENT_<span class="nv">$b</span> <span class="nv">$DE</span>STINATION/<span class="nv">$b</span>
+      <span class="nb">echo</span> -n <span class="nv">$CURRENT</span> &gt; ../CURRENT_<span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>        
+      cp -R build/html/ <span class="nv">$DESTINATION</span>/<span class="nv">$b</span>
+      cp ../CURRENT_<span class="nv">$b</span> <span class="nv">$DESTINATION</span>/<span class="nv">$b</span>
    <span class="k">fi</span>
    <span class="nb">cd</span> ..
 <span class="o">}</span>
 
-<span class="nb">cd</span> $PROJECT_DIR
+<span class="nb">cd</span> <span class="nv">$PROJECT_DIR</span>
 git fetch --all 
 
 <span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span> 0<span class="p">;</span> i &lt; <span class="si">${#</span><span class="nv">BRANCHES</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> i++<span class="o">))</span> <span class="k">do</span>
-   <span class="nv">b</span><span class="o">=</span><span class="si">${</span><span class="nv">BRANCHES</span><span class="p">[</span>$<span class="nv">i</span><span class="p">]</span><span class="si">}</span>
+   <span class="nv">b</span><span class="o">=</span><span class="si">${</span><span class="nv">BRANCHES</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span>
    ffw <span class="nv">$b</span>
    <span class="nv">CURRENT</span><span class="o">=</span><span class="sb">`</span>git log --oneline -1 <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span>
    <span class="nv">LATEST</span><span class="o">=</span><span class="sb">`</span>cat CURRENT_<span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span><span class="sb">`</span>
@@ -115,7 +115,7 @@ git fetch --all
 <code>CURRENT_$BRANCHES</code> files. To do this, run inside the git repository the following 
 command:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> b in <span class="nv">$B</span>RANCHES <span class="p">;</span> <span class="k">do</span>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> b in <span class="nv">$BRANCHES</span> <span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;START&quot;</span> &gt; CURRENT_<span class="nv">$b</span>
 <span class="k">done</span>
 </code></pre></div>
