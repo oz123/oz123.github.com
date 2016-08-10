@@ -5,96 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:05Z</updated>
+<updated>2016-08-10T14:32:13Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Broken Links Alert</title>
-  <link href="http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html" />
-  <id>http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html</id>
+  <title>AJAX with bottle.py</title>
+  <link href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
+  <id>http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Due to infrastructure changes, I removed all the attachments.
-    <a href="http://oz123.github.com/writings/2010-06-21-broken-links-alert/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Convert LATEX to OPENOFFICE</title>
-  <link href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html" />
-  <id>http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    For a long time I know that I can export lyx files to ODT format, and it does a pretty good job. Today, I start lyx with moving it to the background and I looked what's going in on when I export to ODT. It's using a commant htlatex, which can be found in the Debian package tex4ht .
-    <a href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Swine Flu</title>
-  <link href="http://oz123.github.com/writings/2009-04-28-swine-flu/index.html" />
-  <id>http://oz123.github.com/writings/2009-04-28-swine-flu/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Lately everybody's talking about swine flu. So I must too. Just in case I get it, and die before I manage to say something about that. Here's my two cents.
-    <a href="http://oz123.github.com/writings/2009-04-28-swine-flu/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Israel's new Minister of Foreign Affairs - A note to Obama's administration</title>
-  <link href="http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html" />
-  <id>http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Dear President Obama, I am writing you even though you are not my president. But some how you know a lot of people are looking up to you
-    <a href="http://oz123.github.com/writings/2009-03-31-israels-new-minister-of-foreign-affairs-a-note-to-obamas-administration/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>The Real Economic Crisis</title>
-  <link href="http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html" />
-  <id>http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Everybody is talking about the "CRISIS" and the bailouts and the rescues and the huge salaries.
-    <a href="http://oz123.github.com/writings/2009-03-21-the-real-economic-crisis/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>WordPress rant...</title>
-  <link href="http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html" />
-  <id>http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    WordPress is a great tool for quickly building a personal blog, website or even a store or a large community website. However, there comes a time with every wordpress installation, or maybe even every pre built content management system such as Drupal or Joomla!, that you encounter the glass ceiling where you have to start heavily digging in code you didn't write
-    <a href="http://oz123.github.com/writings/2008-08-11-wordpress-rantor-may-be-rants/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Video guides for Wikipedia editing</title>
-  <link href="http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html" />
-  <id>http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This is a just reminder and collector:
-    <a href="http://oz123.github.com/writings/2008-06-20-a-short-post-of-video-guides-describing-how-to-edit-on-wikipedia/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Hey, I actually like the new Blogger</title>
-  <link href="http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html" />
-  <id>http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    It used to really suck, but my two hours of playing with it made me
-    <a href="http://oz123.github.com/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html">continue reading...</a>
+    A working example of AJAX with JQuery and Bottle
+    <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

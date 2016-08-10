@@ -5,19 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:07Z</updated>
+<updated>2016-08-10T14:32:15Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Floats wider than text in Latex</title>
-  <link href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html" />
-  <id>http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html</id>
+  <title>Convert LATEX to OPENOFFICE</title>
+  <link href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html" />
+  <id>http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex floats  by default have the text width or smaller. Took me some time to figure out how to make a float wider than the text width itself.
-    <a href="http://oz123.github.com/writings/2010-09-16-floats-wider-than-text-in-latex/index.html">continue reading...</a>
+    For a long time I know that I can export lyx files to ODT format, and it does a pretty good job. Today, I start lyx with moving it to the background and I looked what's going in on when I export to ODT. It's using a commant htlatex, which can be found in the Debian package tex4ht .
+    <a href="http://oz123.github.com/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
