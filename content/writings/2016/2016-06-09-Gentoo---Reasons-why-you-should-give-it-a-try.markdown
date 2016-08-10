@@ -3,7 +3,7 @@ title: Gentoo - Reasons why you should give it a try
 author: Oz Nahum Tiram
 published: 2016-06-09
 tags: gentoo, linux, programming
-public: yes
+public: no
 chronological: yes
 kind: writing
 summary: Type your summary here.
