@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T15:40:33Z</updated>
+<updated>2016-08-23T14:45:55Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>On learning Ruby coming from Python ...</title>
+  <link href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html" />
+  <id>http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I am learning Ruby, as coming from Python it's not a very easy thing. Ruby is confusing, it has a weired syntax, and things are not really simple as in Python. There is still tons of stuff which dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, isn't Ruby_. Ruby was good for so many people out there, and I am sure you can do amazing stuff in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
+    <a href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>New version of Pwman3 released (v0.9)</title>
   <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
@@ -95,17 +106,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support.
     <a href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>AJAX with bottle.py</title>
-  <link href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
-  <id>http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    A working example of AJAX with JQuery and Bottle
-    <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

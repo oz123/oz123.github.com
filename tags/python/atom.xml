@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-10T15:40:32Z</updated>
+<updated>2016-08-23T14:45:51Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>On learning Ruby coming from Python ...</title>
+  <link href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html" />
+  <id>http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I am learning Ruby, as coming from Python it's not a very easy thing. Ruby is confusing, it has a weired syntax, and things are not really simple as in Python. There is still tons of stuff which dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, isn't Ruby_. Ruby was good for so many people out there, and I am sure you can do amazing stuff in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
+    <a href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Morse fun with Python</title>
   <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
     <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Localizing applications with gettext</title>
-  <link href="http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html" />
-  <id>http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I was always interested in how I can add translations to pwman3 or to my little PyGTK tutorial, these are summerizing of my gettext experiences
-    <a href="http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
