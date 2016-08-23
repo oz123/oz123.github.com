@@ -12,7 +12,7 @@
 		   {% endfor %}
 		</div>
      </div>
-     <p>{{ entry.summary }}</p>
+     <p>{{ entry.summary|markdown}}</p>
 
 	<div class="link-url"><p><a href="{{ entry.permalink }}">continue reading ...</a></p></div>
 	<div class="permalink"><a title="Permalink to: {{ entry.title }}" href="{{ entry.permalink }}"><span>&para;</span></a></div>
