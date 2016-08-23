@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:21:26Z</updated>
+<updated>2016-08-10T15:40:33Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>New version of Pwman3 released (v0.9)</title>
+  <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
+  <id>http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
+    <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>OpenWRT SSH init script with port forwarding</title>
   <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
@@ -95,28 +106,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     A working example of AJAX with JQuery and Bottle
     <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Introducing psutil in Munich Python Users</title>
-  <link href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html" />
-  <id>http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
-    <a href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Dictionaries in bash scripts - it is possible</title>
-  <link href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html" />
-  <id>http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Apparently, bash offeres assosiative arrays, similar to Python dictionaries
-    <a href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

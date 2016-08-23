@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:00Z</updated>
+<updated>2016-08-10T15:40:31Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Installing Oracle's JAVA on Debian</title>
+  <link href="http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html" />
+  <id>http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    There are many solutions floating around to install Oracle's JAVA on Debian based systems. Most of them involve too many manual steps. Here is one that does not, and it simply works!
+    <a href="http://oz123.github.com/writings/2014-04-16-Installing-Oracle's-JAVA-on-Debian/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Enable UFS Write support under Debian</title>
   <link href="http://oz123.github.com/writings/2012-11-26-enable-ufs-write-support-debian/index.html" />
@@ -106,17 +117,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     For about 4 years now there is a possibility to get a Netbook with Linux. Now, there are many of them coming with Android and Meego.
     <a href="http://oz123.github.com/writings/2011-10-06-another-crack-in-windows-hagmony/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Using BluetoothSpeakers without Pulseaudio</title>
-  <link href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html" />
-  <id>http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    About 3 months ago I have purchased a Bluetooth Speakers set. I chose  the Creative Labs D200, which provide me with nice tunes compared to the prices.
-    <a href="http://oz123.github.com/writings/2011-09-10-how-to-bluetooth-speakers-without/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:04Z</updated>
+<updated>2016-08-10T15:40:32Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>More UNITY Crap</title>
+  <link href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Take a loot at this [post](http://ubuntuguide.net/how-to-run-multiple-copies-of-program-from-unity-launcher). You need a "how to" to run multiple copies of the same program.
+    <a href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Better Apps in Linux</title>
   <link href="http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html" />

@@ -5,7 +5,7 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:05Z</updated>
+<updated>2016-08-10T15:40:31Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
@@ -29,6 +29,28 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
     <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Git tip - git describe</title>
+  <link href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
+  <id>http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Earlier I posted a tip how to count commits between tags, this post suggests a better way to do it
+    <a href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Git tip - Count commits between tags</title>
+  <link href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
+  <id>http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Once every N commits I would like to release a new version of pwman3, so here is how to keep a track of this number between releases ...
+    <a href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

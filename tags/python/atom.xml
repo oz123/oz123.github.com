@@ -5,118 +5,118 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:08Z</updated>
+<updated>2016-08-10T15:40:32Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Working With Binary Data in Python</title>
-  <link href="http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html" />
-  <id>http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html</id>
+  <title>Morse fun with Python</title>
+  <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
+  <id>http://oz123.github.com/writings/morse-fun-with-python/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Working with binary data puzzled me for quite a time, so here is a post explaining some of my findings
-    <a href="http://oz123.github.com/writings/2012-07-28-working-with-binary-data-in-python_28/index.html">continue reading...</a>
+    Creating morse code or translating it to ASCII text is fun, even more fun is making your laptop beep morse code. Here how you can do it with Python.
+    <a href="http://oz123.github.com/writings/morse-fun-with-python/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Good Bye Latex ? Hello WeasyPrint</title>
-  <link href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html" />
-  <id>http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html</id>
+  <title>Yet another case of Python vs. Regular Expressions</title>
+  <link href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html" />
+  <id>http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex, is my main way of producing reports and scientific works. Usually these are formed as PDF before being actually printed. Latex is AWESOME.
-    <a href="http://oz123.github.com/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html">continue reading...</a>
+    Regular Expressions are really awesome, and If you read the last post you might got the wrong impression I am totally against their use. I love using regular expressions, but sometimes, knowing Python is more than enough.
+    <a href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>VIM Quicky - set tabs and spaces behaviour for different files</title>
-  <link href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html" />
-  <id>http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html</id>
+  <title>Python's regex is not always the best option</title>
+  <link href="http://oz123.github.com/writings/2016-03-14-Regex/index.html" />
+  <id>http://oz123.github.com/writings/2016-03-14-Regex/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Never really bothered me before, because I only used Python and C, so I always replaces tabs with spaces.
-    <a href="http://oz123.github.com/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html">continue reading...</a>
+    When programming in Python, regex are not always your best tool. This has a few reasons, regex can be computationally expensive, unreadable and unmaintainble, and finally, sometimes there is a better pythonic way without them. Here are a few examples.
+    <a href="http://oz123.github.com/writings/2016-03-14-Regex/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>oh, Yesterday I was a bad programmer</title>
-  <link href="http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html" />
-  <id>http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html</id>
+  <title>AJAX with bottle.py</title>
+  <link href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
+  <id>http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Forgetting my first lesson in programming, I looked for a solution to convert IP addresses to country. I found out tables, and SQL files, and went on and on trying to figure how to use them, and do SQL in python
-    <a href="http://oz123.github.com/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html">continue reading...</a>
+    A working example of AJAX with JQuery and Bottle
+    <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Tiny Python script to convert Fortran comments to "!"</title>
-  <link href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html" />
-  <id>http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html</id>
+  <title>Introducing psutil in Munich Python Users</title>
+  <link href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html" />
+  <id>http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    I work on a very old Fortran code, which is Fixed form Fortran 77 mixed with some Fortran 95. Geany IDE, had problem displaying lines starting with "c" as comments.
-    <a href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html">continue reading...</a>
+    I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
+    <a href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Easy Python debugging</title>
-  <link href="http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html" />
-  <id>http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html</id>
+  <title>New version of Pwman3 released</title>
+  <link href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
+  <id>http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Just a quicky post ... Python has the excellent pdb module to debug your programs.
-    <a href="http://oz123.github.com/writings/2010-05-28-easy-python-debugging/index.html">continue reading...</a>
+    I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
+    <a href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Evalution of a Tracer Test with Python scipy.optimize</title>
-  <link href="http://oz123.github.com/writings/2009-10-10-evalution-of-tracer-test-with-python-scipy-optimize/index.html" />
-  <id>http://oz123.github.com/writings/2009-10-10-evalution-of-tracer-test-with-python-scipy-optimize/index.html</id>
+  <title>Simple Multiprocessing Task Queue in Python</title>
+  <link href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
+  <id>http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.
-    <a href="http://oz123.github.com/writings/2009-10-10-evalution-of-tracer-test-with-python-scipy-optimize/index.html">continue reading...</a>
+    Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
+    <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>MoinMoin wiki on Debian, Installation and configuration</title>
-  <link href="http://oz123.github.com/writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html" />
-  <id>http://oz123.github.com/writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html</id>
+  <title>Farewell PyCharm! Going VIM again</title>
+  <link href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Sometimes, installation of Debian packages is too easy, but then configuration can be quite confusing.
-    <a href="http://oz123.github.com/writings/2009-09-11-moinmoin-wiki-on-debian-installation-and-configuration/index.html">continue reading...</a>
+    A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
+    <a href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>3D plots with matplotlib</title>
-  <link href="http://oz123.github.com/writings/2009-05-17-3d-plots-with-matplotlib/index.html" />
-  <id>http://oz123.github.com/writings/2009-05-17-3d-plots-with-matplotlib/index.html</id>
+  <title>Poor man's Read-The-Docs</title>
+  <link href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Today I built matplotlib from svn. The answer why I did it is in the post's title. 3D plots are back to this wonderful tool !
-    <a href="http://oz123.github.com/writings/2009-05-17-3d-plots-with-matplotlib/index.html">continue reading...</a>
+    Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
+    <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
-  <title>Data analysis with spreadsheets vs. programming</title>
-  <link href="http://oz123.github.com/writings/2008-06-14-data-analysis-with-spreatsheets-vs-programing-interface/index.html" />
-  <id>http://oz123.github.com/writings/2008-06-14-data-analysis-with-spreatsheets-vs-programing-interface/index.html</id>
+  <title>Localizing applications with gettext</title>
+  <link href="http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html" />
+  <id>http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    In many cases people use programs like Excel, Gnumeric or Openoffice.org spreadsheet to analyze large amounts of data. I always hated Excel, and when I switched to Linux about 3 years ago I learned about Gnumeric, but I always found it a little bit limited because I couldn't use macros.
-    <a href="http://oz123.github.com/writings/2008-06-14-data-analysis-with-spreatsheets-vs-programing-interface/index.html">continue reading...</a>
+    I was always interested in how I can add translations to pwman3 or to my little PyGTK tutorial, these are summerizing of my gettext experiences
+    <a href="http://oz123.github.com/writings/2013-08-04-Localizing-with-gettext/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:03Z</updated>
+<updated>2016-08-10T15:40:30Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>The future of Windows</title>
+  <link href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Last week I participated in a Windows 7 course. I was sent to the course by my employer, although in my official role is Linux System Engineer. 9 people attended the course. Looking around my colleagues I had some interesting observations, I'd like to share.
+    <a href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Vancouver Critical Mass</title>
   <link href="http://oz123.github.com/writings/2010-06-26-vancouver-critical-mass/index.html" />

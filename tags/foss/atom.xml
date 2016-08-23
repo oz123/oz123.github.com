@@ -5,11 +5,44 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-07-03T19:20:04Z</updated>
+<updated>2016-08-10T15:40:32Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Back to blogging</title>
+  <link href="http://oz123.github.com/writings/2012-11-25-backtoblogging/index.html" />
+  <id>http://oz123.github.com/writings/2012-11-25-backtoblogging/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Well, I am back to actively writing ... look inside if you want to know why and how
+    <a href="http://oz123.github.com/writings/2012-11-25-backtoblogging/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>GNU vs Canon</title>
+  <link href="http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html" />
+  <id>http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Linux does not exist in American conusmer market. At least not for Canon.
+    <a href="http://oz123.github.com/writings/2012-08-09-gnu-vs-canon/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Why does the Billlion Dollar OpenSource Company does not matter or should not matter</title>
+  <link href="http://oz123.github.com/writings/2012-05-24-why-does-billlion-dollar-opensource/index.html" />
+  <id>http://oz123.github.com/writings/2012-05-24-why-does-billlion-dollar-opensource/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Once in a while, I bump into posts praising Red Hat for the fact that its Financial Worth in the Stock Market has crossed the 1 Billion Dollar. Every time I read these posts I shiver. And let me explain why.
+    <a href="http://oz123.github.com/writings/2012-05-24-why-does-billlion-dollar-opensource/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Building Octave-3.4 on Debian Sid</title>
   <link href="http://oz123.github.com/writings/2011-05-24-building-octave-34-on-debian-sid/index.html" />
@@ -18,6 +51,72 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I wanted to build the latest Octave (3.4) on my Debian Sid. Well, it wasn't as easy as before, since I upgrade it quite often.
     <a href="http://oz123.github.com/writings/2011-05-24-building-octave-34-on-debian-sid/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>The future of Windows</title>
+  <link href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html" />
+  <id>http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Last week I participated in a Windows 7 course. I was sent to the course by my employer, although in my official role is Linux System Engineer. 9 people attended the course. Looking around my colleagues I had some interesting observations, I'd like to share.
+    <a href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Open Hardware - a short list of alternatives</title>
+  <link href="http://oz123.github.com/writings/2012-02-22-open-hardware-short-list-of/index.html" />
+  <id>http://oz123.github.com/writings/2012-02-22-open-hardware-short-list-of/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    I have been waiting quite a while to write this post. I think it's about time that people who want to write FOSS and support FOSS will also buy hardware from manufacturers that support it.
+    <a href="http://oz123.github.com/writings/2012-02-22-open-hardware-short-list-of/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>UEFI Secure booting is good for Linux</title>
+  <link href="http://oz123.github.com/writings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html" />
+  <id>http://oz123.github.com/writings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Microsoft will block non Windows on the ARM platform. Big deal. It is if installing Linux on any other Laptop is easy. Sure you can install Linux on most Laptops today. But does it really work?
+    <a href="http://oz123.github.com/writings/2012-01-18-uefi-secure-booting-is-good-for-linux.html/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Revisiting Windows 7 - Package management is possible</title>
+  <link href="http://oz123.github.com/writings/2011-12-25-revisiting-windows-7-package-management/index.html" />
+  <id>http://oz123.github.com/writings/2011-12-25-revisiting-windows-7-package-management/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    After a very long time I did not use Windows for my private needs, I have finally found the times to take a longer look on Windows 7. I have decided to install the operating system on a real machine to see it's real behaviour and interaction with plastic and iron
+    <a href="http://oz123.github.com/writings/2011-12-25-revisiting-windows-7-package-management/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>No more MONO on Ubuntu</title>
+  <link href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html" />
+  <id>http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Well, it's a quite a late response, but it ought to be. After Ubuntu has shoved Mono down our throats for quite a while, they have decided to retreat from it.
+    <a href="http://oz123.github.com/writings/2011-11-19-no-more-mono-on-ubuntu/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Analyst my S</title>
+  <link href="http://oz123.github.com/writings/2011-10-26-analyst-my-s/index.html" />
+  <id>http://oz123.github.com/writings/2011-10-26-analyst-my-s/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Sometimes I just can't wonder An posts a blog which shows the guy has no clue what he's talking about. And people actually make such a fuss about it.
+    <a href="http://oz123.github.com/writings/2011-10-26-analyst-my-s/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

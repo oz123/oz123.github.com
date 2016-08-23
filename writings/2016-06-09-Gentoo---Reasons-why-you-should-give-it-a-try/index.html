@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Gentoo - Reasons why you should give it a try </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>				
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; June 09, 2016</div>
+	<h1>Gentoo - Reasons why you should give it a try</h1>
+	<p>About a year a go I stopped using Debian completely (I'm still using Ubuntu
+partially) and made Gentoo my primary Linux distribution of choice. If you 
+are doing some kind of software development or advanced linux usage (I'll coin
+that term soon) I believe you should definitely consider trying Gentoo, and 
+in the long run move to it. <br />
+But first, let's bust some myths!</p>
+
+<h3>Gentoo is hard! Only for hackers or hard core Linux frikzzzzz</h3>
+
+<p>Gentoo is already being indirectly used by millions of people running around
+with Chromebooks. Gentoo is deploying with every instance of CoreOS. 
+You can argue that since these gentoo variants don't come with a package 
+manager, or not meant to be upgraded constantly, they are  not real Gentoo. 
+But never the less, they are being produced with Gentoo, 
+and so can you achieve Linux Nirvana on your Laptop, Workstation or Server(s). </p>
+
+<h3>But I have to compile everything ...</h3>
+
+<p>First of all you DON'T have to compile everything. Gentoo's portage supports
+creating binary packages and installing binary packages. 
+It's just that Gentoo's community belief that you should compile everything, 
+if not as an learning excercise, than as a means of allowing you to stich your
+own best suite of software packages.</p>
+
+<p>Never the less, Gentoo supplies some binary packages to software which it's 
+upstream vendors supply those packages pre-built. 
+A few examples are: Oracle's Java, node.js, Firefox, and Chromium Browser. 
+At the time of writing this post, searching for 'bin' packages yields
+in in the gentoo package archive yields
+more than 80 packages.</p>
+
+<p>You can also install other binaries, supplied by Debian packages or RPM packages, 
+if they don't have to many dependancies. As an example you can take any Ubuntu
+kernel, unpack it and use it for your own Gentoo. You will then be responsible 
+of upgrading it when security flaws are found.</p>
+
+<p>So, you don't have to compile everything. And even than, Gentoo's build system
+is so awesome (see below) that it really eases the task comparing to building
+RPM or DEB packages. Now, if you have been using Linux more than a couple of years
+or you do software development, chance are that you did compile software on your
+own. Which brings me the the next section.</p>
+
+<h3>You sohuld consider Gentoo if ...</h3>
+
+<p>If you ever worked in a corporate environment, there is a really good chance
+you have had to compile software or distribute software packages to more than
+one machine.</p>
+
+<p>If you are a hobbyist loving a particulare software package, and you can't wait
+for your favorite Linux distro to package the latest and shiniest, you have 
+been building from source.</p>
+
+<p>If you always felt that for your laptop Debian stable is too old, and you have
+been running "Testing" or "Unstable" you have been experience frequent updates, 
+not often, but stiil, some stuff would break and you would pin packages.  </p>
+
+<p>If you maintain more than one Linux box ...</p>
+
+<p>For me these are all advanced usages of linux, which justify the consideration 
+of Gentoo.</p>
+
+<h3>Gentoo's build system and Package manager - Portage, its good for you!</h3>
+
+<p>As said above, chances are that if you are a power user, you have been building
+packages. And if so, you have an opinion about it, and your own set of tools. 
+I want to quote a long time Debian developer, Lars Wirzenius, 
+regarding <a href="http://blog.liw.fi/posts/debian-developing-it-wrong/">build systems</a>:</p>
+
+<blockquote>
+  <p>Build tools should be intelligent, packaging should be dumb </p>
+</blockquote>
+
+<p>And further:</p>
+
+<blockquote>
+  <p>Making packaging intelligent, rather than the build tool, means packagers need 
+  to do more work, and there's more work to do when, say, 
+  the Debian policy changes, or when there are other changes that affect a 
+  large number of packages. If packaging is intelligent, then every package
+  needs changes. If the build tool is intelligent, 
+  then you change the build tool and re-build everything.</p>
+</blockquote>
+
+<p>And he has a point. To see how is point is affecting Debian in real life, I want
+to share a piece of data that shocked me when I first noticed it. That is
+the number of packages available in Debian vs. the number available in Gentoo.
+As of now, Debian's website contains the following statement:</p>
+
+<blockquote>
+  <p>Debian provides more than a pure OS: it comes with over 43000 packages, </p>
+</blockquote>
+
+<p><a href="https://en.wikipedia.org/wiki/Debian#Organization">Debian is 6 years older and currently has 1033 active developers</a>.</p>
+
+<p>Currently, Gentoo offers a <a href="https://packages.gentoo.org/">humble number of 19039 packages</a>, 
+and has about 240 active developers[1]. So, with an about the quarter of Debian's
+human resources, Gentoo's developers make almost half the size of Debian's package
+collection. If Gentoo had the amount of Debian developers, it had the stunning amount
+of more that 80,000 packages to choose from. So, creating Debian package is
+hard even for skilled people as Debian developers themselves. RPM based distro
+are even more worse. <a href="https://git.centos.org/project/rpms">RHEL has only 9617 source RPMS</a>.
+And that is the largest by USD value open source company...</p>
+
+<p>So now that we set some background, I hope the potential of portage is clear
+to you.</p>
+
+<h4>How easy is it to build a Gentoo package?</h4>
+
+<p>A gentoo package is a simple bash script file ending with <code>.ebuild</code>. So all 
+you have to do is edit a single file (with a relativly familiar language). 
+Here is how gentoo is building <code>figlet</code>:</p>
+
+<pre><code># Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+EAPI=5
+inherit eutils bash-completion-r1 toolchain-funcs
+
+DESCRIPTION="program for making large letters out of ordinary text"
+HOMEPAGE="http://www.figlet.org/"
+SRC_URI="ftp://ftp.figlet.org/pub/figlet/program/unix/${P}.tar.gz"
+
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 ~sparc x86 ~x86-fbsd \
+ ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+IUSE=""
+
+src_compile() {
+    emake clean
+    emake \
+        CC="$(tc-getCC)" \
+        LD="$(tc-getCC)" \
+        CFLAGS="${CFLAGS}" \
+        LDFLAGS="${LDFLAGS}" \
+        prefix="${EPREFIX}/usr" \
+        all
+}
+
+src_install() {
+    emake \
+        DESTDIR="${ED}" \
+        BINDIR="${EPREFIX}/usr/bin" \
+        MANDIR="${EPREFIX}/usr/share/man" \
+        prefix="${EPREFIX}/usr" \
+        install
+
+    doman chkfont.6 figlet.6 figlist.6 showfigfonts.6
+    dodoc README figfont.txt
+
+    dobashcomp "${FILESDIR}"/figlet.bashcomp
+}
+</code></pre>
+
+<p>Of course it's not plain BASH, and you have to know what each function is doing, 
+and what each variable is doing. But that is all documented in a very good <a href="https://devmanual.gentoo.org/ebuild-writing/">manual
+for creating ebuilds</a>.
+Compare this ebuild, composed of a single file to the following stuff needed
+to create a package for debian:</p>
+
+<pre><code>$ tree debian
+.
+├── changelog
+├── clean
+├── compat
+├── control
+├── copyright
+├── dirs
+├── docs
+├── examples
+│   └── moolets
+├── figlet.el
+├── manpages
+├── patches
+│   ├── makefile_set_debian_buildflags.patch
+│   ├── makefile_set_debian_paths.patch
+│   └── series
+├── postinst
+├── prerm
+├── rules
+├── source
+│   └── format
+└── watch
+
+3 directories, 18 files
+</code></pre>
+
+<p>Ignoring the fact the debian includes here patches, you see a much complicated 
+build system. </p>
+
+<p>And that is just a simple example. Creating rule files is generally a task so 
+complicated that normal people who don't to upload packages to the debian 
+repository opt for using tools like <a href="https://github.com/jordansissel/fpm">fpm</a>.
+The same goes for creating RPM, altough, personally I think creating RPMs is
+a bit more simple compared to creating Debian packages. </p>
+
+<h4>Reusing Built packages</h4>
+
+<p>Building packages is only half the story. If you need to distribute packages
+to your machines, building Debian repositories and RPM repositories is also 
+not the easiest task. Although I used Debian much longer, 
+and prefered it for social reasons, I feel that creating and maintaining RPM 
+repositories for CentOS and Red Hat is much simpler. But both are complicated 
+tasks comparing to creating a <a href="https://wiki.gentoo.org/wiki/Binary_package_guide">binary package host for gentoo</a>.</p>
+
+<p>If you have one machine in the network which builds packages, this machine can 
+serve your binary packages to all other machines. 
+This is where in my opinion Gentoo's excellent handbook falls short! The user
+guide tells and shows an example with the following CFLAGS:</p>
+
+<pre><code>CFLAGS="-march=native -O2 -pipe"
+</code></pre>
+
+<p>So you end up installing one machine in which you compile many packages, and then
+you realize that when you install another machine chances are you can't use the
+compiled packages. My recommendation, if you have machines with Intel CPU, choose
+the architecture of the oldest one in your hands, newer models are backward 
+compatible. For example I have a few laptops with Intel Core i7 and Core i5 CPUs. 
+So on all my machines I have the following CFLAGS:</p>
+
+<pre><code>CFLAGS="-march=haswell -O2 -pipe"
+</code></pre>
+
+<p>This is the architecture of the Core i5 CPUs. So I build packages once and 
+distribute them to all my laptops. You can also use broader categories and CFLAGS
+such that you can build packages for AMD and Intel CPUs.</p>
+
+<h3>The Quick and dirty installation of Gentoo</h3>
+
+<p>First of all - Don't do quick and dirty things. Learn the tools you use. If you 
+don't have time to read the Gentoo book all at once, install gentoo in the way I 
+show you, but promise to read the book in short intervals with your morning coffee
+or at lunch break 15 minutes a day! 
+It will make solving problems, when they arise, quicker. </p>
+
+<p>The hand book will lead you to install gentoo with a bare <code>stage 3</code>. You can 
+immidietly work with a <code>stage 3</code> inside a chroot envrionment, almost as you would
+work with a plain <code>debootstrap</code>ed Debian. So all you need is a partition on 
+your hard-drive to play with. </p>
+
+<p>Another option is to install Gentoo with a Vagrant image (Personaly, I never 
+tried them so I don't know how safe they are).</p>
+
+<p>Gentoo's package manager is not like apt, yum or dnf. It's a different beast.
+If you know what RPM dependency hell is, you are an avid or long time Linux 
+user, Gentoo's version for that is called <code>blocked</code> and <code>masked</code>. Most chances, 
+that you won't experience that, but you will need to read about dealing with
+building hardships. Read about them in [when Portage is complaining][3].</p>
+
+<p>Once you are feeling safe with portage, you can try boot Gentoo. Again, here
+the handbook will show you how to compile a kernel. Compiling a kernel is a task
+that should be automated. There is some work in this direction, but until than, 
+optimizing a kernel for many machines, and many periferal is not something you
+should waste your time on! </p>
+
+<p>Do you have all your machines and devices working with the latest Ubuntu? Great!
+You can reuse this kernel with Gentoo!</p>
+
+<p><em>TODO: Addd instructions for that</em></p>
+
+<p><em>WARNING</em> this is the DIRTY part. This will boot your system, but you won't get
+any security or patches. </p>
+
+<p>your shoulder! You can build a kernel your self with Ubunutu kernel Configuration. 
+Now you are no longer using a dirty solution. And you can reuse this kernel with 
+all your machines too.</p>
+
+<p>From now on you can keep using this huge configuration (which compiles a lot of
+modules and things you don't really need), or when you have free time, you can 
+look inside and removed modules for controllers you don't have, or input devices 
+you'll never buy. It's a good learning excercise.</p>
+
+<h3>Wrapping up ...</h3>
+
+<p>Installing Gentoo, and using Gentoo isn't hard as you think, or contrary to common
+mind. Gentoo's handbook, is a great learning resource, but you don't necessarily 
+need to follow the installation in the A to Z path. I recommend skipping the kernel
+chapters in the beginning, and concentrating on Portage usage. After all, the kernel
+is a package you rarely care for, upgrade or use, where as, other packages are being
+installed and used more often. 
+After you trust yourself with portage, try composing your own bootable system, 
+with a pre-built kernel. 
+Once this system boots, compile your own kernel with a pre-configured configuration
+file. And once you are done with that, you can try and create your own minimalistic
+kernels.
+Usually that last step is not something you need to do, and gives you no real 
+benefit, besides a better understaning of all the Linux Kernel components. 
+Finally, you are now done with the Gentoo handbook, although you didn't read it
+as intended, and you can use gentoo on one or more machines. 
+A few recommendations for being a gentoo user.  Gentoo is, like 
+any other system, breakable! But no Gentoo system breaks on its own. 
+Keep a backup of your <code>etc</code> directory and especially
+<code>/etc/portage</code>. It will save you time if you break things. 
+you a lot of time if <em>you</em> break things. Don't go and upgrade <code>@world</code> without
+understanding what your are doing. Doing this is like doing an Ubuntu upgrade 
+from an LTS to a non LTS version while drunk. You have been warned. 
+Have fun using Gentoo. </p>
+
+<p>[3]  https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage#When<em>Portage</em>is_complaining:</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/gentoo"><span>gentoo</span></a>, <a class="tag" href="/tags/linux"><span>linux</span></a>, <a class="tag" href="/tags/programming"><span>programming</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html&title=Gentoo - Reasons why you should give it a try&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html&title=Gentoo - Reasons why you should give it a try" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" title="Gentoo - Reasons why you should give it a try" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html&body=Gentoo - Reasons why you should give it a try" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>
