@@ -5,19 +5,19 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-23T14:45:51Z</updated>
+<updated>2016-08-23T15:07:39Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
   <title>On learning Ruby coming from Python ...</title>
-  <link href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html</id>
+  <link href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html" />
+  <id>http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I am learning Ruby, as coming from Python it's not a very easy thing. Ruby is confusing, it has a weired syntax, and things are not really simple as in Python. There is still tons of stuff which dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, isn't Ruby_. Ruby was good for so many people out there, and I am sure you can do amazing stuff in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
-    <a href="http://oz123.github.com/writings/2016-08-23-On-leaning-Ruby-and-Python/index.html">continue reading...</a>
+    <a href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
