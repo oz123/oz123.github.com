@@ -6,7 +6,16 @@ tags: python, ruby
 public: yes
 chronological: yes
 kind: writing
-summary: I am learning Ruby, and coming from Python it's not a an easy thing. Ruby is confusing, it has a weird syntax, and things are not really simple as in Python. There is still tons of stuff which seem like dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, which isn't Ruby_. Ruby is good for so many people out there, and I am sure you can do amazing things in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
+summary: >
+  I am learning Ruby, and coming from Python it's not a an easy thing.
+	Ruby is confusing, it has a weird syntax, and things are not really
+	simple as in Python. There is still tons of stuff which seem like dark magic.
+	There's `nil`, there are `gems` and `bundler`. And there is _Rails, 
+	which isn't Ruby_. Ruby is good for so many people out there, and I am sure 
+	you can do amazing things in it. I already know it's never going to be my 
+	weapon of choice, but it's not bad knowing my way around it. I'd like to know 
+	how to set up a simple project, read and debug code, install gems and package 
+	ruby projects. I have been ignoring Ruby for too long.
 ---
 
 I am learning Ruby, and coming for me coming from Python it's not an as easy as it seems.
