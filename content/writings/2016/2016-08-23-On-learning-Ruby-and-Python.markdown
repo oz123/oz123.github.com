@@ -9,9 +9,9 @@ kind: writing
 summary: I am learning Ruby, and coming from Python it's not a an easy thing. Ruby is confusing, it has a weird syntax, and things are not really simple as in Python. There is still tons of stuff which seem like dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, which isn't Ruby_. Ruby is good for so many people out there, and I am sure you can do amazing things in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
 ---
 
-I am learning Ruby, and coming for me coming from Python it's not an as easy as it seems.
+I am learning Ruby, and for me coming from Python it's not an as easy as it seems.
 Ruby is confusing, it has a weird syntax, and for me things in Ruby are not as simple as they're in Python.
-In Ruby there are some things which seem like dark magic for me. There's `nil`, there are `gems`
+In Ruby there are some things which seem like dark magic. There's `nil`, there are `gems`
 and `bundler`. And there's _Rails, which isn't Ruby_.
 Ruby is great for so many developers out there, and I am sure you can do amazing things
 with it. I already know that it's not going to be my weapon of choice, but it's not
@@ -20,7 +20,7 @@ read and debug code, install gems and package Ruby projects. I have been ignorin
 
 Well, that is a lie. I never ignored it. There many applications that I use, which
 are written in Ruby, and the language always intrigued me. I met some really cool people
-working with this language, which made me curious about it. But I was afraid of
+working with it, which made me curious about it. But I was afraid of
 entering a new realm, being incapable again in a programming language is something
 I am not really fond of, and on the surface the benefits didn't seem that big for me.
 
@@ -48,7 +48,7 @@ interface for package installation. It's very UNIX, and it's simpler. There is
 no bundler, bundler exec, no multiple versions installed of a package installed
 inside a virtualenv (Ruby allows multiple versions installed side by side).
 
-This is also a very large trend between the two languages, which I see early on.
+This is also a trend between the two languages, which I saw early on.
 Python tends to be simpler where it can. It might not be as fun and magical like
 Ruby, but it makes the code simpler and the maintenance easier.
 It is the Zen of Python, where
@@ -59,8 +59,8 @@ and readability and simplicity count.
 
 Ruby has some cool tricks, and I think it's OK to use it. However, it will not be my
 weapon of choice, if can choose Python. Never the less, learning Ruby helps me 
-understand things Python. This is either through reflection over stuff that has
-already become transparent or through rethinking aspects of Object Orientation 
+understand things better in Python. This is either through reflection over stuff that has
+already become transparent or through rethinking aspects of OOP
 and Design as are those expressed in Ruby when I compare them to Python. So despite
 my frustrations with Ruby, it's a fun ride, and I recommend investing sometime in
-looking into Ruby.
+looking into it.
