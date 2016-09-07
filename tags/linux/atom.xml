@@ -5,11 +5,26 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-23T15:07:36Z</updated>
+<updated>2016-09-07T20:56:01Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Docker quicky - templating with M4</title>
+  <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
+  <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Creating abstracted Dockerfile is something I really wish existed.
+  Docker does not supply an abstraction around package managers in various
+  Linux distributions. Here is a simple M4 schema how to do this. A better
+  solution will probably invloved Jinja2 templating and code stealing from
+  `pkg.install` in salt-stack modules.
+    <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>OpenWRT SSH init script with port forwarding</title>
   <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
@@ -106,17 +121,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I am looking for a new laptop. 14" is a bit hard to fit in the bag sometimes.
     <a href="http://oz123.github.com/writings/2012-05-02-new-entry-in-linux-laptop-list/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>The future of Windows</title>
-  <link href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html" />
-  <id>http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Last week I participated in a Windows 7 course. I was sent to the course by my employer, although in my official role is Linux System Engineer. 9 people attended the course. Looking around my colleagues I had some interesting observations, I'd like to share.
-    <a href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

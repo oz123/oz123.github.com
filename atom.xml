@@ -5,18 +5,41 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-08-24T15:00:18Z</updated>
+<updated>2016-09-07T20:56:04Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Docker quicky - templating with M4</title>
+  <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
+  <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Creating abstracted Dockerfile is something I really wish existed.
+  Docker does not supply an abstraction around package managers in various
+  Linux distributions. Here is a simple M4 schema how to do this. A better
+  solution will probably invloved Jinja2 templating and code stealing from
+  `pkg.install` in salt-stack modules.
+    <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>On learning Ruby coming from Python ...</title>
   <link href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html" />
   <id>http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    I am learning Ruby, and coming from Python it's not a an easy thing. Ruby is confusing, it has a weird syntax, and things are not really simple as in Python. There is still tons of stuff which seem like dark magic. There's `nil`, there are `gems` and `bundler`. And there is _Rails, which isn't Ruby_. Ruby is good for so many people out there, and I am sure you can do amazing things in it. I already know it's never going to be my weapon of choice, but it's not bad knowing my way around it. I'd like to know how to set up a simple project, read and debug code, install gems and package ruby projects. I have been ignoring Ruby for too long.
+    I am learning Ruby, and coming from Python it's not a an easy thing.
+    Ruby is confusing, it has a weird syntax, and things are not really
+    simple as in Python. There is still tons of stuff which seem like dark magic.
+    There's `nil`, there are `gems` and `bundler`. And there is _Rails, 
+    which isn't Ruby_. Ruby is good for so many people out there, and I am sure 
+    you can do amazing things in it. I already know it's never going to be my 
+    weapon of choice, but it's not bad knowing my way around it. I'd like to know 
+    how to set up a simple project, read and debug code, install gems and package 
+    ruby projects. I have been ignoring Ruby for too long.
     <a href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
     </div>
   </content>
@@ -95,17 +118,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     This blog is back from a long pause
     <a href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>NoSQLite - SQLite, support for JSON field</title>
-  <link href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html" />
-  <id>http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support.
-    <a href="http://oz123.github.com/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
