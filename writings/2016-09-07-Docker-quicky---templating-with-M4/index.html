@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Docker quicky - templating with M4 </title>
+<title> Dockerfile quicky - templating with M4 </title>
 <link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="/media/css/style.css" />
 <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
@@ -45,22 +45,19 @@
 			<div class="col-lg-7 col-md-7 col-sm-10">
 <div class="index">
 	<div id="header" class="published"><a href="http://oz123.github.com">Oz Nahum Tiram</a> &ndash; September 07, 2016</div>
-	<h1>Docker quicky - templating with M4</h1>
-	<p>Creating abstracted Dockerfile is something I really wish existed. Everytime, 
-you write a <code>Dockerfile</code> for a specifie base image you must specify the correct
-package manager command. You either use <code>apt-get</code> or <code>apk</code> or <code>yum</code> or any other
-call for the package manager. This is unfortunately, not very resuable. </p>
+	<h1>Dockerfile quicky - templating with M4</h1>
+	<p>Creating abstracted Dockerfile is something I really wish existed. Every time, 
+I write a <code>Dockerfile</code> for a specific base image I must specify the correct
+package manager command. I must call <code>apt-get</code> or <code>apk</code> or <code>yum</code> or any other
+call for the package manager. This is unfortunately, not very reusable. </p>
 
-<p>I am comparing this to many years of experience with <code>saltstack</code> which includes
-a great wrapper around many common linux package managers. This spares you the
+<p>I am comparing this to many years of experience with <code>salt-stack</code> which includes
+a great wrapper around many common Linux package managers. This spares the
 details of distinguishing between <code>apt</code>, <code>apk</code> or <code>yum</code> and <code>dnf</code>, you just
 write <code>pkg.install</code> and you get your packages installed.</p>
 
-<p>Docker does not supply an abstraction around package managers in various
-Linux distributions. Here is a simple M4 schema how to do this. A better
-solution will probably invloved Jinja2 templating ...</p>
-
-<p>That said, you can use <code>m4</code> macros to create <code>Dockerfile</code>s from templates.
+<p>Here is a simple <code>M4</code> schema how to achieve this abstraction. A better
+solution will probably involve Jinja2 templates ...
 This can spare you the need to remember which package manager you need to use
 in which Docker image. Here is a very quick intro, how to this.</p>
 
@@ -103,11 +100,11 @@ dockerfile:
 <a class="tag" href="/tags/docker"><span>docker</span></a>, <a class="tag" href="/tags/linux"><span>linux</span></a>	</div>
 	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
 		<h4>Share this post:</h4>
-		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&title=Docker quicky - templating with M4&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
-		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&title=Docker quicky - templating with M4" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
-		<a class="tweet" href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" title="Docker quicky - templating with M4" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&title=Dockerfile quicky - templating with M4&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&title=Dockerfile quicky - templating with M4" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" title="Dockerfile quicky - templating with M4" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
 		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
-		<a href="mailto:?subject=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&body=Docker quicky - templating with M4" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2016-09-07-Docker-quicky---templating-with-M4/index.html&body=Dockerfile quicky - templating with M4" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
 	</div>
 	<div id="underpost">
 		<h3>Discussions/Feedback.</h3>

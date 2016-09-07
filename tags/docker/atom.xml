@@ -5,22 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-09-07T20:55:57Z</updated>
+<updated>2016-09-07T21:11:55Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
 <entry>
-  <title>Docker quicky - templating with M4</title>
+  <title>Dockerfile quicky - templating with M4</title>
   <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
   <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    Creating abstracted Dockerfile is something I really wish existed.
-  Docker does not supply an abstraction around package managers in various
-  Linux distributions. Here is a simple M4 schema how to do this. A better
-  solution will probably invloved Jinja2 templating and code stealing from
-  `pkg.install` in salt-stack modules.
+    Creating abstracted Dockerfile is something I really wish existed. Every time, 
+    I write a `Dockerfile` for a specific base image I must specify the correct
+    package manager command. You either use `apt-get` or `apk` or `yum` or any other
+    call for the package manager. This is unfortunately, not very reusable. But,
+    here is a simple schema how to use M4 macros to achieve this abstraction.
     <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
     </div>
   </content>

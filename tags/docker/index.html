@@ -45,20 +45,20 @@
 			<div class="col-lg-7 col-md-7 col-sm-10">
 <div class="index">
   <div class="clearfix entry">
-		<h2><a title="Goes 1to &rarr; /writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" href="/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">Docker quicky - templating with M4</a></h2>
+		<h2><a title="Goes 1to &rarr; /writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" href="/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">Dockerfile quicky - templating with M4</a></h2>
 	<div class="clearfix">
     <div class="date-published">2016-09-07</div>
 		<div class="tags">tagged:
 		   <a class="tag" href="/tags/docker"><span>docker</span></a>, 		   <a class="tag" href="/tags/linux"><span>linux</span></a>		</div>
      </div>
-     <p>Creating abstracted Dockerfile is something I really wish existed.
-  Docker does not supply an abstraction around package managers in various
-  Linux distributions. Here is a simple M4 schema how to do this. A better
-  solution will probably invloved Jinja2 templating and code stealing from
-  `pkg.install` in salt-stack modules.</p>
+     <p>Creating abstracted Dockerfile is something I really wish existed. Every time, 
+    I write a `Dockerfile` for a specific base image I must specify the correct
+    package manager command. You either use `apt-get` or `apk` or `yum` or any other
+    call for the package manager. This is unfortunately, not very reusable. But,
+    here is a simple schema how to use M4 macros to achieve this abstraction.</p>
 
 	<div class="link-url"><p><a href="/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading ...</a></p></div>
-	<div class="permalink"><a title="Permalink to: Docker quicky - templating with M4" href="writings/2016-09-07-Docker-quicky---templating-with-M4/index.html"><span>&para;</span></a></div>
+	<div class="permalink"><a title="Permalink to: Dockerfile quicky - templating with M4" href="writings/2016-09-07-Docker-quicky---templating-with-M4/index.html"><span>&para;</span></a></div>
 
    </div>
 </div>
