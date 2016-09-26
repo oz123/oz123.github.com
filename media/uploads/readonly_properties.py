@@ -51,7 +51,7 @@ but it won't make the code shorter:
         @property
         def b(self):
             return self._c
-        # you can this ... it's long
+        # you get this ... it's long
         
         
 Now imagine you can simply do that:
