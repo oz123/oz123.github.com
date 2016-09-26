@@ -108,10 +108,10 @@ class MyClass(object):
         self.forbidden = b
 
 m = MyClass(1, 2, 3)
+m.ok = 3
 print(m.ok, m.readonly)
 
 # can touch ok
-m.ok = 3
 print("This worked...")
 # this will explode
 m.forbidden = 4
