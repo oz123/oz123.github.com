@@ -6,39 +6,42 @@ Copyright Oz N Tiram <oz.tiram@gmail.com> 2016.
 Note: This should be a Python module.
 
 Make class properties readonly.
-Why not use @property? 
+Why not use @property?
 
-Because it's verbose, and you need to create a function which returns something.
+Because it's verbose, and you need to create a function which returns
+something.
 
 .. code:
 
    class MyClass:
-        
+
         @property
         def a(self):
             return 1
-            
+
 
 Now if you decide to refactor this you got some work to do.
-The same goes if you have a class with many attributes that you want to refactor
-to properties:
+The same goes if you have a class with many attributes that you want to
+refactor to properties:
 
 .. code:
 
     class AClassWithManyAttributes:
-    
+
          def __init__(a, b, c, d, e ...)
              self.a = a
              self.b = b
              self.c = c
              ....
-             
-Now refactoring this would be very verbose (an IDE will save you a lot of typing,
-but it won't make the code shorter:
+
+Now refactoring this would be very verbose (an IDE will save you a lot of
+typing, but it won't make the code shorter:
+
+   .. code::
 
    class AClassWithManyAttributes:
-        """refactored to properties"""
-         def __init__(a, b, c, d, e ...)
+        '''refactored to properties'''
+        def __init__(a, b, c, d, e ...)
              self._a = a
              self._b = b
              self._c = c
@@ -52,15 +55,15 @@ but it won't make the code shorter:
         def b(self):
             return self._c
         # you get this ... it's long
-        
-        
+
+
 Now imagine you can simply do that:
-            
+
 .. code:
-  
+
     @read_only('a', 'b', 'c')
     class AClassWithManyAttributes:
-    
+
          def __init__(a, b, c, d, e ...)
              self.a = a
              self.b = b
