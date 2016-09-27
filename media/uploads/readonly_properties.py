@@ -85,7 +85,7 @@ def read_only_properties(*attrs):
             "This is the overwritten class"
             def __setattr__(self, name, value):
 
-                if name not in ['forbidden', 'forbidden_too']:
+                if name not in attrs:
                     pass
                 elif name not in self.__dict__:
                     pass
