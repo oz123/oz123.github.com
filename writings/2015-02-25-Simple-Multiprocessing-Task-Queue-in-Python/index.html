@@ -76,7 +76,7 @@ simple:</p>
         <span class="n">clean_finished_tasks</span><span class="p">()</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
    <span class="n">run</span><span class="p">()</span>
 </code></pre></div>
 
@@ -93,7 +93,7 @@ the task does not immediately terminate is useful, so we can see the task in the
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   read a task file with the following content: Hello Parallel Tasks;5</span>
 <span class="sd">   &quot;&quot;&quot;</span>
-   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">taskfile</span>
       <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">taskfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
            <span class="n">msg</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
@@ -179,7 +179,7 @@ loop is <code>clean_finished_tasks</code>:</p>
 <span class="sd">    read a task file with the following content: Hello Parallel Tasks;5</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taskfile</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">taskfile</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">taskfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">msg</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
@@ -252,7 +252,7 @@ loop is <code>clean_finished_tasks</code>:</p>
         <span class="c1"># add some delay so, we could see what is going on in the OS</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">run</span><span class="p">()</span>
 </code></pre></div>
 

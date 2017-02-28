@@ -5,11 +5,25 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2016-09-07T21:12:08Z</updated>
+<updated>2017-02-28T22:30:25Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>coverage reporting and logging without a webservice</title>
+  <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
+  <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    For quite a while now I wanted to have a cheap replacement for collecting
+    and tracking coverage of codes I work on. Finally, I found a nice way to
+    record and track coverage reporting inside git itself in a semi-automatic
+    or completely automatic way.
+    <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Dockerfile quicky - templating with M4</title>
   <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
@@ -107,17 +121,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     When programming in Python, regex are not always your best tool. This has a few reasons, regex can be computationally expensive, unreadable and unmaintainble, and finally, sometimes there is a better pythonic way without them. Here are a few examples.
     <a href="http://oz123.github.com/writings/2016-03-14-Regex/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Back again to writing</title>
-  <link href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html" />
-  <id>http://oz123.github.com/writings/2016-03-10-Back-again/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This blog is back from a long pause
-    <a href="http://oz123.github.com/writings/2016-03-10-Back-again/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -89,10 +89,10 @@ root directory served from nginx. </p>
 <span class="nb">cd</span> <span class="nv">$PROJECT_DIR</span>
 git fetch --all 
 
-<span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span> 0<span class="p">;</span> i &lt; <span class="si">${#</span><span class="nv">BRANCHES</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> i++<span class="o">))</span> <span class="k">do</span>
+<span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span> <span class="m">0</span><span class="p">;</span> i &lt; <span class="si">${#</span><span class="nv">BRANCHES</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> i++<span class="o">))</span> <span class="k">do</span>
    <span class="nv">b</span><span class="o">=</span><span class="si">${</span><span class="nv">BRANCHES</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span>
    ffw <span class="nv">$b</span>
-   <span class="nv">CURRENT</span><span class="o">=</span><span class="sb">`</span>git log --oneline -1 <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span>
+   <span class="nv">CURRENT</span><span class="o">=</span><span class="sb">`</span>git log --oneline -1 <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f <span class="m">1</span><span class="sb">`</span>
    <span class="nv">LATEST</span><span class="o">=</span><span class="sb">`</span>cat CURRENT_<span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span><span class="sb">`</span>
    <span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">CURRENT</span><span class="si">}</span> <span class="o">==</span> <span class="si">${</span><span class="nv">LATEST</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
         <span class="nb">echo</span> <span class="s2">&quot;Skipping build of &quot;</span><span class="nv">$b</span><span class="s2">&quot;...&quot;</span>

@@ -6,7 +6,12 @@ tags: python, testing, git
 public: yes
 chronological: yes
 kind: writing
-summary: Type your summary here.
+summary:
+	For quite a while now I wanted to have a cheap replacement for collecting
+	and tracking coverage of codes I work on. Finally, I found a nice way to
+	record and track coverage reporting inside git itself in a semi-automatic
+	or completely automatic way.
+
 ---
 
 For quite a while now I wanted to have a cheap replacement for collecting

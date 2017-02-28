@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/" />
+<id>http://oz123.github.com/atom.xml</id>
+<updated>2017-02-28T22:30:24Z</updated>
+<author>
+  <name>Oz Nahum Tiram</name>
+  <email>nahumoz@gmail.com</email>
+</author>
+<entry>
+  <title>coverage reporting and logging without a webservice</title>
+  <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
+  <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    For quite a while now I wanted to have a cheap replacement for collecting
+    and tracking coverage of codes I work on. Finally, I found a nice way to
+    record and track coverage reporting inside git itself in a semi-automatic
+    or completely automatic way.
+    <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+</feed>

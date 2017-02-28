@@ -75,7 +75,7 @@ Now let's creat the script that actually does the job:</p>
 <span class="nb">read</span> -s -p <span class="s2">&quot;repeat Password: &quot;</span> PASSWORD2
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$PASSWORD1</span> !<span class="o">=</span> <span class="nv">$PASSWORD2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">echo</span> <span class="s2">&quot;The passwords don&#39;t match!&quot;</span>
-    <span class="nb">exit</span> 1
+    <span class="nb">exit</span> <span class="m">1</span>
 <span class="k">fi</span>
 <span class="nb">echo</span> <span class="nv">$PASSWORD</span>
 <span class="nv">HASH</span><span class="o">=</span><span class="sb">`</span>mkpasswd -m sha-512 -s <span class="nv">$PASSWORD1</span><span class="sb">`</span>

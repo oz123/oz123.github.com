@@ -92,10 +92,10 @@ Note the last flag <code>-N</code>. This option makes sure your connection is do
 <div class="codehilite"><pre><span></span><code>root@OpenWrt:~# cat /etc/init.d/ssh-ccd 
 <span class="c1">#!/bin/sh /etc/rc.common</span>
 
-<span class="nv">USE_PROCD</span><span class="o">=</span>1
+<span class="nv">USE_PROCD</span><span class="o">=</span><span class="m">1</span>
 
-<span class="nv">START</span><span class="o">=</span>99
-<span class="nv">STOP</span><span class="o">=</span>0
+<span class="nv">START</span><span class="o">=</span><span class="m">99</span>
+<span class="nv">STOP</span><span class="o">=</span><span class="m">0</span>
 
 
 start_service<span class="o">()</span> <span class="o">{</span>
