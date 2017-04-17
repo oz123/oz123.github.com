@@ -5,11 +5,23 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2017-02-28T22:26:51Z</updated>
+<updated>2017-04-17T14:36:47Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Why I still persist on not using systemd</title>
+  <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
+  <id>http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
+ developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
+    <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Gentoo - Reasons why you should give it a try</title>
   <link href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
