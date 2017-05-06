@@ -8,16 +8,15 @@ template: about.html
 ![me](http://oz123.github.io/media/img/lustig.jpg)
 
 This blog is maintained by Oz Nahum Tiram, a passionate Python programmer,
-and FOSS evangelist, who really likes Debian.
+and FOSS evangelist, who really likes Gentoo.
 
-Currently he works for Plan.Net where he is the Lead DevOps responsible for the
-quite buzzing of a MongoDB cluster and the analytics platform on top of it.
-He is also a part of a software development team running all the latest buzz
+Currently he works for The Mobility House where he is the Lead Python developer responsible for making smart storage solution for electric vehicles.
+He is part of a software development team running all the latest buzz
 words like DevOps, Continuous Deploment and Continous Integration.
 When he is not doing computer related stuff, he likes cycling and rock climbing.
 
 You can find the Curriculum Vitea of Oz in PDF format
-[here](http://oz123.github.io/media/uploads/Oz_Tiram_Resume_Aug_2015.pdf).
+[here](http://oz123.github.io/media/uploads/Oz_Tiram_Resume_May_2017.pdf).
 
 Internet Safety aware people You can find my PGP Key Here
 
