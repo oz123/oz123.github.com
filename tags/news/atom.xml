@@ -5,11 +5,22 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2017-07-11T06:56:15Z</updated>
+<updated>2018-09-21T09:39:40Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>blogit - new release</title>
+  <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
+  <id>http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    After a long development hiatus I am releasing a new version of blogit
+    <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Submitting patches to Python</title>
   <link href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
