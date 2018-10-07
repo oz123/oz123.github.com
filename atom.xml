@@ -5,11 +5,28 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2018-09-21T09:39:41Z</updated>
+<updated>2018-10-07T11:36:36Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>backup and restore with duplicity</title>
+  <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
+  <id>http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
+  I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
+  to check how to restore my files. I did decide to check how to restore file,
+  because backup is only half the job! It turns out, that the GUI does a disservice
+  for duplicity users. Restoring an encrypted backup turned out to not work.
+  I didn't bother to research why, and turned to the CLI. This is a reminder on
+  how to restore the files.
+    <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>blogit - new release</title>
   <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />

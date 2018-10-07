@@ -5,11 +5,28 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2017-07-11T06:41:45Z</updated>
+<updated>2018-10-07T11:36:33Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>backup and restore with duplicity</title>
+  <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
+  <id>http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
+  I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
+  to check how to restore my files. I did decide to check how to restore file,
+  because backup is only half the job! It turns out, that the GUI does a disservice
+  for duplicity users. Restoring an encrypted backup turned out to not work.
+  I didn't bother to research why, and turned to the CLI. This is a reminder on
+  how to restore the files.
+    <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Why I still persist on not using systemd</title>
   <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
@@ -111,17 +128,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
     <a href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Dell is not serious about Linux</title>
-  <link href="http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html" />
-  <id>http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    How serious Dell is about Linux? I think it is not that serious, and it is using Ubuntu fans as free advertising platformadvertising platform
-    <a href="http://oz123.github.com/writings/2013-12-09-Dell-and-Linux/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
