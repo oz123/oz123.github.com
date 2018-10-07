@@ -5,11 +5,34 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2017-04-17T14:36:49Z</updated>
+<updated>2018-09-21T09:39:41Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>blogit - new release</title>
+  <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
+  <id>http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    After a long development hiatus I am releasing a new version of blogit
+    <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
+<entry>
+  <title>Submitting patches to Python</title>
+  <link href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
+  <id>http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This is not my typical blog post style. So no "how to" or opinnions. Just
+    some reflections on how I submitted a patch to Python's standard library.
+    <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Why I still persist on not using systemd</title>
   <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
@@ -28,10 +51,7 @@
   <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    For quite a while now I wanted to have a cheap replacement for collecting
-    and tracking coverage of codes I work on. Finally, I found a nice way to
-    record and track coverage reporting inside git itself in a semi-automatic
-    or completely automatic way.
+    
     <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
     </div>
   </content>
@@ -100,28 +120,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I am announcing here the release of the ebuilds collection of mate-desktop for gentoo. All ebuilds support building with traditional GTK+2 and the newer GTK+3.
     <a href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Morse fun with Python</title>
-  <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
-  <id>http://oz123.github.com/writings/morse-fun-with-python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Creating morse code or translating it to ASCII text is fun, even more fun is making your laptop beep morse code. Here how you can do it with Python.
-    <a href="http://oz123.github.com/writings/morse-fun-with-python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Yet another case of Python vs. Regular Expressions</title>
-  <link href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html" />
-  <id>http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Regular Expressions are really awesome, and If you read the last post you might got the wrong impression I am totally against their use. I love using regular expressions, but sometimes, knowing Python is more than enough.
-    <a href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
