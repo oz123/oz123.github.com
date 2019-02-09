@@ -55,7 +55,7 @@ I didn't bother to research why, and turned to the CLI. This is a reminder on
 how to restore the files.
 duplicity accepts the decryption passphrase using only an environment variables.
 For new comers to Linux and CLI it might look strange. However, <a href="https://unix.stackexchange.com/a/369568">current linux versions
-do not leak environment variables via PS.</a>.
+do not leak environment variables via PS</a>.
 So without much further words, here is how to restore a backup from an external drive:</p>
 
 <div class="codehilite"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">PASSPHRASE</span><span class="o">=</span>YourVeryS3kr3tBackupK3y

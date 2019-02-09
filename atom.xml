@@ -5,11 +5,24 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2018-10-07T11:36:36Z</updated>
+<updated>2019-02-09T13:34:46Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Fooling around with JavaScript and OpenPGP</title>
+  <link href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
+  <id>http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Fooling around with JavaScript and OpenPGP, as the title says. I needed to
+        create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
+        turned out to be possible. These are the results of my experiment.
+    <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>backup and restore with duplicity</title>
   <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
@@ -126,17 +139,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
     <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Mate Desktop Environment 1.14 for Gentoo</title>
-  <link href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html" />
-  <id>http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I am announcing here the release of the ebuilds collection of mate-desktop for gentoo. All ebuilds support building with traditional GTK+2 and the newer GTK+3.
-    <a href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
