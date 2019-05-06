@@ -19,7 +19,7 @@ CONFIG = {
     'base_url': 'http://oz123.github.com',
     'http_port': 3030,
     'content_encoding': 'utf-8',
-    'author': 'Oz Nahum Tiram',
+    'author': 'Oz Tiram',
     'editor': os.getenv("EDITOR"),
     'ARCHIVE_SIZE': 10,
     'INDEX_SIZE': 10
@@ -33,5 +33,3 @@ GLOBAL_TEMPLATE_CONTEXT = {
     'stackoverflow': "http://stackoverflow.com/users/492620/oz123",
     'github': "https://github.com/oz123",
 }
-
-
