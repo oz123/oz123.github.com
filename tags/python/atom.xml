@@ -5,11 +5,24 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2018-10-07T11:35:49Z</updated>
+<updated>2019-06-17T07:59:09Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Visualize almost anything with Grafana and Python</title>
+  <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
+  <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This is a short tutorial on how to build a data source for Grafana using Python
+    Bottle micro-framework. Eventually, you can use this code to connect to any
+    database (including SQLite).
+    <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>blogit - new release</title>
   <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
@@ -115,17 +128,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
     <a href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>New version of Pwman3 released</title>
-  <link href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
-  <id>http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
-    <a href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

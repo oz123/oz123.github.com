@@ -5,11 +5,24 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2019-02-09T13:34:46Z</updated>
+<updated>2019-06-17T08:01:39Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Visualize almost anything with Grafana and Python</title>
+  <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
+  <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    This is a short tutorial on how to build a data source for Grafana using Python
+    Bottle micro-framework. Eventually, you can use this code to connect to any
+    database (including SQLite).
+    <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Fooling around with JavaScript and OpenPGP</title>
   <link href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
@@ -117,28 +130,6 @@
     how to set up a simple project, read and debug code, install gems and package 
     ruby projects. I have been ignoring Ruby for too long.
     <a href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>New version of Pwman3 released (v0.9)</title>
-  <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
-    <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>OpenWRT SSH init script with port forwarding</title>
-  <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
-  <id>http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
-    <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
