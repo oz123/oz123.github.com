@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
 You can now run the server:
 
-```
+```shell
 $ python3 pds.py
 Bottle v0.13-dev server starting up (using WSGIRefServer())...
 Listening on http://localhost:8081/
@@ -61,7 +61,7 @@ as good to use.
 The documentation specifies you should enable CORS, so before adding anything
 to the webserver, let's enable CORS:
 
-```
+```python
 @app.hook('after_request')
 def enable_cors():
     print("after_request hook")
@@ -83,7 +83,7 @@ JSON. Creating a JSON array with bottle is a little more involved. To
 this we create an instance of HTTPResponse with headers that specify that this
 is response is JSON. The body is a dump of a Python list.
 
-```
+```python
 from bottle import json_dumps
 
 
@@ -107,7 +107,7 @@ I will start with the later case.
 Grafana sends a request which specifies that it queries for the tabular data. The
 request's JSON will contain:
 
-```
+```json
 'targets': [{'target': 'series B', 'refId': 'A', 'type': 'table'}]
 ```
 So the endpoint has to check for it in order to return a response which Grafana
@@ -199,7 +199,7 @@ database specific, and I am going to create a simple array of values using the S
 and Cosine function (you should be able to read real data from your favorite
 database instead of these functions).
 
-```
+```python
 @app.post('/query')
 def query():
 	  if request.json['targets'][0]['type'] == 'table':

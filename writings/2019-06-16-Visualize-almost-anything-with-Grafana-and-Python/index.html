@@ -46,16 +46,11 @@
 <div class="index">
 	<div id="header" class="published"><a href="http://oz123.github.com">Oz Tiram</a> &ndash; June 16, 2019</div>
 	<h1>Visualize almost anything with Grafana and Python</h1>
-	<p>First of all, there are a lot of people who would like to <a href="https://github.com/grafana/grafana/issues/1542">use Grafana to visualize
-SQLite</a>. And while this is a popular request, and despite me being a huge fan
-of SQLite, let me say that if you need to keep time based data, relational databases
-should not be your first choice, and especially SQLite which does not even have
-a time data type.</p>
+	<p>There are a lot of people who would like to <a href="https://github.com/grafana/grafana/issues/1542">use Grafana to visualize
+SQLite</a>. This blog post will allow you to do just that with Python.
+The Python Standard Library includes a driver for SQLite</p>
 
-<p>Now after warning you about Relational Databases, let's see how you can still
-do this using the best glue around.</p>
-
-<p>First, go a head and install Grafana (if you have not done so already), and
+<p>First, go ahead and install Grafana (if you have not done so already), and
 install the plugin <code>simple-json-datasource</code>.
 This allows you to add a data-source from a web server that returns specially
 crafted JSON. The documentation on Grafana's website is a bit sparse, so here
@@ -79,11 +74,11 @@ bottle:</p>
 
 <p>You can now run the server:</p>
 
-<pre><code>$ python3 pds.py
-Bottle v0.13-dev server starting up (using WSGIRefServer())...
+<div class="codehilite"><pre><span></span><code>$ python3 pds.py
+Bottle v0.13-dev server starting up <span class="o">(</span>using WSGIRefServer<span class="o">())</span>...
 Listening on http://localhost:8081/
 Hit Ctrl-C to quit.
-</code></pre>
+</code></pre></div>
 
 <p>A few things to note here, bottle is extremely stable although this is the dev
 version. You can safely use this. Another thing here is that I am using the
@@ -98,13 +93,13 @@ as good to use.</p>
 <p>The documentation specifies you should enable CORS, so before adding anything
 to the webserver, let's enable CORS:</p>
 
-<pre><code>@app.hook('after_request')
-def enable_cors():
-    print("after_request hook")
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['Access-Control-Allow-Methods'] = 'OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Accept, Content-Type'
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nd">@app.hook</span><span class="p">(</span><span class="s1">&#39;after_request&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">enable_cors</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;after_request hook&quot;</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Accept, Content-Type&#39;</span>
+</code></pre></div>
 
 <p>The next step is to add a <code>/search</code> endpoint which appears as the find metric
 options on the query tab in panels. This endpoint should return a JSON array
@@ -118,14 +113,14 @@ JSON. Creating a JSON array with bottle is a little more involved. To
 this we create an instance of HTTPResponse with headers that specify that this
 is response is JSON. The body is a dump of a Python list.</p>
 
-<pre><code>from bottle import json_dumps
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">json_dumps</span>
 
 
-@app.post('/search')
-def search():
-    return HTTPResponse(body=json_dumps(['series A', 'series B']),
-                            headers={'Content-Type': 'application/json'})
-</code></pre>
+<span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">search</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">HTTPResponse</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">json_dumps</span><span class="p">([</span><span class="s1">&#39;series A&#39;</span><span class="p">,</span> <span class="s1">&#39;series B&#39;</span><span class="p">]),</span>
+                            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+</code></pre></div>
 
 <p>Also, note that, the code uses <code>json_dumps</code> from bottle and not <code>json.dumps</code>.
 This is because <code>json.dumps</code> slow  and bottle is opting to use <code>usjon.dumps</code>
@@ -141,8 +136,8 @@ I will start with the later case.</p>
 <p>Grafana sends a request which specifies that it queries for the tabular data. The
 request's JSON will contain:</p>
 
-<pre><code>'targets': [{'target': 'series B', 'refId': 'A', 'type': 'table'}]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">&#39;targets&#39;:</span> <span class="p">[{</span><span class="err">&#39;target&#39;:</span> <span class="err">&#39;series</span> <span class="err">B&#39;,</span> <span class="err">&#39;refId&#39;:</span> <span class="err">&#39;A&#39;,</span> <span class="err">&#39;type&#39;:</span> <span class="err">&#39;table&#39;</span><span class="p">}]</span>
+</code></pre></div>
 
 <p>So the endpoint has to check for it in order to return a response which Grafana
 can understand:</p>
@@ -230,21 +225,21 @@ database specific, and I am going to create a simple array of values using the S
 and Cosine function (you should be able to read real data from your favorite
 database instead of these functions).</p>
 
-<pre><code>@app.post('/query')
-def query():
-      if request.json['targets'][0]['type'] == 'table':
-                ... snipped ...
-    else:
-        body = []
-        start, end = request.json['range']['from'], request.json['range']['to']
-        for target in request.json['targets']:
-            name = target['target']
-            datapoints = create_data_points(FUNCTIONS[name], start, end)
-            body.append({'target': name, 'datapoints': datapoints})
+<div class="codehilite"><pre><span></span><code><span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">query</span><span class="p">():</span>
+      <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span>
+                <span class="o">...</span> <span class="n">snipped</span> <span class="o">...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">][</span><span class="s1">&#39;from&#39;</span><span class="p">],</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">][</span><span class="s1">&#39;to&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">]:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
+            <span class="n">datapoints</span> <span class="o">=</span> <span class="n">create_data_points</span><span class="p">(</span><span class="n">FUNCTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+            <span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;datapoints&#39;</span><span class="p">:</span> <span class="n">datapoints</span><span class="p">})</span>
 
-        body = dumps(body)
-    return HTTPResponse(body=body, headers={'Content-Type': 'application/json'})
-</code></pre>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HTTPResponse</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+</code></pre></div>
 
 <p>The hard work is hidden in <code>create_data_points</code>. This function takes care
 of creating an array of values and unixtimestamp in milliseconds. If you inteand
@@ -288,6 +283,12 @@ code for <code>create_data_points</code>:</p>
 
 <p><img src="https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Two%20series.png" alt="graph" /></p>
 
+<p>Finally, I am a huge fan of SQLite, and it's my goto Relational Database
+in most of my Projects. Nevertheless, you should consider whether a Relational
+Database is the right choice for storing time series data. I would not be a huge
+problem for smaller amounts of data. However, for larger datasets and intesive
+queries, you should consider a dedicated time series database.</p>
+
 <p>The complete code for <a href="https://gitlab.com/oz123/grafana-python-datasource">creating a grafana data source with python can be found here</a>.</p>
 
 <p>Credits:</p>
@@ -296,7 +297,6 @@ code for <code>create_data_points</code>:</p>
 <li><a href="https://stackoverflow.com/a/17262900/492620">Bottle Py: Enabling CORS for jQuery AJAX requests</a></li>
 <li><a href="https://stackoverflow.com/a/6683724/492620">Making a list of evenly spaced numbers in a certain range in python</a></li>
 <li><a href="https://blog.jonathanmccall.com/2018/10/09/creating-a-grafana-datasource-using-flask-and-the-simplejson-plugin/">Creating a Grafana datasource using Flask and the Simple JSON datasource plugin</a></li>
-<li><a href="https://github.com/stzr1123">The best glue around - Esteban Zacharzewski</a></li>
 </ul>
 
 	<div class="tags">
