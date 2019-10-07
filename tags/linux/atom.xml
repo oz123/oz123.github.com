@@ -5,11 +5,27 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2018-10-09T22:36:05Z</updated>
+<updated>2019-10-07T07:04:15Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Deploy NFS server inside a Kubernetes cluster</title>
+  <link href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html" />
+  <id>http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    Using NFS shared volumes in Kubernetes is easy. But what if you want to serve 
+    NFS volumes from with Kuberentes? It turns out to be a tricky thing. Here is
+    a tutorial on how to enable Kuberentes to share NFS volumes.
+    In the end of this tutorial we create a Deployment with a container sharing
+    a directory from the host machine, and a few containers using this shared
+    directory as a persistent volume.
+    <a href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>backup and restore with duplicity</title>
   <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
@@ -117,17 +133,6 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
     I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
     <a href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>Quick Tip - Tiling Windows manager in Mate-Desktop</title>
-  <link href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html" />
-  <id>http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Here is how you can achieve Tiling windows management without leaving a full blown Desktop Environment such as Mate-Desktop using x-tile
-    <a href="http://oz123.github.com/writings/2014-01-11-Tiling-windows-mate/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
