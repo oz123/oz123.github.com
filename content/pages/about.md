@@ -68,7 +68,4 @@ T2o9P7OT67k=
 
 This blog is powered by [blogit, a fast static site generator][1].
 
-
-__Internet Explorer is for *neanderthals*, please get a modern browser.__
-
 [1]: https://github.com/oz123/blogit/
