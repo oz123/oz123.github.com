@@ -37,7 +37,7 @@
 								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
 								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
 								<a title="Github" href="https://github.com/oz123">github</a>
-								<a title="Public Speaking" href="/public-speaking">speaking</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
 								</div><!--/.nav-collapse -->
 							</div><!-- menu -->
 						</div><!--navbar-->
@@ -65,7 +65,7 @@ bottle:</p>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Bottle</span><span class="p">()</span>
 
-<span class="nd">@app.get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;OK&quot;</span>
 
@@ -94,9 +94,9 @@ as good to use.</p>
 <p>The documentation specifies you should enable CORS, so before adding anything
 to the webserver, let's enable CORS:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="nd">@app.hook</span><span class="p">(</span><span class="s1">&#39;after_request&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">hook</span><span class="p">(</span><span class="s1">&#39;after_request&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">enable_cors</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;after_request hook&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after_request hook&quot;</span><span class="p">)</span>
     <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
     <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;OPTIONS&#39;</span>
     <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Accept, Content-Type&#39;</span>
@@ -117,7 +117,7 @@ is response is JSON. The body is a dump of a Python list.</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">json_dumps</span>
 
 
-<span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">search</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">HTTPResponse</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">json_dumps</span><span class="p">([</span><span class="s1">&#39;series A&#39;</span><span class="p">,</span> <span class="s1">&#39;series B&#39;</span><span class="p">]),</span>
                             <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
@@ -143,7 +143,7 @@ request's JSON will contain:</p>
 <p>So the endpoint has to check for it in order to return a response which Grafana
 can understand:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span>
         <span class="n">series</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
@@ -154,7 +154,7 @@ can understand:</p>
 can return something that Grafana can understand. We take the example from
 the documentation, and add a little twist, so there is a table for each series:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">query</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span>
         <span class="n">series</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
@@ -226,7 +226,7 @@ database specific, and I am going to create a simple array of values using the S
 and Cosine function (you should be able to read real data from your favorite
 database instead of these functions).</p>
 
-<div class="codehilite"><pre><span></span><code><span class="nd">@app.post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/query&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">query</span><span class="p">():</span>
       <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">&#39;targets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span>
                 <span class="o">...</span> <span class="n">snipped</span> <span class="o">...</span>

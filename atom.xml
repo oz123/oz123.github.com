@@ -5,11 +5,34 @@
 <link href="http://oz123.github.com/atom.xml" rel="self" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
-<updated>2019-10-07T07:25:37Z</updated>
+<updated>2020-03-11T15:55:02Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
   <email>nahumoz@gmail.com</email>
 </author>
+<entry>
+  <title>Thoughts after leaving noris network after two years</title>
+  <link href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html" />
+  <id>http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html</id>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    After two years at noris network AG, yesterday was my last day with this company.
+  It has been a long time since it felt so hard leaving a company. In my two years
+    I worked with really great people on some of the most cutting edge technologies.
+    All these things were not possible without the help of so many great people with
+    whom I worked with. Some of them might read this post, so here is a big thanks.
+    I wanted to summerize my two years and gather all the lessons I learned in one place
+    for my future self and others too.  
+    It's quite hard summerize such an eclectic post. It's been a wild ride in noris network
+    with lots of new technologies and ideas. We have had a lot of success. I would like
+    to think that a great part was because we opted to work in a an open source matter,
+    even thougah not all our projects where open source. This blog post is a summary of the
+    good things we did, and the positive leasons we learned.  
+    I hope reading through these will inspire you to choose a similar path.
+    <a href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
+    </div>
+  </content>
+  </entry>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
   <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
@@ -111,25 +134,6 @@
     call for the package manager. This is unfortunately, not very reusable. But,
     here is a simple schema how to use M4 macros to achieve this abstraction.
     <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
-<entry>
-  <title>On learning Ruby coming from Python ...</title>
-  <link href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I am learning Ruby, and coming from Python it's not a an easy thing.
-    Ruby is confusing, it has a weird syntax, and things are not really
-    simple as in Python. There is still tons of stuff which seem like dark magic.
-    There's `nil`, there are `gems` and `bundler`. And there is _Rails, 
-    which isn't Ruby_. Ruby is good for so many people out there, and I am sure 
-    you can do amazing things in it. I already know it's never going to be my 
-    weapon of choice, but it's not bad knowing my way around it. I'd like to know 
-    how to set up a simple project, read and debug code, install gems and package 
-    ruby projects. I have been ignoring Ruby for too long.
-    <a href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -37,7 +37,7 @@
 								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
 								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
 								<a title="Github" href="https://github.com/oz123">github</a>
-								<a title="Public Speaking" href="/public-speaking">speaking</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
 								</div><!--/.nav-collapse -->
 							</div><!-- menu -->
 						</div><!--navbar-->
@@ -138,7 +138,7 @@ learn how to use wave files in Python. With a little help from Andrew
         <span class="k">return</span> <span class="n">seperator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">morse</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">morse_to_wav</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">file_</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">morse_to_wav</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">file_</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
     <span class="n">char2signal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;.&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
 
@@ -165,7 +165,7 @@ learn how to use wave files in Python. With a little help from Andrew
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">alsaaudio</span>
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need to install pyalsaaudio&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You need to install pyalsaaudio&quot;</span><span class="p">)</span>
 
     <span class="n">device</span> <span class="o">=</span> <span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM</span><span class="p">(</span><span class="n">card</span><span class="o">=</span><span class="n">card</span><span class="p">)</span>
 

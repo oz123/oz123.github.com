@@ -37,7 +37,7 @@
 								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
 								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
 								<a title="Github" href="https://github.com/oz123">github</a>
-								<a title="Public Speaking" href="/public-speaking">speaking</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
 								</div><!--/.nav-collapse -->
 							</div><!-- menu -->
 						</div><!--navbar-->
@@ -70,13 +70,13 @@ but close enough to demonstrate the case:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parseDateString</span><span class="p">(</span><span class="n">date_string</span><span class="p">):</span>
 
-        <span class="n">d</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{4}-\d{2}-\d{2}&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d</span><span class="si">{4}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="p">):</span>
                 <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{2}-\d{2}-\d{2}&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
                 <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d{4}\.\d{2}\.\d{2}&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\d</span><span class="si">{4}</span><span class="s1">\.\d</span><span class="si">{2}</span><span class="s1">\.\d</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">):</span>
                 <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s2">&quot;%y.%m.</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="o">....</span><span class="p">):</span>
         <span class="o">...</span>
@@ -145,14 +145,14 @@ UUIDs and different <code>secretKey</code> strings which had to be grouped toget
 <p>Here is how I started, wasted an expensive half an hour building a regex:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="n">regex</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;.+ - Request to url=&#39;/(?P&lt;URL&gt;.*/)(?P&lt;UUID1&gt;([a-f0-9]{0,32})|&quot;</span>
-         <span class="s2">&quot;([0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}))/(?P&lt;UUID2&gt;[0-9a-f]&quot;</span>
-         <span class="s2">&quot;{32}|([0-9a-f]{8}-[0-9a-f]{4}-{3}[0-9a-f]{12})|.*).*t=&quot;</span>
+         <span class="s2">&quot;([0-9a-f]</span><span class="si">{8}</span><span class="s2">-([0-9a-f]</span><span class="si">{4}</span><span class="s2">-)</span><span class="si">{3}</span><span class="s2">[0-9a-f]</span><span class="si">{12}</span><span class="s2">))/(?P&lt;UUID2&gt;[0-9a-f]&quot;</span>
+         <span class="s2">&quot;</span><span class="si">{32}</span><span class="s2">|([0-9a-f]</span><span class="si">{8}</span><span class="s2">-[0-9a-f]</span><span class="si">{4}</span><span class="s2">-</span><span class="si">{3}</span><span class="s2">[0-9a-f]</span><span class="si">{12}</span><span class="s2">)|.*).*t=&quot;</span>
          <span class="s2">&quot;&#39;(?P&lt;time&gt;\d+)ms&#39;$&quot;</span><span class="p">)</span>
 
 <span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;requests.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">rgx</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
 </code></pre></div>
 
 <p>The above code was spitting out dictionaries which I thought I could group:</p>
@@ -199,9 +199,9 @@ and if possible use built-it methods for strings. Here is what I came with:</p>
 
 <span class="n">url_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span>
 <span class="c1"># print header</span>
-<span class="k">print</span> <span class="s2">&quot;URL</span><span class="se">\t</span><span class="s2"> |# of calls </span><span class="se">\t</span><span class="s2">| avg. response time (ms)&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;URL</span><span class="se">\t</span><span class="s2"> |# of calls </span><span class="se">\t</span><span class="s2">| avg. response time (ms)&quot;</span>
 <span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">url_table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;{}</span><span class="se">\t</span><span class="s2">|{}</span><span class="se">\t</span><span class="s2">|{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;calls&#39;</span><span class="p">],</span>
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="se">\t</span><span class="s2">|</span><span class="si">{}</span><span class="se">\t</span><span class="s2">|</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;calls&#39;</span><span class="p">],</span>
             <span class="n">values</span><span class="p">[</span><span class="s1">&#39;total_time&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;calls&#39;</span><span class="p">])</span>
 
 <span class="c1"># ouput:</span>
@@ -228,9 +228,9 @@ tuple of strings to check:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;elepahant&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s1">&#39;elep&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">))</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;elep&#39;</span><span class="p">,</span> <span class="s1">&#39;nt&#39;</span><span class="p">))</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </code></pre></div>
 
 <p>So before you go hacking yourself a nice regex, check the STL, maybe the code

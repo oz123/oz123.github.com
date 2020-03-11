@@ -37,7 +37,7 @@
 								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
 								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
 								<a title="Github" href="https://github.com/oz123">github</a>
-								<a title="Public Speaking" href="/public-speaking">speaking</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
 								</div><!--/.nav-collapse -->
 							</div><!-- menu -->
 						</div><!--navbar-->
@@ -71,7 +71,7 @@ simple:</p>
 <span class="sd">    The main loop of tasku where everything happens.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">check_for_tasks</span><span class="p">():</span>
             <span class="n">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
         <span class="n">clean_finished_tasks</span><span class="p">()</span>
@@ -103,7 +103,7 @@ the task does not immediately terminate is useful, so we can see the task in the
       <span class="bp">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">delay</span>
 
    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-       <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+       <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">delay</span><span class="p">)</span>
 </code></pre></div>
 
@@ -151,7 +151,7 @@ loop is <code>clean_finished_tasks</code>:</p>
 <span class="sd">    errors and executed are global dictionaries. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">running</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
+        <span class="nb">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">exitcode</span><span class="p">:</span>
                 <span class="n">errors</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">exitcode</span>
@@ -163,7 +163,7 @@ loop is <code>clean_finished_tasks</code>:</p>
 
 <p>Finally, all the building stones are there. The full program is then:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">mp</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -189,7 +189,7 @@ loop is <code>clean_finished_tasks</code>:</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">delay</span><span class="p">)</span>
 
 
@@ -225,7 +225,7 @@ loop is <code>clean_finished_tasks</code>:</p>
 <span class="sd">    errors and executed are global dictionaries.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">running</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
+        <span class="nb">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">exitcode</span><span class="p">:</span>
                 <span class="n">errors</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">exitcode</span>
@@ -240,16 +240,16 @@ loop is <code>clean_finished_tasks</code>:</p>
 <span class="sd">    The main loop of tasku where everything happens.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">check_for_tasks</span><span class="p">():</span>
             <span class="n">start_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
 
         <span class="n">clean_finished_tasks</span><span class="p">()</span>
-        <span class="k">print</span> <span class="s2">&quot;successfully cleaned! &quot;</span>
+        <span class="nb">print</span> <span class="s2">&quot;successfully cleaned! &quot;</span>
         <span class="c1"># added some information output</span>
-        <span class="k">print</span> <span class="s2">&quot;executed, &quot;</span><span class="p">,</span> <span class="n">executed</span>
-        <span class="k">print</span> <span class="s2">&quot;running, &quot;</span><span class="p">,</span> <span class="n">running</span>
-        <span class="k">print</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="nb">print</span> <span class="s2">&quot;executed, &quot;</span><span class="p">,</span> <span class="n">executed</span>
+        <span class="nb">print</span> <span class="s2">&quot;running, &quot;</span><span class="p">,</span> <span class="n">running</span>
+        <span class="nb">print</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
         <span class="c1"># add some delay so, we could see what is going on in the OS</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 

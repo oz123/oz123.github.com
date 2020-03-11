@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Deploy NFS server inside a Kubernetes cluster </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Tiram</a> &ndash; April 24, 2019</div>
+	<h1>Deploy NFS server inside a Kubernetes cluster</h1>
+	<p>First, let's start by clearing the motivation. Sharing NFS volumes requires
+modifications of services and packages on a Linux server. If you want to set up
+a server with NFS your first and easies option is to use SSH and set this up
+manually on a server (maybe one of the worker nodes in your Kuberenetes cluster).
+You can also set up a dedicated machines, or use a service by your cloud provider.
+If you run a Kuberentes on premises, chances you have some dedicated NFS server,
+or maybe even a more sophisticated service like NetApp). Doing SSH on a running
+server an setting up NFS manually, is idea terrible. Having this configuration
+save in Ansible Playbook is a bit better. The trouble is that you now have to
+keep working in 2 different environments Ansible and Kubernetes. While both
+offer declarative style configuration, you still need to switch context while
+changing from one to another. Using only Kuberentes to configure you
+infrastructure simplifies things a little bit (although, by no means, Kuberentes
+is simple).
+So, now that the motivation is clear let's jump right in. To run NFS server from
+a containers the host has to have a kernel that supports NFS. In my case, my
+hosts where using a kernel which didn't support it. So setting up NFS failed.</p>
+
+<pre><code>$ sudo apt install nfs-kernel-server
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+nfs-kernel-server is already the newest version (1:1.2.8-9ubuntu12.1).
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+1 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Setting up nfs-kernel-server (1:1.2.8-9ubuntu12.1) ...
+A dependency job for nfs-server.service failed. See 'journalctl -xe' for details.
+nfs-server.service couldn't start.
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+A dependency job for nfs-server.service failed. See 'journalctl -xe' for details.
+invoke-rc.d: initscript nfs-kernel-server, action "start" failed.
+● nfs-server.service - NFS server and services
+   Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+   Active: inactive (dead)
+
+Apr 26 09:09:18 master-1-test systemd[1]: Dependency failed for NFS server and services.
+Apr 26 09:09:18 master-1-test systemd[1]: nfs-server.service: Job nfs-server.service/start failed with result 'dependency'.
+Apr 27 06:34:12 master-1-test systemd[1]: Dependency failed for NFS server and services.
+Apr 27 06:34:12 master-1-test systemd[1]: nfs-server.service: Job nfs-server.service/start failed with result 'dependency'.
+Apr 27 06:34:14 master-1-test systemd[1]: Dependency failed for NFS server and services.
+Apr 27 06:34:14 master-1-test systemd[1]: nfs-server.service: Job nfs-server.service/start failed with result 'dependency'.
+Apr 27 15:00:28 master-1-test systemd[1]: Dependency failed for NFS server and services.
+Apr 27 15:00:28 master-1-test systemd[1]: nfs-server.service: Job nfs-server.service/start failed with result 'dependency'.
+Apr 27 15:00:30 master-1-test systemd[1]: Dependency failed for NFS server and services.
+Apr 27 15:00:30 master-1-test systemd[1]: nfs-server.service: Job nfs-server.service/start failed with result 'dependency'.
+dpkg: error processing package nfs-kernel-server (--configure):
+ subprocess installed post-installation script returned error exit status 1
+Errors were encountered while processing:
+ nfs-kernel-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ubuntu@node-2-test:~$ uname -r
+4.4.0-1044-kvm
+</code></pre>
+
+<p>Switching to the generic kernel of ubuntu fixed the issue.
+This is done by doing:</p>
+
+<pre><code>$ sudo apt install linux-image-generic
+$ grep menuentry /boot/grub/grub.cfg
+...
+$ sudo grub-reboot '1&gt;6'  # you probably want to change this number
+$ sudo reboot
+</code></pre>
+
+<p>After the reboot:</p>
+
+<pre><code>ubuntu@node-2-test:~$ uname -r
+4.4.0-146-generic
+</code></pre>
+
+<p>Now, that the host OS is ready we can continue to deploy a kuberentes Pod
+which serves NFS. This Pod is deployed with the following manfiest:</p>
+
+<pre><code>---
+# Run the NFS server a Pod
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nfs-server-pod
+  labels:
+    role: nfs
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: node-2-test
+  containers:
+    - name: nfs-server-container
+      image: oz123/nfs-server:0.1
+      securityContext:
+        privileged: true
+      - mountPath: /srv/exports0002
+        name: exports0002
+      securityContext:
+        privileged: true
+      env:
+       - name: MOUNTS
+         value: "/srv/exports0001"
+  volumes:
+   - name: exports0001
+     hostPath:
+       path: /srv/exports0001
+       type: DirectoryOrCreate
+</code></pre>
+
+<p>Note the following things about the manifest:</p>
+
+<ol>
+<li>I specified that the pod should run on <code>node-2-test</code> using a <code>nodeSelector</code>.
+That is the node where I previously installed a kernel that supports NFS.
+You can use any other selector or none if all your hosts support NFS.</li>
+<li>The container is running a privileged container. This is required for two
+reasons, the obvious one is that the container will try to create a new
+ directory in <code>/</code>, using the directive <code>DirectoryOrCreate</code>. The less obvious
+ one, is that NFS needs to run as root too. Other wise the a Pod trying to
+ mount a shared volume will encouter error.</li>
+</ol>
+
+<p>The <a href="https://github.com/oz123/docker-nfs-server/blob/master/Dockerfile">container which runs the NFS server</a> deserves some explanation too. If you
+try to understand what is going on in it, you might have some difficulty.
+First, this container is quite unusual, since it uses an init to start multiple
+process and restart them if the crash.
+This is done by <a href="https://github.com/oz123/docker-nfs-server/blob/master/Dockerfile#L3">installing runit</a>. Runit manages services by watching
+directories  in <code>/etc/sv</code>. A service is defined as directory with the following
+scripts at list:</p>
+
+<pre><code>/etc/sv/&lt;service&gt;/run
+/etc/sv/&lt;service&gt;/finish
+</code></pre>
+
+<p>https://wiki.debian.org/SecuringNFS</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/linux"><span>linux</span></a>, <a class="tag" href="/tags/kubernetes"><span>kubernetes</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html&title=Deploy NFS server inside a Kubernetes cluster&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html&title=Deploy NFS server inside a Kubernetes cluster" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html" title="Deploy NFS server inside a Kubernetes cluster" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html&body=Deploy NFS server inside a Kubernetes cluster" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>
