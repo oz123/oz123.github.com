@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="{{site_url}}/atom.xml" rel="self" />
+<link href="{{site_url}}/atom.xml" rel="self" type="application/atom+xml" />
 <link href="{{site_url}}/" />
 <id>{{site_url}}/atom.xml</id>
 <updated>{{ last_build }}</updated>

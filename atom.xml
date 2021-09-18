@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
+<link href="http://oz123.github.com/atom.xml" rel="self" type="application/atom+xml" />
 <link href="http://oz123.github.com/" />
 <id>http://oz123.github.com/atom.xml</id>
 <updated>2020-03-11T16:27:20Z</updated>
