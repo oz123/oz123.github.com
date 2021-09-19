@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
 <body>
 	<div class="container-fluid">
 		<div class="row" style="padding-top: 10px">
@@ -127,8 +128,7 @@ $ sudo reboot
 <p>Now, that the host OS is ready we can continue to deploy a kuberentes Pod
 which serves NFS. This Pod is deployed with the following manfiest:</p>
 
-<pre><code>---
-# Run the NFS server a Pod
+<pre><code># Run the NFS server a Pod
 
 kind: Pod
 apiVersion: v1

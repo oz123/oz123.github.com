@@ -2,138 +2,124 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
-<updated>2020-03-11T15:51:07Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Nahum Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Deploy NFS server inside a Kubernetes cluster</title>
   <link href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html" />
   <id>http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Using NFS shared volumes in Kubernetes is easy. But what if you want to serve 
+	<content type="html" xml:lang="en"><![CDATA[
+      Using NFS shared volumes in Kubernetes is easy. But what if you want to serve 
     NFS volumes from with Kuberentes? It turns out to be a tricky thing. Here is
     a tutorial on how to enable Kuberentes to share NFS volumes.
     In the end of this tutorial we create a Deployment with a container sharing
     a directory from the host machine, and a few containers using this shared
     directory as a persistent volume.
-    <a href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>backup and restore with duplicity</title>
   <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
   <id>http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
+	<content type="html" xml:lang="en"><![CDATA[
+      Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
   I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
   to check how to restore my files. I did decide to check how to restore file,
   because backup is only half the job! It turns out, that the GUI does a disservice
   for duplicity users. Restoring an encrypted backup turned out to not work.
   I didn't bother to research why, and turned to the CLI. This is a reminder on
   how to restore the files.
-    <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Why I still persist on not using systemd</title>
   <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
   <id>http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
+	<content type="html" xml:lang="en"><![CDATA[
+      The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
  developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
-    <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Dockerfile quicky - templating with M4</title>
   <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
   <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Creating abstracted Dockerfile is something I really wish existed. Every time, 
+	<content type="html" xml:lang="en"><![CDATA[
+      Creating abstracted Dockerfile is something I really wish existed. Every time, 
     I write a `Dockerfile` for a specific base image I must specify the correct
     package manager command. You either use `apt-get` or `apk` or `yum` or any other
     call for the package manager. This is unfortunately, not very reusable. But,
     here is a simple schema how to use M4 macros to achieve this abstraction.
-    <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>OpenWRT SSH init script with port forwarding</title>
   <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
   <id>http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
-    <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
+      <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Gentoo - Reasons why you should give it a try</title>
   <link href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
   <id>http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Type your summary here.
-    <a href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Type your summary here.
+      <a href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Dictionaries in bash scripts - it is possible</title>
   <link href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html" />
   <id>http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Apparently, bash offeres assosiative arrays, similar to Python dictionaries
-    <a href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Apparently, bash offeres assosiative arrays, similar to Python dictionaries
+      <a href="http://oz123.github.com/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Simple Multiprocessing Task Queue in Python</title>
   <link href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
   <id>http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
-    <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
+      <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>salt quick tip - changing passwords on multiple clusters</title>
   <link href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
   <id>http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
-    <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
+      <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Revive and old Smartphone with Cyanogenmod!</title>
   <link href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
   <id>http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
-    <a href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
+      <a href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

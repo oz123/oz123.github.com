@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
 <body>
 	<div class="container-fluid">
 		<div class="row" style="padding-top: 10px">
@@ -137,7 +138,7 @@ I will start with the later case.</p>
 <p>Grafana sends a request which specifies that it queries for the tabular data. The
 request's JSON will contain:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="err">&#39;targets&#39;:</span> <span class="p">[{</span><span class="err">&#39;target&#39;:</span> <span class="err">&#39;series</span> <span class="err">B&#39;,</span> <span class="err">&#39;refId&#39;:</span> <span class="err">&#39;A&#39;,</span> <span class="err">&#39;type&#39;:</span> <span class="err">&#39;table&#39;</span><span class="p">}]</span>
+<div class="codehilite"><pre><span></span><code><span class="err">&#39;</span><span class="kc">tar</span><span class="err">ge</span><span class="kc">ts</span><span class="err">&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="err">&#39;</span><span class="kc">tar</span><span class="err">ge</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">&#39;series</span> <span class="err">B&#39;</span><span class="p">,</span> <span class="err">&#39;re</span><span class="kc">f</span><span class="err">Id&#39;</span><span class="p">:</span> <span class="err">&#39;A&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">&#39;</span><span class="kc">ta</span><span class="err">ble&#39;</span><span class="p">}]</span>
 </code></pre></div>
 
 <p>So the endpoint has to check for it in order to return a response which Grafana
@@ -199,9 +200,9 @@ Grafana expects the data in the following form:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="p">{</span>
-    <span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="s2">&quot;series A&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">The</span> <span class="err">field</span> <span class="err">being</span> <span class="err">queried</span> <span class="err">for</span>
+    <span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="s2">&quot;series A&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">The</span> <span class="kc">f</span><span class="err">ield</span> <span class="err">bei</span><span class="kc">n</span><span class="err">g</span> <span class="err">queried</span> <span class="kc">f</span><span class="err">or</span>
     <span class="nt">&quot;datapoints&quot;</span><span class="p">:[</span>
-      <span class="p">[</span><span class="mi">622</span><span class="p">,</span><span class="mi">1450754160000</span><span class="p">],</span>  <span class="err">//</span> <span class="err">Metric</span> <span class="err">value</span> <span class="err">as</span> <span class="err">a</span> <span class="err">float</span> <span class="p">,</span> <span class="err">unixtimestamp</span> <span class="err">in</span> <span class="err">milliseconds</span>
+      <span class="p">[</span><span class="mi">622</span><span class="p">,</span><span class="mi">1450754160000</span><span class="p">],</span>  <span class="err">//</span> <span class="err">Me</span><span class="kc">tr</span><span class="err">ic</span> <span class="err">value</span> <span class="err">as</span> <span class="err">a</span> <span class="kc">fl</span><span class="err">oa</span><span class="kc">t</span> <span class="p">,</span> <span class="err">u</span><span class="kc">n</span><span class="err">ix</span><span class="kc">t</span><span class="err">imes</span><span class="kc">ta</span><span class="err">mp</span> <span class="err">i</span><span class="kc">n</span> <span class="err">milliseco</span><span class="kc">n</span><span class="err">ds</span>
       <span class="p">[</span><span class="mi">365</span><span class="p">,</span><span class="mi">1450754220000</span><span class="p">]</span>
     <span class="p">]</span>
   <span class="p">},</span>

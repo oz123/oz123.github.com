@@ -2,36 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
-<updated>2020-03-11T15:51:13Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Nahum Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Fooling around with JavaScript and OpenPGP</title>
   <link href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
   <id>http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Fooling around with JavaScript and OpenPGP, as the title says. I needed to
+	<content type="html" xml:lang="en"><![CDATA[
+      Fooling around with JavaScript and OpenPGP, as the title says. I needed to
         create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
         turned out to be possible. These are the results of my experiment.
-    <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>New version of Pwman3 released (v0.9)</title>
   <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
   <id>http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
-    <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
+      <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

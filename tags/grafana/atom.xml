@@ -2,25 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
-<updated>2020-03-11T15:51:14Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Nahum Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
   <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
   <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This is a short tutorial on how to build a data source for Grafana using Python
+	<content type="html" xml:lang="en"><![CDATA[
+      This is a short tutorial on how to build a data source for Grafana using Python
     Bottle micro-framework. Eventually, you can use this code to connect to any
     database (including SQLite).
-    <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

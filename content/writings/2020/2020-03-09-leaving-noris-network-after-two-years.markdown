@@ -8,7 +8,7 @@ chronological: yes
 kind: writing
 summary: >
 	After two years at noris network AG, yesterday was my last day with this company.
-  It has been a long time since it felt so hard leaving a company. In my two years
+	It has been a long time since it felt so hard leaving a company. In my two years
 	I worked with really great people on some of the most cutting edge technologies.
 	All these things were not possible without the help of so many great people with
 	whom I worked with. Some of them might read this post, so here is a big thanks.
