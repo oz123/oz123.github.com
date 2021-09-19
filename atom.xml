@@ -2,22 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" type="application/atom+xml" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
-<updated>2020-03-11T16:27:20Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Nahum Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Thoughts after leaving noris network after two years</title>
   <link href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html" />
   <id>http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    After two years at noris network AG, yesterday was my last day with this company.
-  It has been a long time since it felt so hard leaving a company. In my two years
+	<content type="html" xml:lang="en"><![CDATA[
+      After two years at noris network AG, yesterday was my last day with this company.
+    It has been a long time since it felt so hard leaving a company. In my two years
     I worked with really great people on some of the most cutting edge technologies.
     All these things were not possible without the help of so many great people with
     whom I worked with. Some of them might read this post, so here is a big thanks.
@@ -29,112 +24,107 @@
     even thougah not all our projects where open source. This blog post is a summary of the
     good things we did, and the positive leasons we learned.  
     I hope reading through these will inspire you to choose a similar path.
-    <a href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
   <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
   <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This is a short tutorial on how to build a data source for Grafana using Python
+	<content type="html" xml:lang="en"><![CDATA[
+      This is a short tutorial on how to build a data source for Grafana using Python
     Bottle micro-framework. Eventually, you can use this code to connect to any
     database (including SQLite).
-    <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Fooling around with JavaScript and OpenPGP</title>
   <link href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
   <id>http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Fooling around with JavaScript and OpenPGP, as the title says. I needed to
+	<content type="html" xml:lang="en"><![CDATA[
+      Fooling around with JavaScript and OpenPGP, as the title says. I needed to
         create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
         turned out to be possible. These are the results of my experiment.
-    <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>backup and restore with duplicity</title>
   <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
   <id>http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
+	<content type="html" xml:lang="en"><![CDATA[
+      Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
   I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
   to check how to restore my files. I did decide to check how to restore file,
   because backup is only half the job! It turns out, that the GUI does a disservice
   for duplicity users. Restoring an encrypted backup turned out to not work.
   I didn't bother to research why, and turned to the CLI. This is a reminder on
   how to restore the files.
-    <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>blogit - new release</title>
   <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
   <id>http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    After a long development hiatus I am releasing a new version of blogit
-    <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      After a long development hiatus I am releasing a new version of blogit
+      <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Submitting patches to Python</title>
   <link href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
   <id>http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This is not my typical blog post style. So no "how to" or opinnions. Just
+	<content type="html" xml:lang="en"><![CDATA[
+      This is not my typical blog post style. So no "how to" or opinnions. Just
     some reflections on how I submitted a patch to Python's standard library.
-    <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Why I still persist on not using systemd</title>
   <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
   <id>http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
+	<content type="html" xml:lang="en"><![CDATA[
+      The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
  developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
-    <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>coverage reporting and logging without a webservice</title>
   <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
   <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    
-    <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      For quite a while now I wanted to have a cheap replacement for collecting
+    and tracking coverage of codes I work on. Finally, I found a nice way to
+    record and track coverage reporting inside git itself in a semi-automatic
+    or completely automatic way.
+      <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Dockerfile quicky - templating with M4</title>
   <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
   <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Creating abstracted Dockerfile is something I really wish existed. Every time, 
+	<content type="html" xml:lang="en"><![CDATA[
+      Creating abstracted Dockerfile is something I really wish existed. Every time, 
     I write a `Dockerfile` for a specific base image I must specify the correct
     package manager command. You either use `apt-get` or `apk` or `yum` or any other
     call for the package manager. This is unfortunately, not very reusable. But,
     here is a simple schema how to use M4 macros to achieve this abstraction.
-    <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>
