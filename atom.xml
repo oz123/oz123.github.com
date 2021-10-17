@@ -3,9 +3,21 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Nahum Tiram</name>
+    <name>Oz Tiram</name>
     <email>oz.tiram@gmail.com</email>
 </author>
+<entry>
+  <title>Announce - Wolkenbrot v0.3 - now with OpenStack support</title>
+  <link href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
+  <id>http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      I have just released WolkenBrot v0.3 with OpenStack support.
+    WolkenBrot is my own little program to bake cloud images.
+    The name means "Cloud Bread" in German.
+      <a href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Thoughts after leaving noris network after two years</title>
   <link href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html" />
@@ -110,20 +122,6 @@
     record and track coverage reporting inside git itself in a semi-automatic
     or completely automatic way.
       <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Dockerfile quicky - templating with M4</title>
-  <link href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html" />
-  <id>http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      Creating abstracted Dockerfile is something I really wish existed. Every time, 
-    I write a `Dockerfile` for a specific base image I must specify the correct
-    package manager command. You either use `apt-get` or `apk` or `yum` or any other
-    call for the package manager. This is unfortunately, not very reusable. But,
-    here is a simple schema how to use M4 macros to achieve this abstraction.
-      <a href="http://oz123.github.com/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

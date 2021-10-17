@@ -20,6 +20,7 @@ CONFIG = {
     'http_port': 3030,
     'content_encoding': 'utf-8',
     'author': 'Oz Tiram',
+    'email': 'oz.tiram@gmail.com',
     'editor': os.getenv("EDITOR"),
     'ARCHIVE_SIZE': 10,
     'INDEX_SIZE': 10

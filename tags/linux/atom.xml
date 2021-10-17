@@ -3,9 +3,21 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Nahum Tiram</name>
+    <name>Oz Tiram</name>
     <email>oz.tiram@gmail.com</email>
 </author>
+<entry>
+  <title>Announce - Wolkenbrot v0.3 - now with OpenStack support</title>
+  <link href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
+  <id>http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      I have just released WolkenBrot v0.3 with OpenStack support.
+    WolkenBrot is my own little program to bake cloud images.
+    The name means "Cloud Bread" in German.
+      <a href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Deploy NFS server inside a Kubernetes cluster</title>
   <link href="http://oz123.github.com/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html" />
@@ -109,16 +121,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
       <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Revive and old Smartphone with Cyanogenmod!</title>
-  <link href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html" />
-  <id>http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      I recently installed Cyanogenmod on an old Samsung Galaxy II and I just wanted to share my thoughts.
-      <a href="http://oz123.github.com/writings/2014-04-13-Revive-and-old-Smartphone-with-Cyanogenmod!/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

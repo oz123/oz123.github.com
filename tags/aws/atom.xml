@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<author>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
+</author>
+<entry>
+  <title>Announce - Wolkenbrot v0.3 - now with OpenStack support</title>
+  <link href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
+  <id>http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      I have just released WolkenBrot v0.3 with OpenStack support.
+    WolkenBrot is my own little program to bake cloud images.
+    The name means "Cloud Bread" in German.
+      <a href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+</feed>
