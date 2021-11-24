@@ -7,6 +7,17 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
+  <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
+  <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      A short guide for using IPython and Jupyter Notebook on remote Linux machine
+    in the Enterprise Corp, where you don't have root rights.
+      <a href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>Announce - Wolkenbrot v0.3 - now with OpenStack support</title>
   <link href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
   <id>http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
@@ -111,16 +122,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
       <a href="http://oz123.github.com/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>salt quick tip - changing passwords on multiple clusters</title>
-  <link href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html" />
-  <id>http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      Using salt stack to manage your own private cloud on clusters can ease your life. Here is how you can allow users to update their passwords on multipl Linux hosts
-      <a href="http://oz123.github.com/writings/2014-10-24-salt-quick-tip---changing-passwords-on-multiple-clusters/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

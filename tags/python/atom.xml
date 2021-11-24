@@ -3,9 +3,20 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Nahum Tiram</name>
+    <name>Oz Tiram</name>
     <email>oz.tiram@gmail.com</email>
 </author>
+<entry>
+  <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
+  <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
+  <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      A short guide for using IPython and Jupyter Notebook on remote Linux machine
+    in the Enterprise Corp, where you don't have root rights.
+      <a href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
   <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
@@ -107,16 +118,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       A working example of AJAX with JQuery and Bottle
       <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Introducing psutil in Munich Python Users</title>
-  <link href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html" />
-  <id>http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      I gave a quick talk in Python Munich User Group about one of my favourite. Here is a link to the presentation about psutil.
-      <a href="http://oz123.github.com/writings/2015-07-16-Introducing-psutil-in-Munich-Python-Users/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

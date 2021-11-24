@@ -2,23 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
-<updated>2020-03-11T15:51:13Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
+<entry>
+  <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
+  <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
+  <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      A short guide for using IPython and Jupyter Notebook on remote Linux machine
+    in the Enterprise Corp, where you don't have root rights.
+      <a href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>OpenWRT SSH init script with port forwarding</title>
   <link href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html" />
   <id>http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
-    <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      If you have a publicly available server you can setup a permanent SSH connection to it from your OpenWRT. Add remote port forwarding to the plan, and you get an easy way to always access your hosts where your OpenWRT router is.
+      <a href="http://oz123.github.com/writings/2016-07-03-OpenWRT-init-script-with-port-forwarding/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

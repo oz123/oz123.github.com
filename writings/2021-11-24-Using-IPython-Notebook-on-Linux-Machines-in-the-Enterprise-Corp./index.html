@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Using IPython Notebook on Linux Machines in the Enterprise Corp. </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/OzNTiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="http://oz123.github.com">Oz Tiram</a> &ndash; November 24, 2021</div>
+	<h1>Using IPython Notebook on Linux Machines in the Enterprise Corp.</h1>
+	<h2>Installing Python packages as normal user</h2>
+
+<p>The first problem is that you need to solve is that you don't have
+the rights to install packages using <code>apt</code> or <code>yum</code>.
+This is actually, easy to solve.
+You don't need to be Admin (or <code>root</code> in the Unix terminology)
+to install Python software.</p>
+
+<p>You can use Python's own package manager to create isolated environments
+with your own Python collection of packages.</p>
+
+<p>To do so, you first need to create a <code>virtual environment</code>.
+For that we invoke python as the following:</p>
+
+<pre><code>$ python3 -m venv &lt;name-of-your-virtualenv&gt;
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>$ python3 -m venv my-data-science-project
+</code></pre>
+
+<p>To use it you need to activate it:</p>
+
+<pre><code>$ source ./my-data-science-project/bin/activate
+</code></pre>
+
+<p>Doing so tells the shell where
+is <code>pip3</code> installed and it also tells <code>pip3</code> where to install packages.
+Once done, you will see that your shell has a new prefix, and <code>pip3</code> is
+no longer the one in <code>/usr/bin/</code></p>
+
+<pre><code>(my-data-science-project)$ which pip3
+/home/oz123/my-data-science-project/bin/pip3
+</code></pre>
+
+<p>Now, you can install packages into this environment. You need to tell <code>pip3</code>
+to avoid compiling packages and prefer binary packages:</p>
+
+<pre><code>(my-data-science-project)$ pip3 install --prefer-binary jupyter
+</code></pre>
+
+<p>This will install IPython and the Jupyter Notebook in your virtual environment.
+You can use IPython directly or you can use the Web Notebook.
+To use IPython simply type:</p>
+
+<pre><code>(my-data-science-project)$ ipython
+Python 3.8.10 (default, Sep 28 2021, 16:10:42)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.29.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]:
+</code></pre>
+
+<p>Using the Jupyter notebook requires a little work ...</p>
+
+<h2>Using Jupyter Notebook:</h2>
+
+<p>If you run Jupyter notebook you will see something similar to this:</p>
+
+<pre><code>(my-data-science-project)$ jupyter-notebook
+[I 15:00:36.756 NotebookApp] Serving notebooks from local directory: /home/oz123
+[I 15:00:36.756 NotebookApp] Jupyter Notebook 6.4.6 is running at:
+[I 15:00:36.756 NotebookApp] http://localhost:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+[I 15:00:36.756 NotebookApp]  or http://127.0.0.1:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+[I 15:00:36.756 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 15:00:36.759 NotebookApp] No web browser found: could not locate runnable browser.
+[C 15:00:36.759 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///home/oz123/.local/share/jupyter/runtime/nbserver-778704-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+     or http://127.0.0.1:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+</code></pre>
+
+<p>You will not be able to connect to the notebook, since per default the notebook server listens
+only on the private network connection. One can force the application to listen on the public
+IP addresses) with:</p>
+
+<pre><code>(my-data-science-project)$ jupyter-notebook --ip 10.100.6.66
+[I 15:03:05.068 NotebookApp] Serving notebooks from local directory: /home/oz123
+[I 15:03:05.068 NotebookApp] Jupyter Notebook 6.4.6 is running at:
+[I 15:03:05.068 NotebookApp] http://10.100.6.666:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+[I 15:03:05.068 NotebookApp]  or http://127.0.0.1:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+[I 15:03:05.068 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 15:03:05.070 NotebookApp] No web browser found: could not locate runnable browser.
+[C 15:03:05.071 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///home/oz123/.local/share/jupyter/runtime/nbserver-779914-open.html
+    Or copy and paste one of these URLs:
+        http://10.100.6.666:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+     or http://127.0.0.1:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+</code></pre>
+
+<p><strong>Important</strong>: You you will have another token! Don't just copy the lines I show here.</p>
+
+<p>Now, in theory, you could open the browser on your laptop and access the following address:</p>
+
+<pre><code>http://10.100.6.66:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+</code></pre>
+
+<p>You will notice, however, that nothing is loaded. That is because our servers our behind a firewall.
+To access the notebook you will need to employ SSH sorcery. Namely, port forwarding.
+From another Putty or Terminal access the machine where Jupyter is running in the following way:</p>
+
+<pre><code>ssh ds.machine.ecorp.net -L 8889:127.0.0.1:8888
+</code></pre>
+
+<p>This tells SSH to tunnel the port 8888 on the <code>localhost</code> to your local machine on port 8889.
+Now if you copy line from the output of Jupyter and paste it in your browser, modifying 8888 to 8889
+you should be able to access the notebook.</p>
+
+<pre><code>http://127.0.0.1:8889/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
+</code></pre>
+
+<p>OK, that was not so ergonomic. There is a lot of typing and copying and modifying. You can
+configure you SSH client to do the port forwarding for you.
+Add the following to the file <code>~/.ssh/config</code> on your Laptop (this will work if your are using
+WSL or MobaXterm on windows, for Putty you will have to google around):</p>
+
+<pre><code>Host ECorpServer
+   User oz123
+   Hostname ds.machine.ecorp.net
+   # You can replace the line above with the internal IP of ds.machine.ecorp.net
+   # Hostname 10.100.6.66
+   LocalForward 8888 127.0.0.1:8888
+</code></pre>
+
+<p>This will allow you to simply do the following:</p>
+
+<pre><code># on WSL
+$ ssh ECorpServer
+# You will now be on the remote server
+oz123@ds.machine.ecorp.net:~$ source my-data-science-project/bin/activate
+(my-data-science-project) oz123@ds.machine.ecorp.net:~$ jupyter-notebook
+[I 15:00:36.756 NotebookApp] Serving notebooks from local directory: /home/oz123
+[I 15:00:36.756 NotebookApp] Jupyter Notebook 6.4.6 is running at:
+[I 15:00:36.756 NotebookApp] http://localhost:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+[I 15:00:36.756 NotebookApp]  or http://127.0.0.1:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+[I 15:00:36.756 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 15:00:36.759 NotebookApp] No web browser found: could not locate runnable browser.
+[C 15:00:36.759 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///home/oz123/.local/share/jupyter/runtime/nbserver-778704-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+     or http://127.0.0.1:8888/?token=4fb831758d182a0f1c727193e41d01b54d4bf3a434e87ee1
+</code></pre>
+
+<p>Back on your laptop, copy one of the URIs starting with <code>http://</code> and paste it in the location bar
+of the browser on your Windows machine and you will see the Jupyter notebook.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/linux"><span>linux</span></a>, <a class="tag" href="/tags/ssh"><span>ssh</span></a>, <a class="tag" href="/tags/python"><span>python</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html&title=Using IPython Notebook on Linux Machines in the Enterprise Corp.&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html&title=Using IPython Notebook on Linux Machines in the Enterprise Corp." onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" title="Using IPython Notebook on Linux Machines in the Enterprise Corp." target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=http://oz123.github.comwritings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html&body=Using IPython Notebook on Linux Machines in the Enterprise Corp." onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>
