@@ -24,4 +24,6 @@ To implement this support, I also added a docker-compose setup and a set of make
 testing against a real netbox (an integration test suite if you want to call it). The code for this suite is
 still in the closed source repository. However, there is good unit test coverage and examples which allow you to
 quickly get comfortable using the plugin.
+You can find the latest release in the [project's Github page][1].
 
+[1]: https://github.com/oz123/coredns-netbox-plugin/
