@@ -7,6 +7,16 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>Announce - CoreDNS Netbox Plugin v0.2, now with IPv6</title>
+  <link href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html" />
+  <id>http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      I just released the 2nd version of my CoreDNS plugin for getting DNS records from Netbox. This release adds IPv6.
+      <a href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
   <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
   <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
@@ -109,17 +119,6 @@
       This is not my typical blog post style. So no "how to" or opinnions. Just
     some reflections on how I submitted a patch to Python's standard library.
       <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Why I still persist on not using systemd</title>
-  <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
-  <id>http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
- developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
-      <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

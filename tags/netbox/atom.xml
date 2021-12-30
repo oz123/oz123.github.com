@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<author>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
+</author>
+<entry>
+  <title>Announce - CoreDNS Netbox Plugin v0.2, now with IPv6</title>
+  <link href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html" />
+  <id>http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      I just released the 2nd version of my CoreDNS plugin for getting DNS records from Netbox. This release adds IPv6.
+      <a href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+</feed>

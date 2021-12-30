@@ -75,8 +75,8 @@ For that we invoke python as the following:</p>
 <pre><code>$ source ./my-data-science-project/bin/activate
 </code></pre>
 
-<p>Doing so tells the shell where
-is <code>pip3</code> installed and it also tells <code>pip3</code> where to install packages.
+<p>Doing so tells the shell where is <code>pip3</code> installed,
+and it also tells <code>pip3</code> where to install packages.
 Once done, you will see that your shell has a new prefix, and <code>pip3</code> is
 no longer the one in <code>/usr/bin/</code></p>
 
@@ -91,7 +91,7 @@ to avoid compiling packages and prefer binary packages:</p>
 </code></pre>
 
 <p>This will install IPython and the Jupyter Notebook in your virtual environment.
-You can use IPython directly or you can use the Web Notebook.
+You can use IPython directly, or you can use the Web Notebook.
 To use IPython simply type:</p>
 
 <pre><code>(my-data-science-project)$ ipython
@@ -126,7 +126,7 @@ In [1]:
 
 <p>You will not be able to connect to the notebook, since per default the notebook server listens
 only on the private network connection. One can force the application to listen on the public
-IP addresses) with:</p>
+IP addresses with:</p>
 
 <pre><code>(my-data-science-project)$ jupyter-notebook --ip 10.100.6.66
 [I 15:03:05.068 NotebookApp] Serving notebooks from local directory: /home/oz123
@@ -144,7 +144,7 @@ IP addresses) with:</p>
      or http://127.0.0.1:8888/?token=98ca17cd95dd209b7d2f2d9f0e946fee6c6d82563fdc03dd
 </code></pre>
 
-<p><strong>Important</strong>: You you will have another token! Don't just copy the lines I show here.</p>
+<p><strong>Important</strong>: You will have another token! Don't just copy the lines I show here.</p>
 
 <p>Now, in theory, you could open the browser on your laptop and access the following address:</p>
 
@@ -167,8 +167,8 @@ you should be able to access the notebook.</p>
 
 <p>OK, that was not so ergonomic. There is a lot of typing and copying and modifying. You can
 configure you SSH client to do the port forwarding for you.
-Add the following to the file <code>~/.ssh/config</code> on your Laptop (this will work if your are using
-WSL or MobaXterm on windows, for Putty you will have to google around):</p>
+Add the following to the file <code>~/.ssh/config</code> on your Laptop (this will work if you are using
+WSL or MobaXterm on Windows, for Putty you will have to google around):</p>
 
 <pre><code>Host ECorpServer
    User oz123
@@ -201,7 +201,7 @@ oz123@ds.machine.ecorp.net:~$ source my-data-science-project/bin/activate
 </code></pre>
 
 <p>Back on your laptop, copy one of the URIs starting with <code>http://</code> and paste it in the location bar
-of the browser on your Windows machine and you will see the Jupyter notebook.</p>
+of the browser on your Windows machine, and you will see the Jupyter notebook.</p>
 
 	<div class="tags">
 	<p>This entry was tagged:
