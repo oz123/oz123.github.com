@@ -46,7 +46,7 @@
 			</div> <!-- end of colum -->
 			<div class="col-lg-7 col-md-7 col-sm-10">
 <div class="index">
-	<div id="header" class="published"><a href="http://oz123.github.com">Oz Tiram</a> &ndash; June 16, 2019</div>
+	<div id="header" class="published"><a href="https://oz123.github.io">Oz Tiram</a> &ndash; June 16, 2019</div>
 	<h1>Visualize almost anything with Grafana and Python</h1>
 	<p>There are a lot of people who would like to <a href="https://github.com/grafana/grafana/issues/1542">use Grafana to visualize
 SQLite</a>. This blog post will allow you to do just that with Python.
@@ -90,7 +90,7 @@ application with uWSGI (or Gunicorn if you must).</p>
 <p>Now in Grafana you will be able to add this data source, and it should be marked
 as good to use.</p>
 
-<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20DataSource.png" alt="Data Source" /></p>
+<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20DataSource.png" alt="Data Source" /></p>
 
 <p>The documentation specifies you should enable CORS, so before adding anything
 to the webserver, let's enable CORS:</p>
@@ -129,7 +129,7 @@ This is because <code>json.dumps</code> slow  and bottle is opting to use <code>
 for speed if this module is installed.
 Now it is possible to choose one of two series:</p>
 
-<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Series%20List.png" alt="Two Series" /></p>
+<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Series%20List.png" alt="Two Series" /></p>
 
 <p>The next step is to add the <code>/query</code> endpoint. This one is a bit trickier, because
 this end point can return either time-series data or a table for each series.
@@ -193,7 +193,7 @@ the documentation, and add a little twist, so there is a table for each series:<
 
 <p>Now you can switch between both tables:</p>
 
-<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Table.png" alt="Table" /></p>
+<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Table.png" alt="Table" /></p>
 
 <p>The next step is to extend <code>/query</code> so that it requerns time series data.
 Grafana expects the data in the following form:</p>
@@ -283,7 +283,7 @@ code for <code>create_data_points</code>:</p>
     <span class="k">return</span> <span class="p">[[</span><span class="n">func</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">lower</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">upper</span><span class="o">-</span><span class="n">lower</span><span class="p">)</span><span class="o">/</span><span class="n">length</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]]</span>
 </code></pre></div>
 
-<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Two%20series.png" alt="graph" /></p>
+<p><img src="https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Two%20series.png" alt="graph" /></p>
 
 <p>Finally, I am a huge fan of SQLite, and it's my goto Relational Database
 in most of my Projects. Nevertheless, you should consider whether a Relational
@@ -306,11 +306,11 @@ queries, you should consider a dedicated time series database.</p>
 <a class="tag" href="/tags/python"><span>python</span></a>, <a class="tag" href="/tags/grafana"><span>grafana</span></a>, <a class="tag" href="/tags/data-science"><span>data science</span></a>, <a class="tag" href="/tags/bottle"><span>bottle</span></a>	</div>
 	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
 		<h4>Share this post:</h4>
-		<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://oz123.github.comwritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&title=Visualize almost anything with Grafana and Python&source=http://oz123.github.com" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
-		<a href="http://www.facebook.com/sharer/sharer.php?u=http://oz123.github.comwritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&title=Visualize almost anything with Grafana and Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
-		<a class="tweet" href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" title="Visualize almost anything with Grafana and Python" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-		<a href="https://plus.google.com/share?url=http://oz123.github.comwritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
-		<a href="mailto:?subject=http://oz123.github.comwritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&body=Visualize almost anything with Grafana and Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://oz123.github.iowritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&title=Visualize almost anything with Grafana and Python&source=https://oz123.github.io" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=https://oz123.github.iowritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&title=Visualize almost anything with Grafana and Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" title="Visualize almost anything with Grafana and Python" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=https://oz123.github.iowritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=https://oz123.github.iowritings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html&body=Visualize almost anything with Grafana and Python" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
 	</div>
 	<div id="underpost">
 		<h3>Discussions/Feedback.</h3>

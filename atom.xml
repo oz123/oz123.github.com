@@ -8,41 +8,41 @@
 </author>
 <entry>
   <title>Announce - CoreDNS Netbox Plugin v0.2, now with IPv6</title>
-  <link href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html" />
-  <id>http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html</id>
+  <link href="https://oz123.github.io/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html" />
+  <id>https://oz123.github.io/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I just released the 2nd version of my CoreDNS plugin for getting DNS records from Netbox. This release adds IPv6.
-      <a href="http://oz123.github.com/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
-  <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
-  <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
+  <link href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
+  <id>https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A short guide for using IPython and Jupyter Notebook on remote Linux machine
     in the Enterprise Corp, where you don't have root rights.
-      <a href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Announce - Wolkenbrot v0.3 - now with OpenStack support</title>
-  <link href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
-  <id>http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
+  <link href="https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html" />
+  <id>https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I have just released WolkenBrot v0.3 with OpenStack support.
     WolkenBrot is my own little program to bake cloud images.
     The name means "Cloud Bread" in German.
-      <a href="http://oz123.github.com/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Thoughts after leaving noris network after two years</title>
-  <link href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html" />
-  <id>http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html</id>
+  <link href="https://oz123.github.io/writings/2020-03-09-leaving-noris-network-after-two-years/index.html" />
+  <id>https://oz123.github.io/writings/2020-03-09-leaving-noris-network-after-two-years/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       After two years at noris network AG, yesterday was my last day with this company.
     It has been a long time since it felt so hard leaving a company. In my two years
@@ -57,38 +57,38 @@
     even thougah not all our projects where open source. This blog post is a summary of the
     good things we did, and the positive leasons we learned.  
     I hope reading through these will inspire you to choose a similar path.
-      <a href="http://oz123.github.com/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
-  <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
+  <id>https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is a short tutorial on how to build a data source for Grafana using Python
     Bottle micro-framework. Eventually, you can use this code to connect to any
     database (including SQLite).
-      <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Fooling around with JavaScript and OpenPGP</title>
-  <link href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
-  <id>http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
+  <link href="https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html" />
+  <id>https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Fooling around with JavaScript and OpenPGP, as the title says. I needed to
         create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
         turned out to be possible. These are the results of my experiment.
-      <a href="http://oz123.github.com/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>backup and restore with duplicity</title>
-  <link href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
-  <id>http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
+  <link href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
+  <id>https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
   I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
@@ -97,28 +97,28 @@
   for duplicity users. Restoring an encrypted backup turned out to not work.
   I didn't bother to research why, and turned to the CLI. This is a reminder on
   how to restore the files.
-      <a href="http://oz123.github.com/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>blogit - new release</title>
-  <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
-  <id>http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html</id>
+  <link href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html" />
+  <id>https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       After a long development hiatus I am releasing a new version of blogit
-      <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Submitting patches to Python</title>
-  <link href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
-  <id>http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
+  <id>https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is not my typical blog post style. So no "how to" or opinnions. Just
     some reflections on how I submitted a patch to Python's standard library.
-      <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

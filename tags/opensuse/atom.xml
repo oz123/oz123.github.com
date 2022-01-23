@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:13Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,12 +12,12 @@
 </author>
 <entry>
   <title>Broken USB in OpenSUSE 11.1</title>
-  <link href="http://oz123.github.com/writings/2009-03-16-broken-usb-in-opensuse-111/index.html" />
-  <id>http://oz123.github.com/writings/2009-03-16-broken-usb-in-opensuse-111/index.html</id>
+  <link href="https://oz123.github.io/writings/2009-03-16-broken-usb-in-opensuse-111/index.html" />
+  <id>https://oz123.github.io/writings/2009-03-16-broken-usb-in-opensuse-111/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Last week I upgraded one of my workstations at work to version 11.1 from 11.0 only to discover this week that automounting of usb disks has ceased to work.
-    <a href="http://oz123.github.com/writings/2009-03-16-broken-usb-in-opensuse-111/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2009-03-16-broken-usb-in-opensuse-111/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

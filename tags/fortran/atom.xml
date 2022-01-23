@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:09Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,45 +12,45 @@
 </author>
 <entry>
   <title>Tiny Python script to convert Fortran comments to "!"</title>
-  <link href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html" />
-  <id>http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html" />
+  <id>https://oz123.github.io/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I work on a very old Fortran code, which is Fixed form Fortran 77 mixed with some Fortran 95. Geany IDE, had problem displaying lines starting with "c" as comments.
-    <a href="http://oz123.github.com/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-05-29-tiny-python-script-to-convert-fortran-comments-to/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>MasterMind Game in Fortran 95</title>
-  <link href="http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html" />
-  <id>http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-04-24-mastermind-game-in-fortran-95/index.html" />
+  <id>https://oz123.github.io/writings/2010-04-24-mastermind-game-in-fortran-95/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Just for the fun, and to learn some Fortran 95, I wrote this little game which imitates the [MasterMind](http://en.wikipedia.org/wiki/Mastermind_%28board_game%29) game.
-    <a href="http://oz123.github.com/writings/2010-04-24-mastermind-game-in-fortran-95/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-04-24-mastermind-game-in-fortran-95/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Another matplotlib tutorial</title>
-  <link href="http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html" />
-  <id>http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-04-30-another-matplotlib-tutorial/index.html" />
+  <id>https://oz123.github.io/writings/2010-04-30-another-matplotlib-tutorial/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Recently I started working with [MIN3P](http://www.eos.ubc.ca/about/faculty/U.Mayer.html), a reactive transport modeling software, which produces data output which can be easily visualized with a commercial software package. However, I can't afford purchasing this package for my research, and I won't even though they have a Linux client.
-    <a href="http://oz123.github.com/writings/2010-04-30-another-matplotlib-tutorial/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-04-30-another-matplotlib-tutorial/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>The misteries of Fortran Functions</title>
-  <link href="http://oz123.github.com/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html" />
-  <id>http://oz123.github.com/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html" />
+  <id>https://oz123.github.io/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Fortran has a 2 ways to define sub-procedures: functions and subroutines. Functions allow many input variables, but only one output variable, which has to be a number. Subroutines, can take a few variables and output a few variables.
-    <a href="http://oz123.github.com/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-04-22-the-misteries-of-fortran-functions-a-few-examples/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

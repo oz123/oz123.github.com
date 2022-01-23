@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:11Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,23 +12,23 @@
 </author>
 <entry>
   <title>The future of Windows</title>
-  <link href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html" />
-  <id>http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-05-29-future-of-windows/index.html" />
+  <id>https://oz123.github.io/writings/2011-05-29-future-of-windows/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Last week I participated in a Windows 7 course. I was sent to the course by my employer, although in my official role is Linux System Engineer. 9 people attended the course. Looking around my colleagues I had some interesting observations, I'd like to share.
-    <a href="http://oz123.github.com/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-05-29-future-of-windows/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Vancouver Critical Mass</title>
-  <link href="http://oz123.github.com/writings/2010-06-26-vancouver-critical-mass/index.html" />
-  <id>http://oz123.github.com/writings/2010-06-26-vancouver-critical-mass/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-06-26-vancouver-critical-mass/index.html" />
+  <id>https://oz123.github.io/writings/2010-06-26-vancouver-critical-mass/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I've attended Vancouver Critical Mass. Yay! It was fun, about 2000 cyclist came to have fun. We even had a police escort. About 15 police men...Well, the city of Vancouver is probably the most dumb city I've seen in regards to bikes. They try to encourage bicycles, eh ? So, on the way back home, guess what, a couple of nice traffic police men where waiting on 10th Ave, where many people cycle home, and they just gave all the cyclists fines of 29 CAD.
-    <a href="http://oz123.github.com/writings/2010-06-26-vancouver-critical-mass/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-06-26-vancouver-critical-mass/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -278,10 +278,10 @@ contains one page with the title `General` and looks like that:
 
 ![general_tab_finished][general_tab_finished]
     
-[tutor1]: http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
-[tutor2]: http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
-[tutor3]: http://oz123.github.com/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
-[tutor4]: http://oz123.github.com/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
+[tutor1]: https://oz123.github.io/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
+[tutor2]: https://oz123.github.io/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
+[tutor3]: https://oz123.github.io/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
+[tutor4]: https://oz123.github.io/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
 [code_prefs_with_widgets]: https://raw.github.com/oz123/punder/13842098a60ecef132e5f4ef86bf304f0cbbaed1/punder.py
 [code_prefs_with_filechooser]: https://raw.github.com/oz123/punder/95df972ca5e46fa03b5ad761cd05fd469ebb5850/punder.py 
 [tag]: https://raw.github.com/oz123/punder/Notebook_with_General_Tab/punder.py

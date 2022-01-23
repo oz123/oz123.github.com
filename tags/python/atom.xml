@@ -8,65 +8,65 @@
 </author>
 <entry>
   <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
-  <link href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
-  <id>http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
+  <link href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
+  <id>https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A short guide for using IPython and Jupyter Notebook on remote Linux machine
     in the Enterprise Corp, where you don't have root rights.
-      <a href="http://oz123.github.com/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
-  <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
+  <id>https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is a short tutorial on how to build a data source for Grafana using Python
     Bottle micro-framework. Eventually, you can use this code to connect to any
     database (including SQLite).
-      <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>blogit - new release</title>
-  <link href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html" />
-  <id>http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html</id>
+  <link href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html" />
+  <id>https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       After a long development hiatus I am releasing a new version of blogit
-      <a href="http://oz123.github.com/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Submitting patches to Python</title>
-  <link href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
-  <id>http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
+  <id>https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is not my typical blog post style. So no "how to" or opinnions. Just
     some reflections on how I submitted a patch to Python's standard library.
-      <a href="http://oz123.github.com/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>coverage reporting and logging without a webservice</title>
-  <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
-  <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
+  <id>https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       For quite a while now I wanted to have a cheap replacement for collecting
     and tracking coverage of codes I work on. Finally, I found a nice way to
     record and track coverage reporting inside git itself in a semi-automatic
     or completely automatic way.
-      <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>On learning Ruby coming from Python ...</title>
-  <link href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-08-23-On-learning-Ruby-and-Python/index.html" />
+  <id>https://oz123.github.io/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I am learning Ruby, and coming from Python it's not a an easy thing.
     Ruby is confusing, it has a weird syntax, and things are not really
@@ -77,47 +77,47 @@
     weapon of choice, but it's not bad knowing my way around it. I'd like to know 
     how to set up a simple project, read and debug code, install gems and package 
     ruby projects. I have been ignoring Ruby for too long.
-      <a href="http://oz123.github.com/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Morse fun with Python</title>
-  <link href="http://oz123.github.com/writings/morse-fun-with-python/index.html" />
-  <id>http://oz123.github.com/writings/morse-fun-with-python/index.html</id>
+  <link href="https://oz123.github.io/writings/morse-fun-with-python/index.html" />
+  <id>https://oz123.github.io/writings/morse-fun-with-python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Creating morse code or translating it to ASCII text is fun, even more fun is making your laptop beep morse code. Here how you can do it with Python.
-      <a href="http://oz123.github.com/writings/morse-fun-with-python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/morse-fun-with-python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Yet another case of Python vs. Regular Expressions</title>
-  <link href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html" />
-  <id>http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html</id>
+  <link href="https://oz123.github.io/writings/yet-another-case-of-python-vs-regex/index.html" />
+  <id>https://oz123.github.io/writings/yet-another-case-of-python-vs-regex/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Regular Expressions are really awesome, and If you read the last post you might got the wrong impression I am totally against their use. I love using regular expressions, but sometimes, knowing Python is more than enough.
-      <a href="http://oz123.github.com/writings/yet-another-case-of-python-vs-regex/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/yet-another-case-of-python-vs-regex/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Python's regex is not always the best option</title>
-  <link href="http://oz123.github.com/writings/2016-03-14-Regex/index.html" />
-  <id>http://oz123.github.com/writings/2016-03-14-Regex/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-03-14-Regex/index.html" />
+  <id>https://oz123.github.io/writings/2016-03-14-Regex/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       When programming in Python, regex are not always your best tool. This has a few reasons, regex can be computationally expensive, unreadable and unmaintainble, and finally, sometimes there is a better pythonic way without them. Here are a few examples.
-      <a href="http://oz123.github.com/writings/2016-03-14-Regex/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2016-03-14-Regex/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>AJAX with bottle.py</title>
-  <link href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
-  <id>http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
+  <link href="https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
+  <id>https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A working example of AJAX with JQuery and Bottle
-      <a href="http://oz123.github.com/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

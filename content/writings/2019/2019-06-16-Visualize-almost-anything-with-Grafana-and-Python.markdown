@@ -56,7 +56,7 @@ application with uWSGI (or Gunicorn if you must).
 Now in Grafana you will be able to add this data source, and it should be marked
 as good to use.
 
-![Data Source](https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20DataSource.png)
+![Data Source](https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20DataSource.png)
 
 The documentation specifies you should enable CORS, so before adding anything
 to the webserver, let's enable CORS:
@@ -98,7 +98,7 @@ This is because `json.dumps` slow  and bottle is opting to use `usjon.dumps`
 for speed if this module is installed.
 Now it is possible to choose one of two series:
 
-![Two Series](https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Series%20List.png)
+![Two Series](https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Series%20List.png)
 
 The next step is to add the `/query` endpoint. This one is a bit trickier, because
 this end point can return either time-series data or a table for each series.
@@ -164,7 +164,7 @@ def query():
 ```
 Now you can switch between both tables:
 
-![Table](https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Table.png)
+![Table](https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Table.png)
 
 The next step is to extend `/query` so that it requerns time series data.
 Grafana expects the data in the following form:
@@ -257,7 +257,7 @@ def create_data_points(func, start, end, length=1020):
     return [[func(i), int(i)] for i in [lower + x*(upper-lower)/length for x in range(length)]]
 ```
 
-![graph](https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/img/content/Grafana%20Two%20series.png)
+![graph](https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/img/content/Grafana%20Two%20series.png)
 
 Finally, I am a huge fan of SQLite, and it's my goto Relational Database
 in most of my Projects. Nevertheless, you should consider whether a Relational

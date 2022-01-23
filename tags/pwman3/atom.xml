@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:11Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,45 +12,45 @@
 </author>
 <entry>
   <title>New version of Pwman3 released (v0.9)</title>
-  <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
+  <id>https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
-    <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>New version of Pwman3 released</title>
-  <link href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
-  <id>http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
+  <link href="https://oz123.github.io/writings/2015-03-22-New-version-of-Pwman3-released/index.html" />
+  <id>https://oz123.github.io/writings/2015-03-22-New-version-of-Pwman3-released/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I finally managed to release a new version of pwman3, the console and network password manager. Read more about it here.
-    <a href="http://oz123.github.com/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2015-03-22-New-version-of-Pwman3-released/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Git tip - git describe</title>
-  <link href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
-  <id>http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
+  <link href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
+  <id>https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Earlier I posted a tip how to count commits between tags, this post suggests a better way to do it
-    <a href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Git tip - Count commits between tags</title>
-  <link href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
-  <id>http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
+  <link href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
+  <id>https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Once every N commits I would like to release a new version of pwman3, so here is how to keep a track of this number between releases ...
-    <a href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

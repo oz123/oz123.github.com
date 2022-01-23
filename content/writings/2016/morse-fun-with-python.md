@@ -246,4 +246,4 @@ complete code [here][4].
 [1]: https://en.wikipedia.org/wiki/Morse_code
 [2]: http://blog.acipo.com/wave-generation-in-python/
 [3]: http://larsimmisch.github.io/pyalsaaudio/pyalsaaudio.html
-[4]: http://oz123.github.com/media/uploads/morse_translator.py
+[4]: https://oz123.github.io/media/uploads/morse_translator.py

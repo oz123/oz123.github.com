@@ -180,12 +180,12 @@ no Screenshots to share. If you like this tutorial, you can keep following the c
 it on github, or visiting this blog again. 
 
 
-[tutor1]: http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
-[tutor2]: http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
-[tutor3]: http://oz123.github.com/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
-[tutor4]: http://oz123.github.com/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
-[tutor5]: http://oz123.github.com/writings/2013-02-11-PyGTK%20CD%20Ripper%20Tutorial%20Part%205/
-[tutor6]: http://oz123.github.io/writings/2013-02-27-PyGTK%20CD%20Ripper%20Tutorial%20Part%206/
+[tutor1]: https://oz123.github.io/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
+[tutor2]: https://oz123.github.io/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
+[tutor3]: https://oz123.github.io/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
+[tutor4]: https://oz123.github.io/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
+[tutor5]: https://oz123.github.io/writings/2013-02-11-PyGTK%20CD%20Ripper%20Tutorial%20Part%205/
+[tutor6]: https://oz123.github.io/writings/2013-02-27-PyGTK%20CD%20Ripper%20Tutorial%20Part%206/
 [uipart6]: https://lh3.googleusercontent.com/-NBzN56B7o5c/UamNiz1yDXI/AAAAAAAACP0/7Jjt3Uy4IpE/s508/EndOfPart6.png
 [asunder_highlighted]: https://lh3.googleusercontent.com/-J2rSBaebmqQ/UamMIHeJMkI/AAAAAAAACP0/1-y10KU5VFY/s606/Screenshot-Asunder-Highlighted.png
 [gtkimages]: http://www.learngtk.org/pygtk-tutorial/stockimages.html

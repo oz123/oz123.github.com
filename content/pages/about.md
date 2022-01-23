@@ -5,7 +5,7 @@ kind: page
 template: about.html
 ---
 
-![me](http://oz123.github.io/media/img/lustig.jpg)
+![me](https://oz123.github.io/media/img/lustig.jpg)
 
 This blog is maintained by Oz Nahum Tiram, a passionate Python programmer,
 and FOSS evangelist, who really likes Gentoo.
@@ -19,7 +19,7 @@ Continous Integration. When he is not doing computer related stuff, he likes
 cycling and rock climbing.
 
 You can find the Curriculum Vitea of Oz in PDF format
-[here](http://oz123.github.io/media/uploads/Oz_Tiram_Resume_Oct_2018.pdf).
+[here](https://oz123.github.io/media/uploads/Oz_Tiram_Resume_Oct_2018.pdf).
 
 Internet Safety aware people You can find my PGP Key Here
 

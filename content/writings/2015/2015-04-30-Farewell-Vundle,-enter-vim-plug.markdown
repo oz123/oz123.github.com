@@ -13,4 +13,4 @@ summary: Vundle, the vim pluging manager used me for almost 4 faitfull years. Bu
 
 vim-plug also supports parallel installation of plug-ins if you have vim compiled with python or ruby support! Here is screen-shot of vim-plug running when installing my 40 favorite plug-ins in parallel:
 
-![vim-plug](https://github.com/oz123/oz123.github.com/blob/master/media/uploads/vim-plug.png?raw=true)
+![vim-plug](https://github.com/oz123/oz123.github.io/blob/master/media/uploads/vim-plug.png?raw=true)

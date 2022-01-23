@@ -127,5 +127,5 @@ More functionality will be added in part 4 of this pygtk tutorial.
 
 [gittag1]: https://github.com/oz123/punder/blob/better_treeview_control/punder.py
 [TreeViewTablePopulated]: https://lh5.googleusercontent.com/-4Xm1L8XDD58/UO3b0gdtqkI/AAAAAAAACFY/31j4-Cypj10/s506/TreeViewCoordinates.png
-[tutor1]: http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
-[tutor2]: http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
+[tutor1]: https://oz123.github.io/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
+[tutor2]: https://oz123.github.io/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/

@@ -84,5 +84,5 @@ And this is the template:
 The code is based on the original example given inside Flask sources by Armin Ronacher.
 You can download both files directy from here: [ajax_bottle.py][1], [index.tpl][2].
 
-[1]: http://oz123.github.io/media/uploads/ajax_bottle_files/ajax_bottle.py
-[2]: http://oz123.github.io/media/uploads/ajax_bottle_files/index.tpl
+[1]: https://oz123.github.io/media/uploads/ajax_bottle_files/ajax_bottle.py
+[2]: https://oz123.github.io/media/uploads/ajax_bottle_files/index.tpl

@@ -8,54 +8,54 @@
 </author>
 <entry>
   <title>coverage reporting and logging without a webservice</title>
-  <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
-  <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
+  <id>https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       For quite a while now I wanted to have a cheap replacement for collecting
     and tracking coverage of codes I work on. Finally, I found a nice way to
     record and track coverage reporting inside git itself in a semi-automatic
     or completely automatic way.
-      <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Farewell PyCharm! Going VIM again</title>
-  <link href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
-  <id>http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
+  <link href="https://oz123.github.io/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html" />
+  <id>https://oz123.github.io/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A few months ago we migrated from PyDev to PyCharm. After a 3 months time where I lead the migration from PyDev to PyCharm and SVN to GIT, I am back again to work with VIM. Here are my thoughts about PyCharm.
-      <a href="http://oz123.github.com/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2015-01-20-Farewell-PyCharm!-Going-VIM-again/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Poor man's Read-The-Docs</title>
-  <link href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
-  <id>http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
+  <link href="https://oz123.github.io/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html" />
+  <id>https://oz123.github.io/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Here is how to build sphinx documentation on multiple branches in your Python project. If you want to have Sphinx documentation for your project without having to install the whole complicated readthedocs.org image.
-      <a href="http://oz123.github.com/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2015-01-16-Poor-man's-Read-The-Docs/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Git tip - git describe</title>
-  <link href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
-  <id>http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
+  <link href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
+  <id>https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Earlier I posted a tip how to count commits between tags, this post suggests a better way to do it
-      <a href="http://oz123.github.com/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
 <entry>
   <title>Git tip - Count commits between tags</title>
-  <link href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
-  <id>http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
+  <link href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
+  <id>https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Once every N commits I would like to release a new version of pwman3, so here is how to keep a track of this number between releases ...
-      <a href="http://oz123.github.com/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

@@ -15,7 +15,7 @@ summary: >
 The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
 developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
 
- ![systemd](https://raw.githubusercontent.com/oz123/oz123.github.com/master/media/uploads/systemd.png)
+ ![systemd](https://raw.githubusercontent.com/oz123/oz123.github.io/master/media/uploads/systemd.png)
 
 [The original discussion in Github][1]
 

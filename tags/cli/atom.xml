@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:13Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,111 +12,111 @@
 </author>
 <entry>
   <title>New version of Pwman3 released (v0.9)</title>
-  <link href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
-  <id>http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html" />
+  <id>https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Yesterday night I released a new version of my CLI password manager Pwman3. This is a major mile stone, with huge amount of changes and improvements. Read more to find about what changed, and what I learned writing this version.
-    <a href="http://oz123.github.com/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2016-08-10-New-version-of-Pwman3-released-(v0.9)/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Turn your laptop to alarm clock</title>
-  <link href="http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html" />
+  <id>https://oz123.github.io/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I bumped into an article describing `rtcwake` [here](http://www.dedoimedo.com/computers/wake-cron.html), so I thought it will be cool to write a nice wrapper script around it.
-    <a href="http://oz123.github.com/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-04-03-turn-your-laptop-to-alarm-clock/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Command Line Posting to Blogger</title>
-  <link href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
-  <id>http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
+  <link href="https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
+  <id>https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
-    <a href="http://oz123.github.com/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Remove all Development packages from Debian</title>
-  <link href="http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-04-02-remove-all-development-packages-from/index.html" />
+  <id>https://oz123.github.io/writings/2011-04-02-remove-all-development-packages-from/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Another cool one liner to remove all development packages to clean your Debian.
-    <a href="http://oz123.github.com/writings/2011-04-02-remove-all-development-packages-from/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-04-02-remove-all-development-packages-from/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Remove all GNOME from debian - a one line</title>
-  <link href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html" />
+  <id>https://oz123.github.io/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     This one is not so easy to follow, but it works for me    ...
-    <a href="http://oz123.github.com/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-04-02-remove-all-gnome-from-debian-one-line/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Quicktip - make gedit more sane</title>
-  <link href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html" />
-  <id>http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html" />
+  <id>https://oz123.github.io/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Continuing the agile setup of GNOME desktop using gconftool-2. Here's a snippet to make tab width 4 spaces, insert spaces instead of tabs and enable automatic indentation:
-    <a href="http://oz123.github.com/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-10-03-quicktip-make-gedit-more-sane/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Quicktip - Setting keyboard layout in GNOME via CLI</title>
-  <link href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html" />
-  <id>http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html" />
+  <id>https://oz123.github.io/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Of course backups could do the job, but I find a clean install much cleaner and safer for my purposes.
-    <a href="http://oz123.github.com/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-09-27-quicktip-setting-keyboard-layout-in/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Calcurse, a compact Linux organizer, now with encryption</title>
-  <link href="http://oz123.github.com/writings/2011-04-17-calcurse-compact-linux-organizer/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-17-calcurse-compact-linux-organizer/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-04-17-calcurse-compact-linux-organizer/index.html" />
+  <id>https://oz123.github.io/writings/2011-04-17-calcurse-compact-linux-organizer/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I bumped into calcurse a while ago, but I didn't take the use of it seriously. When I started using it, I was also using Gnome's Evolution.
-    <a href="http://oz123.github.com/writings/2011-04-17-calcurse-compact-linux-organizer/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-04-17-calcurse-compact-linux-organizer/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Stripping EOL from output in BASH</title>
-  <link href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html" />
-  <id>http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html" />
+  <id>https://oz123.github.io/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Sometimes you have to text process the output of many chained commands, e.g. bash command to list all dev package in Debian. The results are usually outputted with "\\n"
-    <a href="http://oz123.github.com/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-04-15-stripping-eol-from-output-in-bash/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>yes yes we can - about the Linux command yes</title>
-  <link href="http://oz123.github.com/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html" />
-  <id>http://oz123.github.com/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html" />
+  <id>https://oz123.github.io/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Recently I started building my own [LFS](http://www.linuxfromscratch.org/), I was pretty amused by the command `yes`
-    <a href="http://oz123.github.com/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-03-25-yesyes-we-can-on-usefull-linux-command/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

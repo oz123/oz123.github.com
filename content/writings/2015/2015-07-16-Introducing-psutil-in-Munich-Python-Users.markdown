@@ -15,4 +15,4 @@ a cross platform library to retrieve information about your systems.
 
 So without further writing here is the link to the [presentation about psutil][1].
 
-[1]: http://oz123.github.io/pages/psutil#1
+[1]: https://oz123.github.io/pages/psutil#1

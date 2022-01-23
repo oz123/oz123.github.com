@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:07Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,12 +12,12 @@
 </author>
 <entry>
   <title>How to Build a DEB package for the git sources</title>
-  <link href="http://oz123.github.com/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html" />
-  <id>http://oz123.github.com/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html</id>
+  <link href="https://oz123.github.io/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html" />
+  <id>https://oz123.github.io/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I wanted to build python-moinmoin from the 1.8.x series because python-moinmoin 1.9 didn't work for me.
-    <a href="http://oz123.github.com/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2010-01-09-how-to-build-a-deb-package-for-the-git-sources/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

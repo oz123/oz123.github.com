@@ -8,14 +8,14 @@
 </author>
 <entry>
   <title>coverage reporting and logging without a webservice</title>
-  <link href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
-  <id>http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html" />
+  <id>https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       For quite a while now I wanted to have a cheap replacement for collecting
     and tracking coverage of codes I work on. Finally, I found a nice way to
     record and track coverage reporting inside git itself in a semi-automatic
     or completely automatic way.
-      <a href="http://oz123.github.com/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

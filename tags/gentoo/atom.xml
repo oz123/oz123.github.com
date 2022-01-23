@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:13Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,35 +12,35 @@
 </author>
 <entry>
   <title>Why I still persist on not using systemd</title>
-  <link href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
-  <id>http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
+  <link href="https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
+  <id>https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
  developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
-    <a href="http://oz123.github.com/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Gentoo - Reasons why you should give it a try</title>
-  <link href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
-  <id>http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
+  <id>https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Type your summary here.
-    <a href="http://oz123.github.com/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Mate Desktop Environment 1.14 for Gentoo</title>
-  <link href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html" />
-  <id>http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html</id>
+  <link href="https://oz123.github.io/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html" />
+  <id>https://oz123.github.io/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I am announcing here the release of the ebuilds collection of mate-desktop for gentoo. All ebuilds support building with traditional GTK+2 and the newer GTK+3.
-    <a href="http://oz123.github.com/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2016-06-09-Mate-Desktop-Environment-1.14-for-Gentoo/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

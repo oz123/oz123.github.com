@@ -38,5 +38,5 @@ This blog is powered by [blogit, a fast static site generator][1].
 
 [1]: https://github.com/oz123/blogit/
 [2]: https://www.meetup.com/Kubernetes-Nurnberg
-[3]: https://github.com/oz123/oz123.github.com/blob/master/media/uploads/going-cloud-dost-berlin-2019.pdf
-[4]: https://github.com/oz123/oz123.github.com/raw/master/media/uploads/Deployment%20strategies%20-%20N%C3%BCrnberg%20Digital%20Festival%202019.pdf 
+[3]: https://github.com/oz123/oz123.github.io/blob/master/media/uploads/going-cloud-dost-berlin-2019.pdf
+[4]: https://github.com/oz123/oz123.github.io/raw/master/media/uploads/Deployment%20strategies%20-%20N%C3%BCrnberg%20Digital%20Festival%202019.pdf 

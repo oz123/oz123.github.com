@@ -8,13 +8,13 @@
 </author>
 <entry>
   <title>Visualize almost anything with Grafana and Python</title>
-  <link href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
-  <id>http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
+  <link href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html" />
+  <id>https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is a short tutorial on how to build a data source for Grafana using Python
     Bottle micro-framework. Eventually, you can use this code to connect to any
     database (including SQLite).
-      <a href="http://oz123.github.com/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
+      <a href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

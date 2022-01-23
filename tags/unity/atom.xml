@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="http://oz123.github.com/atom.xml" rel="self" />
-<link href="http://oz123.github.com/" />
-<id>http://oz123.github.com/atom.xml</id>
+<link href="https://oz123.github.io/atom.xml" rel="self" />
+<link href="https://oz123.github.io/" />
+<id>https://oz123.github.io/atom.xml</id>
 <updated>2020-03-11T15:51:13Z</updated>
 <author>
   <name>Oz Nahum Tiram</name>
@@ -12,23 +12,23 @@
 </author>
 <entry>
   <title>More UNITY Crap</title>
-  <link href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html" />
-  <id>http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-05-06-more-unity-crap/index.html" />
+  <id>https://oz123.github.io/writings/2011-05-06-more-unity-crap/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     Take a loot at this [post](http://ubuntuguide.net/how-to-run-multiple-copies-of-program-from-unity-launcher). You need a "how to" to run multiple copies of the same program.
-    <a href="http://oz123.github.com/writings/2011-05-06-more-unity-crap/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-05-06-more-unity-crap/index.html">continue reading...</a>
     </div>
   </content>
   </entry>
 <entry>
   <title>Better Apps in Linux</title>
-  <link href="http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html" />
-  <id>http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html</id>
+  <link href="https://oz123.github.io/writings/2011-05-06-better-apps-in-linux.html/index.html" />
+  <id>https://oz123.github.io/writings/2011-05-06-better-apps-in-linux.html/index.html</id>
   <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
     I don't know why, but I have the feeling that the rise of Ubuntu, does not bring Linux forward. I have read a few posts about it. And I think that the focus of Linux developers is starting to annoy me so much that I am thinking of ripping Linux off my Laptop and just installing \*BSD, although I'd have to twitch my nose, because I prefer GPL over BSD.
-    <a href="http://oz123.github.com/writings/2011-05-06-better-apps-in-linux.html/index.html">continue reading...</a>
+    <a href="https://oz123.github.io/writings/2011-05-06-better-apps-in-linux.html/index.html">continue reading...</a>
     </div>
   </content>
   </entry>

@@ -187,7 +187,7 @@ The code to produce this UI can be found in the github brach
 [simplified tree view][github_simple_tree_view]. The UI is almost complete. 
 However, there is more work to do. So, stay tuned for part tree.
 
-[tutor1]: http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
+[tutor1]: https://oz123.github.io/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
 [TreeViewComplete]: https://lh3.googleusercontent.com/-FNY2AUuOuGc/UOgOd38DNbI/AAAAAAAACE8/8V7omSeNGDo/s493/TreeView-punder.py.png
 [github_simple_tree_view]: https://github.com/oz123/punder/blob/127c039bf147694d3bb0d92c5e0d52428ca5a5af/punder.py
 [ColumnsAdd]: https://lh4.googleusercontent.com/-s5PG1zSkigE/UOgMbD13WVI/AAAAAAAACEg/Xz8ttf8ZZgs/s506/Screenshot-punder.py.png

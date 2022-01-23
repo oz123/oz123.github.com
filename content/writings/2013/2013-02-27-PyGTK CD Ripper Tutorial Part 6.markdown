@@ -377,11 +377,11 @@ Also, since the UI is almost complete, it would be quite nice to have some keybo
 shortcuts and maybe even translation to other languages. So, stay tuned.
 
 
-[tutor1]: http://oz123.github.com/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
-[tutor2]: http://oz123.github.com/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
-[tutor3]: http://oz123.github.com/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
-[tutor4]: http://oz123.github.com/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
-[tutor5]: http://oz123.github.com/writings/2013-02-11-PyGTK%20CD%20Ripper%20Tutorial%20Part%205/
+[tutor1]: https://oz123.github.io/writings/2013-01-03-A%20Complete%20PyGTK%20CD%20Ripper%20Tutorial/
+[tutor2]: https://oz123.github.io/writings/2013-01-04-PyGTK%20CD%20Ripper%20Tutorial%20Continued/
+[tutor3]: https://oz123.github.io/writings/2013-01-09-PyGTK%20CD%20Ripper%20Tutorial%20Part%203/
+[tutor4]: https://oz123.github.io/writings/2013-01-21-PyGTK%20CD%20Ripper%20Tutorial%20Part%204/
+[tutor5]: https://oz123.github.io/writings/2013-02-11-PyGTK%20CD%20Ripper%20Tutorial%20Part%205/
 [encode]: https://lh5.googleusercontent.com/-w6jbKTW8yXo/USt-ToZ1OQI/AAAAAAAACKY/5i6KzVVQylg/s596/Encode.png
 [3frames]: https://lh6.googleusercontent.com/-77QtY3iLrek/USyvRcGc1iI/AAAAAAAACLE/wz3govq85-U/w405-h375-o-k/3-Empty-Frames.png
 [checkbutton_in_frame]: https://lh6.googleusercontent.com/-YkKWEGF_zis/USyx8g_vHwI/AAAAAAAACLg/iux6DNfjGbY/w461-h428-o-k/mp3_frame_with_checkbutton.png
