@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Oz's Blog</title>
+<subtitle>Oz's weblog</subtitle>
+<author>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
+</author>
+<entry>
+  <title>I am on Github sponsors now</title>
+  <link href="https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html" />
+  <id>https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      This already happend a while ago. I am on Github Sponsors and you can support my opensource work.
+      <a href="https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+</feed>
