@@ -2,56 +2,48 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:06Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>The best latex editor Kile 2.1 Released!</title>
   <link href="https://oz123.github.io/writings/2011-06-21-best-latex-editor-kile-21-released/index.html" />
   <id>https://oz123.github.io/writings/2011-06-21-best-latex-editor-kile-21-released/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This should be really bigger news! Although I don't use KDE at all, Kile is the best editor for Latex, I have tried.
-    <a href="https://oz123.github.io/writings/2011-06-21-best-latex-editor-kile-21-released/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      This should be really bigger news! Although I don't use KDE at all, Kile is the best editor for Latex, I have tried.
+      <a href="https://oz123.github.io/writings/2011-06-21-best-latex-editor-kile-21-released/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Good Bye Latex ? Hello WeasyPrint</title>
   <link href="https://oz123.github.io/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html" />
   <id>https://oz123.github.io/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex, is my main way of producing reports and scientific works. Usually these are formed as PDF before being actually printed. Latex is AWESOME.
-    <a href="https://oz123.github.io/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Latex, is my main way of producing reports and scientific works. Usually these are formed as PDF before being actually printed. Latex is AWESOME.
+      <a href="https://oz123.github.io/writings/2012-03-20-good-bye-latex-hello-weasyprint/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Floats wider than text in Latex</title>
   <link href="https://oz123.github.io/writings/2010-09-16-floats-wider-than-text-in-latex/index.html" />
   <id>https://oz123.github.io/writings/2010-09-16-floats-wider-than-text-in-latex/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Latex floats  by default have the text width or smaller. Took me some time to figure out how to make a float wider than the text width itself.
-    <a href="https://oz123.github.io/writings/2010-09-16-floats-wider-than-text-in-latex/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Latex floats  by default have the text width or smaller. Took me some time to figure out how to make a float wider than the text width itself.
+      <a href="https://oz123.github.io/writings/2010-09-16-floats-wider-than-text-in-latex/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Convert LATEX to OPENOFFICE</title>
   <link href="https://oz123.github.io/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html" />
   <id>https://oz123.github.io/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    For a long time I know that I can export lyx files to ODT format, and it does a pretty good job. Today, I start lyx with moving it to the background and I looked what's going in on when I export to ODT. It's using a commant htlatex, which can be found in the Debian package tex4ht .
-    <a href="https://oz123.github.io/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      For a long time I know that I can export lyx files to ODT format, and it does a pretty good job. Today, I start lyx with moving it to the background and I looked what's going in on when I export to ODT. It's using a commant htlatex, which can be found in the Debian package tex4ht .
+      <a href="https://oz123.github.io/writings/2010-01-02-how-to-convert-latex-to-openoffice/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

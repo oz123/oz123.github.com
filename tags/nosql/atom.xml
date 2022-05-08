@@ -2,23 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:12Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>NoSQLite - SQLite, support for JSON field</title>
   <link href="https://oz123.github.io/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html" />
   <id>https://oz123.github.io/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support.
-    <a href="https://oz123.github.io/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Released just recently (14-10-2015) the new SQLite (3.9.*) now has optional support for NoSQL like work flows with the new JSON field type. This is a very brief introduction to the JSON1 extension which enables this support.
+      <a href="https://oz123.github.io/writings/2015-10-30-NOSQLite---SQLite-and-NoSQL/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

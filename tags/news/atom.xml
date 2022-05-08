@@ -2,35 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:13Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>blogit - new release</title>
   <link href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html" />
   <id>https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    After a long development hiatus I am releasing a new version of blogit
-    <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      After a long development hiatus I am releasing a new version of blogit
+      <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Submitting patches to Python</title>
   <link href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
   <id>https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This is not my typical blog post style. So no "how to" or opinnions. Just
+	<content type="html" xml:lang="en"><![CDATA[
+      This is not my typical blog post style. So no "how to" or opinnions. Just
     some reflections on how I submitted a patch to Python's standard library.
-    <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+      <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

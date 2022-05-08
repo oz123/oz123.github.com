@@ -2,122 +2,108 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:09Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Gentoo - Reasons why you should give it a try</title>
   <link href="https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html" />
   <id>https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Type your summary here.
-    <a href="https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Type your summary here.
+      <a href="https://oz123.github.io/writings/2016-06-09-Gentoo---Reasons-why-you-should-give-it-a-try/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Git tip - git describe</title>
   <link href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html" />
   <id>https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Earlier I posted a tip how to count commits between tags, this post suggests a better way to do it
-    <a href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Earlier I posted a tip how to count commits between tags, this post suggests a better way to do it
+      <a href="https://oz123.github.io/writings/2013-12-08-Count-Commits-Between-Tags/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Git tip - Count commits between tags</title>
   <link href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html" />
   <id>https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Once every N commits I would like to release a new version of pwman3, so here is how to keep a track of this number between releases ...
-    <a href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Once every N commits I would like to release a new version of pwman3, so here is how to keep a track of this number between releases ...
+      <a href="https://oz123.github.io/writings/2013-09-10-Git-Tip-Count-Commits-between-Tags/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Localizing applications with gettext</title>
   <link href="https://oz123.github.io/writings/2013-08-04-Localizing-with-gettext/index.html" />
   <id>https://oz123.github.io/writings/2013-08-04-Localizing-with-gettext/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I was always interested in how I can add translations to pwman3 or to my little PyGTK tutorial, these are summerizing of my gettext experiences
-    <a href="https://oz123.github.io/writings/2013-08-04-Localizing-with-gettext/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      I was always interested in how I can add translations to pwman3 or to my little PyGTK tutorial, these are summerizing of my gettext experiences
+      <a href="https://oz123.github.io/writings/2013-08-04-Localizing-with-gettext/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 7</title>
   <link href="https://oz123.github.io/writings/2013-06-01-PyGTK CD Ripper Tutorial Part 7/index.html" />
   <id>https://oz123.github.io/writings/2013-06-01-PyGTK CD Ripper Tutorial Part 7/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Part 6 of this tutorial completed the Preferences dialog and introduced gtk.Frames and gtk.Expanders. This part of the tutorial will add some more polish to th UI, introducing icons and completing the About Dialog
-    <a href="https://oz123.github.io/writings/2013-06-01-PyGTK CD Ripper Tutorial Part 7/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Part 6 of this tutorial completed the Preferences dialog and introduced gtk.Frames and gtk.Expanders. This part of the tutorial will add some more polish to th UI, introducing icons and completing the About Dialog
+      <a href="https://oz123.github.io/writings/2013-06-01-PyGTK CD Ripper Tutorial Part 7/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 6</title>
   <link href="https://oz123.github.io/writings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html" />
   <id>https://oz123.github.io/writings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Part 5 of this tutorial added a gtk.Notebook and other widgets to the Preferences dialog. This part of the tutorial introduces the gtk.Frame and gtk.Expander widgets and completes the Preferences dialog.
-    <a href="https://oz123.github.io/writings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Part 5 of this tutorial added a gtk.Notebook and other widgets to the Preferences dialog. This part of the tutorial introduces the gtk.Frame and gtk.Expander widgets and completes the Preferences dialog.
+      <a href="https://oz123.github.io/writings/2013-02-27-PyGTK CD Ripper Tutorial Part 6/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 5</title>
   <link href="https://oz123.github.io/writings/2013-02-11-PyGTK CD Ripper Tutorial Part 5/index.html" />
   <id>https://oz123.github.io/writings/2013-02-11-PyGTK CD Ripper Tutorial Part 5/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    The last part of this tutorial added some polish to the main window of the CD Ripper, and showed how to create an empty Preferences dialog. This part of the tutorial will complete the Presences exploring gtk.Notebook and other widgets.
-    <a href="https://oz123.github.io/writings/2013-02-11-PyGTK CD Ripper Tutorial Part 5/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      The last part of this tutorial added some polish to the main window of the CD Ripper, and showed how to create an empty Preferences dialog. This part of the tutorial will complete the Presences exploring gtk.Notebook and other widgets.
+      <a href="https://oz123.github.io/writings/2013-02-11-PyGTK CD Ripper Tutorial Part 5/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 4</title>
   <link href="https://oz123.github.io/writings/2013-01-21-PyGTK CD Ripper Tutorial Part 4/index.html" />
   <id>https://oz123.github.io/writings/2013-01-21-PyGTK CD Ripper Tutorial Part 4/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    The last part of this tutorial added the complete song list. However, the UI is still not complete. This part will add the polish to the UI.
-    <a href="https://oz123.github.io/writings/2013-01-21-PyGTK CD Ripper Tutorial Part 4/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      The last part of this tutorial added the complete song list. However, the UI is still not complete. This part will add the polish to the UI.
+      <a href="https://oz123.github.io/writings/2013-01-21-PyGTK CD Ripper Tutorial Part 4/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 3</title>
   <link href="https://oz123.github.io/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html" />
   <id>https://oz123.github.io/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. Part 2 then continued and expanded this tutorial with GTK ListView to create the song list. This part will add some polish and varnish to the UI as well as some more functionality...
-    <a href="https://oz123.github.io/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. Part 2 then continued and expanded this tutorial with GTK ListView to create the song list. This part will add some polish and varnish to the UI as well as some more functionality...
+      <a href="https://oz123.github.io/writings/2013-01-09-PyGTK CD Ripper Tutorial Part 3/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>PyGTK CD Ripper Tutorial - Part 2</title>
   <link href="https://oz123.github.io/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html" />
   <id>https://oz123.github.io/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. This part will expand this GUI and will add some more functionality ...
-    <a href="https://oz123.github.io/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      In part 1 of this tutorial, the most basic GUI form of a CD ripper application, was created. This part will expand this GUI and will add some more functionality ...
+      <a href="https://oz123.github.io/writings/2013-01-04-PyGTK CD Ripper Tutorial Continued/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

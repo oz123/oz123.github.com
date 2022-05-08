@@ -2,34 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:11Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>oh, Yesterday I was a bad programmer</title>
   <link href="https://oz123.github.io/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html" />
   <id>https://oz123.github.io/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Forgetting my first lesson in programming, I looked for a solution to convert IP addresses to country. I found out tables, and SQL files, and went on and on trying to figure how to use them, and do SQL in python
-    <a href="https://oz123.github.io/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Forgetting my first lesson in programming, I looked for a solution to convert IP addresses to country. I found out tables, and SQL files, and went on and on trying to figure how to use them, and do SQL in python
+      <a href="https://oz123.github.io/writings/2011-02-25-oh-yesterday-i-was-bad-programmer/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>MapServer Examples for Debian</title>
   <link href="https://oz123.github.io/writings/2010-06-14-mapserver-examples-for-debian-2/index.html" />
   <id>https://oz123.github.io/writings/2010-06-14-mapserver-examples-for-debian-2/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I've made a package of the Itasca example that are supposed to work  "out of the box" for Debian Lenny and Squeeze
-    <a href="https://oz123.github.io/writings/2010-06-14-mapserver-examples-for-debian-2/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      I've made a package of the Itasca example that are supposed to work  "out of the box" for Debian Lenny and Squeeze
+      <a href="https://oz123.github.io/writings/2010-06-14-mapserver-examples-for-debian-2/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

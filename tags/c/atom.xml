@@ -2,23 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:13Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>VIM Quicky - set tabs and spaces behaviour for different files</title>
   <link href="https://oz123.github.io/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html" />
   <id>https://oz123.github.io/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Never really bothered me before, because I only used Python and C, so I always replaces tabs with spaces.
-    <a href="https://oz123.github.io/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Never really bothered me before, because I only used Python and C, so I always replaces tabs with spaces.
+      <a href="https://oz123.github.io/writings/2012-02-24-vim-quicky-set-tabs-and-spaces/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

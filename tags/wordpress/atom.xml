@@ -2,34 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:13Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Fucked up explorer</title>
   <link href="https://oz123.github.io/writings/2008-09-21-fucked-up-explorer/index.html" />
   <id>https://oz123.github.io/writings/2008-09-21-fucked-up-explorer/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I hate microsoft. Short Post descrbining a hack for explorer. Not much ...
-    <a href="https://oz123.github.io/writings/2008-09-21-fucked-up-explorer/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      I hate microsoft. Short Post descrbining a hack for explorer. Not much ...
+      <a href="https://oz123.github.io/writings/2008-09-21-fucked-up-explorer/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Playing with wordpress - Hacking the header to display random pictures</title>
   <link href="https://oz123.github.io/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html" />
   <id>https://oz123.github.io/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    After I started seriously playing with wordpress and discovered how cool it is, I decided that I can seriously hack to it my own needs.
-    <a href="https://oz123.github.io/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      After I started seriously playing with wordpress and discovered how cool it is, I decided that I can seriously hack to it my own needs.
+      <a href="https://oz123.github.io/writings/2008-09-03-playing-with-wordpress-hacking-the-header-to-display-random-pictures/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

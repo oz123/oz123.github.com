@@ -7,6 +7,16 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>I am on Github sponsors now</title>
+  <link href="https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html" />
+  <id>https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      This already happend a while ago. I am on Github Sponsors and you can support my opensource work.
+      <a href="https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>Announce - CoreDNS Netbox Plugin v0.2, now with IPv6</title>
   <link href="https://oz123.github.io/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html" />
   <id>https://oz123.github.io/writings/2021-12-30-Announce---CoreDNS-Netbox-Plugin,-now-with-IPv6/index.html</id>
@@ -108,17 +118,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       After a long development hiatus I am releasing a new version of blogit
       <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Submitting patches to Python</title>
-  <link href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html" />
-  <id>https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      This is not my typical blog post style. So no "how to" or opinnions. Just
-    some reflections on how I submitted a patch to Python's standard library.
-      <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

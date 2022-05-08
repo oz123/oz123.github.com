@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
 <body>
 	<div class="container-fluid">
 		<div class="row" style="padding-top: 10px">
@@ -116,7 +117,7 @@ git fetch --all
 <code>CURRENT_$BRANCHES</code> files. To do this, run inside the git repository the following 
 command:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> b in <span class="nv">$BRANCHES</span> <span class="p">;</span> <span class="k">do</span>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> b <span class="k">in</span> <span class="nv">$BRANCHES</span> <span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;START&quot;</span> &gt; CURRENT_<span class="nv">$b</span>
 <span class="k">done</span>
 </code></pre></div>

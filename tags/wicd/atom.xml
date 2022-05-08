@@ -2,34 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:12Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Network-manager still sucks !</title>
   <link href="https://oz123.github.io/writings/2011-02-26-network-manager-still-sucks/index.html" />
   <id>https://oz123.github.io/writings/2011-02-26-network-manager-still-sucks/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    I have been long complaining about the buggy network-manager included in GNOME. Today, I have (re)discovered I am still unable to use Network-Manager to connect to a WPA secured wirless
-    <a href="https://oz123.github.io/writings/2011-02-26-network-manager-still-sucks/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      I have been long complaining about the buggy network-manager included in GNOME. Today, I have (re)discovered I am still unable to use Network-Manager to connect to a WPA secured wirless
+      <a href="https://oz123.github.io/writings/2011-02-26-network-manager-still-sucks/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>WICD rocks on the roads !</title>
   <link href="https://oz123.github.io/writings/2009-08-27-wicd-rock-on-the-roads/index.html" />
   <id>https://oz123.github.io/writings/2009-08-27-wicd-rock-on-the-roads/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Been traveling in the USA for a couple of weeks now. I was prepared for bitter timetime with my Debian and wireless roaming. So I've mastered the use of commands ifconfig and iwlist and such. The reason is that I've had my share already with network-manager.
-    <a href="https://oz123.github.io/writings/2009-08-27-wicd-rock-on-the-roads/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Been traveling in the USA for a couple of weeks now. I was prepared for bitter timetime with my Debian and wireless roaming. So I've mastered the use of commands ifconfig and iwlist and such. The reason is that I've had my share already with network-manager.
+      <a href="https://oz123.github.io/writings/2009-08-27-wicd-rock-on-the-roads/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>

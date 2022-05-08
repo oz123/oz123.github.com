@@ -2,45 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
-<link href="https://oz123.github.io/atom.xml" rel="self" />
-<link href="https://oz123.github.io/" />
-<id>https://oz123.github.io/atom.xml</id>
-<updated>2020-03-11T15:51:12Z</updated>
 <author>
-  <name>Oz Nahum Tiram</name>
-  <email>nahumoz@gmail.com</email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
   <title>Back again to writing</title>
   <link href="https://oz123.github.io/writings/2016-03-10-Back-again/index.html" />
   <id>https://oz123.github.io/writings/2016-03-10-Back-again/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    This blog is back from a long pause
-    <a href="https://oz123.github.io/writings/2016-03-10-Back-again/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      This blog is back from a long pause
+      <a href="https://oz123.github.io/writings/2016-03-10-Back-again/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Command Line Posting to Blogger</title>
   <link href="https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html" />
   <id>https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
-    <a href="https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      Oh man, I'm really becoming a geek. I spend so much time staring at VIM that writing a Blog post using the Web interface seems cumbersome to me.
+      <a href="https://oz123.github.io/writings/2012-04-02-command-line-posting-to-blogger_02/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Hey, I actually like the new Blogger</title>
   <link href="https://oz123.github.io/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html" />
   <id>https://oz123.github.io/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html</id>
-  <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    It used to really suck, but my two hours of playing with it made me
-    <a href="https://oz123.github.io/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html">continue reading...</a>
-    </div>
-  </content>
-  </entry>
+	<content type="html" xml:lang="en"><![CDATA[
+      It used to really suck, but my two hours of playing with it made me
+      <a href="https://oz123.github.io/writings/2011-02-18-hey-i-actually-like-new-blogger/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 </feed>
