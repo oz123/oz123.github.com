@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> 3 years of work on Pipenv in Gentoo come to a happy end </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/oztiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="https://oz123.github.io">Oz Tiram</a> &ndash; October 28, 2023</div>
+	<h1>3 years of work on Pipenv in Gentoo come to a happy end</h1>
+	<p>3 years and 3 months ago, I signed up for maintaining <a href="https://github.com/gentoo/gentoo/commit/47eb7e89e86d9bfc3575c865a8254e91ad1a4132">Gentoo's pipenv ebuild</a>.
+I thought it would be a fun way to learn about Python in Gentoo. I already knew that
+pipenv has issues. Also, I knew that the project was a bit dormant, due to the departure
+of Keneth Reitz, who was the original developer. And despite that I took on the commitment
+to work on that ebuild.</p>
+
+<p>Gentoo's maintainers didn't like the fact that Pipenv bundles tons of Python packages in
+its vendor directory. Arguably, a security issue. Hence, bug <a href="https://bugs.gentoo.org/717666">717666 - dev-python/pipenv:
+bundles humongous number of packages</a> was opened.
+I also think that even though disk space is cheap it's a waste of resources. It seems like
+a nice project to work on. And what started as fixes for the ebuild, to "unvendor" those
+packages, turned into skepticism. </p>
+
+<p>Are those packages even used? It seemed that many of those python packages where old and
+unused. Specifically, <a href="https://github.com/sarugaku/vistir">vistir</a> seemed like a grab-bag of hacks to support multiple
+platforms and Python versions. But many of those had already better fixes in upstream
+packages or the standard library.</p>
+
+<p>Eager to fix those issues, I started looking for good opportunity to fix issues directly
+in Pipenv. And then in June 2023, I saw that Frost Ming, the maintainer of Pipenv, <a href="https://github.com/pypa/pipenv/issues/4894#issuecomment-1008289265">is looking
+for help</a>. </p>
+
+<p>And so, together with <a href="https://github.com/matteius">Matt Davis</a> I took over the project. My first goal, was to find
+a way to unvendor all those packages. This required a lot of refactoring and patches
+to requirementslib and vistir and few other packages that pipenv consumes.
+Eventually, we fixed many issues in vistir but ended up dropping it because it was no longer
+needed. Matt has done a tremendous job fixing requirementslib, until it was no longer possible,
+and he ended up internalizing many parts, and rewritting huge amounts of code.
+I continued to incrementally find stuff in the vendor library that was not needed due to fixes
+in the standard library. An obvious example, pipenv was still shipping six even though it only
+supported Python3 versions. Another example, we shipped <code>orderedmultidict</code>. Python has had ordered
+dictionaries for quite a while, so it was a bit of a red flag.
+We found out that we can safely remove this library in favour of using regular dictionaries,
+thus removing hundreds line of code immediately.
+Many other vendored libraries where dropped, and in some cases we turned to use vendored libraries
+that are found inside pip's own vendor directory, thus reducing duplication. </p>
+
+<p>In parallel, I kept bumping versions of pipenv in Gentoo, incrementally removing more packages,
+from the vendor in favor of adding dependencies to other ebuilds. A few times, I tried removing
+all the packages all at once, but failed. Finally, I did the unpreventable and started creating
+ebuilds to packages that didn't have any ebuilds in Gentoo. I did not yet upstream them, just
+to keep experimenting with Python ebuilds.</p>
+
+<p>This September, I finally decided to give this issue a final blow, and it's now closed.
+The Gentoo version no longer bundles packages in vendor!
+My work on this issue, has also a positive impact on pipenv for all other users.
+This is because recent version of pipenv no longer ship many packages in vendor.
+Pipenv release 2023.10.20 has only <a href="https://github.com/pypa/pipenv/blob/fd4147bd7e69620ef257ea57c0b67eaa80d01ab7/pipenv/vendor/vendor.txt">16</a> vendored libraries, compared to 59 in <a href="https://github.com/pypa/pipenv/blob/9299ae1f7353bdd523a1829f3c7cad0ee67c2e3b/pipenv/vendor/vendor.txt">2020.8.13</a>.</p>
+
+<p>Finally, despite almost 20% reduction in size, pipenv is still a huge program.
+The wheel size of version 2020.8.13 is <a href="https://pypi.org/project/pipenv/2020.8.13/#files">3.9MB</a>, while the wheel size of version
+2023.10.20 is only <a href="https://pypi.org/project/pipenv/2023.10.24/#files">3.2MB</a>. I was hopping for more, but the work is still not done.
+Future versions of pipenv will continue receiving bug fixes, along with speed improvements
+and size reduction.</p>
+
+<p>If you use pipenv, please consider sponsoring our work via Github sponsors.</p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/python"><span>python</span></a>, <a class="tag" href="/tags/gentoo"><span>gentoo</span></a>, <a class="tag" href="/tags/foss"><span>foss</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://oz123.github.iowritings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html&title=3 years of work on Pipenv in Gentoo come to a happy end&source=https://oz123.github.io" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=https://oz123.github.iowritings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html&title=3 years of work on Pipenv in Gentoo come to a happy end" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" title="3 years of work on Pipenv in Gentoo come to a happy end" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=https://oz123.github.iowritings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=https://oz123.github.iowritings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html&body=3 years of work on Pipenv in Gentoo come to a happy end" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

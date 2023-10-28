@@ -3,9 +3,21 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Tiram</name>
-    <email>oz.tiram@gmail.com</email>
+    <name></name>
+    <email></email>
 </author>
+<entry>
+  <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
+  <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />
+  <id>https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      3 years and 3 months ago, I signed up for maintaining Pipenv in Gentoo. This work made me co-maintainer
+of pipenv. I finally closed a long standing bug in Gentoo's pipenv. Due to this work, pipenv now ships
+less vendored packages, and is about 20% smaller in size.
+      <a href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Back to blogging</title>
   <link href="https://oz123.github.io/writings/2012-11-25-backtoblogging/index.html" />
@@ -93,16 +105,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       Well, it's a quite a late response, but it ought to be. After Ubuntu has shoved Mono down our throats for quite a while, they have decided to retreat from it.
       <a href="https://oz123.github.io/writings/2011-11-19-no-more-mono-on-ubuntu/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Analyst my S</title>
-  <link href="https://oz123.github.io/writings/2011-10-26-analyst-my-s/index.html" />
-  <id>https://oz123.github.io/writings/2011-10-26-analyst-my-s/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      Sometimes I just can't wonder An posts a blog which shows the guy has no clue what he's talking about. And people actually make such a fuss about it.
-      <a href="https://oz123.github.io/writings/2011-10-26-analyst-my-s/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

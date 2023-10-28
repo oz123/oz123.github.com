@@ -7,6 +7,18 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
+  <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />
+  <id>https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      3 years and 3 months ago, I signed up for maintaining Pipenv in Gentoo. This work made me co-maintainer
+of pipenv. I finally closed a long standing bug in Gentoo's pipenv. Due to this work, pipenv now ships
+less vendored packages, and is about 20% smaller in size.
+      <a href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>I am on Github sponsors now</title>
   <link href="https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html" />
   <id>https://oz123.github.io/writings/2022-05-08-I-am-on-Github-sponsors-now/index.html</id>
@@ -32,7 +44,7 @@
   <id>https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A short guide for using IPython and Jupyter Notebook on remote Linux machine
-    in the Enterprise Corp, where you don't have root rights.
+in the Enterprise Corp, where you don't have root rights.
       <a href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
 			]]>
 	</content>
@@ -43,8 +55,8 @@
   <id>https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I have just released WolkenBrot v0.3 with OpenStack support.
-    WolkenBrot is my own little program to bake cloud images.
-    The name means "Cloud Bread" in German.
+WolkenBrot is my own little program to bake cloud images.
+The name means "Cloud Bread" in German.
       <a href="https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -55,18 +67,18 @@
   <id>https://oz123.github.io/writings/2020-03-09-leaving-noris-network-after-two-years/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       After two years at noris network AG, yesterday was my last day with this company.
-    It has been a long time since it felt so hard leaving a company. In my two years
-    I worked with really great people on some of the most cutting edge technologies.
-    All these things were not possible without the help of so many great people with
-    whom I worked with. Some of them might read this post, so here is a big thanks.
-    I wanted to summerize my two years and gather all the lessons I learned in one place
-    for my future self and others too.  
-    It's quite hard summerize such an eclectic post. It's been a wild ride in noris network
-    with lots of new technologies and ideas. We have had a lot of success. I would like
-    to think that a great part was because we opted to work in an open source matter,
-    even thougah not all our projects where open source. This blog post is a summary of the
-    good things we did, and the positive leasons we learned.  
-    I hope reading through these will inspire you to choose a similar path.
+It has been a long time since it felt so hard leaving a company. In my two years
+I worked with really great people on some of the most cutting edge technologies.
+All these things were not possible without the help of so many great people with
+whom I worked with. Some of them might read this post, so here is a big thanks.
+I wanted to summerize my two years and gather all the lessons I learned in one place
+for my future self and others too.  
+It's quite hard summerize such an eclectic post. It's been a wild ride in noris network
+with lots of new technologies and ideas. We have had a lot of success. I would like
+to think that a great part was because we opted to work in an open source matter,
+even thougah not all our projects where open source. This blog post is a summary of the
+good things we did, and the positive leasons we learned.  
+I hope reading through these will inspire you to choose a similar path.
       <a href="https://oz123.github.io/writings/2020-03-09-leaving-noris-network-after-two-years/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -77,8 +89,8 @@
   <id>https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is a short tutorial on how to build a data source for Grafana using Python
-    Bottle micro-framework. Eventually, you can use this code to connect to any
-    database (including SQLite).
+Bottle micro-framework. Eventually, you can use this code to connect to any
+database (including SQLite).
       <a href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -89,8 +101,8 @@
   <id>https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Fooling around with JavaScript and OpenPGP, as the title says. I needed to
-        create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
-        turned out to be possible. These are the results of my experiment.
+    create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
+    turned out to be possible. These are the results of my experiment.
       <a href="https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -101,23 +113,13 @@
   <id>https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
-  I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
-  to check how to restore my files. I did decide to check how to restore file,
-  because backup is only half the job! It turns out, that the GUI does a disservice
-  for duplicity users. Restoring an encrypted backup turned out to not work.
-  I didn't bother to research why, and turned to the CLI. This is a reminder on
-  how to restore the files.
+I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
+to check how to restore my files. I did decide to check how to restore file,
+because backup is only half the job! It turns out, that the GUI does a disservice
+for duplicity users. Restoring an encrypted backup turned out to not work.
+I didn't bother to research why, and turned to the CLI. This is a reminder on
+how to restore the files.
       <a href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>blogit - new release</title>
-  <link href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html" />
-  <id>https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      After a long development hiatus I am releasing a new version of blogit
-      <a href="https://oz123.github.io/writings/2018-09-21-blogit---new-release/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

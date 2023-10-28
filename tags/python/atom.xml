@@ -3,16 +3,28 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Tiram</name>
-    <email>oz.tiram@gmail.com</email>
+    <name></name>
+    <email></email>
 </author>
+<entry>
+  <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
+  <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />
+  <id>https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      3 years and 3 months ago, I signed up for maintaining Pipenv in Gentoo. This work made me co-maintainer
+of pipenv. I finally closed a long standing bug in Gentoo's pipenv. Due to this work, pipenv now ships
+less vendored packages, and is about 20% smaller in size.
+      <a href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
   <link href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
   <id>https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A short guide for using IPython and Jupyter Notebook on remote Linux machine
-    in the Enterprise Corp, where you don't have root rights.
+in the Enterprise Corp, where you don't have root rights.
       <a href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
 			]]>
 	</content>
@@ -23,8 +35,8 @@
   <id>https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is a short tutorial on how to build a data source for Grafana using Python
-    Bottle micro-framework. Eventually, you can use this code to connect to any
-    database (including SQLite).
+Bottle micro-framework. Eventually, you can use this code to connect to any
+database (including SQLite).
       <a href="https://oz123.github.io/writings/2019-06-16-Visualize-almost-anything-with-Grafana-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -45,7 +57,7 @@
   <id>https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       This is not my typical blog post style. So no "how to" or opinnions. Just
-    some reflections on how I submitted a patch to Python's standard library.
+some reflections on how I submitted a patch to Python's standard library.
       <a href="https://oz123.github.io/writings/2017-07-11-Submitting-patches-to-Python/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -56,9 +68,9 @@
   <id>https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       For quite a while now I wanted to have a cheap replacement for collecting
-    and tracking coverage of codes I work on. Finally, I found a nice way to
-    record and track coverage reporting inside git itself in a semi-automatic
-    or completely automatic way.
+and tracking coverage of codes I work on. Finally, I found a nice way to
+record and track coverage reporting inside git itself in a semi-automatic
+or completely automatic way.
       <a href="https://oz123.github.io/writings/2017-02-28-coverage-reporting-and-logging-without-a-webservice/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -69,14 +81,14 @@
   <id>https://oz123.github.io/writings/2016-08-23-On-learning-Ruby-and-Python/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I am learning Ruby, and coming from Python it's not a an easy thing.
-    Ruby is confusing, it has a weird syntax, and things are not really
-    simple as in Python. There is still tons of stuff which seem like dark magic.
-    There's `nil`, there are `gems` and `bundler`. And there is _Rails, 
-    which isn't Ruby_. Ruby is good for so many people out there, and I am sure 
-    you can do amazing things in it. I already know it's never going to be my 
-    weapon of choice, but it's not bad knowing my way around it. I'd like to know 
-    how to set up a simple project, read and debug code, install gems and package 
-    ruby projects. I have been ignoring Ruby for too long.
+  Ruby is confusing, it has a weird syntax, and things are not really
+  simple as in Python. There is still tons of stuff which seem like dark magic.
+  There's `nil`, there are `gems` and `bundler`. And there is _Rails, 
+  which isn't Ruby_. Ruby is good for so many people out there, and I am sure 
+  you can do amazing things in it. I already know it's never going to be my 
+  weapon of choice, but it's not bad knowing my way around it. I'd like to know 
+  how to set up a simple project, read and debug code, install gems and package 
+  ruby projects. I have been ignoring Ruby for too long.
       <a href="https://oz123.github.io/writings/2016-08-23-On-learning-Ruby-and-Python/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -108,16 +120,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       When programming in Python, regex are not always your best tool. This has a few reasons, regex can be computationally expensive, unreadable and unmaintainble, and finally, sometimes there is a better pythonic way without them. Here are a few examples.
       <a href="https://oz123.github.io/writings/2016-03-14-Regex/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>AJAX with bottle.py</title>
-  <link href="https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html" />
-  <id>https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      A working example of AJAX with JQuery and Bottle
-      <a href="https://oz123.github.io/writings/2015-08-17-AJAX-with-bottle.py/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

@@ -3,16 +3,28 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name>Oz Tiram</name>
-    <email>oz.tiram@gmail.com</email>
+    <name></name>
+    <email></email>
 </author>
+<entry>
+  <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
+  <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />
+  <id>https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      3 years and 3 months ago, I signed up for maintaining Pipenv in Gentoo. This work made me co-maintainer
+of pipenv. I finally closed a long standing bug in Gentoo's pipenv. Due to this work, pipenv now ships
+less vendored packages, and is about 20% smaller in size.
+      <a href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>Why I still persist on not using systemd</title>
   <link href="https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html" />
   <id>https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
- developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
+developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
       <a href="https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
 			]]>
 	</content>
