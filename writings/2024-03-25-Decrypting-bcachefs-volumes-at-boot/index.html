@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Decrypting bcachefs volumes at boot </title>
+<link rel="stylesheet" type="text/css" href="/media/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="alternate" type="application/rss+xml" href="https://oz123.github.io/atom.xml"/>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 10px">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-1 col-md-1 col-sm-2">
+				<div class="sidebar-nav">
+					<div class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-left navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<span class="visible-xs navbar-brand">menu</span>
+						</div><!--navbar-header-->
+						<div id="menu">
+							<div class="navbar-collapse collapse sidebar-navbar-collapse">
+								<div id="profile"><img src="/media/img/me.png"></div>
+								<a title="Home" href="/">home</a>
+								<a title="About" class="about" href="/about.html">about</a>
+								<a title="Archive" class="archive" href="/archive">archive</a>
+								<a title="Atom feeds" href="/atom.xml">atom</a>
+								<a title="Twitter" href="https://twitter.com/#!/oztiram">twitter</a>
+								<a title="Stackoverflow" href="http://stackoverflow.com/users/492620/oz123">stackoverflow</a>
+								<a title="Github" href="https://github.com/oz123">github</a>
+								<a title="Public Speaking" href="/speaking.html">speaking</a>
+								</div><!--/.nav-collapse -->
+							</div><!-- menu -->
+						</div><!--navbar-->
+				</div><!--sidebar-->
+			</div> <!-- end of colum -->
+			<div class="col-lg-7 col-md-7 col-sm-10">
+<div class="index">
+	<div id="header" class="published"><a href="https://oz123.github.io">Oz Tiram</a> &ndash; March 25, 2024</div>
+	<h1>Decrypting bcachefs volumes at boot</h1>
+	<p>I have been playing with bcachefs on virtual machines for more than 3 years now.
+With the merge of bcachefs into the mainline Linux kernel, I decided I want to
+try bcachefs on real hardware.
+The problem was that <code>/etc/fstab</code> does not support bcachefs arrays nor there was
+a way to decrypt volumes at boot.
+Hence, it was time for me to roll my sleeves up and come with my own solution.</p>
+
+<p>First, I had to teach <code>bcachefs-utils</code> to accept a new command line flag to
+read a decryption key from a file. My <a href="https://github.com/koverstreet/bcachefs-tools/pull/241">PR for adding an option to read a password
+from a file</a> got accepted without much re-work.
+In this way, one can boot a main root partition
+encrypted with LUKS, which is then mounted decrypted using familiar tools.
+This partition will then have a key file which is passed to bcachefs-tools.</p>
+
+<p>The process is then:</p>
+
+<pre><code> grub2-&gt;dracut (initram-fs)-&gt;LUKS-&gt;bcachefs-utils decrypts secret-&gt;init mounts an array
+</code></pre>
+
+<p>I am not going to describe how to boot from a LUKS encrypted partition since this process
+is well documented for almost every Linux distro out there.</p>
+
+<p>First, I created a bcachefs array using the following command:</p>
+
+<pre><code># bcachefs format --compression=lz4 --encrypted --replicas=2 --label=nvme0 /dev/nvme0n1 \
+     --label=nvme1 /dev/nvme1n1 --label=nvme2 /dev/nvme2n1 --label=nvme3 /dev/nvme3n1 
+</code></pre>
+
+<p>This prompts for a password, type it and keep it somewhere safe.
+Now, if you attempt to mount any of the drives in the array, or the complete array, you
+will get an error:</p>
+
+<pre><code># mount -t bcachefs /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 /srv
+mount: /srv: mount(2) system call failed: Required key not available.
+       dmesg(1) may have more information after failed mount system call.
+</code></pre>
+
+<p>Now, you can test that the password works.</p>
+
+<pre><code># mkdir -v /etc/bcachefs-mount/
+# echo "YourSecretPassword" &gt; /etc/etc/bcachefs-mount/secret
+# bcachefs unlock -f /etc/bcachefs-mount/secret /dev/nvme3n1
+</code></pre>
+
+<p>Since, all disks in the array are encrypted with the same key, it is enough to unlock just
+one disk. Now, the mount command should work:</p>
+
+<pre><code># mount -t bcachefs /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 /srv
+# df -h /srv/
+Filesystem                                           Size  Used Avail Use% Mounted on
+/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1  3.4T   13M  3.3T   1% /srv
+</code></pre>
+
+<p>Now, this still isn't happening at boot time. The unlock and mount steps can be automated
+as a systemd unit or an openrc service which can be invoked at boot.
+I am not using systemd at home, so I am going to share my openrc service, but it should be
+easy to port.</p>
+
+<p>First, I created my own copy of <code>fstab</code> with a similar structure:</p>
+
+<pre><code>$ cat /etc/bcachefs-mount/fstab
+
+# group      mount  point
+/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 /srv
+</code></pre>
+
+<p>This file is parsed by my init script to determine which array is mounted where.</p>
+
+<p>Also, the init script reads a secrets file, which finds a decryption secret for a device:</p>
+
+<pre><code># disk secret
+/dev/nvme0n1 /etc/bcachefs-mount/srv
+</code></pre>
+
+<p>The file <code>/etc/bcachefs-mount/srv</code> contains the password.</p>
+
+<p>The init script runs a function at start which decrypts each disk and then mounts each array:</p>
+
+<pre><code>SECRET=/etc/bcachefs-mount/secret
+FILE_SYSTEMS=/etc/bcachefs-mount/fstab
+
+start() {
+
+    # check if the file exists
+    if [ ! -r "${FILE_SYSTEMS}" ]; then
+        ebegin "configuration file not found."
+        eend 1
+    fi
+
+    if [ -r "${SECRET}" ]; then
+        while ifs= read -r line; do
+            # skip lines starting with '#'
+            case "$line" in
+                \#*) continue ;;
+            esac
+
+            # set the ifs to a space
+            ifs=' '
+
+            # read the line into positional parameters
+            set -- $line
+
+            # assign the first part to group and the second part to mount
+            dev="$1"
+            secret_path="$2"
+
+            ebegin "Unlocking device: ${dev} with secret from ${secret_path}"
+        ebegin bcachefs unlock -f "${secret_path}" "${dev}"
+        bcachefs unlock -f "${secret_path}" "${dev}"
+            unset ifs
+
+            if [ $? -ne 0 ]; then
+               eend $?
+            fi
+
+        done &lt; "${SECRET}"
+        eend 0
+
+    fi
+    # read each line from the file
+    while ifs= read -r line; do
+        # skip lines starting with '#'
+        case "$line" in
+            \#*) continue ;;
+        esac
+
+        # set the ifs to a space
+        ifs=' '
+
+        # read the line into positional parameters
+        set -- $line
+
+        # assign the first part to group and the second part to mount
+        group="$1"
+        mp="$2"
+
+        ebegin "Mounting group: ${group} at ${mp}"
+        # optionally, restore the original ifs value
+        unset ifs
+
+        start-stop-daemon --start --exec /bin/mount -- -t bcachefs "${group}" "${mp}"
+        if [ $? -ne 0 ]; then
+           eend $?
+        fi
+
+    done &lt; "${FILE_SYSTEMS}"
+    eend 0
+}
+</code></pre>
+
+<p>You can find <a href="https://raw.githubusercontent.com/oz123/dude/master/gentoo/etc/init.d/mount-bcachefs">the complete openrc service in my repository</a></p>
+
+	<div class="tags">
+	<p>This entry was tagged:
+<a class="tag" href="/tags/linux"><span>linux</span></a>, <a class="tag" href="/tags/gentoo"><span>gentoo</span></a>, <a class="tag" href="/tags/bcachefs"><span>bcachefs</span></a>	</div>
+	<div id="social-btns" style="margin-top: 50px; margin-bottom: 0px">
+		<h4>Share this post:</h4>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://oz123.github.iowritings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html&title=Decrypting bcachefs volumes at boot&source=https://oz123.github.io" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-linkedin-square fa-2x"></i></a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=https://oz123.github.iowritings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html&title=Decrypting bcachefs volumes at boot" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook-square fa-2x"></i></a>
+		<a class="tweet" href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html" title="Decrypting bcachefs volumes at boot" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+		<a href="https://plus.google.com/share?url=https://oz123.github.iowritings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus-square fa-2x"></i></a>
+		<a href="mailto:?subject=https://oz123.github.iowritings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html&body=Decrypting bcachefs volumes at boot" onclick="javascript:window.open(this.href, 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-envelope-square fa-2x"></i></a>
+	</div>
+	<div id="underpost">
+		<h3>Discussions/Feedback.</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'oz123githubcom'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+			<div id="footer"><p>&copy; Oz Nahum Tiram 2016. Some Rights Reserved</p></div>
+			</div><!-- end column-->
+		<div class="col-lg-3"></div>
+	</div><!--end row-->
+	</div><!--end container-->
+	<script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/bootstrap.min.js"></script>
+	<script src="/media/js/scripts.js"></script>
+	</body>
+</html>

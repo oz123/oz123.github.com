@@ -3,9 +3,19 @@
 <title>Oz's Blog</title>
 <subtitle>Oz's weblog</subtitle>
 <author>
-    <name></name>
-    <email></email>
+    <name>Oz Tiram</name>
+    <email>oz.tiram@gmail.com</email>
 </author>
+<entry>
+  <title>Decrypting bcachefs volumes at boot</title>
+  <link href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html" />
+  <id>https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      This blog post describes how to mount an encrypted array of bcachefs disks at boot time.
+      <a href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
 <entry>
   <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
   <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />

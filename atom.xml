@@ -7,6 +7,16 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>Decrypting bcachefs volumes at boot</title>
+  <link href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html" />
+  <id>https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      This blog post describes how to mount an encrypted array of bcachefs disks at boot time.
+      <a href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>3 years of work on Pipenv in Gentoo come to a happy end</title>
   <link href="https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html" />
   <id>https://oz123.github.io/writings/2023-10-28-3-years-of-work-on-Pipenv-in-gentoo-come-to-a-happy-end/index.html</id>
@@ -104,22 +114,6 @@ database (including SQLite).
     create a page in which I can encrypt files with OpenPGP. Doing this with JavaScript
     turned out to be possible. These are the results of my experiment.
       <a href="https://oz123.github.io/writings/2019-02-09-Fooling-around-with-JavaScript-and-OpenPGP/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>backup and restore with duplicity</title>
-  <link href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html" />
-  <id>https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
-I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
-to check how to restore my files. I did decide to check how to restore file,
-because backup is only half the job! It turns out, that the GUI does a disservice
-for duplicity users. Restoring an encrypted backup turned out to not work.
-I didn't bother to research why, and turned to the CLI. This is a reminder on
-how to restore the files.
-      <a href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>

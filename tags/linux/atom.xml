@@ -7,12 +7,22 @@
     <email>oz.tiram@gmail.com</email>
 </author>
 <entry>
+  <title>Decrypting bcachefs volumes at boot</title>
+  <link href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html" />
+  <id>https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html</id>
+	<content type="html" xml:lang="en"><![CDATA[
+      This blog post describes how to mount an encrypted array of bcachefs disks at boot time.
+      <a href="https://oz123.github.io/writings/2024-03-25-Decrypting-bcachefs-volumes-at-boot/index.html">continue reading...</a>
+			]]>
+	</content>
+</entry>
+<entry>
   <title>Using IPython Notebook on Linux Machines in the Enterprise Corp.</title>
   <link href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html" />
   <id>https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       A short guide for using IPython and Jupyter Notebook on remote Linux machine
-    in the Enterprise Corp, where you don't have root rights.
+in the Enterprise Corp, where you don't have root rights.
       <a href="https://oz123.github.io/writings/2021-11-24-Using-IPython-Notebook-on-Linux-Machines-in-the-Enterprise-Corp./index.html">continue reading...</a>
 			]]>
 	</content>
@@ -23,8 +33,8 @@
   <id>https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       I have just released WolkenBrot v0.3 with OpenStack support.
-    WolkenBrot is my own little program to bake cloud images.
-    The name means "Cloud Bread" in German.
+WolkenBrot is my own little program to bake cloud images.
+The name means "Cloud Bread" in German.
       <a href="https://oz123.github.io/writings/2021-10-17-Announce---Wolkenbrot-v0.3---now-with-OpenStack-support/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -35,11 +45,11 @@
   <id>https://oz123.github.io/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Using NFS shared volumes in Kubernetes is easy. But what if you want to serve 
-    NFS volumes from with Kuberentes? It turns out to be a tricky thing. Here is
-    a tutorial on how to enable Kuberentes to share NFS volumes.
-    In the end of this tutorial we create a Deployment with a container sharing
-    a directory from the host machine, and a few containers using this shared
-    directory as a persistent volume.
+NFS volumes from with Kuberentes? It turns out to be a tricky thing. Here is
+a tutorial on how to enable Kuberentes to share NFS volumes.
+In the end of this tutorial we create a Deployment with a container sharing
+a directory from the host machine, and a few containers using this shared
+directory as a persistent volume.
       <a href="https://oz123.github.io/writings/2019-04-24-Deploy-NFS-server-inside-a-Kubernetes-cluster/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -50,12 +60,12 @@
   <id>https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Duplicity backup utility is the old workhorse in all recent Ubuntu versions.
-  I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
-  to check how to restore my files. I did decide to check how to restore file,
-  because backup is only half the job! It turns out, that the GUI does a disservice
-  for duplicity users. Restoring an encrypted backup turned out to not work.
-  I didn't bother to research why, and turned to the CLI. This is a reminder on
-  how to restore the files.
+I use the GUI called Deja-Dup for quite a while now. But until now I never bothered
+to check how to restore my files. I did decide to check how to restore file,
+because backup is only half the job! It turns out, that the GUI does a disservice
+for duplicity users. Restoring an encrypted backup turned out to not work.
+I didn't bother to research why, and turned to the CLI. This is a reminder on
+how to restore the files.
       <a href="https://oz123.github.io/writings/2018-10-07-backup-and-restore-with-duplicity/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -66,7 +76,7 @@
   <id>https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       The following screenshot of a systemd issue reported on github saysit all.  I don't care if systemd is technically superior, the way it's being
- developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
+developed is truely bothering. It's leadership is insisting on being blunt  ingoring users, misleading and even wrong.
       <a href="https://oz123.github.io/writings/2017-04-17-Why-I-still-persist-on-not-using-systemd/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -77,10 +87,10 @@
   <id>https://oz123.github.io/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html</id>
 	<content type="html" xml:lang="en"><![CDATA[
       Creating abstracted Dockerfile is something I really wish existed. Every time, 
-    I write a `Dockerfile` for a specific base image I must specify the correct
-    package manager command. You either use `apt-get` or `apk` or `yum` or any other
-    call for the package manager. This is unfortunately, not very reusable. But,
-    here is a simple schema how to use M4 macros to achieve this abstraction.
+I write a `Dockerfile` for a specific base image I must specify the correct
+package manager command. You either use `apt-get` or `apk` or `yum` or any other
+call for the package manager. This is unfortunately, not very reusable. But,
+here is a simple schema how to use M4 macros to achieve this abstraction.
       <a href="https://oz123.github.io/writings/2016-09-07-Docker-quicky---templating-with-M4/index.html">continue reading...</a>
 			]]>
 	</content>
@@ -112,16 +122,6 @@
 	<content type="html" xml:lang="en"><![CDATA[
       Apparently, bash offeres assosiative arrays, similar to Python dictionaries
       <a href="https://oz123.github.io/writings/2015-06-11-Dictionaries-in-bash-scripts---it-is-possible/index.html">continue reading...</a>
-			]]>
-	</content>
-</entry>
-<entry>
-  <title>Simple Multiprocessing Task Queue in Python</title>
-  <link href="https://oz123.github.io/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html" />
-  <id>https://oz123.github.io/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html</id>
-	<content type="html" xml:lang="en"><![CDATA[
-      Yet another tutorial about Python's multiprocessing. What make this one different? Well, it's based on a real life example and shows what is going on behind the sceanes on your Linux host.
-      <a href="https://oz123.github.io/writings/2015-02-25-Simple-Multiprocessing-Task-Queue-in-Python/index.html">continue reading...</a>
 			]]>
 	</content>
 </entry>
